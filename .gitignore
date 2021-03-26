@@ -1,0 +1,13 @@
+# Ignore folders
+env/
+models/*
+venv/
+
+# Ignore visible files
+
+# Ignore hidden files
+.idea
+__pycache__
+
+# exception to the rule
+!models/to_be_trained.md
