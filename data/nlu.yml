@@ -1,92 +1,250 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
     - hey
     - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
+    - hallo
+    - Grüß dich
+    - Guten Tag
+    - Hallöchen
+    - Grüzi
+    - Moin
+    - Hey du
+    - Hallo du
+    - Hallo
+    - Hallo, ich bin [Alfred](name)
+    - hey, ich heiße [Mareike](name)
+    - Grüß dich, ich bin [Werner](name)
+    - Ich bin [Klaus](name)
 - intent: goodbye
   examples: |
-    - good afternoon
     - cu
-    - good by
-    - cee you later
-    - good night
     - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
+    - byebye
+    - tschöö
+    - tschö
+    - tschüss
+    - bis dann
+    - bis bald
+    - auf wiedersehen
+    - machst gut
+    - tschüß
+    - öö
+    - Danke
 - intent: affirm
   examples: |
+    - ja
+    - klar
+    - ok
+    - mach das
+    - in Ordnung
+    - o.k.
+    - geht klar
+    - warum nicht
+    - mach
+    - ja bitte
     - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
+    - nein
+    - möchte ich nicht
+    - auf keinen Fall
+    - nö
+    - ne
+    - nicht wirklich
+    - muss nicht sein
+    - bitte nicht
+    - definitiv nicht
+    - nope
+- intent: ask_for_weather
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
+    - Wie ist das Wetter im Moment?
+    - Wie wird das Wetter?
+    - Kannst du mir sagen, wie das Wetter wird?
+- intent: faq/democracy
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
+    - Ist Deutschland eine Demokratie?
+    - Was ist eine Demokratie?
+    - Was bedeutet Demokratie?
+    - Was versteht man unter Demokratie?
+    - Erkläre mir Demokratie
+    - Wie funktioniert eine Demokratie?
+    - Was Demokratie?
+    - Wer ist Demokratie?
+    - Das Volk kann wählen?
+    - Was bedeutet Herrschaft des Volkes
+    - Wieso heißt es Herrschaft des Volkes
+    - Demokratie
+- intent: faq/partiesWhat
+  examples: |
+    - Was sind Parteien?
+    - Was bedeutet Partei?
+    - Was versteht man unter Parteien?
+    - Erkläre mir Parteien
+    - Was Parteien
+    - Parteien
+    - Parteien was?
+    - Wie funktionieren Parteien?
+    - Was machen Parteien?
+    - Welche Aufgaben haben Parteien?
+    - Worum kümmern sich Parteien?
+    - Wie arbeiten Parteien?
+- intent: faq/partiesWho
+  examples: |
+    - Wer sind Parteien?
+    - Welche Parteien gibt es?
+    - Wen kann ich wählen?
+    - sag mir welche Parteien es gibt
+    - Über welche PArteien kansnt du mir etwas sagen?
+    - Welche Parteien gibt es?
+- intent: faq/parties_CDU
+  examples: |
+    - Wer ist die CDU?
+    - Wer ist die CSU?
+    - Was ist die CSU?
+    - Wer sind die Konservativen?
+    - Was sind die konservativen Parteien?
+    - Christlich Soziale Union
+    - Christlich Demokratische Union
+    - Unionsparteien
+    - Union
+    - CDU
+    - CSU
+- intent: faq/parties_SPD
+  examples: |
+    - Sozialisten
+    - Sozialistische Partei Deutschlands
+    - SPD
+    - Wer ist die SPD?
+    - Was ist SPD?
+- intent: faq/parties_FDP
+  examples: |
+    - Liberale Partei
+    - Freiheitliche Partei
+    - Wirtschaftspartei
+    - Arbeitgeberpartei
+    - Wer ist die FDP?
+    - Sag mir was die FDP ist
+    - Wer ist die FDP?
+    - FDP
+- intent: faq/parties_GRUENE
+  examples: |
+    - Ökopartei
+    - Grüne
+    - Umweltpartei
+    - Wer sind die Grünen?
+    - Was ist Bündnis 90 die Grünen.
+    - Die Grünen
+    - Wer ist Bündnis 90?
+    - Bündnis 90 die Grünen
+- intent: faq/parties_Linke
+  examples: |
+    - wer sind die Linken?
+    - Die Linke?
+    - Kommunisten
+    - SED
+    - Sozialistische Einheitspartei
+    - Kommunistische Partei
+    - Was sind die Linken?
+    - Linke Partei
+    - Wer ist politisch Links
+- intent: faq/parties_AFD
+  examples: |
+    - AFD
+    - Wer ist die AFD?
+    - Was ist die Alternative für Deutschland?
+    - Wer ist politisch rechts?
+    - Die Rechten
+    - Rechte Partei
+- intent: faq/rightToVote
+  examples: |
+    - Was ist ein Wahlrecht?
+    - Was bedeutet Wahlrecht?
+    - Was versteht man unter Wahlrecht?
+    - Erkläre mir Wahlrecht
+    - Wie funktioniert das Wahlrecht?
+    - Was Wahlrecht?
+    - Wahlrecht was?
+    - Wer kann wählen?
+    - Wer darf wählen?
+    - Darf jeder wählen?
+    - Dürfen alle wählen?
+    - Was heißt wahlberechtigt
+- intent: faq/howToVote
+  examples: |
+    - Muss ich wählen?
+    - Ist meine Wahl geheim?
+    - Darf ich wählen, wen ich will?
+    - Wie viel zählt meine Stimme?
+    - Geheime Wahl?
+    - Wie viele Stimmen habe ich?
+    - Wie funktioniert wählen?
+- intent: faq/chancellorWhat
+  examples: |
+    - Was ist ein Bundeskanzler?
+    - Was bedeutet Bundeskanzler?
+    - Was versteht man unter Bundeskanzler?
+    - Erkläre mir Bundeskanzler
+    - Was heißt Bundeskanzler?
+    - Bundeskanzler was?
+    - Was macht ein Bundeskanzler?
+- intent: faq/chancellorWho
+  examples: |
+    - Wer ist Bundeskanzler?
+    - Wie heißt der Bundeskanzler?
+    - Wie heißt die Bundeskanzlerin?
+    - Wer ist Angela Merkel?
+    - Was macht Angela Merkel?
+    - Wer ist Bundeskanzler
+    - Wer ist Kanzler?
+- intent: faq/parliamentWhat
+  examples: |
+    - Was ist der Bundestag?
+    - Was bedeutet Bundestag?
+    - Was versteht man unter Bundestag?
+    - Was heißt Bundestag?
+    - Erkläre mir Bundestag?
+    - Wer ist die Volksvertretung?
+    - Wer vertritt das Volk?
+    - Wer macht die Gesetze?
+    - Wo entstehen Gesetze?
+    - Wer stimmt über Gesetze ab?
+    - Was macht der Bundestag?
+    - wer ist der Bundestag?
+- intent: faq/parliamentWhere
+  examples: |
+    - Wo ist das Parlament?
+    - Wo ist der Bundestag?
+    - Wo finde ich den Bundestag?
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - bist du ein Bot?
+    - bist du ein Mensch?
+    - bist du Menschlich?
+    - Spreche ich mit einem Menschen?
+    - Bist du eine KI?
+    - was bist du?
+    - Bist du ein Bot?
+- intent: chitchat/howAreYou
+  examples: |
+    - wie geht es dir?
+    - geht es dir gut?
+    - wie ist dein befinden?
+    - alles fit?
+    - alles gut bei dir?
+- intent: chitchat/joke
+  examples: |
+    - Erzähle mir einen Witz
+    - Kannst du witzig sein?
+    - Kannst du mir einen Witz erzählen?
+    - Ich möchte einen Witz hören
+    - Witz
+    - Witz erzählen
+- intent: chitchat/turing
+  examples: |
+    - kennst du den Turing-Test?
+    - Turing-Test
+    - weißt du, was der Turing-Test ist?
+    - kannst du den Turing-Test bestehen?
