@@ -18,6 +18,13 @@ nlu:
     - hey, ich heiße [Mareike](name)
     - Grüß dich, ich bin [Werner](name)
     - Ich bin [Klaus](name)
+    - Hallo, ich heiße [Alfred](name)
+    - Hallp
+    - Hey
+    - Hi
+    - Hallo, ich heiße Simon
+    - ich bin [Mareike](name)
+    - Hallo, ich bin Simon
 - intent: goodbye
   examples: |
     - cu
@@ -33,6 +40,7 @@ nlu:
     - tschüß
     - öö
     - Danke
+    - Machs gut
 - intent: affirm
   examples: |
     - ja
@@ -63,6 +71,10 @@ nlu:
     - Wie ist das Wetter im Moment?
     - Wie wird das Wetter?
     - Kannst du mir sagen, wie das Wetter wird?
+    - Wetter
+    - Wetterinfo
+    - Wie ist das Wetter?
+    - Und wie ist das Wetter?
 - intent: faq/democracy
   examples: |
     - Ist Deutschland eine Demokratie?
@@ -98,7 +110,9 @@ nlu:
     - Wen kann ich wählen?
     - sag mir welche Parteien es gibt
     - Über welche PArteien kansnt du mir etwas sagen?
-    - Welche Parteien gibt es?
+    - Ok, was ist die SPD?
+    - Wer sind die Parteien?
+    - wen kann ich wählen?
 - intent: faq/parties_CDU
   examples: |
     - Wer ist die CDU?
@@ -112,6 +126,8 @@ nlu:
     - Union
     - CDU
     - CSU
+    - Und wer ist di CSU?
+    - Und wer ist die Union?
 - intent: faq/parties_SPD
   examples: |
     - Sozialisten
@@ -119,6 +135,7 @@ nlu:
     - SPD
     - Wer ist die SPD?
     - Was ist SPD?
+    - Was ist die SPD?
 - intent: faq/parties_FDP
   examples: |
     - Liberale Partei
@@ -127,7 +144,6 @@ nlu:
     - Arbeitgeberpartei
     - Wer ist die FDP?
     - Sag mir was die FDP ist
-    - Wer ist die FDP?
     - FDP
 - intent: faq/parties_GRUENE
   examples: |
@@ -158,6 +174,7 @@ nlu:
     - Wer ist politisch rechts?
     - Die Rechten
     - Rechte Partei
+    - AFD?
 - intent: faq/rightToVote
   examples: |
     - Was ist ein Wahlrecht?
@@ -199,6 +216,7 @@ nlu:
     - Was macht Angela Merkel?
     - Wer ist Bundeskanzler
     - Wer ist Kanzler?
+    - Ich wüsste gerne, wer Bundeskanzler ist
 - intent: faq/parliamentWhat
   examples: |
     - Was ist der Bundestag?
@@ -218,6 +236,54 @@ nlu:
     - Wo ist das Parlament?
     - Wo ist der Bundestag?
     - Wo finde ich den Bundestag?
+- intent: faq/candidates
+  examples: |
+    - Wer sind die Kandidaten?
+    - Wer will Kanzler werden?
+    - Wer will Kanzlerin werden?
+    - Wer wird Bundeskanzler?
+    - Wer wird Bundeskanzlerin?
+    - Spitzenkandidaten?
+    - Kandidaten?
+    - wer sind die Kandidaten?
+- intent: faq/Armin_Laschet
+  examples: |
+    - Wer ist der Kandidat der CDU?
+    - Wer kandidiert für die CDU?
+    - Wen kriege ich, wenn ich die CSU wähle?
+    - Wer stellt die CDU als Kanzler auf?
+    - Wer ist Armin Laschet?
+    - Armin Laschet
+    - Laschet
+    - Laschi
+- intent: faq/Olaf_Scholz
+  examples: |
+    - Wer ist der Kandidat der SPD?
+    - Wer kandidiert für die SPD?
+    - Wen kriege ich, wenn ich die SPD wähle?
+    - Wen stellt die SPD als Kanzler auf?
+    - Wer ist Olaf Scholz?
+    - Olaf Scholz
+    - Scholz
+- intent: faq/Annalena_Baerbock
+  examples: |
+    - Wer ist der Kandidat der Grünen?
+    - Wer kandidiert für die Grünen?
+    - Wen kriege ich, wenn ich die Grünen wähle?
+    - Wen stellen die Grünen als Kanzler auf?
+    - Wer ist Annalena Baerbock?
+    - Annalena Baerbock
+    - Baerbock
+    - Bärbock
+- intent: faq/Christian_Lindner
+  examples: |
+    - Wer ist der Kandidat der FDP?
+    - Wer kandidiert für die FDP?
+    - Wen kriege ich, wenn ich die FDP wähle?
+    - Wen stellt die FDP als Kanzler auf?
+    - Wer ist Christian Lindner?
+    - Christian Lindner
+    - Lindner
 - intent: bot_challenge
   examples: |
     - bist du ein Bot?
@@ -227,6 +293,7 @@ nlu:
     - Bist du eine KI?
     - was bist du?
     - Bist du ein Bot?
+    - Bist du ein bot?
 - intent: chitchat/howAreYou
   examples: |
     - wie geht es dir?
@@ -242,9 +309,27 @@ nlu:
     - Ich möchte einen Witz hören
     - Witz
     - Witz erzählen
+    - erzähle mir einen Witz
 - intent: chitchat/turing
   examples: |
     - kennst du den Turing-Test?
     - Turing-Test
     - weißt du, was der Turing-Test ist?
     - kannst du den Turing-Test bestehen?
+    - Kennst du den Turing-Test?
+- intent: out_of_scope
+  examples: |
+    - Wer ist US-Präsident?
+    - Was läuft gerade im Kino?
+    - Kino?
+    - Barack Obama?
+    - Gottesdienst
+    - Wo kann ich baden gehen?
+    - Wer geht mit mir schwimmen?
+    - sldfjdsölgkj
+    - helgajagörrsnefall
+    - Was läuft im Kino?
+    - Wer ist Barack Obama?
+- intent: chitchat/weather
+  examples: |
+    - Und wie wird das Wetter?

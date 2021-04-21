@@ -6,9 +6,12 @@ stories:
   - action: utter_greet
   - intent: bot_challenge
   - action: utter_iamabot
+
 - story: weather
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_for_weather
   - action: action_ask_for_weather
+  - intent: goodbye
+  - action: utter_goodbye

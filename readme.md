@@ -206,3 +206,12 @@ responses:
 ###Sonstiges:
 spaCy: https://spacy.io/usage/models#languages
 
+REST-Endpoint: https://rasa.com/docs/rasa/2.2.x/connectors/your-own-website
+bei laufendem rasa x über `http://localhost:5005/webhooks/rest/webhook` per JSON-Objekt, bspw.
+```JSON
+{
+    "message": "Wer ist der Kandidat der CDU?",
+    "sender": "User-ID"
+}
+```
+pypi-dotenv: https://pypi.org/project/python-dotenv/

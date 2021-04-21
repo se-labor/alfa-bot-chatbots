@@ -21,6 +21,10 @@ intents:
     use_entities: true
 - ask_for_weather:
     use_entities: true
+- out_of_scope:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
 entities:
 - name
 slots:
@@ -33,10 +37,7 @@ responses:
   utter_default:
   - text: Das habe ich leider nicht verstanden. Kannst du es anders ausdrücken?
   utter_greet:
-  - buttons:
-    - payload: Ich wüsste gerne, wer Bundeskanzler ist
-      title: Bundeskanzler
-    text: Hey!
+  - text: Hey!
   utter_goodbye:
   - text: Machs gut!
   utter_iamabot:
@@ -68,7 +69,31 @@ responses:
   utter_faq/chancellorWhat:
   - text: Der Bundeskanzler ist der Regierungschef der Bundesrepublik Deutschland. Zurzeit ist Angela Merkel Bundeskanzlerin
   utter_faq/chancellorWho:
-  - text: Angela Merkel ist seit November 2005 Bundeskanzlerin. Sie wird bei der Wahl 2021 aber nicht mehr zur Wiederwahl antreten.
+  - image: https://www.bundestag.de/resource/image/241388/3x4/568/758/5b540b9f5294257c2163925e6cb288fb/SQ/merkel_angela_gross.jpg
+    text: Angela Merkel ist seit November 2005 Bundeskanzlerin. Sie wird bei der Wahl 2021 aber nicht mehr zur Wiederwahl antreten.
+  utter_faq/candidates:
+  - buttons:
+    - payload: /Armin_Laschet
+      title: Armin Laschet
+    - payload: /Olaf_Scholz
+      title: Olaf Scholz
+    - payload: /Annalena_Baerbock
+      title: Annalena Baerbock
+    - payload: /Christian_Lindner
+      title: Christian Lindner
+    text: 'Die Spitzenkandidaten für die Bundestagswahl sind: Armin Laschet (CDU), Olaf Scholz (SPD), Annalena Baerbock (GRÜNE), Christian Lindner (FDP). Möchtest du mehr über einen davon erfahren?'
+  utter_faq/Armin_Laschet:
+  - image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2017-09-24_Armin_Laschet_by_Sandro_Halank.jpg/220px-2017-09-24_Armin_Laschet_by_Sandro_Halank.jpg
+    text: Das ist Armin Laschet
+  utter_faq/Olaf_Scholz:
+  - image: https://upload.wikimedia.org/wikipedia/commons/c/c6/Olaf_Scholz_–_Bürgerschaftswahl_in_Hamburg_2015_02.jpg
+    text: Das ist Olaf Scholz
+  utter_faq/Annalena_Baerbock:
+  - image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20180120_AB_HH.png/1200px-20180120_AB_HH.png
+    text: Das ist Annalena Baerbock
+  utter_faq/Christian_Lindner:
+  - image: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg/1200px-2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg
+    text: Christian Lindner
   utter_faq/parliamentWhat:
   - text: Im Bundestag wird über Gesetze geredet und abgestimmt. Die Abgeordneten beraten und beschließen alle Bundesgesetze, wie zum Beispiel das Grundgesetz. Der Bundestag wählt auch den Bundeskanzler.
   utter_faq/parliamentWhere:
@@ -78,10 +103,12 @@ responses:
   - text: Bei mir ist alles super.
   utter_chitchat/joke:
   - text: 'Kommt ein Pferd in eine Bar, fragt der Barkeeper: "Was machst du denn für ein langes Gesicht?"'
-  - text: 'Sagt Lisa zu Anna: "Mein Hund kann lügen." Sagt Anna: "Das geht doch nicht." Sagt Lisa: "Doch das geht. Belo, wie macht eine Katze?" "Wau wau."'
+  - text: 'Sagt Lisa zu Anna: "Mein Hund kann lügen." Sagt Anna: "Das geht doch nicht." Sagt Lisa: "Doch das geht. Bello, wie macht eine Katze?" "Wau wau."'
   - text: 'Fritzchen saß in der Schule. Da kam der Lehrer und nahm Fritzchen den Apfel weg. Er sagte: "Wenn du den Apfel haben willst, dann sage mir 3 Obstsorten." Da sagte Fritzchen: "Gib mir meinen Apfel, du Pflaume, sonst kriegst du eins auf die Birne."'
   utter_chitchat/turing:
   - text: Der Turing-Test stammt vom britischen Mathematiker Alan Turing. Turing schlug diesen Test vor, um einen Richtwert für Künstliche Intelligenz zu erschaffen. Gut programmiert bestehe ich den Test eine Weile, aber kaum lange genug.
+  utter_out_of_scope:
+  - text: 'Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder melde dich beim [ALFA-Telefon](https://alfa-telefon.de): 0800 53 53 44 55'
 actions:
 - action_ask_for_weather
 forms: {}
