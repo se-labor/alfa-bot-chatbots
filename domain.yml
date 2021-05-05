@@ -93,7 +93,7 @@ responses:
     text: Das ist Annalena Baerbock
   utter_faq/Christian_Lindner:
   - image: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg/1200px-2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg
-    text: Christian Lindner
+    text: Das ist Christian Lindner
   utter_faq/parliamentWhat:
   - text: Im Bundestag wird über Gesetze geredet und abgestimmt. Die Abgeordneten beraten und beschließen alle Bundesgesetze, wie zum Beispiel das Grundgesetz. Der Bundestag wählt auch den Bundeskanzler.
   utter_faq/parliamentWhere:

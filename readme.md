@@ -206,6 +206,14 @@ responses:
 ###Sonstiges:
 spaCy: https://spacy.io/usage/models#languages
 
+Rasa und Docker:
+
+https://rasa.com/docs/rasa-x/installation-and-setup/install/docker-compose/
+
+https://rasa.com/docs/rasa/docker/building-in-docker/
+
+https://hub.docker.com/r/rasa/rasa/
+
 REST-Endpoint: https://rasa.com/docs/rasa/2.2.x/connectors/your-own-website
 bei laufendem rasa x über `http://localhost:5005/webhooks/rest/webhook` per JSON-Objekt, bspw.
 ```JSON

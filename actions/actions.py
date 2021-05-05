@@ -24,6 +24,7 @@ class ActionAskForWeather(Action):
         dispatcher.utter_message(text=content)
 
         return []
+
 # class ActionHelloWorld(Action):
 #
 #     def name(self) -> Text:
