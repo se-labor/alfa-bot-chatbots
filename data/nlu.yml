@@ -25,6 +25,7 @@ nlu:
     - Hallo, ich heiße Simon
     - ich bin [Mareike](name)
     - Hallo, ich bin Simon
+    - Hey, ich bin Simon
 - intent: goodbye
   examples: |
     - cu
@@ -89,6 +90,8 @@ nlu:
     - Was bedeutet Herrschaft des Volkes
     - Wieso heißt es Herrschaft des Volkes
     - Demokratie
+    - Was heißt Demokratie?
+    - Was ist Demokratie?
 - intent: faq/partiesWhat
   examples: |
     - Was sind Parteien?
@@ -113,6 +116,7 @@ nlu:
     - Ok, was ist die SPD?
     - Wer sind die Parteien?
     - wen kann ich wählen?
+    - Wen kann ich wählen
 - intent: faq/parties_CDU
   examples: |
     - Wer ist die CDU?
@@ -256,6 +260,8 @@ nlu:
     - Armin Laschet
     - Laschet
     - Laschi
+    - Wer ist Kandidat der CDU
+    - Wer ist Kandidat bei der CDU?
 - intent: faq/Olaf_Scholz
   examples: |
     - Wer ist der Kandidat der SPD?
@@ -275,6 +281,7 @@ nlu:
     - Annalena Baerbock
     - Baerbock
     - Bärbock
+    - Wer ist der Kandidat der Grünen
 - intent: faq/Christian_Lindner
   examples: |
     - Wer ist der Kandidat der FDP?
@@ -284,6 +291,8 @@ nlu:
     - Wer ist Christian Lindner?
     - Christian Lindner
     - Lindner
+    - Wer tritt bei der FDP an?
+    - Wer ist Kandidat der FDP?
 - intent: bot_challenge
   examples: |
     - bist du ein Bot?
@@ -301,6 +310,8 @@ nlu:
     - wie ist dein befinden?
     - alles fit?
     - alles gut bei dir?
+    - Wie geht es dir?
+    - Wie geht es dir
 - intent: chitchat/joke
   examples: |
     - Erzähle mir einen Witz
@@ -330,6 +341,10 @@ nlu:
     - helgajagörrsnefall
     - Was läuft im Kino?
     - Wer ist Barack Obama?
+    - Blödsinn
+    - Theater
+    - Wo steht die Sphinx?
+    - Wo bitte geht's zum Militär?
 - intent: chitchat/weather
   examples: |
     - Und wie wird das Wetter?
