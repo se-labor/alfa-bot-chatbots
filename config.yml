@@ -3,6 +3,15 @@ pipeline:
 # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # If you'd like to customize it, uncomment and adjust the pipeline.
 # See https://rasa.com/docs/rasa/tuning-your-model for more information.
+
+# From Rasa version 2.5 use of Spacy has to be clarified in another way. See notes: https://rasa.com/docs/rasa/migration-guide
+# May need install of Spacy and Spacy language pack (https://spacy.io/usage/models):
+# pip3 install -U pip setuptools wheel
+# pip3 install -U spacy
+# python3 -m spacy download de_core_news_sm
+# Than use ->
+#   - name: SpacyNLP
+#     model: "de_core_news_sm"
    - name: WhitespaceTokenizer
    - name: RegexFeaturizer
    - name: LexicalSyntacticFeaturizer
