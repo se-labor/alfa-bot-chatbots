@@ -19,11 +19,11 @@ intents:
     use_entities: true
 - chitchat:
     use_entities: true
-- ask_for_weather:
-    use_entities: true
 - out_of_scope:
     use_entities: true
 - nlu_fallback:
+    use_entities: true
+- ask_for_weather:
     use_entities: true
 entities:
 - name
@@ -37,79 +37,159 @@ responses:
   utter_default:
   - text: Das habe ich leider nicht verstanden. Kannst du es anders ausdrücken?
   utter_greet:
-  - text: Hey!
+  - image: http://sbhc-nrw.de/assets/wahlzettel.jpg
+    text: Willkommen zum Chat. Frage mich gerne, was du über die Bundestagswahl 2021 wissen möchtest. Wenn du auf den Lautsprecher tippst, lese ich dir die Nachricht auch vor.
   utter_goodbye:
   - text: Machs gut!
+  - text: Bis zum nächsten Mal!
+  - text: Bis bald!
   utter_iamabot:
-  - text: Ja, ich bin ein Bot - powered by Rasa.
-  - text: Ich bin ein Chatbot und verwende das Rasa-Framework.
+  - text: Ich bin ein Chatbot. Ich werde entwickelt von der FH Münster und dem Bundesverband Alphabetisierung und Grundbildung.
   utter_faq/democracy:
-  - text: In Deutschland leben wir in einer Demokratie. Demokratie bedeutet die Herrschaft des Volkes.  Das Volk soll die Politik selbst bestimmen und dafür regelmäßig Politiker wählen. Die Menschen sollen sich selbst Regeln für das Zusammenleben geben.
-  - text: Deutschland ist eine Demokratie. Demokratie bedeutet Herrschaft des Volkes. Das Volk soll die Politik und damit die Regeln für das Zusammenleben selbst bestimmen. Im Gegensatz zu bspw. einer Monarchie in der ein König oder eine Königin alleine die Regeln bestimmt. Da aber nicht jeder alles wissen kann und auch nicht alle Einwohner Deutschlands für Entscheidungen zusammenkommen können, gibt es regelmäßig Wahlen. In den Wahlen werden Politiker in Parlamente gewählt, die dann im Interesse ihrer Wähler die Politik mitgestalten.
+  - text: Demokratie ist ein griechisches Wort und Bedeutung "Herrschaft des Volkes". Das Volk sind alle Bürger. In einer Demokratie wählt das Volk seine Regierung.
+  - text: In einer Demokratie wählt das Volk die Politiker für den Bundestag, also das Parlament. Das Wort Parlament bedeutet "Aussprache". Die Politiker treffen Entscheidungen für unser tägliches Zusammenleben.
   utter_faq/partiesWhat:
-  - text: Parteien vertreten Interessen von Bürgern. Du kannst die Partei wählen, die am besten Deine Interessen vertritt.
+  - buttons:
+    - payload: Wahlprogramme
+      title: Wahlprogramm
+    text: Menschen, die gleiche politische Ziele verfolgen, organisieren sich in Parteien. Gewählte Parteien vertreten die Interessen ihrer Wähler. Sie haben Parteiprogramme und Wahlprogramme in denen ihre Ziele stehen. Jeder kann einer Partei als Mitglied beitreten.
   utter_faq/partiesWho:
-  - text: Die bekanntesten Parteien sind CDU/CSU, SPD, FDP, die Grünen und die Linke. Seit der letzten Bundestagswahl ist auch die AFD im Bundestag vertreten.
+  - text: 'Im aktuellen Bundestag sitzen CDU/CSU, SPD, AFD, FDP, DIE LINKE und die Grünen. Dazu gibt es noch viele weitere Parteien, die nicht über die 5%-Hürde kamen. Zu allen Parteien findest du [hier mehr](https://www.bpb.de/politik/wahlen/wer-steht-zur-wahl/bundestagswahl-2017/)'
   utter_faq/parties_CDU:
-  - text: Die CDU und ihre bayerische Schwesterpartei CSU sind die sogenannten Unionsparteien. Sie stehen üblicherweise für die politische Mitte bis hin zu eher konservativer Politik.
+  - image: https://www.bpb.de/cache/images/5/230175-1x1-teaser140.jpg
+    text: Die CDU und ihre bayerische Schwesterpartei CSU sind die sogenannten Unionsparteien. Die CDU kombiniert sozialpolitischen christlichen Konservatismus mit einer ökonomisch marktwirtschaftlichen Orientierung.
   utter_faq/parties_SPD:
-  - text: SPD steht für die Sozialdemokratische Partei Deutschlands. Traditionell sind sie eher der politischen Mitte bis ins linke Spektrum orientiert. Die SPD wurde gegründet, um vor allem die Interessen der Gewerkschaften und Arbeiter zu vertreten.
+  - image: https://www.bpb.de/cache/images/7/254657-1x1-teaser140.jpg
+    text: SPD steht für die Sozialdemokratische Partei Deutschlands. Die SPD stützt sich auf die Grundwerte Freiheit, Gerechtigkeit und Solidarität. Die SPD wurde gegründet, um vor allem die Interessen der Gewerkschaften und Arbeiter zu vertreten.
   utter_faq/parties_FDP:
-  - text: FDP steht für Freie Demokratische Partei. Die FDP steht vor allem für liberale Wirtschaftspolitik und steht traditionell den Arbeitgebern nahe.
+  - image: https://www.bpb.de/cache/images/1/254661-1x1-teaser140.jpg
+    text: FDP steht für Freie Demokratische Partei. Die FDP bewertet Freiheit höher als Gleichheit und steht traditionell den Arbeitgebern nahe.
   utter_faq/parties_GRUENE:
-  - text: Bündnis 90 die Grünen. Die GRÜNEN haben ihren Namen ihren Leitlinien nach gewählt. Umweltschutz ist ihre oberste Maxime.
+  - image: https://www.bpb.de/cache/images/2/246082-1x1-teaser140.png
+    text: Bündnis 90 die GRÜNEN. Die GRÜNEN orientieren sich an den Themen Umweltschutz, Bürger- und Menschenrechte, Gleichstellung sowie Demokratisierung der Gesellschaft.
   utter_faq/parties_Linke:
-  - text: Die Linke ist hat ihre Wurzeln in der kommunistischen Partei der DDR. Auch heute verfolgen Mitglieder der Linken hautpsächlich sozialistische Politik.
+  - image: https://www.bpb.de/cache/images/8/254658-1x1-teaser140.jpg
+    text: DIE LINKE ist hat ihre Wurzeln in der kommunistischen Partei der DDR. Sie tritt für einen demokratischen Sozialismus und einen umfassenden Ausbau des Sozialstaates ein. Sie ist seit 1990 im Bundestag vertreten.
   utter_faq/parties_AFD:
-  - text: AFD steht für Alternative für Deutschland. Unter diesem Namen verfolgen Mitglieder dieser Partei eine nationalistische Politik.
+  - image: https://www.bpb.de/cache/images/1/254701-1x1-teaser140.jpg
+    text: AFD steht für Alternative für Deutschland. Die AfD wendet sich gegen die aktuelle Europapolitik und nimmt verstärkt die Themen Asyl und Zuwanderung in den Fokus.
   utter_faq/rightToVote:
-  - text: Jeder deutsche Bürger über 18 Jahre hat bei der Bundestagswahl ein aktives Wahlrecht. Das heißt Du kannst bei der Bundestagswahl Deine Stimme abgeben. Mit Deiner Wahl kannst Du die Politik mitbestimmen.
+  - text: Alle Menschen, die mindestens 18 Jahre alt sind, die deutsche Staatsangehörigkeit haben und mindestens 3 Monate vor der Wahl in Deutschland gewohnt haben, dürfen wählen.
+  utter_faq/wahlbenachrichtigung:
+  - image: https://sbhc-nrw.de/assets/wahlbenachrichtigung.jpg
+    text: Eine Wahlbenachrichtigung ist eine Einladung zur Wahl. Du kannst damit wählen gehen oder Briefwahl beantragen. Die Benachrichtigung enthält alle wichtigen Informationen zur bevorstehenden Wahl.
+  - image: https://sbhc-nrw.de/assets/wahlbenachrichtigung.jpg
+    text: Du erhältst Deine Wahlbenachrichtigung spätestens am 5. September 2021. Dort steht wo dein Wahllokal ist, in dem du wählen kannst. Du kannst mit der Karte auch Deine Unterlagen für eine Briefwahl bestellen. Oder Du gehst zum Wahlamt. Dort kannst Du auch schon vor dem Wahltag am 26. September Deine Stimmen abgeben.
   utter_faq/howToVote:
-  - text: Die Wahl ist allgemein, frei, gleich und geheim. Was bedeutet das? Die Wahl ist allgemein. Jeder hat das Recht zu wählen. Keiner wird ausgeschlossen. Die Wahl ist frei. Du darfst selbst entscheiden, welche Partei du wählst. Die Wahl ist gleich. Jeder hat die gleiche Anzahl von Stimmen. Jede Stimme zählt gleich. Deine Wahl ist geheim. Du musst niemandem erzählen, welche Partei Du gewählt hast. Es gibt in Deutschland keine Wahlpflicht. Niemand kann Dich zur Wahl zwingen.
+  - image: https://www.bpb.de/cache/images/6/248816-1x2-article620.png
+    text: Wenn du deine Wahlbenachrichtigung erhalten hast, hast du zwei Optionen. Entweder wählst du am Wahltag in deinem Wahllokal oder du beantragst vorher Briefwahl. In beiden Fällen bekommst du zur Wahl einen Stimmzettel auf dem du zwei Kreuze machen kannst. Deine Erststimme und deine Zweitstimme.
+  utter_faq/wahlablauf:
+  - text: 'Wenn du im Wahllokal wählen möchtest, gehst Du am Wahltag in Dein Wahllokal. Die Adresse steht auf Deiner Einladungskarte. Nimm Deinen Personalausweis oder Reisepass mit. Im Wahllokal sitzen Wahlhelfer, die Dir gerne alles erklären. Die Wahlhelfer geben Dir deinen Stimmzettel. Mit diesem Schein gehst Du alleine in die Wahlkabine. Danach wirfst Du den Wahlschein in die Wahlurne, die bei den Wahlhelfern steht. Mehr Informationen findest du [hier](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Wahllokal)'
+  utter_faq/briefwahl:
+  - text: 'Manche Wähler und Wählerinnen können nicht zum Wahllokal. Zum Beispiel wenn sie am Wahltag im Urlaub sind, einen Termin haben oder weil sie krank sind. Dafür gibt es die Briefwahl. Dann können die Wähler und Wählerinnen vor dem Wahltag wählen. Sie können per Post oder im Wahlamt wählen. Die Briefwahl kannst du mit deiner Wahlbenachrichtung beantragen. Mehr Infos findest du [hier](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Briefwahl).'
+  - text: 'Wenn Du zu Hause wählen möchtest, musst Du die Briefwahl beantragen. Diesen Antrag findest Du in Deiner Wahl-Benachrichtigung. Er heißt: Wahlschein-Antrag. Du bekommst die Unterlagen dann zugeschickt. Darin ist auch eine Beschreibung wie die Briefwahl geht. Mehr Infos findest du [hier].(https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Briefwahl)'
+  utter_faq/wahlkreise:
+  - text: Es gibt insgesamt 299 Wahlkreise in Deutschland, die unterschiedlich groß sind. Aber es leben ungefähr gleich viele Menschen in den Wahlkreisen.
+  - text: Deutschland ist in 299 Wahlkreise eingeteilt, die unterschiedlich groß sind. Aber es leben ungefähr gleich viele Menschen in den Wahlkreisen.
+  utter_faq/oeffnungszeiten:
+  - text: Die Wahllokale sind am Sonntag, den 26. September 2021 von 8:00 Uhr bis 18:00 Uhr geöffnet.
+  - text: Du kannst am 26. September zwischen 8:00 Uhr und 18:00 Uhr wählen.
+  - text: Du Bundestagswahl ist am 26. September. Die Wahllokale öffnen um 8:00 Uhr und schließen um 18:00 Uhr.
+  utter_faq/erststimme:
+  - text: Mit der Erststimme wählst du den Kandidaten deines Wahlkreises. Der Kandidat mit den meisten Stimmen im Wahlkreis kommt direkt in den Bundestag.
+  - text: Der Kandidat mit den meisten Erststimmen wird Direktkandidat und zieht in den nächsten Bundestag ein.
+  - text: Mit deiner Erststimme wählst du den Direktkandidaten. Aus jedem Wahlkreis kommt eine Person direkt in den Bundestag.
+  utter_faq/zweitstimme:
+  - text: Mit der Zweitstimme wählst du eine Partei. Danach entscheidet sich das Kräfteverhältnis der Parteien im Bundestag.
+  - text: Du wählst mit deiner Zweitstimme eine Partei. So entscheiden die Wähler, wie viele Sitze eine Partei im Bundestag bekommt.
+  utter_faq/koalition:
+  - text: Die Koalition ist ein Bündnis oder eine Verabredung von mehreren Parteien. Sie wollen zusammenarbeiten und eine Mehrheit bilden. Sie können dann Entscheidungen treffen und Abstimmungen gewinnen.
+  - text: Die Parteien schließen sich zusammen und bilden eine Koalition. Sie möchten bei Abstimmungen die Mehrheit haben und den politischen Weg bestimmen.
+  utter_faq/wahlberechtigt:
+  - text: Jede Person darf wählen, die mindestens 18 Jahre alt ist und einen deutschen Personalausweis hat. Man muss mindestens drei Monate vor der Wahl einen Wohnsitz in Deutschland haben. Es gibt keine Wahlpflicht.
   utter_faq/chancellorWhat:
-  - text: Der Bundeskanzler ist der Regierungschef der Bundesrepublik Deutschland. Zurzeit ist Angela Merkel Bundeskanzlerin
+  - text: Der Bundeskanzler ist der Regierungschef der Bundesrepublik Deutschland. Zurzeit ist Angela Merkel Bundeskanzlerin.
   utter_faq/chancellorWho:
   - image: https://www.bundestag.de/resource/image/241388/3x4/568/758/5b540b9f5294257c2163925e6cb288fb/SQ/merkel_angela_gross.jpg
     text: Angela Merkel ist seit November 2005 Bundeskanzlerin. Sie wird bei der Wahl 2021 aber nicht mehr zur Wiederwahl antreten.
   utter_faq/candidates:
   - buttons:
-    - payload: /Armin_Laschet
+    - payload: '/Armin_Laschet'
       title: Armin Laschet
-    - payload: /Olaf_Scholz
+    - payload: '/faq/Olaf_Scholz'
       title: Olaf Scholz
-    - payload: /Annalena_Baerbock
+    - payload: '/utter_faq/Annalena_Baerbock'
       title: Annalena Baerbock
-    - payload: /Christian_Lindner
+    - payload: Christian Lindner
       title: Christian Lindner
     text: 'Die Spitzenkandidaten für die Bundestagswahl sind: Armin Laschet (CDU), Olaf Scholz (SPD), Annalena Baerbock (GRÜNE), Christian Lindner (FDP). Möchtest du mehr über einen davon erfahren?'
   utter_faq/Armin_Laschet:
   - image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2017-09-24_Armin_Laschet_by_Sandro_Halank.jpg/220px-2017-09-24_Armin_Laschet_by_Sandro_Halank.jpg
-    text: Das ist Armin Laschet
+    text: Das ist Armin Laschet. Er ist der Kanzlerkandidat der CDU
   utter_faq/Olaf_Scholz:
   - image: https://upload.wikimedia.org/wikipedia/commons/c/c6/Olaf_Scholz_–_Bürgerschaftswahl_in_Hamburg_2015_02.jpg
-    text: Das ist Olaf Scholz
+    text: Das ist Olaf Scholz. Er ist der Kanzlerkandidat der SPD
   utter_faq/Annalena_Baerbock:
   - image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20180120_AB_HH.png/1200px-20180120_AB_HH.png
-    text: Das ist Annalena Baerbock
+    text: Das ist Annalena Baerbock. Sie ist die Kanzlerkandidatin der Grünen
   utter_faq/Christian_Lindner:
   - image: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg/1200px-2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg
-    text: Das ist Christian Lindner
+    text: Das ist Christian Lindner. Er ist der Kanzlerkandidat der FDP
   utter_faq/parliamentWhat:
-  - text: Im Bundestag wird über Gesetze geredet und abgestimmt. Die Abgeordneten beraten und beschließen alle Bundesgesetze, wie zum Beispiel das Grundgesetz. Der Bundestag wählt auch den Bundeskanzler.
+  - image: https://sbhc-nrw.de/assets/bundestag.jpg
+    text: Im Bundestag wird über Gesetze geredet und abgestimmt. Die Abgeordneten beraten und beschließen alle Bundesgesetze. Der Bundestag wählt auch den Bundeskanzler.
+  - image: https://sbhc-nrw.de/assets/bundestag.jpg
+    text: Am 26. September ist Bundestagswahl. Alle gewählten Vertreter heißen Abgeordnete und kommen in den Deutschen Bundestag. Alle vier Jahre wird der Bundestag gewählt. Hier ist ein Film zum Bundestag
+  - image: https://sbhc-nrw.de/assets/bundestag.jpg
+    text: Der Bundestag wählt den Bundeskanzler, beschließt neue Gesetze und entscheidet über das Geld, das ausgegeben werden soll. Der Bundestag kontrolliert die Bundesregierung und entscheidet auch über Einsätze der Bundeswehr. Mehr zum Bundestag
   utter_faq/parliamentWhere:
   - text: Der Bundestag befindet sich in Berlin. Er tagt im Reichstagsgebäude.
+  utter_faq/bundesregierung:
+  - text: Die Bundesregierung setzt die Entscheidungen des Bundestages um und macht Vorschläge für Gesetze. Die Bundesregierung besteht aus Bundeskanzler und Bundesministern.
+  utter_faq/wahlOMat:
+  - image: https://sbhc-nrw.de/assets/wahlomat.png
+    text: Es ist schwer sich für eine Partei zu entscheiden. Man kann aber nichts verkehrt machen. Du weißt selbst was gut für Dich ist. Welche Themen sind Dir wichtig? Was interessiert Dich? Welche Partei oder welche Person magst Du? Du kannst dich aber auch beraten lassen. Der Wahl-O-Mat ist ein Computerprogramm der Bundeszentrale für politische Bildung. Ab Ende August kannst du ihn nutzen.
+  - image: https://sbhc-nrw.de/assets/wahlomat.png
+    text: Der Wahl-O-Mat ist ein Computerprogramm. Es kann Dir helfen, Dich für eine Partei zu entscheiden. Er stellt Dir Fragen, die Du mit "Ja" oder "Nein" beantworten kannst. Die Bundeszentrale für politische Bildung aktiviert den Wahl-O-Mat für die Bundestagswahl Ende August.
+  utter_faq/fuenfProzentHuerde:
+  - text: 'Je mehr Parteien im Bundestag sind, desto schwerer können Entscheidungen getroffen werden. Wenn alle etwas anderes wollen, ist es schwierig, sich zu einigen. Daher gibt es die 5%-Hürde. Wenn eine Partei weniger als 5% der Zweitstimmen erhält, kommt sie nicht in den Bundestag. Jede Partei muss also wenigstens von jedem zwanzigsten Wähler gewählt werden. Aber es gibt eine Ausnahme: Wenn eine Partei in mindestens drei Wahlkreisen die meisten Erststimmen hat, dann zählen auch die Zweitstimmen'
+  utter_faq/opposition:
+  - text: In der Opposition sind die Parteien, die eine andere Meinung als die Bundesregierung haben. Opposition bedeutet "entgegenstellen". Die Parteien der Opposition kontrollieren die Bundesregierung und haben häufig andere Lösungsvorschläge.
+  - text: In der Opposition befinden sich die Parteien, die nicht zur Bundesregierung gehören. Sie stellen ihre politischen Ideen vor und erarbeiten Gegenvorschläge. Häufig wird dann im Bundestag diskutiert. In der Oppostion sind die Agbeordneten, die nicht zur Koalition gehören.
+  utter_faq/warumWaehlen:
+  - text: Mit Deiner Wahl stärkst du Personen und Parteien, die du gut findest, damit sie in deinem Sinn arbeiten können. Wenn Du niemanden richtig gut findest, kannst Du auch die Partei oder Person wählen, die Dir noch am ehesten zusagt. Wenn Du nicht wählst, entscheidet die Wahl der anderen das Ergebnis.
+  utter_chitchat/nettiquette:
+  - text: 'Das war keine nette Eingabe oder? Ich rede gerne mit dir, aber bitte sei freundlich 🙃'
   utter_chitchat/howAreYou:
+  - custom:
+      - licence: 'Bundeszentrale für Politische Bildung'
   - text: Mir geht's gut, Danke :-)
-  - text: Bei mir ist alles super.
   utter_chitchat/joke:
   - text: 'Kommt ein Pferd in eine Bar, fragt der Barkeeper: "Was machst du denn für ein langes Gesicht?"'
   - text: 'Sagt Lisa zu Anna: "Mein Hund kann lügen." Sagt Anna: "Das geht doch nicht." Sagt Lisa: "Doch das geht. Bello, wie macht eine Katze?" "Wau wau."'
   - text: 'Fritzchen saß in der Schule. Da kam der Lehrer und nahm Fritzchen den Apfel weg. Er sagte: "Wenn du den Apfel haben willst, dann sage mir 3 Obstsorten." Da sagte Fritzchen: "Gib mir meinen Apfel, du Pflaume, sonst kriegst du eins auf die Birne."'
   utter_chitchat/turing:
   - text: Der Turing-Test stammt vom britischen Mathematiker Alan Turing. Turing schlug diesen Test vor, um einen Richtwert für Künstliche Intelligenz zu erschaffen. Gut programmiert bestehe ich den Test eine Weile, aber kaum lange genug.
+  utter_chitchat/kontakt:
+  - text: 'Meine Entwickler erreichst du am ALFA-Telefon: 0800 53 53 44 55 oder [https://alfa-telefon.de](https://alfa-telefon.de)'
   utter_out_of_scope:
-  - text: 'Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder melde dich beim [ALFA-Telefon](https://alfa-telefon.de): 0800 53 53 44 55'
-actions:
-- action_ask_for_weather
+  - text: 'Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder melde dich beim ALFA-Telefon: 0800 53 53 44 55 oder [https://alfa-telefon.de](https://alfa-telefon.de)'
+  utter_faq/wannWahl:
+  - text: Die Bundestagswahl 2021 ist am 26. September 2021. Das dann gewählte Parlament ist normalerweise für vier Jahre im Amt. Es kann aber auch sein, dass bereits früher Neuwahlen stattfinden müssen. Das ist zuletzt 2005 passiert.
+  utter_faq/wahlprogramme:
+    - text: Jede Partei erstellt für eine Wahl ein Wahlprogramm. Darin steht, was die Partei in der Wahlperiode erreichen möchte, wenn sie kann. Wie gut eine Partei ihr Wahlprogramm umsetzen kann, hängt davon ab, wie viele Stimmen sie bekommt und ob sie mit anderen Parteien zusammen reagieren muss.
+  utter_faq/bundeskanzlerwahl:
+    - text: Der Bundespräsident schlägt nach einer Wahl den Bundeskanzler vor und der Bundestag wählt den Kanzler. Üblicherweise wird der Spitzenkandidat der stärksten Partei neuer Bundeskanzler.
+  utter_faq/eigenschaftenWahlen:
+    - text: Wahlen in Deutschland sind demokratisch. Sie müssen drei Kriterien erfüllen. Sie müssen frei, gleich und geheim sein.
+  utter_faq/wahlenFrei:
+    - text: Wahlen sind frei. Du darfst wählen, wen du möchtest! Und du musst nicht wählen, wenn du nicht möchtest.
+  utter_faq/wahlenGleich:
+    - text: Wahlen sind gleich. Deine Stimme zählt genau so viel wie jede andere! Keine Stimme ist mehr oder weniger wert und jede Stimme zählt nur einmal.
+  utter_faq/wahlenGeheim:
+    - text: Wahlen sind geheim. Niemand darf zuschauen, wen du wählst. Niemand darf überprüfen, wen du gewählt hast.
+  utter_faq/brauchIchNicht:
+    - text: Diesen Text sollte niemand jemals sehen. Echt jetzt.
+actions: []
 forms: {}
 e2e_actions: []
