@@ -168,7 +168,7 @@ responses:
   utter_chitchat/kontakt:
   - text: 'Meine Entwickler erreichst du am ALFA-Telefon: [0800 53 53 44 55](tel:080053534455), im [Web](https://alfa-telefon.de) oder schreibe ihnen eine [Mail](mailto:info@alfa-telefon.de)'
   utter_out_of_scope:
-  - text: 'Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder melde dich beim ALFA-Telefon: ALFA-Telefon: [0800 53 53 44 55](tel:080053534455), im [Web](https://alfa-telefon.de) oder schreibe uns eine [Mail](mailto:info@alfa-telefon.de)''
+  - text: 'Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder melde dich beim ALFA-Telefon: ALFA-Telefon: [0800 53 53 44 55](tel:080053534455), im [Web](https://alfa-telefon.de) oder schreibe uns eine [Mail](mailto:info@alfa-telefon.de)'
   utter_faq/wannWahl:
   - text: Die Bundestagswahl 2021 ist am 26. September 2021. Das dann gewählte Parlament ist normalerweise für vier Jahre im Amt. Es kann aber auch sein, dass bereits früher Neuwahlen stattfinden müssen. Das ist zuletzt 2005 passiert.
   utter_faq/wahlprogramme:
