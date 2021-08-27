@@ -55,24 +55,24 @@ responses:
     text: Parteien sind Organisationen von Menschen, die gleiche politische Ziele verfolgen. Gewählte Parteien vertreten die Interessen ihrer Wähler. Parteien haben Parteiprogramme und Wahlprogramme. In diesen Programmen schreiben Parteien ihre Ziele auf. Jeder kann einer Partei als Mitglied beitreten.
   utter_faq/partiesWho:
   - text: 'Im aktuellen Bundestag sitzen Cdu, CSU, SPD, AFD, FDP, DIE LINKE und die Grünen. Daneben gibt es noch viele weitere Parteien, die an der 5%-Hürde scheiterten. Zu allen Parteien findest du [hier mehr Informationen](https://www.bpb.de/politik/wahlen/wer-steht-zur-wahl/bundestagswahl-2017/).'
-  utter_faq/parties_Cdu:
+  utter_faq/parties_CDU:
   - image: https://www.bpb.de/cache/images/5/230175-1x1-teaser140.jpg
-    text: Die Cdu und ihre bayerische Schwesterpartei CSU sind die sogenannten Unionsparteien. Die Cdu kombiniert sozialpolitischen christlichen Konservatismus mit einer ökonomisch marktwirtschaftlichen Orientierung.
+    text: 'CDU steht für Christlich Demokratische Union. Bei der Bundestagswahl ist sie gemeinsam mit der CSU (Christlich Soziale Union) vertreten. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Parteien. Klicke [hier für das Wahlprogramm der CDU/CSU in einfacher Sprache](https://aktion.cdu.de/assets_lp/a8e74c0bacf58b0737229ccc0f3057f5/lp/15/17/Das_20Wahl-Programm_20von_20CDU_20und_20CSU_20fu_CC_88r_20die_20Bundestags-Wahl_202021_20in_20Leichter_20Sprache_20_281_29.pdf)'
   utter_faq/parties_SPD:
   - image: https://www.bpb.de/cache/images/7/254657-1x1-teaser140.jpg
-    text: SPD steht für die Sozialdemokratische Partei Deutschlands. Die SPD stützt sich auf die Grundwerte Freiheit, Gerechtigkeit und Solidarität. Die SPD wurde gegründet, um vor allem die Interessen der Gewerkschaften und Arbeiter zu vertreten.
+    text: 'SPD steht für die Sozialdemokratische Partei Deutschlands. Diesen Namen hat sie seit 1890. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Partei. Klicke [hier für das Wahlprogramm der SPD in leichter Sprache](https://www.spd.de/fileadmin/Dokumente/Beschluesse/Programm/Wahlprogramm_SPD_2021_LS_barrierefrei.pdf)'
   utter_faq/parties_FDP:
   - image: https://www.bpb.de/cache/images/1/254661-1x1-teaser140.jpg
-    text: FDP steht für Freie Demokratische Partei. Die FDP bewertet Freiheit höher als Gleichheit und steht traditionell den Arbeitgebern nahe.
+    text: 'FDP steht für Freie Demokratische Partei. Die FDP ist 1948 gegründet worden und seit 1949 im Bundestag. Von 2013 bis 2017 war sie nicht im Bundestag vertreten. Sie hat bei der Wahl die Fünf-Prozent-Hürde nicht erreicht. Klicke [hier für das Wahlprogramm der FDP in leichter Sprache](https://www.fdp.de/sites/default/files/2021-08/FDP_BTW2021_KWP_leichteSprache.pdf)'
   utter_faq/parties_GRUENE:
   - image: https://www.bpb.de/cache/images/2/246082-1x1-teaser140.png
-    text: Bündnis 90 die GRÜNEN. Die GRÜNEN orientieren sich an den Themen Umweltschutz, Bürger- und Menschenrechte, Gleichstellung sowie Demokratisierung der Gesellschaft.
+    text: 'Bündnis 90 die Grünen: Ein inhaltlicher Schwerpunkt der Grünen ist die Umweltpolitik. 1983 gelang den Grünen der Einzug in den Bundestag. Klicke [hier für das Wahlprogramm der GRÜNEN in leichter Sprache](https://cms.gruene.de/uploads/documents/Wahlprogramm_DIE_GRUENEN_Bundestagswahl2021_Leichte-Sprache.pdf)'
   utter_faq/parties_Linke:
   - image: https://www.bpb.de/cache/images/8/254658-1x1-teaser140.jpg
-    text: DIE LINKE ist hat ihre Wurzeln in der kommunistischen Partei der DDR. Sie tritt für einen demokratischen Sozialismus und einen umfassenden Ausbau des Sozialstaates ein. Sie ist seit 1990 im Bundestag vertreten.
+    text: 'Die Linke ist ein Zusammenschluss der Partei des Demokratischen Sozialismus (PDS) und der Wahlalternative Arbeit und soziale Gerechtigkeit (WASG). Sie ist seit 2005 im deutschen Bundestag vertreten. Ihre Spitzenkandidatin ist Janine Wissler Klicke [hier für das Wahlprogramm der LINKEN in leichter Sprache](https://www.die-linke.de/fileadmin/download/wahlen2021/Wahlprogramm/755715_LINKE-PV_BTW21_KWP_EinfacheSprache_A5_210715b.pdf)'
   utter_faq/parties_AFD:
   - image: https://www.bpb.de/cache/images/1/254701-1x1-teaser140.jpg
-    text: AFD steht für Alternative für Deutschland. Die AfD wendet sich gegen die aktuelle Europapolitik und nimmt verstärkt die Themen Asyl und Zuwanderung in den Fokus.
+    text: 'AFD steht für Alternative für Deutschland. 2017 gelang der AFD der Einzung in den Bundestag. Ihr Spitzenkandidat ist Tino Chrupalla Klicke [hier für die Wahlwerbung der AFD](https://www.afd.de/wp-content/uploads/sites/111/2021/06/Kurzwahlprogramm_DINlang_Webversion.pdf)'
   utter_faq/wahlbenachrichtigung:
   - image: https://sbhc-nrw.de/assets/wahlbenachrichtigung.jpg
     text: 'Mit der Wahlbenachrichtigung wirst du zur Wahl eingeladen. du kannst damit wählen gehen oder Briefwahl beantragen. Die Benachrichtigung enthält alle wichtigen Informationen zur bevorstehenden Wahl. *(Bildquelle: bpb.de)*'
@@ -118,19 +118,43 @@ responses:
       title: Annalena Baerbock
     - payload: Christian Lindner
       title: Christian Lindner
-    text: 'Die Spitzenkandidaten für die Bundestagswahl sind: Armin Laschet (Cdu), Olaf Scholz (SPD), Annalena Baerbock (GRÜNE), Christian Lindner (FDP). Möchtest du mehr über einen davon erfahren?'
+    text: 'Die Spitzenkandidaten für die Bundestagswahl sind: Armin Laschet (CDU), Olaf Scholz (SPD), Annalena Baerbock (GRÜNE), Christian Lindner (FDP), Tino Chrupalla (AFD) und Janine Wissler (LINKE). Möchtest du mehr über einen davon erfahren?'
+  utter_faq/Tino_Chrupalla:
+  - buttons:
+      - payload: AFD
+        title: AFD
+    image: https://upload.wikimedia.org/wikipedia/commons/e/e5/Tino_Chrupalla%2C_2020_%28cropped%29.jpg
+    text: Das ist Tino Chrupalla. Er ist der Spitzenkandidat der AFD.
+  utter_faq/Janine_Wissler:
+  - buttons:
+      - payload: Die LINKE
+        title: Die LINKE
+    image: https://www.janine-wissler.de/site/images/medien/seite/300_Janine_Wissler_Hintergrund_weiss.jpg
+    text: Das ist Janine Wissler. Sie ist die Spitzenkandidatin der Linken.
   utter_faq/Armin_Laschet:
-  - image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2017-09-24_Armin_Laschet_by_Sandro_Halank.jpg/220px-2017-09-24_Armin_Laschet_by_Sandro_Halank.jpg
-    text: Das ist Armin Laschet. Er ist der Kanzlerkandidat der Cdu
+  - buttons:
+      - payload: CDU
+        title: CDU
+    image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2017-09-24_Armin_Laschet_by_Sandro_Halank.jpg/220px-2017-09-24_Armin_Laschet_by_Sandro_Halank.jpg
+    text: Das ist Armin Laschet. Er ist der Kanzlerkandidat der CDU.
   utter_faq/Olaf_Scholz:
-  - image: https://upload.wikimedia.org/wikipedia/commons/c/c6/Olaf_Scholz_–_Bürgerschaftswahl_in_Hamburg_2015_02.jpg
+  - buttons:
+      - payload: SPD
+        title: SPD
+    image: https://upload.wikimedia.org/wikipedia/commons/c/c6/Olaf_Scholz_–_Bürgerschaftswahl_in_Hamburg_2015_02.jpg
     text: Das ist Olaf Scholz. Er ist der Kanzlerkandidat der SPD
   utter_faq/Annalena_Baerbock:
-  - image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20180120_AB_HH.png/1200px-20180120_AB_HH.png
+  - buttons:
+      - payload: Die GRÜNEN
+        title: Bündnis 90 die GRÜNEN
+    image: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20180120_AB_HH.png/1200px-20180120_AB_HH.png
     text: Das ist Annalena Baerbock. Sie ist die Kanzlerkandidatin der Grünen
   utter_faq/Christian_Lindner:
-  - image: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg/1200px-2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg
-    text: Das ist Christian Lindner. Er ist der Kanzlerkandidat der FDP
+  - buttons:
+      - payload: FDP
+        title: FDP
+    image: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg/1200px-2020-02-14_Christian_Lindner_%28Bundestagsprojekt_2020%29_by_Sandro_Halank–2.jpg
+    text: Das ist Christian Lindner. Er ist der Kanzlerkandidat der FDP. Möchtest du wissen, was die FDP vor hat?
   utter_faq/parliamentWhat:
   - image: https://sbhc-nrw.de/assets/bundestag.jpg
     text: 'Im Bundestag wird über Gesetze geredet und abgestimmt. Die Abgeordneten beraten und beschließen alle Bundesgesetze. Der Bundestag wählt auch den Bundeskanzler. [Mehr über den Bundestag](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248221/der-bundestag-und-was-er-macht).'
@@ -145,9 +169,9 @@ responses:
   - text: Die Bundesregierung setzt die Entscheidungen des Bundestages um und macht Vorschläge für Gesetze. Die Bundesregierung besteht aus Bundeskanzler und Bundesministern.
   utter_faq/wahlOMat:
   - image: https://sbhc-nrw.de/assets/wahlomat.png
-    text: Es ist schwer sich für eine Partei zu entscheiden. Man kann aber nichts verkehrt machen. Du weißt selbst was gut für dich ist. Welche Themen sind dir wichtig? Was interessiert dich? Welche Partei oder welche Person magst du? Du kannst dich aber auch beraten lassen. Der Wahl-O-Mat ist ein Computerprogramm der Bundeszentrale für politische Bildung. Ab Ende August kannst du ihn nutzen.
+    text: 'Es ist schwer sich für eine Partei zu entscheiden. Man kann aber nichts verkehrt machen. Du weißt selbst was gut für dich ist. Welche Themen sind dir wichtig? Was interessiert dich? Welche Partei oder welche Person magst du? Du kannst dich aber auch beraten lassen. Der Wahl-O-Mat ist ein Computerprogramm der Bundeszentrale für politische Bildung.[Zum Wahl-O-Mat](https://www.bpb.de/politik/wahlen/wahl-o-mat/) (ab 2. September).'
   - image: https://sbhc-nrw.de/assets/wahlomat.png
-    text: Der Wahl-O-Mat ist ein Computerprogramm. Es kann dir helfen, dich für eine Partei zu entscheiden. Er stellt dir Fragen, die du mit "Ja" oder "Nein" beantworten kannst. Die Bundeszentrale für politische Bildung aktiviert den Wahl-O-Mat für die Bundestagswahl Ende August.
+    text: 'Der Wahl-O-Mat ist ein Computerprogramm. Es kann dir helfen, dich für eine Partei zu entscheiden. Er stellt dir Fragen, die du mit "Ja" oder "Nein" beantworten kannst. Die Bundeszentrale für politische Bildung aktiviert den Wahl-O-Mat für die Bundestagswahl Ende August. [Zum Wahl-O-Mat](https://www.bpb.de/politik/wahlen/wahl-o-mat/) (Ab 2. September)'
   utter_faq/fuenfProzentHuerde:
   - text: 'Je mehr Parteien im Bundestag sind, desto schwerer einigen sich die Abgeordneten auf Entscheidungen. Daher gibt es die **5%-Hürde**. Wenn eine Partei weniger als 5% der Zweitstimmen erhält, kommt sie nicht in den Bundestag. Anders ausgedrückt muss eine Partei mindestens jeden zwanzigsten Wähler überzeugen, um in den Bundestag zu kommen. Es gibt eine Ausnahme: Hat eine Partei in mindestens drei Wahlkreisen die meisten Erststimmen, dann zählen auch die Zweitstimmen.'
   utter_faq/opposition:

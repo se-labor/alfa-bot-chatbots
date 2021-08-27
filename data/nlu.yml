@@ -34,6 +34,8 @@ nlu:
     - ALFA
     - moin
     - Hallo Lichter an
+    - Willkommen
+    - Guten Mittag
 - intent: goodbye
   examples: |
     - cu
@@ -212,6 +214,9 @@ nlu:
     - gh
     - Wie warm ist es
     - wer noch?
+    - Hartz4
+    - xurk1+/"#0CuniiO:-)uzggyoqnr72xex:-(:-D
+    - text
 - intent: faq/democracy
   examples: |
     - Ist Deutschland eine Demokratie?
@@ -228,6 +233,8 @@ nlu:
     - Demokratie
     - Was heißt Demokratie?
     - Was ist Demokratie?
+    - was ist eine Demokratie
+    - wie funktioniert Demokratie
 - intent: faq/partiesWhat
   examples: |
     - Was sind Parteien?
@@ -261,6 +268,7 @@ nlu:
     - kandiat
     - wen wälen
     - welche Parteien gibt es?
+    - Welche Parteien kann ich wählen?
 - intent: faq/parties_CDU
   examples: |
     - Wer ist die CDU?
@@ -280,6 +288,11 @@ nlu:
     - Christlich demokratische union
     - Schäuble
     - union
+    - cdu
+    - was macht die cdu
+    - wahlprogramm cdu
+    - cdu/csu
+    - csu
 - intent: faq/parties_SPD
   examples: |
     - Sozialisten
@@ -289,6 +302,9 @@ nlu:
     - Was ist SPD?
     - Was ist die SPD?
     - Sozialdemokratische partei
+    - Wahlprogramm der SPD
+    - spd
+    - was macht die spd
 - intent: faq/parties_FDP
   examples: |
     - Liberale Partei
@@ -303,6 +319,9 @@ nlu:
     - freie demokraten
     - freie demokratische partei
     - ich will wirtschaft
+    - Wahlprogramm FDP
+    - fdp programm
+    - fdp
 - intent: faq/parties_GRUENE
   examples: |
     - Ökopartei
@@ -322,6 +341,9 @@ nlu:
     - ich will öko
     - Habeck
     - Roth
+    - grüne
+    - Wahlprogramm grüne
+    - grünes Wahlprogramm
 - intent: faq/parties_Linke
   examples: |
     - wer sind die Linken?
@@ -333,6 +355,10 @@ nlu:
     - Was sind die Linken?
     - Linke Partei
     - Wer ist politisch Links
+    - Linke
+    - Die Linke
+    - Wahlprogramm der Linken
+    - Linkes Wahlprogramm
 - intent: faq/parties_AFD
   examples: |
     - AFD
@@ -343,7 +369,6 @@ nlu:
     - Rechte Partei
     - AFD?
     - afd
-
 - intent: faq/howToVote
   examples: |
     - Muss ich wählen?
@@ -405,6 +430,7 @@ nlu:
     - Was ist das Parlament?
     - Parlament?
     - parlament
+    - Parlament
 - intent: faq/parliamentWhere
   examples: |
     - Wo ist das Parlament?
@@ -421,6 +447,10 @@ nlu:
     - Kandidaten?
     - wer sind die Kandidaten?
     - kandidaten
+    - Kandidaten
+    - wofür sthene die Kandidaten
+    - welche Kandidaten gibt es?
+    - wer sind die kandidaten
 - intent: faq/Armin_Laschet
   examples: |
     - Wer ist der Kandidat der CDU?
@@ -477,6 +507,26 @@ nlu:
     - Lindner
     - Wer tritt bei der FDP an?
     - Wer ist Kandidat der FDP?
+- intent: faq/Tino_Chrupalla
+  examples: |
+    - Wer ist Kandidat der AFD
+    - Wer kandidiert für die AFD
+    - Wer für AFD
+    - Tino Chrupalla
+    - Tino
+    - Chrupalla
+    - Spitzenkandidat AFD
+- intent: faq/Janine_Wissler
+  examples: |
+    - wer ist die Spitzenkandidatin der Linken
+    - Kandidat Linke
+    - Janine
+    - Wissler
+    - Janine Wissler
+    - Wer für Linke
+    - Linker Kandidat
+    - linke Kandidatin
+    - Kandidatin LINKE
 - intent: faq/wahlkreise
   examples: |
     - Wie viele Wahlkreise gibt es bei der Bundestagswahl?
@@ -485,6 +535,7 @@ nlu:
     - Anzahl Wahlkreise?
     - Was hat es mit den Wahlkreisen auf sich?
     - Wie viele Wahlbezirke gibt es
+    - Wahlkreise
 - intent: faq/oeffnungszeiten
   examples: |
     - Wie lange haben die Wahllokale geöffnet?
@@ -505,6 +556,8 @@ nlu:
     - Wie lange ist das Wahllokal geöffnet
     - Stimme abgeben
     - Bundestagswahl Zeit
+    - Wann haben die Wahllokale offen?
+    - Wann wälen
 - intent: faq/erststimme
   examples: |
     - Was ist die Erststimme?
@@ -543,6 +596,7 @@ nlu:
     - Parteien tun sich zu sammen
     - Bündnis
     - Warum schließen sich Parteien zusammen?
+    - Was ist eine Koalition
 - intent: faq/wahlberechtigt
   examples: |
     - Was ist ein Wahlrecht?
@@ -574,6 +628,7 @@ nlu:
     - Wie alt muss ich sein um zu wählen?
     - Dürfen Flüchtlinge wählen?
     - flüchtlinge
+    - wer ist wahlberechtigt
 - intent: faq/wannWahl
   examples: |
     - Wann ist die nächste Wahl
@@ -601,6 +656,7 @@ nlu:
     - Aufgaben der Regierung?
     - Aufgaben des Bundestags
     - Bundestag
+    - Bundesregierung
 - intent: faq/wahlOMat
   examples: |
     - Was soll ich wählen?
@@ -632,6 +688,14 @@ nlu:
     - Wahlhilfe
     - Was wählen
     - wen soll ich wählen?
+    - Wer hilft mir wählen
+    - Einkommenunabhängiges Bafög
+    - klimawandel
+    - Hartz4
+    - Hatz4
+    - Flüchtlinge
+    - Zuwanderung
+    - niedrigere Steuern
 - intent: faq/wahlbenachrichtigung
   examples: |
     - Wahlbenachrichtigung?
@@ -650,6 +714,9 @@ nlu:
     - Wo wählen?
     - wahlaufforderung
     - Wahlaufforderung
+    - Wo ist mein Wahllokal?
+    - wahlbenachrichtigung
+    - Wahlbenachrichtigung
 - intent: faq/wahlablauf
   examples: |
     - Wie wähle ich?
@@ -666,6 +733,8 @@ nlu:
     - urne
     - Urne
     - wahlzettel
+    - wie wählt man
+    - wie geht wählen
 - intent: faq/briefwahl
   examples: |
     - Wie geht Briefwahl?
@@ -678,6 +747,7 @@ nlu:
     - briefwahl
     - Briefwahl
     - Wie funktioniert die Briefwahl
+    - Wie beantrage ich Briefwahl
 - intent: faq/fuenfProzentHuerde
   examples: |
     - Was bedeutet 5-Prozent-Hürde?
@@ -688,6 +758,7 @@ nlu:
     - Mindeststimmen?
     - Kommt jede Partei in den Bundestag?
     - was ist die 5% Hürde
+    - fünf 5 Hüder
 - intent: faq/opposition
   examples: |
     - Was ist eine Opposition?
@@ -710,6 +781,8 @@ nlu:
     - Ich will nicht wählen
     - keine Lust
     - ist das wichtigk
+    - Bringt wählen etwas?
+    - Meine Stimme bringt doch nichts
 - intent: faq/wahlprogramme
   examples: |
     - Welche Wahlprogramme gibt es?
@@ -720,6 +793,7 @@ nlu:
     - Welche Ziele haben die Parteien?
     - Wie soll ich mich für eine Partei entscheiden?
     - walprogramme
+    - Wahlprogramme
 - intent: faq/bundeskanzlerwahl
   examples: |
     - Wer bestimmt den Bundeskanzler?
@@ -763,6 +837,7 @@ nlu:
     - Wieso heißt es, Wahlen seien frei?
     - wählen frei
     - Was freie wählen?
+    - kann ich alleine wählen
 - intent: faq/wahlenGleich
   examples: |
     - Wann sind Wahlen gleich?
