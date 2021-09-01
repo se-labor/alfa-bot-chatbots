@@ -217,6 +217,8 @@ nlu:
     - Hartz4
     - xurk1+/"#0CuniiO:-)uzggyoqnr72xex:-(:-D
     - text
+    - rezo
+    - was ist
 - intent: faq/democracy
   examples: |
     - Ist Deutschland eine Demokratie?
@@ -250,6 +252,8 @@ nlu:
     - Worum kümmern sich Parteien?
     - Wie arbeiten Parteien?
     - Partei
+    - europäische partei
+    - was ist eine Fraktion
 - intent: faq/partiesWho
   examples: |
     - Wer sind Parteien?
@@ -269,6 +273,11 @@ nlu:
     - wen wälen
     - welche Parteien gibt es?
     - Welche Parteien kann ich wählen?
+    - Welche Parteien gibt es
+    - welche parteien gibt es?
+    - sonstige
+    - tierschutzpartei
+    - die partei
 - intent: faq/parties_CDU
   examples: |
     - Wer ist die CDU?
@@ -305,6 +314,7 @@ nlu:
     - Wahlprogramm der SPD
     - spd
     - was macht die spd
+    - Wahlprogramm SPD
 - intent: faq/parties_FDP
   examples: |
     - Liberale Partei
@@ -344,6 +354,8 @@ nlu:
     - grüne
     - Wahlprogramm grüne
     - grünes Wahlprogramm
+    - was sind die Grünen
+    - sind die Grünen gut
 - intent: faq/parties_Linke
   examples: |
     - wer sind die Linken?
@@ -359,6 +371,9 @@ nlu:
     - Die Linke
     - Wahlprogramm der Linken
     - Linkes Wahlprogramm
+    - linke
+    - ist die Linke die SED
+    - PDS
 - intent: faq/parties_AFD
   examples: |
     - AFD
@@ -369,6 +384,19 @@ nlu:
     - Rechte Partei
     - AFD?
     - afd
+    - ist die AFD eine gute Partei
+- intent: faq/parties_Volt
+  examples: |
+    - Volt
+    - Wer ist Volt?
+    - Was ist Volt?
+    - Wer ist europäisch?
+    - Die europäer
+    - Europa Partei
+    - Volt?
+    - volt
+    - Volt Partei
+    - was ist Volt
 - intent: faq/howToVote
   examples: |
     - Muss ich wählen?
@@ -393,6 +421,20 @@ nlu:
     - Wahlzettel
     - muss ich wählen
     - wue vieöe stimmen?
+- intent: faq/kostenWahl
+  examples: |
+    - wie teuer ist das Wählen?
+    - was kostet die Wahl?
+    - Kosten wal
+    - wal kosten
+    - muss ich etwas bezahlen um wählen zu dürfen
+    - kostet das was?
+    - wählen kostenlos?
+    - Kostet wählen?
+    - kosten Briefwahl?
+    - Briefwahlen kosten?
+    - wählen teuer?
+    - Wie teuer würd die Wahl?
 - intent: faq/chancellorWhat
   examples: |
     - Was ist ein Bundeskanzler?
@@ -431,6 +473,7 @@ nlu:
     - Parlament?
     - parlament
     - Parlament
+    - was ist der Unterschied zwischen Bundestag und
 - intent: faq/parliamentWhere
   examples: |
     - Wo ist das Parlament?
@@ -476,6 +519,8 @@ nlu:
     - Olaf Scholz
     - Scholz
     - scholz
+    - Wer ist Olaf Scholz
+    - Vizekanzler
 - intent: faq/Annalena_Baerbock
   examples: |
     - Wer ist der Kandidat der Grünen?
@@ -496,6 +541,7 @@ nlu:
     - annalena
     - anna
     - Annalena baerbock
+    - Wer ist Annalena baerbock
 - intent: faq/Christian_Lindner
   examples: |
     - Wer ist der Kandidat der FDP?
@@ -516,6 +562,7 @@ nlu:
     - Tino
     - Chrupalla
     - Spitzenkandidat AFD
+    - Wer kandidiert für AFD
 - intent: faq/Janine_Wissler
   examples: |
     - wer ist die Spitzenkandidatin der Linken
@@ -527,6 +574,21 @@ nlu:
     - Linker Kandidat
     - linke Kandidatin
     - Kandidatin LINKE
+    - Kandidat linke
+- intent: faq/Rebekka_Müller
+  examples: |
+    - Wer ist die Spitzenkandidatin von Volt
+    - Kandidat Volt
+    - Kandidatin Volt
+    - Kandidatin europartei
+    - Rebekka
+    - Müller
+    - Rebekka Müller
+    - Wer ist Rebekka Müller
+    - Wer für Volt
+    - Volt Kandidatin
+    - Spitzenkandidatin Volt
+    - Wer ist Kandidatt für Volt?
 - intent: faq/wahlkreise
   examples: |
     - Wie viele Wahlkreise gibt es bei der Bundestagswahl?
@@ -586,6 +648,7 @@ nlu:
     - zweitstimme?
     - zweitstimme
     - Zweistime
+    - Zweistimme
 - intent: faq/koalition
   examples: |
     - Koalition
@@ -597,6 +660,7 @@ nlu:
     - Bündnis
     - Warum schließen sich Parteien zusammen?
     - Was ist eine Koalition
+    - was ist eine Koalition
 - intent: faq/wahlberechtigt
   examples: |
     - Was ist ein Wahlrecht?
@@ -696,6 +760,31 @@ nlu:
     - Flüchtlinge
     - Zuwanderung
     - niedrigere Steuern
+    - tierschutz
+    - Wahl o mat
+    - Klimawandel
+    - welche Partei ist gut
+    - welche Partei ist schlecht
+    - welche Partei ist für eine
+    - welche Partei ist die beste für
+    - welches ist die beste Partei
+    - wen sollte ich nicht
+    - was ist die beste Partei
+    - wen soll ich wählen
+    - welche Partei ist für Atomkraft
+    - wer ist gegen AKWs
+    - wer reduziert schulden
+    - mehr Schulden
+    - weniger schulden
+- intent: faq/vizekanzler
+  examples: |
+    - wer ist Vizekanzler?
+    - Was ist ein Vizekanzler?
+    - fiesekanzsler?
+    - Was Fietzekansler?
+    - Wer ist stellvertrender Kanzler?
+    - Ersatz für Angela Merkel?
+    - Vertretung Merkel?
 - intent: faq/wahlbenachrichtigung
   examples: |
     - Wahlbenachrichtigung?
@@ -735,6 +824,9 @@ nlu:
     - wahlzettel
     - wie wählt man
     - wie geht wählen
+    - Wie geht wählen?
+    - Was sind Übehangmandate?
+    - was sind Wahllokale
 - intent: faq/briefwahl
   examples: |
     - Wie geht Briefwahl?
@@ -827,6 +919,10 @@ nlu:
     - Was Eigenschaften von Wahlen
     - Wie sind die Wahlen?
     - Kriterien Wal
+    - Wie müssen wählen sein?
+    - Wie muss eine Wahl sein?
+    - Wie muss eine Wahl sein
+    - Eigenschaft wahl
 - intent: faq/wahlenFrei
   examples: |
     - freie walen?
@@ -848,6 +944,7 @@ nlu:
     - gleiches wal?
     - Wahl gleichberechtigt?
     - wieso wählen gleich
+    - Wahlen gleich
 - intent: faq/wahlenGeheim
   examples: |
     - Sind wahlen geheim?
