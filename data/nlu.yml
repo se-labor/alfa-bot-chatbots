@@ -11,6 +11,7 @@ nlu:
     - Hallöchen
     - Grüzi
     - Moin
+    - Hallo Lalo
     - Hey du
     - Hallo du
     - Hallo
@@ -36,6 +37,7 @@ nlu:
     - Hallo Lichter an
     - Willkommen
     - Guten Mittag
+    - haöli
 - intent: goodbye
   examples: |
     - cu
@@ -80,15 +82,6 @@ nlu:
     - bitte nicht
     - definitiv nicht
     - nope
-- intent: ask_for_weather
-  examples: |
-    - Wie ist das Wetter im Moment?
-    - Wie wird das Wetter?
-    - Kannst du mir sagen, wie das Wetter wird?
-    - Wetter
-    - Wetterinfo
-    - Wie ist das Wetter?
-    - Und wie ist das Wetter?
 - intent: bot_challenge
   examples: |
     - bist du ein Bot?
@@ -261,7 +254,6 @@ nlu:
     - Wen kann ich wählen?
     - sag mir welche Parteien es gibt
     - Über welche PArteien kansnt du mir etwas sagen?
-    - Ok, was ist die SPD?
     - Wer sind die Parteien?
     - wen kann ich wählen?
     - Wen kann ich wählen
@@ -270,7 +262,6 @@ nlu:
     - Wen kann man wählen? u U
     - Wer stellt sich zur Wahl?
     - kandiat
-    - wen wälen
     - welche Parteien gibt es?
     - Welche Parteien kann ich wählen?
     - Welche Parteien gibt es
@@ -278,6 +269,8 @@ nlu:
     - sonstige
     - tierschutzpartei
     - die partei
+    - welche Parteien sind denn zur Wahl aufgestellt
+    - welche Parteien gibt es denn noch zum wählen
 - intent: faq/parties_CDU
   examples: |
     - Wer ist die CDU?
@@ -302,6 +295,7 @@ nlu:
     - wahlprogramm cdu
     - cdu/csu
     - csu
+    - was sagt denn die CDU
 - intent: faq/parties_SPD
   examples: |
     - Sozialisten
@@ -315,6 +309,7 @@ nlu:
     - spd
     - was macht die spd
     - Wahlprogramm SPD
+    - was macht die SPD
 - intent: faq/parties_FDP
   examples: |
     - Liberale Partei
@@ -356,6 +351,8 @@ nlu:
     - grünes Wahlprogramm
     - was sind die Grünen
     - sind die Grünen gut
+    - wofür stehen die Grünen
+    - welche Informationen gibt es zu den Grünen
 - intent: faq/parties_Linke
   examples: |
     - wer sind die Linken?
@@ -397,13 +394,23 @@ nlu:
     - volt
     - Volt Partei
     - was ist Volt
-- intent: faq/howToVote
+- intent: faq/wahlenFrei
   examples: |
     - Muss ich wählen?
-    - Ist meine Wahl geheim?
     - Darf ich wählen, wen ich will?
+    - Wahlpflicht?
+    - freie walen?
+    - was sind freie wahlen?
+    - was heißt freie Wahlen?
+    - was freie wahlen?
+    - Wieso sind wahlen frei?
+    - Wieso heißt es, Wahlen seien frei?
+    - wählen frei
+    - Was freie wählen?
+    - kann ich alleine wählen
+- intent: faq/howToVote
+  examples: |
     - Wie viel zählt meine Stimme?
-    - Geheime Wahl?
     - Wie viele Stimmen habe ich?
     - Wie funktioniert wählen?
     - Wie viele Stimmen habe ich
@@ -411,16 +418,31 @@ nlu:
     - wie viele Stimmen habe ich?
     - wie kann ich wählen?
     - Wählen wie?
-    - Wahlurne
-    - Urnenwahl
-    - wählen an der Urne
+    - Wie wähle ich?
+    - Wie geht wahl
+    - Wie geht wählen?
+    - Lalo, wie wähle ich?
     - wie wählen
     - wi wälen
     - Wie wählen?
     - Wie wählen
     - Wahlzettel
-    - muss ich wählen
     - wue vieöe stimmen?
+- intent: faq/wahlenGeheim
+  examples: |
+    - Geheime Wahl?
+    - Sind wahlen geheim?
+    - Wal geheim?
+    - geheime Wahlen?
+    - Was heißt geheime Wahlen?
+    - was sagt Wal geheim?
+    - wieso wal geheim?
+    - Kann ich alleine wählen?
+    - Wieso sind Wahlen geheim?
+    - Was geheime waleng
+    - gehime walen
+    - Kann ich noch jemanden mitnehmen?
+    - Muss ich alleine wählen?
 - intent: faq/kostenWahl
   examples: |
     - wie teuer ist das Wählen?
@@ -494,6 +516,10 @@ nlu:
     - wofür sthene die Kandidaten
     - welche Kandidaten gibt es?
     - wer sind die kandidaten
+    - Wer ist denn alles auf
+    - Wer ist denn Kanzlerkandidat
+    - Wer ist denn alles aufgestellt aufgestellt wurden für die Bundes
+    - Wer ist denn in Essen aufgestellt für Partei
 - intent: faq/Armin_Laschet
   examples: |
     - Wer ist der Kandidat der CDU?
@@ -682,7 +708,6 @@ nlu:
     - darf jeder wählen?
     - Wer darf wählen?
     - Wahlberechtigt?
-    - Wahlpflicht?
     - Gibt es eine Wahlpflicht?
     - Darf ich wählen?
     - Welche Bedingungen muss ich erfüllen, um wählen zu dürfen?
@@ -710,6 +735,7 @@ nlu:
     - wann ist die Wahl
     - wan wählen
     - wann wahl
+    - lalu wann ist denn die Bundeswahl
 - intent: faq/bundesregierung
   examples: |
     - Bundesregierung?
@@ -776,6 +802,10 @@ nlu:
     - wer reduziert schulden
     - mehr Schulden
     - weniger schulden
+    - soll ich Armin Laschet wählen
+    - welche Partei soll ich wählen
+    - wahl o mat
+    - Wen soll ich wählen?
 - intent: faq/vizekanzler
   examples: |
     - wer ist Vizekanzler?
@@ -806,15 +836,14 @@ nlu:
     - Wo ist mein Wahllokal?
     - wahlbenachrichtigung
     - Wahlbenachrichtigung
-- intent: faq/wahlablauf
+- intent: faq/wahllokal
   examples: |
-    - Wie wähle ich?
+    - Wahlurne
+    - Urnenwahl
+    - wählen an der Urne
     - Was muss ich bei der Wahl machen?
-    - Wie geht das Wählen?
     - Was muss ich zur Wahl mitbringen?
     - Kann ich einfach so wählen?
-    - Kann ich alleine wählen?
-    - Kann ich noch jemanden zur Wahl mitbringen?
     - Wie wähle ich im Wahllokal?
     - Wahllokal
     - Vor Ort wählen
@@ -822,11 +851,9 @@ nlu:
     - urne
     - Urne
     - wahlzettel
-    - wie wählt man
-    - wie geht wählen
-    - Wie geht wählen?
-    - Was sind Übehangmandate?
     - was sind Wahllokale
+    - wo kann ich wählen
+    - wo kann ich als Essener den Willen
 - intent: faq/briefwahl
   examples: |
     - Wie geht Briefwahl?
@@ -840,6 +867,9 @@ nlu:
     - Briefwahl
     - Wie funktioniert die Briefwahl
     - Wie beantrage ich Briefwahl
+    - Kann ich denn auch per Brief wählen?
+    - Birefwahl
+    - kann ich denn auch per Brief wählen
 - intent: faq/fuenfProzentHuerde
   examples: |
     - Was bedeutet 5-Prozent-Hürde?
@@ -923,17 +953,6 @@ nlu:
     - Wie muss eine Wahl sein?
     - Wie muss eine Wahl sein
     - Eigenschaft wahl
-- intent: faq/wahlenFrei
-  examples: |
-    - freie walen?
-    - was sind freie wahlen?
-    - was heißt freie Wahlen?
-    - was freie wahlen?
-    - Wieso sind wahlen frei?
-    - Wieso heißt es, Wahlen seien frei?
-    - wählen frei
-    - Was freie wählen?
-    - kann ich alleine wählen
 - intent: faq/wahlenGleich
   examples: |
     - Wann sind Wahlen gleich?
@@ -945,14 +964,61 @@ nlu:
     - Wahl gleichberechtigt?
     - wieso wählen gleich
     - Wahlen gleich
-- intent: faq/wahlenGeheim
+- intent: faq/nichtWaehlen
   examples: |
-    - Sind wahlen geheim?
-    - Wal geheim?
-    - geheime Wahlen?
-    - Was heißt geheime Wahlen?
-    - was sagt Wal geheim?
-    - wieso wal geheim?
-    - Wieso sind Wahlen geheim?
-    - Was geheime waleng
-    - gehime walen
+    - Wenn ich nicht wäjlen gehe
+    - was passiert wenn ich nicht wählen gehe
+    - wenn ich nicht wähle
+    - ich will nicht wählen
+    - wenn ich nicht wähle?
+    - Falls ich nicht wähle, was passiert?
+    - Wer kriegt meine Stimme, wenn ich nicht wähle?
+    - Wer bekommt meine Stimme, falls ich nicht wähle?
+- intent: faq/wahlbeteiligung
+  examples: |
+    - wie hoch ist denn die Quote beim wählen
+    - wie viele Leute nehen an der Wahl teil?
+    - Wahlbeteiligung
+    - wie viele wählen?
+    - wer geht wählen?
+    - Wahlquote
+    - Wählquote
+    - Wie viele Menschen wählen?
+    - Wie hoch ist die Wahlbeteiligung?
+- intent: faq/keinWahlschein
+  examples: |
+    - was kann ich denn machen wenn ich keinen Wahlschein gekriegt habe
+    - keinen Wahlschein bekommen
+    - kein walzettel
+    - keine wahlaufforderung erhalten
+    - Ich habe keinen Wahlschein bekommen
+    - Was tue ich, wenn ich keinen Wahlschein bekommen habe
+    - Was wenn ich keinen Wahlschein habe
+    - Kein Wahlschein gekriegt.
+- intent: faq/onlinewahl
+  examples: |
+    - kann ich auch online wählen
+    - online wählen
+    - mit dem Internet wählen
+    - kann ich auch aus dem Internet heraus wählen?
+    - Kann ich im Internet wählen?
+    - Darf ich auch online abstimmen?
+    - Online wählen
+    - Per Internet wählen
+    - Onlinewahl
+    - Kann ich auch per Internet abstimmen?
+- intent: faq/hilfreich
+  examples: |
+    - yayy!!
+    - Danke
+    - Super, das hat mir geholfen
+    - Hilfreich
+    - Danke für deine Hilfe
+    - Super
+    - toll
+    - schön
+    - klasse
+    - mega
+    - top!
+    - yeah
+    - Juppiie

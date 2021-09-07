@@ -23,8 +23,6 @@ intents:
     use_entities: true
 - nlu_fallback:
     use_entities: true
-- ask_for_weather:
-    use_entities: true
 entities:
 - name
 slots:
@@ -55,36 +53,36 @@ responses:
     text: Parteien sind Organisationen von Menschen, die gleiche politische Ziele verfolgen. Gewählte Parteien vertreten die Interessen ihrer Wähler. Parteien haben Parteiprogramme und Wahlprogramme. In diesen Programmen schreiben Parteien ihre Ziele auf. Jeder kann einer Partei als Mitglied beitreten.
   utter_faq/partiesWho:
   - buttons:
-    - payload: Wahl-O-Mat
+    - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    text: Im aktuellen Bundestag sitzen CDU, CSU, SPD, AFD, FDP, DIE LINKE und die Grünen. Daneben gibt es noch viele weitere Parteien, die an der 5%-Hürde scheiterten oder ganz neu dabei sind, wie bspw. Volt. Zu allen Parteien, die du wählen kannst, findest du [hier mehr Informationen](https://www.voteswiper.org/de/deutschland/bundestagswahl-2021/parteien).
+    text: Im aktuellen Bundestag sitzen CDU, CSU, SPD, AFD, FDP, DIE LINKE und die Grünen. Daneben gibt es noch viele weitere Parteien, die an der 5%-Hürde scheiterten oder ganz neu dabei sind, wie bspw. Volt. Zu allen Parteien, die du wählen kannst, findest du [hier mehr Informationen](https://www.bpb.de/politik/wahlen/wer-steht-zur-wahl/bundestagswahl-2021/).
   utter_faq/parties_CDU:
   - buttons:
-    - payload: Wahl-O-Mat
+    - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
     image: https://www.studentenwerke.de/sites/default/files/bundestagswahl-cdu-csu-union.png
     text: CDU steht für Christlich Demokratische Union. Bei der Bundestagswahl ist sie gemeinsam mit der CSU (Christlich Soziale Union) vertreten. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Parteien. Klicke [hier für das Wahlprogramm der CDU/CSU in einfacher Sprache](https://aktion.cdu.de/assets_lp/a8e74c0bacf58b0737229ccc0f3057f5/lp/15/17/Das_20Wahl-Programm_20von_20CDU_20und_20CSU_20fu_CC_88r_20die_20Bundestags-Wahl_202021_20in_20Leichter_20Sprache_20_281_29.pdf).
   utter_faq/parties_SPD:
   - buttons:
-    - payload: Wahl-O-Mat
+    - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
     image: https://www.spd.de/typo3conf/ext/spd/Resources/Public/Images/spd-logo-claim.svg
     text: SPD steht für die Sozialdemokratische Partei Deutschlands. Diesen Namen hat sie seit 1890. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Partei. Klicke [hier für das Wahlprogramm der SPD in leichter Sprache](https://www.spd.de/fileadmin/Dokumente/Beschluesse/Programm/Wahlprogramm_SPD_2021_LS_barrierefrei.pdf).
   utter_faq/parties_FDP:
   - buttons:
-    - payload: Wahl-O-Mat
+    - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
     image: https://www.designtagebuch.de/wp-content/uploads/mediathek//2015/01/fdp-logo-700x392.png
     text: FDP steht für Freie Demokratische Partei. Die FDP ist 1948 gegründet worden und seit 1949 im Bundestag. Von 2013 bis 2017 war sie nicht im Bundestag vertreten. Sie hat bei der Wahl die Fünf-Prozent-Hürde nicht erreicht. Klicke [hier für das Wahlprogramm der FDP in leichter Sprache](https://www.fdp.de/sites/default/files/2021-08/FDP_BTW2021_KWP_leichteSprache.pdf).
   utter_faq/parties_GRUENE:
   - buttons:
-    - payload: Wahl-O-Mat
+    - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
     image: https://cms.gruene.de/uploads/images/Gruene_Logo_4c_aufTransparent_hellesBlaugrnaufweiss-01.svg
     text: 'Bündnis 90 die Grünen: Ein inhaltlicher Schwerpunkt der Grünen ist die Umweltpolitik. 1983 gelang den Grünen der Einzug in den Bundestag. Klicke [hier für das Wahlprogramm der GRÜNEN in leichter Sprache](https://cms.gruene.de/uploads/documents/Wahlprogramm_DIE_GRUENEN_Bundestagswahl2021_Leichte-Sprache.pdf).'
   utter_faq/parties_Linke:
   - buttons:
-    - payload: Wahl-O-Mat
+    - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
     image: https://www.die-linke.de/typo3conf/ext/dielinke2021_sitepackage/Resources/Public/Images/logo_dielinke_rot.png
     text: Die Linke ist ein Zusammenschluss der Partei des Demokratischen Sozialismus (PDS) und der Wahlalternative Arbeit und soziale Gerechtigkeit (WASG). Sie ist seit 2005 im deutschen Bundestag vertreten. Ihre Spitzenkandidatin ist Janine Wissler Klicke [hier für das Wahlprogramm der LINKEN in leichter Sprache](https://www.die-linke.de/fileadmin/download/wahlen2021/Wahlprogramm/755715_LINKE-PV_BTW21_KWP_EinfacheSprache_A5_210715b.pdf).
@@ -96,7 +94,7 @@ responses:
     text: 'AFD steht für Alternative für Deutschland. 2017 gelang der AFD der Einzug in den Bundestag. Ihr Spitzenkandidat ist Tino Chrupalla Klicke [hier für die Wahlwerbung der AFD](https://www.afd.de/wp-content/uploads/sites/111/2021/06/Kurzwahlprogramm_DINlang_Webversion.pdf). *Bildquelle: Wikipedia*'
   utter_faq/parties_Volt:
   - buttons:
-    - payload: Wahl-O-Mat
+    - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
     image: https://www.voltdeutschland.org/og-default.png
     text: Volt ist eine neue Partei. Es gibt Volt seit 2017. 2019 traten sie bei den Wahlen zum EU-Parlament das erste Mal an. Volt möchte mehr Zusammenarbeit der Länder in Europa. Klicke [hier für das Wahlprogramm von Volt in einfacher Sprache](https://www.voltdeutschland.org/leichte-sprache/was-will-volt).
@@ -108,13 +106,21 @@ responses:
   utter_faq/kostenWahl:
   - text: Die Bundestagswahl 2021 wird über 100 Millionen Euro kosten und komplett aus Steuermitteln finanziert. Damit wird sie die bisher teuerste Wahl in Deutschland. Ein Grund dafür ist der sehr hohe Anteil an Briefwählern. Das Wählen selbst ist für dich kostenlos. Auch wenn du Briefwahl nutzt, musst du keine Briefmarke kaufen
   utter_faq/howToVote:
-  - image: https://www.bpb.de/cache/images/6/248816-1x2-article620.png
-    text: 'Wenn du deine Wahlbenachrichtigung erhalten hast, hast du zwei Optionen. Entweder wählst du am Wahltag in deinem Wahllokal oder du beantragst vorher Briefwahl. In beiden Fällen bekommst du zur Wahl einen Stimmzettel auf dem du zwei Kreuze machen kannst. deine Erststimme und deine Zweitstimme.*(Bildquelle: bpb.de)*'
-  utter_faq/wahlablauf:
-  - text: Möchtest du im Wahllokal wählen, gehe am Wahltag in dein Wahllokal. Die Adresse steht auf deiner Einladungskarte. Nimm deinen Personalausweis oder Reisepass mit. Im Wahllokal sitzen Wahlhelfer, die Dir gerne alles erklären. Die Wahlhelfer geben Dir deinen Stimmzettel. Mit dem Stimmzettel gehst du alleine in die Wahlkabine und wählst. Danach wirfst du den Stimmzettel in die Wahlurne, die bei den Wahlhelfern steht. Mehr Informationen findest du [hier](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Wahllokal).
+  - buttons:
+      - payload: Wahllokal
+        title: Wahllkoal
+      - payload: Briefwahl
+        title: Briefwahl
+    image: https://www.bpb.de/cache/images/6/248816-1x2-article620.png
+    text: 'Wenn du deine Wahlbenachrichtigung erhalten hast, kannst du damit im *Wahllokal* wählen gehen oder *Briefwahl* beantragen. Du bekommst zur Wahl einen Stimmzettel auf dem du zwei Kreuze machen kannst. Deine Erststimme links und deine Zweitstimme rechts. Für ein einfaches Heft zur Bundestagswahl tippe [hier](https://alphabetisierung.de/wp-content/uploads/2021/09/Themenheft_Bundestagswahl_2021.pdf)*(Bildquelle: bpb.de)*'
+  utter_faq/wahllokal:
+  - image: https://www.bpb.de/cache/images/0/331490-1x1-article220.jpg?C6967
+    text: 'Möchtest du im Wahllokal wählen, gehe am Wahltag dorthin. Die Adresse steht auf deiner Einladungskarte. Nimm deinen Personalausweis oder Reisepass mit. Im Wahllokal sitzen Wahlhelfer, die dir gerne alles erklären. Die Wahlhelfer geben dir deinen Stimmzettel. Mit dem Stimmzettel gehst du alleine in die Wahlkabine und wählst. In der linken Spalte wählst du einen Direktkandidaten mit deiner Erststimme. Mit der rechten Spalte, gibst du deine Zweitstimme einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach faltest du den Stimmzettel so, dass niemand sieht, was du gewählt hast. Nun gehst du wieder zu den Wahlhelfern und wirfst deinen Stimmzettel dort in die Wahlurne. Mehr Informationen findest du [hier](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Wahllokal). *(Bildquelle: bpb)*'
   utter_faq/briefwahl:
-  - text: Manche Wähler und Wählerinnen können nicht zum Wahllokal. Zum Beispiel wenn sie am Wahltag im Urlaub sind, einen Termin haben oder weil sie krank sind. Dafür gibt es die Briefwahl. Dann können die Wähler und Wählerinnen vor dem Wahltag wählen. Die Briefwahl kannst du mit deiner Wahlbenachrichtung beantragen. Mehr Infos findest du [hier](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Briefwahl).
-  - text: 'Möchtest du zu Hause wählen, musst du die Briefwahl beantragen. Diesen Antrag findest du in deiner Wahlbenachrichtigung. Er heißt: Wahlschein-Antrag. du bekommst die Wahlzettel zugeschickt. Darin ist auch eine Beschreibung wie die Briefwahl geht. Mehr Infos findest du [hier](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Briefwahl).'
+  - image: https://www.bpb.de/cache/images/6/331496-st-article220.jpg?39BBE
+    text: 'Manche Wähler und Wählerinnen können nicht zum Wahllokal. Zum Beispiel wenn sie am Wahltag im Urlaub sind, einen Termin haben oder weil sie krank sind. Dafür gibt es die Briefwahl. Dann können die Wähler und Wählerinnen vor dem Wahltag wählen. Die Briefwahl kannst du mit deiner Wahlbenachrichtung beantragen. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner Erststimme. Mit der rechten Spalte, gibst du deine Zweitstimme einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Nun kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Infos findest du [hier](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Briefwahl). *(Bildquelle: bpb)*'
+  - image: https://www.bpb.de/cache/images/6/331496-st-article220.jpg?39BBE
+    text: 'Möchtest du zu Hause wählen, musst du die Briefwahl beantragen. Diesen Antrag findest du in deiner Wahlbenachrichtigung. Er heißt: Wahlschein-Antrag. du bekommst die Wahlzettel zugeschickt. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner Erststimme. Mit der rechten Spalte, gibst du deine Zweitstimme einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Nun kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Infos findest du [hier](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Briefwahl). *(Bildquelle: bpb)*'
   utter_faq/wahlkreise:
   - text: Es gibt insgesamt 299 Wahlkreise in Deutschland. Die Wahlkreise sind unterschiedlich groß, aber es leben immer ungefähr gleich viele Menschen in den Wahlkreisen.
   utter_faq/oeffnungszeiten:
@@ -149,7 +155,7 @@ responses:
       title: Annalena Baerbock
     - payload: Christian Lindner
       title: Christian Lindner
-    text: 'Die Spitzenkandidaten für die Bundestagswahl sind: Armin Laschet (CDU), Olaf Scholz (SPD), Annalena Baerbock (GRÜNE), Christian Lindner (FDP), Tino Chrupalla (AFD) und Janine Wissler (LINKE). Möchtest du mehr über einen davon erfahren?'
+    text: 'Die Spitzenkandidaten für die Bundestagswahl sind: Armin Laschet (CDU), Olaf Scholz (SPD), Annalena Baerbock (GRÜNE), Christian Lindner (FDP), Tino Chrupalla (AFD) und Janine Wissler (LINKE). Zusätzlich gibt es in jedem Wahlkreis Direktkandidaten, die du mit deiner Erststimme wählst. Möchtest du mehr über der Spitzenkandidaten erfahren?'
   utter_faq/Tino_Chrupalla:
   - buttons:
     - payload: AFD
@@ -204,8 +210,8 @@ responses:
   utter_faq/bundesregierung:
   - text: Die Bundesregierung setzt die Entscheidungen des Bundestages um und macht Vorschläge für Gesetze. Die Bundesregierung besteht aus Bundeskanzler und Bundesministern.
   utter_faq/wahlOMat:
-  - text: Es ist schwer sich für eine Partei zu entscheiden. Man kann aber nichts verkehrt machen. Du weißt selbst was gut für dich ist. Welche Themen sind dir wichtig? Was interessiert dich? Welche Partei oder welche Person magst du? Du kannst dich aber auch beraten lassen. Dafür gibt es zum Beispiel den Wahl-O-Mat. Das ist ein Computerprogramm der Bundeszentrale für politische Bildung. [Zum Wahl-O-Mat](https://www.bpb.de/politik/wahlen/wahl-o-mat/) (ab 2. September). Oder Probiere [WahlSwiper](https://www.voteswiper.org/de/deutschland/bundestagswahl-2021) vom Verein VoteSwiper.
-  - text: Dich für eine Partei zu entscheiden kann schwer sein. Im Internet gibt es Angebote, die dir dabei helfen. Du musst dort nur ein paar Fragen mit Ja oder Nein beantworten und auswählen, welche Parteien du vergleichen möchtest. Zum Beispiel der Wahl-O-Mat der Bundeszentrale für politische Bildung. Oder WahlSwiper vom Verein VoteSwiper. [Zum Wahl-O-Mat](https://www.bpb.de/politik/wahlen/wahl-o-mat/), zu [WahlSwiper](https://www.voteswiper.org/de/deutschland/bundestagswahl-2021).
+  - text: Es ist schwer sich für eine Partei zu entscheiden. Man kann aber nichts verkehrt machen. Du weißt selbst was gut für dich ist. Welche Themen sind dir wichtig? Was interessiert dich? Welche Partei oder welche Person magst du? Du kannst dich aber auch beraten lassen. Dafür gibt es zum Beispiel den Wahl-O-Mat. Das ist ein Computerprogramm der Bundeszentrale für politische Bildung. [Zum Wahl-O-Mat](https://www.wahl-o-mat.de/bundestagswahl2021/app/main_app.html). Oder Probiere [WahlSwiper](https://www.voteswiper.org/de/deutschland/bundestagswahl-2021) vom Verein VoteSwiper.
+  - text: Dich für eine Partei zu entscheiden kann schwer sein. Im Internet gibt es Angebote, die dir dabei helfen. Du musst dort nur ein paar Fragen mit Ja oder Nein beantworten und auswählen, welche Parteien du vergleichen möchtest. Zum Beispiel der Wahl-O-Mat der Bundeszentrale für politische Bildung. Oder WahlSwiper vom Verein VoteSwiper. [Zum Wahl-O-Mat](https://www.wahl-o-mat.de/bundestagswahl2021/app/main_app.html), [zum WahlSwiper](https://www.voteswiper.org/de/deutschland/bundestagswahl-2021).
   utter_faq/fuenfProzentHuerde:
   - text: 'Je mehr Parteien im Bundestag sind, desto schwerer einigen sich die Abgeordneten auf Entscheidungen. Daher gibt es die **5%-Hürde**. Wenn eine Partei weniger als 5% der Zweitstimmen erhält, kommt sie nicht in den Bundestag. Anders ausgedrückt muss eine Partei mindestens jeden zwanzigsten Wähler überzeugen, um in den Bundestag zu kommen. Es gibt eine Ausnahme: Hat eine Partei in mindestens drei Wahlkreisen die meisten Erststimmen, dann zählen auch die Zweitstimmen. Falls dich eine dieser kleinen Parteien überzeugt, unterstütze sie mit deiner Stimme. [Hier findest du eine Übersicht der verfügbaren Parteien](https://www.voteswiper.org/de/deutschland/bundestagswahl-2021/parteien).'
   utter_faq/opposition:
@@ -256,13 +262,23 @@ responses:
       title: GEHEIM
     text: Wahlen in Deutschland sind demokratisch. Sie müssen drei Kriterien erfüllen. Sie müssen frei, gleich und geheim sein.
   utter_faq/wahlenFrei:
-  - text: Wahlen sind frei. Du darfst wählen, wen du möchtest! Und du musst nicht wählen, wenn du nicht möchtest.
+  - text: Wahlen sind frei. Du darfst wählen, wen du möchtest! Niemand darf dir vorgeben, wen du wählen sollst. Und du musst nicht wählen, wenn du nicht möchtest.
   utter_faq/wahlenGleich:
   - text: Wahlen sind gleich. deine Stimme zählt genau so viel wie jede andere! Keine Stimme ist mehr oder weniger wert und jede Stimme zählt nur einmal.
   utter_faq/wahlenGeheim:
-  - text: Wahlen sind geheim. Niemand darf zuschauen, wen du wählst. Niemand darf überprüfen, wen du gewählt hast.
+  - text: Wahlen sind geheim. Niemand darf zuschauen, wen du wählst. Niemand darf überprüfen, wen du gewählt hast und wen du nicht möchtest, brauchst du es auch niemandem erzählen. Leider darfst du auch niemanden in die Wahlkabine mitnehmen oder dort Fotos machen.
   utter_faq/brauchIchNicht:
   - text: Diesen Text sollte niemand jemals sehen. Echt jetzt.
+  utter_faq/nichtWaehlen:
+  - text: Wenn du nicht wählen gehst, kannst du das Wahlergebnis nicht mitbestimmen. Nur die abgegebenen Stimmen werden auf die Parteien verteilt. Wenn also eine Partei zum Beispiel 20% erreicht, sind das 20% der abgegebenen Stimmen. Es besteht aber keine Wahlpflicht, also musst du nicht wählen, wenn du nicht möchtest.
+  utter_faq/wahlbeteiligung:
+  - text: Wie hoch die Wahlbeteiligung sein wird, kann man erst hinterher sagen. Bei der letzten Bundestagswahl 2017 haben 76,2% der Wahlberechtigten abgestimmt.
+  utter_faq/keinWahlschein:
+  - text: Wenn du jetzt noch keine Wahlbenachrichtigung erhalten hast, melde dich bei deinem Wahlamt und frage nach. Falls du nicht weißt, wo dein Wahlamt ist, frage am besten in deinem Rathaus oder bei deiner Gemeindeverwaltung nach.
+  utter_faq/onlinewahl:
+    - text: Per Internet wählen, geht leider nicht. Du kannst persönlich im *Wahllokal* oder per *Briefwahl* wählen.
+  utter_faq/hilfreich:
+  - text: Ich freue mich, wenn ich dir helfen konnte.
 actions: []
 forms: {}
 e2e_actions: []
