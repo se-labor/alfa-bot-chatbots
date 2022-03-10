@@ -38,6 +38,10 @@ nlu:
     - Willkommen
     - Guten Mittag
     - haöli
+    - neustart
+    - n3u
+    - neu
+    - Hallo la Lo
 - intent: goodbye
   examples: |
     - cu
@@ -56,6 +60,7 @@ nlu:
     - Machs gut
     - Toll, machs gut
     - Mir geht's gut danke:
+    - Danke lalo
 - intent: affirm
   examples: |
     - ja
@@ -70,6 +75,7 @@ nlu:
     - ja bitte
     - yes
     - okay
+    - Oh okay
 - intent: deny
   examples: |
     - nein
@@ -93,6 +99,14 @@ nlu:
     - Bist du ein Bot?
     - Bist du ein bot?
     - Wer bist du?
+    - lalou wer hat dich entwickelt
+    - la lu wer ist dein Bus
+    - lalou wer ist dein Boss
+    - Salou wer ist dein Besitzer
+    - Wer ist dein Boss
+    - Wer ist dein Chef?
+    - Wer hat dich gemacht?
+    - Wer hat dich programmiert?
 - intent: chitchat/howAreYou
   examples: |
     - wie geht es dir?
@@ -102,6 +116,7 @@ nlu:
     - alles gut bei dir?
     - Wie geht es dir?
     - Wie geht es dir
+    - Wie geht's dir?
 - intent: chitchat/joke
   examples: |
     - Erzähle mir einen Witz
@@ -111,6 +126,7 @@ nlu:
     - Witz
     - Witz erzählen
     - erzähle mir einen Witz
+    - ein anderer Witz
 - intent: chitchat/kontakt
   examples: |
     - Ich möchte mit einem Menschen sprechen
@@ -168,6 +184,8 @@ nlu:
     - pipi
     - Nazi
     - Nazis
+    - alle sind doof
+    - restart
 - intent: nlu_fallback
   examples: |
     - djdlfkd
@@ -212,6 +230,14 @@ nlu:
     - text
     - rezo
     - was ist
+    - lalu kennst du Oliver Meisel
+    - ich habe dich gefragt was ich denn nicht nettes gesagt habe
+    - was habe ich denn nicht nettes gesagt
+    - 1 2 3
+    - wann ist Weihnachten
+    - gukgulgul
+    - gzkghkghkghk
+    - Hier ist meine Nachricht
 - intent: faq/democracy
   examples: |
     - Ist Deutschland eine Demokratie?
@@ -271,6 +297,7 @@ nlu:
     - die partei
     - welche Parteien sind denn zur Wahl aufgestellt
     - welche Parteien gibt es denn noch zum wählen
+    - welche Parteien gibt es
 - intent: faq/parties_CDU
   examples: |
     - Wer ist die CDU?
@@ -296,6 +323,8 @@ nlu:
     - cdu/csu
     - csu
     - was sagt denn die CDU
+    - Wahlprogramm der CDU
+    - Hat die CDU ein Wahlprogramm?
 - intent: faq/parties_SPD
   examples: |
     - Sozialisten
@@ -353,6 +382,8 @@ nlu:
     - sind die Grünen gut
     - wofür stehen die Grünen
     - welche Informationen gibt es zu den Grünen
+    - Wer sind die Grünen
+    - GRÜNE
 - intent: faq/parties_Linke
   examples: |
     - wer sind die Linken?
@@ -371,6 +402,7 @@ nlu:
     - linke
     - ist die Linke die SED
     - PDS
+    - LINKE
 - intent: faq/parties_AFD
   examples: |
     - AFD
@@ -414,7 +446,7 @@ nlu:
     - Wie viele Stimmen habe ich?
     - Wie funktioniert wählen?
     - Wie viele Stimmen habe ich
-    - wie kann ich wählen
+    - Wie kann ich wählen?
     - wie viele Stimmen habe ich?
     - wie kann ich wählen?
     - Wählen wie?
@@ -428,6 +460,12 @@ nlu:
     - Wie wählen
     - Wahlzettel
     - wue vieöe stimmen?
+    - wie viele Kreuze muss ich machen
+    - Wie viele Stimmen darf ich abgeben?
+    - Wie viele Kreuze muss ich machen?
+    - ich will ja wählen aber wie denn ich kann es doch nicht
+    - wenn ich aber nicht weiß wie das geht
+    - wenn ich doch nicht weiß wie das geht mit dem wählen
 - intent: faq/wahlenGeheim
   examples: |
     - Geheime Wahl?
@@ -496,6 +534,7 @@ nlu:
     - parlament
     - Parlament
     - was ist der Unterschied zwischen Bundestag und
+    - was wird gewählt
 - intent: faq/parliamentWhere
   examples: |
     - Wo ist das Parlament?
@@ -520,6 +559,11 @@ nlu:
     - Wer ist denn Kanzlerkandidat
     - Wer ist denn alles aufgestellt aufgestellt wurden für die Bundes
     - Wer ist denn in Essen aufgestellt für Partei
+    - Wer sind die Kanzlerkandidaten?
+    - Wer will Bundeskanzler werden
+    - wie heißen die Kanzlerkandidaten
+    - nein Kandidaten
+    - Welche Kandidaten gibt es?
 - intent: faq/Armin_Laschet
   examples: |
     - Wer ist der Kandidat der CDU?
@@ -535,6 +579,7 @@ nlu:
     - Wer ist Armin Laschet
     - wer ist armin
     - armin Laschet
+    - Lalo, wer ist Armin Laschet
 - intent: faq/Olaf_Scholz
   examples: |
     - Wer ist der Kandidat der SPD?
@@ -547,6 +592,7 @@ nlu:
     - scholz
     - Wer ist Olaf Scholz
     - Vizekanzler
+    - Lalo, was weißt du über Olaf Scholz?
 - intent: faq/Annalena_Baerbock
   examples: |
     - Wer ist der Kandidat der Grünen?
@@ -646,6 +692,7 @@ nlu:
     - Bundestagswahl Zeit
     - Wann haben die Wahllokale offen?
     - Wann wälen
+    - wann kann ich wählen
 - intent: faq/erststimme
   examples: |
     - Was ist die Erststimme?
@@ -736,6 +783,8 @@ nlu:
     - wan wählen
     - wann wahl
     - lalu wann ist denn die Bundeswahl
+    - wann ist Bundestagswahl
+    - Wann ist die Bundeswahl?
 - intent: faq/bundesregierung
   examples: |
     - Bundesregierung?
@@ -806,6 +855,8 @@ nlu:
     - welche Partei soll ich wählen
     - wahl o mat
     - Wen soll ich wählen?
+    - welche Partei passt zu mir
+    - lalu wen soll ich wählen
 - intent: faq/vizekanzler
   examples: |
     - wer ist Vizekanzler?
@@ -836,6 +887,7 @@ nlu:
     - Wo ist mein Wahllokal?
     - wahlbenachrichtigung
     - Wahlbenachrichtigung
+    - ich wohne in Essen wo ist mein Wahllokal
 - intent: faq/wahllokal
   examples: |
     - Wahlurne
@@ -854,6 +906,8 @@ nlu:
     - was sind Wahllokale
     - wo kann ich wählen
     - wo kann ich als Essener den Willen
+    - wo ist in essen mein valsacor
+    - ich war doch freundlich ich habe doch nur gefragt wo in Essen
 - intent: faq/briefwahl
   examples: |
     - Wie geht Briefwahl?
@@ -870,6 +924,7 @@ nlu:
     - Kann ich denn auch per Brief wählen?
     - Birefwahl
     - kann ich denn auch per Brief wählen
+    - wie geht Briefwahl
 - intent: faq/fuenfProzentHuerde
   examples: |
     - Was bedeutet 5-Prozent-Hürde?
@@ -916,6 +971,10 @@ nlu:
     - Wie soll ich mich für eine Partei entscheiden?
     - walprogramme
     - Wahlprogramme
+    - hallo kannst du mir das Wahlprogramm von
+    - Hallo haben nicht die Parteien immer alles versprochen
+    - was macht die Partei denn für die Analphabeten
+    - haben die Parteien nicht immer alles versprochen und nie gehalten
 - intent: faq/bundeskanzlerwahl
   examples: |
     - Wer bestimmt den Bundeskanzler?
@@ -995,6 +1054,7 @@ nlu:
     - Was tue ich, wenn ich keinen Wahlschein bekommen habe
     - Was wenn ich keinen Wahlschein habe
     - Kein Wahlschein gekriegt.
+    - ich habe aber keine Einladung gekriegt
 - intent: faq/onlinewahl
   examples: |
     - kann ich auch online wählen
@@ -1022,3 +1082,13 @@ nlu:
     - top!
     - yeah
     - Juppiie
+- intent: faq/themen
+  examples: |
+    - Was kannst du mir sagen?
+    - Was weißt du?
+    - Wobei kannst du mir helfen?
+    - Was kannst du?
+    - Welche Themen kennst du?
+    - Theman?
+    - Themen?
+    - Was kann ich dich fragen?

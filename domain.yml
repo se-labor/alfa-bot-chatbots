@@ -41,6 +41,21 @@ responses:
   - text: Machs gut!
   - text: Bis zum nächsten Mal!
   - text: Bis bald!
+  utter_faq/themen:
+  - buttons:
+    - payload: Wie geht wählen?
+      title: Wie geht wählen?
+    - payload: Wann ist die Wahl?
+      title: Wann ist die Wahl?
+    - payload: Welche Parteien gibt es?
+      title: Welche Parteien gibt es?
+    - payload: Wahlprogramme
+      title: Wahlprogramme
+    - payload: Kandidaten?
+      title: Kandidaten?
+    - payload: Wen soll ich wählen?
+      title: Wen soll ich wählen?
+    text: 'Hier sind Beispiele, was du mich fragen kannst:'
   utter_iamabot:
   - text: Ich bin ein Chatbot. Meine Entwickler sind die **FH Münster** und der **Bundesverband Alphabetisierung und Grundbildung**.
   utter_faq/democracy:
@@ -49,13 +64,13 @@ responses:
   utter_faq/partiesWhat:
   - buttons:
     - payload: Wahlprogramme
-      title: Wahlprogramm
+      title: Wahlprogramme
     text: Parteien sind Organisationen von Menschen, die gleiche politische Ziele verfolgen. Gewählte Parteien vertreten die Interessen ihrer Wähler. Parteien haben Parteiprogramme und Wahlprogramme. In diesen Programmen schreiben Parteien ihre Ziele auf. Jeder kann einer Partei als Mitglied beitreten.
   utter_faq/partiesWho:
   - buttons:
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    text: Im aktuellen Bundestag sitzen CDU, CSU, SPD, AFD, FDP, DIE LINKE und die Grünen. Daneben gibt es noch viele weitere Parteien, die an der 5%-Hürde scheiterten oder ganz neu dabei sind, wie bspw. Volt. Zu allen Parteien, die du wählen kannst, findest du [hier mehr Informationen](https://www.bpb.de/politik/wahlen/wer-steht-zur-wahl/bundestagswahl-2021/).
+    text: Im aktuellen Landtag von NRW sitzen CDU, SPD, AFD, FDP und die Grünen. Daneben gibt es noch viele weitere Parteien, die an der 5%-Hürde scheiterten oder ganz neu dabei sind, wie bspw. Volt. Zu allen Parteien, die du wählen kannst, findest du [hier mehr Informationen](https://www.bpb.de/politik/wahlen/wer-steht-zur-wahl/bundestagswahl-2021/).
   utter_faq/parties_CDU:
   - buttons:
     - payload: Wen soll ich wählen?
@@ -107,12 +122,12 @@ responses:
   - text: Die Bundestagswahl 2021 wird über 100 Millionen Euro kosten und komplett aus Steuermitteln finanziert. Damit wird sie die bisher teuerste Wahl in Deutschland. Ein Grund dafür ist der sehr hohe Anteil an Briefwählern. Das Wählen selbst ist für dich kostenlos. Auch wenn du Briefwahl nutzt, musst du keine Briefmarke kaufen
   utter_faq/howToVote:
   - buttons:
-      - payload: Wahllokal
-        title: Wahllkoal
-      - payload: Briefwahl
-        title: Briefwahl
+    - payload: Wahllokal
+      title: Wahllokal
+    - payload: Briefwahl
+      title: Briefwahl
     image: https://www.bpb.de/cache/images/6/248816-1x2-article620.png
-    text: 'Wenn du deine Wahlbenachrichtigung erhalten hast, kannst du damit im *Wahllokal* wählen gehen oder *Briefwahl* beantragen. Du bekommst zur Wahl einen Stimmzettel auf dem du zwei Kreuze machen kannst. Deine Erststimme links und deine Zweitstimme rechts. Für ein einfaches Heft zur Bundestagswahl tippe [hier](https://alphabetisierung.de/wp-content/uploads/2021/09/Themenheft_Bundestagswahl_2021.pdf)*(Bildquelle: bpb.de)*'
+    text: 'Wenn du deine Wahlbenachrichtigung erhalten hast, kannst du damit im *Wahllokal* wählen gehen oder *Briefwahl* beantragen. Du bekommst zur Wahl einen Stimmzettel auf dem du zwei Kreuze machen kannst. Deine Erststimme links und deine Zweitstimme rechts. Frage mich gerne nach Wahllokal oder Briefwahl. Für ein einfaches Heft zur Bundestagswahl tippe [hier](https://alphabetisierung.de/wp-content/uploads/2021/09/Themenheft_Bundestagswahl_2021.pdf)*(Bildquelle: bpb.de)*'
   utter_faq/wahllokal:
   - image: https://www.bpb.de/cache/images/0/331490-1x1-article220.jpg?C6967
     text: 'Möchtest du im Wahllokal wählen, gehe am Wahltag dorthin. Die Adresse steht auf deiner Einladungskarte. Nimm deinen Personalausweis oder Reisepass mit. Im Wahllokal sitzen Wahlhelfer, die dir gerne alles erklären. Die Wahlhelfer geben dir deinen Stimmzettel. Mit dem Stimmzettel gehst du alleine in die Wahlkabine und wählst. In der linken Spalte wählst du einen Direktkandidaten mit deiner Erststimme. Mit der rechten Spalte, gibst du deine Zweitstimme einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach faltest du den Stimmzettel so, dass niemand sieht, was du gewählt hast. Nun gehst du wieder zu den Wahlhelfern und wirfst deinen Stimmzettel dort in die Wahlurne. Mehr Informationen findest du [hier](https://www.bpb.de/politik/grundfragen/politik-einfach-fuer-alle/248475/wie-sie-waehlen-koennen#Wahllokal). *(Bildquelle: bpb)*'
@@ -222,7 +237,7 @@ responses:
   utter_chitchat/nettiquette:
   - text: Das war keine nette Eingabe oder? Ich rede gerne mit dir, aber bitte sei freundlich 🙃
   utter_chitchat/howAreYou:
-  - text: 'Mir geht es gut, Danke :slightly_smiling_face:'
+  - text: Mir geht es gut, Danke.
   utter_chitchat/joke:
   - text: 'Kommt ein _Pferd_ in eine **Bar**, fragt der Barkeeper: "Was machst du denn für ein langes Gesicht?"'
   - text: 'Sagt Lisa zu Anna: "Mein Hund kann lügen." Sagt Anna: "Das geht doch nicht." Sagt Lisa: "Doch das geht. **Bello**, wie macht eine Katze?" "_Wau wau_."'
@@ -276,7 +291,7 @@ responses:
   utter_faq/keinWahlschein:
   - text: Wenn du jetzt noch keine Wahlbenachrichtigung erhalten hast, melde dich bei deinem Wahlamt und frage nach. Falls du nicht weißt, wo dein Wahlamt ist, frage am besten in deinem Rathaus oder bei deiner Gemeindeverwaltung nach.
   utter_faq/onlinewahl:
-    - text: Per Internet wählen, geht leider nicht. Du kannst persönlich im *Wahllokal* oder per *Briefwahl* wählen.
+  - text: Per Internet wählen, geht leider nicht. Du kannst persönlich im *Wahllokal* oder per *Briefwahl* wählen.
   utter_faq/hilfreich:
   - text: Ich freue mich, wenn ich dir helfen konnte.
 actions: []
