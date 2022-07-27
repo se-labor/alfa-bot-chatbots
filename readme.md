@@ -1,4 +1,4 @@
-# Rasa-Chatbot für Projekt ALFA-Bot - BT-Wahlen Prototyp
+# Rasa-Chatbot für Projekt ALFA-Bot - LT-Wahl NRW Prototyp
 
 ## Installation und Inbetriebnahme
 ###Python3 (venv)

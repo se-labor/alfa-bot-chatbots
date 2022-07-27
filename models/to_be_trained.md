@@ -1,1 +1,0 @@
-This directory contains trained models of the chatbot. But don't commit it's files to the repository. Just create new model-files via `rasa train`.

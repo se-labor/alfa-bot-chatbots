@@ -1,15 +1,13 @@
 # Ignore folders
-env/
-models/*
 venv/
 
 # Ignore visible files
-values.yml
 
 # Ignore hidden files
 .idea
+.idea*
 .idea/*
 __pycache__
 actions/.env
+.DS_Store
 # exception to the rule
-!models/to_be_trained.md
