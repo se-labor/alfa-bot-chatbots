@@ -37,7 +37,7 @@ slots:
     influence_conversation: false
 responses:
   utter_greet:
-  - image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
+  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
     text: Willkommen zum Chat. Frage mich gerne, was du über die Landtagswahl 2022 wissen möchtest. Tippe auf den Lautsprecher, dann lese ich dir die Nachricht vor. Tippe noch mal auf den Lautsprecher, damit ich aufhöre.
   utter_goodbye:
   - text: Machs gut!
@@ -103,20 +103,20 @@ responses:
       title: AFD
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    text: Im aktuellen Landtag von NRW sitzen CDU, SPD, FDP, die Grünen und die AFD. Daneben gibt es noch drei Abgeordnete, die keiner Partei angehören. Es gibt aber noch weitere Parteien, die bei der letzten Wahl an der 5%-Hürde scheiterten oder ganz neu dabei sind. Eine Liste aller Parteien, die du wählen kannst, findest du [hier](https://alfacms.se-labor.de/wp-content/uploads/2022/04/parteien_NRW_22.pdf)
+    text: Im aktuellen Landtag von NRW sitzen CDU, SPD, FDP, die Grünen und die AFD. Daneben gibt es noch drei Abgeordnete, die keiner Partei angehören. Es gibt aber noch weitere Parteien, die bei der letzten Wahl an der 5%-Hürde scheiterten oder ganz neu dabei sind. Eine Liste aller Parteien, die du wählen kannst, findest du [hier](https://www.alfa-bot.de/wp-content/uploads/2022/04/parteien_NRW_22.pdf)
   utter_faq/parties_CDU:
   - buttons:
     - payload: Hendrik Wüst
       title: Hendrik Wüst
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/logo_cdu.gif
-    text: CDU steht für Christlich Demokratische Union. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Parteien. Die CDU ist seit 1947 immer im Landtag vertreten. Ihr Spitzenkandidat ist Hendrik Wüst. Tippe [hier für das Wahlprogramm der CDU in leichter Sprache](https://alfacms.se-labor.de/wp-content/uploads/2022/04/cdu-wahlprogramm-leicht.pdf).
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_cdu.gif
+    text: CDU steht für Christlich Demokratische Union. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Parteien. Die CDU ist seit 1947 immer im Landtag vertreten. Ihr Spitzenkandidat ist Hendrik Wüst. Tippe [hier für das Wahlprogramm der CDU in leichter Sprache](https://www.alfa-bot.de/wp-content/uploads/2022/04/cdu-wahlprogramm-leicht.pdf).
   utter_faq/parties_CSU:
   - buttons:
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/logo_csu.png
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_csu.png
     text: CSU steht für Christlich Soziale Union. Diese Partei kannst du nur in Bayern wählen. Bei der Landtagswahl In Nordrhein-Westfalen tritt sie nicht an.
   utter_faq/parties_SPD:
   - buttons:
@@ -124,40 +124,40 @@ responses:
       title: Thomas Kutschaty
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/logo_spd.jpg
-    text: SPD steht für die Sozialdemokratische Partei Deutschlands. Diesen Namen hat sie seit 1890. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Partei. Die SPD ist seit 1947 immer im Landtag vertreten. Ihr Spitzenkandidat ist Thomas Kutschaty. Tippe [hier für das Wahlprogramm der SPD in leichter Sprache](https://alfacms.se-labor.de/wp-content/uploads/2022/04/spd-wahlprogramm.pdf).
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_spd.jpg
+    text: SPD steht für die Sozialdemokratische Partei Deutschlands. Diesen Namen hat sie seit 1890. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Partei. Die SPD ist seit 1947 immer im Landtag vertreten. Ihr Spitzenkandidat ist Thomas Kutschaty. Tippe [hier für das Wahlprogramm der SPD in leichter Sprache](https://www.alfa-bot.de/wp-content/uploads/2022/04/spd-wahlprogramm.pdf).
   utter_faq/parties_FDP:
   - buttons:
     - payload: Joachim Stamp
       title: Joachim Stamp
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/logo_fdp.png
-    text: FDP steht für Freie Demokratische Partei. Die FDP ist seit 1947 im Landtag vertreten. Bei den Wahlen in den Jahren 1980 und 1995 hatte sie nicht genug Wählerstimmen und war für fünf Jahre nicht im Landtag. Ihr Spitzenkandidat ist Joachim Stamp. Tippe [hier für das Wahlprogramm der FDP in leichter Sprache](https://alfacms.se-labor.de/wp-content/uploads/2022/04/fdp-wahlprogramm-leicht.pdf).
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_fdp.png
+    text: FDP steht für Freie Demokratische Partei. Die FDP ist seit 1947 im Landtag vertreten. Bei den Wahlen in den Jahren 1980 und 1995 hatte sie nicht genug Wählerstimmen und war für fünf Jahre nicht im Landtag. Ihr Spitzenkandidat ist Joachim Stamp. Tippe [hier für das Wahlprogramm der FDP in leichter Sprache](https://www.alfa-bot.de/wp-content/uploads/2022/04/fdp-wahlprogramm-leicht.pdf).
   utter_faq/parties_GRUENE:
   - buttons:
     - payload: Mona Neubar
       title: Mona Neubaur
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/logo_gruene.jpg
-    text: 'Grüne: Ein inhaltlicher Schwerpunkt der Grünen ist die Umweltpolitik. 1990 gelang den Grünen der Einzug in den Landtag. Seit diesem Zeitpunkt sind sie immer im Landtag vertreten. Ihre Spitzenkandidatin ist Mona Neubaur. Klicke [hier für das Wahlprogramm der GRÜNEN in leichter Sprache](https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-programm_gruene.pdf).'
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_gruene.jpg
+    text: 'Grüne: Ein inhaltlicher Schwerpunkt der Grünen ist die Umweltpolitik. 1990 gelang den Grünen der Einzug in den Landtag. Seit diesem Zeitpunkt sind sie immer im Landtag vertreten. Ihre Spitzenkandidatin ist Mona Neubaur. Klicke [hier für das Wahlprogramm der GRÜNEN in leichter Sprache](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-programm_gruene.pdf).'
   utter_faq/parties_Linke:
   - buttons:
     - payload: Carolin Butterwegge
       title: Carolin Butterwegge
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/logo_linke.jpg
-    text: Die Linke scheiterte bei der letzten Wahl nur ganz knapp an der 5%-Hürde. Davor schaffte sie im Jahr 2010 den Einzug in den Landtag. Ihre Spitzenkandidatin ist Carolin Butterwegge. Klicke [hier für das Wahlprogramm der Linken in einfacher Sprache](https://alfacms.se-labor.de/wp-content/uploads/2022/05/linke-wahlprogram-leicht.pdf)
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_linke.jpg
+    text: Die Linke scheiterte bei der letzten Wahl nur ganz knapp an der 5%-Hürde. Davor schaffte sie im Jahr 2010 den Einzug in den Landtag. Ihre Spitzenkandidatin ist Carolin Butterwegge. Klicke [hier für das Wahlprogramm der Linken in einfacher Sprache](https://www.alfa-bot.de/wp-content/uploads/2022/05/linke-wahlprogram-leicht.pdf)
   utter_faq/parties_AFD:
   - buttons:
     - payload: Markus Wagner
       title: Markus Wagner
     - payload: Wahl-O-Mat
       title: Wen soll ich wählen?
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/logo_afd.png
-    text: AFD steht für Alternative für Deutschland. 2017 gelang der AFD der Einzug in den Landtag. Ihr Spitzenkandidat ist Markus Wagner. Tippe hier für das [Wahlprogramm der AFD in leichter Sprache](http://alfacms.se-labor.de/wp-content/uploads/2022/04/afd-wahlprogramm.pdf)
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_afd.png
+    text: AFD steht für Alternative für Deutschland. 2017 gelang der AFD der Einzug in den Landtag. Ihr Spitzenkandidat ist Markus Wagner. Tippe hier für das [Wahlprogramm der AFD in leichter Sprache](http://www.alfa-bot.de/wp-content/uploads/2022/04/afd-wahlprogramm.pdf)
   utter_faq/wahlenFrei:
   - buttons:
     - payload: Eigenschaften Wahlen
@@ -188,17 +188,17 @@ responses:
   utter_faq/primeMinisterWhat:
   - text: Der Ministerpräsident ist der Regierungschef des Landes Nordrhein-Westfalen. Zurzeit ist Hendrik Wüst von der CDU Ministerpräsident.
   utter_faq/primeMinisterWho:
-  - image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-hendrik_wuest-scaled.jpeg
+  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-hendrik_wuest-scaled.jpeg
     text: Hendrik Wüst von der CDU ist seit Oktober 2021 Ministerpräsident des Landes NRW. Nach der Landtagswahl am 15. Mai 2022 möchte er wieder Ministerpräsident sein.
   utter_faq/parliamentWhat:
-  - image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
+  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
     text: Im Landtag wird über Gesetze geredet und abgestimmt. Die Abgeordneten beraten und beschließen alle Landesgesetze. Der Landtag wählt auch den Ministerpräsidenten.
-  - image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
+  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
     text: Am 15. Mai 2022 ist Landtagswahl. Alle gewählten Vertreter heißen Abgeordnete und arbeiten im Nordrhein-Westfälischen Landtag. Alle fünf Jahre wird der Landtag gewählt.
-  - image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
+  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
     text: Der Landtag wählt den Ministerpräsidenten, beschließt neue Gesetze und entscheidet wofür das Land NRW Geld ausgibt. Der Landtag kontrolliert die Landesregierung und entscheidet zum Beispiel auch über die Schulbildung in NRW.
   utter_faq/parliamentWhere:
-  - image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/landtag_nrw.jpeg
+  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/landtag_nrw.jpeg
     text: Der Landtag NRW ist in Düsseldorf. Du findest ihn an der Adresse [Platz des Landtags 1, Düsseldorf](https://www.google.com/maps/search/?api=1&query=Platz+des+Landtags+1+40221+Düsseldorf)
   utter_faq/candidates:
   - buttons:
@@ -219,37 +219,37 @@ responses:
   - buttons:
     - payload: CDU
       title: 'Partei: CDU'
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-hendrik_wuest-scaled.jpeg
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-hendrik_wuest-scaled.jpeg
     text: Das ist Hendrik Wüst. Er ist der Spitzenkandidat der CDU und der jetzige Ministerpräsident.
   utter_faq/Thomas_Kutschaty:
   - buttons:
     - payload: SPD
       title: 'Partei: SPD'
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-thomas_kutschaty-scaled.jpg
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-thomas_kutschaty-scaled.jpg
     text: Das ist Thomas Kutschaty. Er ist der Spitzenkandidat der SPD.
   utter_faq/Mona_Neubaur:
   - buttons:
     - payload: Die GRÜNEN
       title: 'Partei: Bündnis 90 die GRÜNEN'
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-mona_neubaur.jpg
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-mona_neubaur.jpg
     text: Das ist Mona Neubaur. Sie ist die Spitzenkandidatin der Grünen
   utter_faq/Joachim_Stamp:
   - buttons:
     - payload: FDP
       title: 'Partei: FDP'
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-joachim_stamp-scaled.jpg
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-joachim_stamp-scaled.jpg
     text: Das ist Joachim Stamp. Er ist der Spitzenkandidat der FDP.
   utter_faq/Markus_Wagner:
   - buttons:
     - payload: AFD
       title: 'Partei: AFD'
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-wagner_markus.png
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-wagner_markus.png
     text: Das ist Markus Wagner. Er ist der Spitzenkandidat der AFD.
   utter_faq/Carolin_Butterwegge:
   - buttons:
     - payload: Die LINKE
       title: 'Partei: Die LINKE'
-    image: https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-caro_butterwegge-scaled.jpg
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-caro_butterwegge-scaled.jpg
     text: Das ist Carolin Butterwegge. Sie ist die Spitzenkandidatin der Linken.
   utter_faq/wahlkreise:
   - text: Es gibt insgesamt 128 Wahlkreise in NRW. Die Wahlkreise sind unterschiedlich groß, aber es leben immer ungefähr gleich viele Wähler in den Wahlkreisen.
@@ -257,11 +257,11 @@ responses:
   - text: Die Wahllokale sind am **Sonntag, den 15. Mai 2022** von 8:00 Uhr bis 18:00 Uhr geöffnet.
   - text: Wählen kannst Du am **Sonntag, 15. Mai 2022** zwischen 8:00 Uhr und 18:00 Uhr.
   utter_faq/erststimme:
-  - text: Mit deiner **Erststimme** wählst du den Kandidaten deines Wahlkreises. Der Kandidat mit den meisten Stimmen im Wahlkreis kommt direkt in den Landtag. Mehr zur [Erststimme in diesem Heft](https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
-  - text: Mit deiner **Erststimme** wählst du den Direktkandidaten in deinem Wahlkreis. Aus jedem Wahlkreis kommt die Person mit den meisten Stimmen direkt in den Landtag. Mehr zur [Erststimme in diesem Heft](https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
+  - text: Mit deiner **Erststimme** wählst du den Kandidaten deines Wahlkreises. Der Kandidat mit den meisten Stimmen im Wahlkreis kommt direkt in den Landtag. Mehr zur [Erststimme in diesem Heft](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
+  - text: Mit deiner **Erststimme** wählst du den Direktkandidaten in deinem Wahlkreis. Aus jedem Wahlkreis kommt die Person mit den meisten Stimmen direkt in den Landtag. Mehr zur [Erststimme in diesem Heft](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
   utter_faq/zweitstimme:
-  - text: Mit der **Zweitstimme** wählst du eine Partei. Damit bestimmst du mit, wie viele Plätze eine Partei im Landtag bekommt. Mehr zur [Zweitstimme in diesem Heft](https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
-  - text: Du wählst mit deiner **Zweitstimme** eine Partei. So entscheiden Wähler, wie viele Plätze eine Partei im Landtag bekommt. Mehr zur [Zweitstimme in diesem Heft](https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
+  - text: Mit der **Zweitstimme** wählst du eine Partei. Damit bestimmst du mit, wie viele Plätze eine Partei im Landtag bekommt. Mehr zur [Zweitstimme in diesem Heft](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
+  - text: Du wählst mit deiner **Zweitstimme** eine Partei. So entscheiden Wähler, wie viele Plätze eine Partei im Landtag bekommt. Mehr zur [Zweitstimme in diesem Heft](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
   utter_faq/koalition:
   - text: Eine **Koalition** ist ein Bündnis oder eine Verabredung von mehreren Parteien. Sie wollen zusammenarbeiten, um mehr als die Hälfte der Stimmen im Landtag zu haben. Sie können dann Entscheidungen treffen und Abstimmungen gewinnen.
   - text: Parteien schließen sich zusammen und bilden eine **Koalition**. Sie haben dann eine Mehrheit an Stimmen bei Abstimmungen. So können sie den politischen Weg bestimmen.
@@ -281,10 +281,10 @@ responses:
   - buttons:
     - payload: /wahllokal
       title: Wo ist mein Wahllokal?
-    text: Möchtest du im Wahllokal wählen? Dann gehe am Wahltag dorthin. Die Adresse steht auf deiner Einladungskarte. Nimm deinen Personalausweis oder Reisepass mit. Im Wahllokal sitzen Wahlhelfer, die dir gerne alles erklären. Die Wahlhelfer geben dir deinen Stimmzettel. Mit dem Stimmzettel gehst du in die Wahlkabine und wählst. In der linken Spalte wählst du einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach faltest du den Stimmzettel. Nun gehst du wieder zu den Wahlhelfern und wirfst deinen Stimmzettel dort in die Wahlurne. Mehr Informationen dazu findest du [hier](https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)
+    text: Möchtest du im Wahllokal wählen? Dann gehe am Wahltag dorthin. Die Adresse steht auf deiner Einladungskarte. Nimm deinen Personalausweis oder Reisepass mit. Im Wahllokal sitzen Wahlhelfer, die dir gerne alles erklären. Die Wahlhelfer geben dir deinen Stimmzettel. Mit dem Stimmzettel gehst du in die Wahlkabine und wählst. In der linken Spalte wählst du einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach faltest du den Stimmzettel. Nun gehst du wieder zu den Wahlhelfern und wirfst deinen Stimmzettel dort in die Wahlurne. Mehr Informationen dazu findest du [hier](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)
   utter_faq/briefwahl:
-  - text: Manche Wähler können nicht zum Wahllokal. Zum Beispiel wenn sie am Wahltag im Urlaub sind, einen Termin haben oder weil sie krank sind. Dafür gibt es die Briefwahl. Dann können sie vor dem Wahltag wählen. Die Briefwahl kannst du mit deiner Wahlbenachrichtigung bis zum 13. Mai beantragen. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Dann kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Informationen dazu findest du [hier](https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)
-  - text: 'Möchtest du zu Hause wählen, dann musst du die Briefwahl bis zum 13. Mai beantragen. Diesen Antrag findest du in deiner Wahlbenachrichtigung. Er heißt: Wahlschein-Antrag. du bekommst die Wahlzettel zugeschickt. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Nun kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Informationen dazu findest du [hier](https://alfacms.se-labor.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)'
+  - text: Manche Wähler können nicht zum Wahllokal. Zum Beispiel wenn sie am Wahltag im Urlaub sind, einen Termin haben oder weil sie krank sind. Dafür gibt es die Briefwahl. Dann können sie vor dem Wahltag wählen. Die Briefwahl kannst du mit deiner Wahlbenachrichtigung bis zum 13. Mai beantragen. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Dann kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Informationen dazu findest du [hier](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)
+  - text: 'Möchtest du zu Hause wählen, dann musst du die Briefwahl bis zum 13. Mai beantragen. Diesen Antrag findest du in deiner Wahlbenachrichtigung. Er heißt: Wahlschein-Antrag. du bekommst die Wahlzettel zugeschickt. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Nun kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Informationen dazu findest du [hier](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)'
   utter_faq/fuenfProzentHuerde:
   - text: Je mehr Parteien im Landtag sind, desto schwerer einigen sich die Abgeordneten auf Entscheidungen. Daher gibt es die **5%-Hürde**. Wenn eine Partei weniger als 5% der Zweitstimmen erhält, kommt sie nicht in den Landtag. Anders ausgedrückt muss eine Partei mindestens jeden zwanzigsten Wähler überzeugen, um in den Landtag zu kommen. Falls dich eine dieser kleinen Parteien überzeugt, unterstütze sie mit deiner Stimme.
   utter_faq/opposition:
