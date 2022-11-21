@@ -1,4 +1,4 @@
-version: '2.0'
+version: '3.1'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -26,15 +26,21 @@ slots:
   polling_num:
     type: text
     influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: nummer
   polling_city:
     type: text
     influence_conversation: true
-  requested_slot:
-    type: unfeaturized
-    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: stadt
   name:
     type: text
     influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: name
 responses:
   utter_greet:
   - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
@@ -360,9 +366,5 @@ actions:
 forms:
   simple_polling_form:
     required_slots:
-      polling_city:
-      - entity: stadt
-        type: from_entity
-      polling_num:
-      - entity: nummer
-        type: from_entity
+    - stadt
+    - nummer

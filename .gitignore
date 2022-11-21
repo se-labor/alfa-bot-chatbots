@@ -1,6 +1,7 @@
 # Ignore folders
 venv/
-
+.rasa
+models/
 # Ignore visible files
 
 # Ignore hidden files
