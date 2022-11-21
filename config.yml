@@ -21,10 +21,14 @@ pipeline:
    - name: EntitySynonymMapper
    - name: ResponseSelector
      epochs: 100
-# FAQ ResponseSelector
+# Generic vote information Response Selector
    - name: ResponseSelector
      epochs: 100
-     retrieval_intent: faq
+     retrieval_intent: gvi
+# Election specific questions Response Selector
+   - name: ResponseSelector
+     epochs: 100
+     retrieval_intent: esq
 # Chitchat ResponseSelector
    - name: ResponseSelector
      epochs: 100

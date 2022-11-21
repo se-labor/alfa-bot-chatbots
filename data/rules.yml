@@ -6,7 +6,12 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
-  - action: utter_faq/themen
+  - action: utter_themen
+
+- rule: Show contact
+  steps:
+    - intent: kontakt
+    - action: utter_kontakt
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
@@ -18,10 +23,15 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: respond to FAQs
+- rule: respond to general questions
   steps:
-    - intent: faq
-    - action: utter_faq
+    - intent: gvi
+    - action: utter_gvi
+
+- rule: respond to specific questions
+  steps:
+    - intent: esq
+    - action: utter_esq
 
 - rule: respond to chitchat
   steps:
