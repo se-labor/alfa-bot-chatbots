@@ -223,3 +223,29 @@ bei laufendem rasa x über `http://localhost:5005/webhooks/rest/webhook` per JSO
 }
 ```
 pypi-dotenv: https://pypi.org/project/python-dotenv/
+
+### Chatroom zur einfachen lokalen Probe des Chatbots
+
+```html
+<head>
+    <link rel="stylesheet" href="https://cdn.statically.io/gh/weberi/chatroom/master/dist/Chatroom.css" />
+</head>
+<body>
+    <div class="chat-container"></div>
+    <script src="https://cdn.statically.io/gh/weberi/chatroom/master/dist/Chatroom.js"></script>
+    <script type="text/javascript">
+    var chatroom = new window.Chatroom({
+        host: "http://localhost:5005",
+        title: "Chat with a bot",
+        container: document.querySelector(".chat-container"),
+        welcomeMessage: "Hallo!",
+        speechRecognition: "de-DE",
+        voiceLang: "de-DE"
+    });
+    chatroom.openChat();
+    </script>
+</body>
+```
+Um den Chatroom nutzen zu können, muss rasa als Server gestartet werden:
+
+`rasa run --port 5005 --enable-api --cors "*"`

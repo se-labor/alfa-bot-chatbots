@@ -1,20 +1,23 @@
-# Extend the official Rasa SDK image
-FROM rasa/rasa-sdk:2.6.0
+# Generate a custom rasa docker container
+# Start from python 3.8 environment
+FROM python:3.8-slim
 
-# Use subdirectory as working directory
-WORKDIR /app
-
-# Copy any additional custom requirements, if necessary (uncomment next line)
-COPY actions/requirements-actions.txt ./
-
-# Change back to root user to install dependencies
 USER root
+# Install Rasa version 3.2.8
+RUN /usr/local/bin/python3 -m pip install --upgrade pip
+RUN python -m pip install rasa==3.2.8
 
-# Install extra requirements for actions code, if necessary (uncomment next line)
-RUN pip install -r requirements-actions.txt
+WORKDIR /app
+ENV HOME=/app
 
-# Copy actions folder to working directory
-COPY ./actions /app/actions
+COPY . .
 
-# By best practices, don't run the code with root user
+# Set User to run, don't run as root
+RUN chgrp -R 0 /app && chmod -R g=u /app && chmod o+wr /app
 USER 1001
+
+# Set entrypoint for interactive shells
+ENTRYPOINT ["rasa"]
+
+# command to run when the container is called to run
+CMD ["run", "--enable-api", "--port", "5005"]
