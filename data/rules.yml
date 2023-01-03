@@ -23,15 +23,15 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
+- rule: Tell a joke
+  steps:
+    - intent: joke
+    - action: action_tell_joke
+
 - rule: respond to general questions
   steps:
-    - intent: gvi
-    - action: utter_gvi
-
-- rule: respond to specific questions
-  steps:
-    - intent: esq
-    - action: utter_esq
+    - intent: gen
+    - action: utter_gen
 
 - rule: respond to chitchat
   steps:
@@ -53,28 +53,48 @@ rules:
     - intent: testintent
     - action: action_test_action
 
-- rule: Activate pollingstation form
-  steps:
-    - intent: wahllokal
-    - action: simple_polling_form
-    - active_loop: simple_polling_form
 
-- rule: Submit polling form
+#- rule: interrupt form
+#  steps:
+#    - intent: interrupt
+#    - action: action_deactivate_loop
+#    - active_loop: null
+#    - slot_was_set:
+#        - requested_slot: null
+#    - action: action_clear_slots
+#    - action: utter_interruption
+
+- rule: Activate as_than_form
+  steps:
+    - intent: compare_as_than_test_start
+ #   - action: utter_test_than
+    - action: as_than_form
+    - active_loop: as_than_form
+
+- rule: Submit as_than_form
   condition:
-    - active_loop: simple_polling_form
+    - active_loop: as_than_form
   steps:
-    - action: simple_polling_form
+    - action: as_than_form
     - active_loop: null
     - slot_was_set:
         - requested_slot: null
-    - action: action_tell_pollingstation
+    - action: utter_test_success
+    - action: action_clear_as_than
 
-- rule: interrupt form
+- rule: Activate apparently_seemingly_form
   steps:
-    - intent: interrupt
-    - action: action_deactivate_loop
+    - action: apparently_seemingly_form
+    - active_loop: apparently_seemingly_form
+
+- rule: Submit apparently_seemingly_form
+  condition:
+    - active_loop: apparently_seemingly_form
+  steps:
+    - action: apparently_seemingly_form
     - active_loop: null
     - slot_was_set:
         - requested_slot: null
-    - action: action_clear_slots
-    - action: utter_interruption
+    - action: utter_success_apparently_seemingly
+    - action: action_clear_seemingly_apparently
+    - action: action_clear_as_than
