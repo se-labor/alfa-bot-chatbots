@@ -325,6 +325,55 @@ nlu:
     - Nazi
     - Nazis
     - alle sind doof
+- intent: start_survey
+  examples: |
+    - Ich möchte die Umfrage starten
+    - Umfrage starten
+    - Bitte die Umfrage starten
+    - Kann ich mit der Befragung anfangen
+    - App bewerten
+    - Bewerten
+    - Ich möchte die Befragung starten
+    - Befragung starten
+    - Ich möchte an der Befragung teilnehmen
+- intent: lot_number
+  examples: |
+    - Meine Teilnehmernummer lautet [123456](lot number)
+    - Meine Nummer ist [59427](lot_number)
+    - Das ist [94835](lot_number)
+    - Meine Nummer lautet [53757](lot_number)
+    - Meine Nummer lautet [007](lot_number)
+    - Nummer [96123](lot_number)
+    - [53757](lot_number)
+    - [48143](lot_number)
+    - [48341](lot_number)
+    - [48565](lot_number)
+    - [911](lot_number)
+    - [1092](lot_number)
+    - [1126](lot_number)
+    - [1263](lot_number)
+    - [1518](lot_number)
+    - [1645](lot_number)
+    - [1931](lot_number)
+    - [1932](lot_number)
+    - [2063](lot_number)
+    - [2147](lot_number)
+    - [2656](lot_number)
+    - [3094](lot_number)
+    - [3310](lot_number)
+    - [3349](lot_number)
+    - [3507](lot_number)
+    - [4098](lot_number)
+    - [4297](lot_number)
+    - [4667](lot_number)
+    - [4935](lot_number)
+    - [5010](lot_number)
+    - [5025](lot_number)
+    - [5050](lot_number)
+    - [5299](lot_number)
+    - [5320](lot_number)
+    - [5325](lot_number)
+    - [5382](lot_number)
 - intent: compare_as_than
   examples: |
     - Wie vergleiche ich?
@@ -333,6 +382,8 @@ nlu:
     - Wann wie, wann als?
     - Womit sage ich, dass etwas gleich ist?
     - Wie sage ich, dass etwas ungleich ist?
+    - vergleich als
+    - als
 - intent: compare_as_than_test_start
   examples: |
     - start Test als-wie-Vergleich
@@ -347,3 +398,6 @@ nlu:
     - scheinbar
     - Vergleich scheinbar
     - vergleich scheinbar
+- intent: chitchat
+  examples: |
+    - wie

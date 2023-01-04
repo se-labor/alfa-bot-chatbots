@@ -277,3 +277,230 @@ Vielleicht auch hilfreich: RasaLit
 Um den Chatroom nutzen zu können, muss rasa als Server gestartet werden:
 
 `rasa run --port 5005 --enable-api --cors "*"`
+
+### Bot-Bestandteile für Befragung
+
+#### Intents
+````yaml
+Intents:
+- lot_number
+- start_survey
+````
+#### Entities
+````yaml
+entities:
+- lot_number
+````
+
+#### Slots
+````yaml
+lot_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: lot_number
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: lot_number
+  helpful:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: helpful
+  smartphone:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: smartphone
+  need_help:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: need_help
+  read_answers:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: read_answers
+  understand_answers:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: understand_answers
+  critic_pos:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: critic_pos
+  critic_neg:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: critic_neg
+  learn_with_bot:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: learn_with_bot
+  learn_why:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: learn_why
+  learn_not:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: learn_not
+````
+#### Responses
+```yaml
+responses:
+  utter_ask_lot_number:
+  - text: 'Ok, du möchtest an der Befragung teilnehmen. Nenne mir dafür bitte eine Teilnahme-Nummer:'
+  utter_ask_helpful:
+  - buttons:
+      - payload: Sehr hilfreich
+        title: Sehr hilfreich
+      - payload: Hilfreich
+        title: Hilfreich
+      - payload: Geht so
+        title: Geht so
+      - payload: Nicht hilfreich
+        title: Nicht hilfreich
+      - payload: Unbrauchbar
+        title: Unbrauchbar
+    text: Wie hilfreich fandest du meine Antworten?
+  utter_ask_understand_answers:
+  - buttons:
+      - payload: Ja, alles gut verstanden
+        title: Ja, alles gut verstanden
+      - payload: Ja, das meiste verstanden
+        title: Ja, das meiste verstanden
+      - payload: Einiges nicht verstanden
+        title: Einiges nicht verstanden
+      - payload: Viele Antworten zu schwer
+        title: Viele Antworten zu schwer
+    text: Hast du meine Antworten gut verstanden?
+  utter_ask_smartphone:
+  - buttons:
+      - payload: Ja
+        title: Ja
+      - payload: Nein
+        title: Nein
+    text: Hast du ein eigenes Smartphone?
+  utter_ask_need_help:
+  - buttons:
+      - payload: Ja
+        title: Ja
+      - payload: Ja, aber nur am Anfang
+        title: Ja, aber nur am Anfang
+      - payload: Nein, ich konnte alles alleine
+        title: Nein, ich konnte alles alleine
+    text: Hast du Hilfe bei der Arbeit mit dem Chatbot benötigt?
+  utter_ask_read_answers:
+  - buttons:
+      - payload: Alles selbst gelesen
+        title: Alles selbst gelesen
+      - payload: teils gelesen, teils vorlesen lassen
+        title: teils gelesen, teils vorlesen lassen
+      - payload: Alles vorlesen lassen
+        title: Alles vorlesen lassen
+    text: Hast du meine Antworten selbst gelesen oder sie dir vorlesen lassen?
+  utter_ask_critic_pos:
+  - buttons:
+      - payload: Kein Kommentar
+        title: Kein Kommentar
+    text: Was hat dir an Lalo gut gefallen? Gib deine Antwort einfach unten ein.
+  utter_ask_critic_neg:
+  - buttons:
+      - payload: Kein Kommentar
+        title: Kein Kommentar
+    text: Gibt es auch etwas, das wir besser machen sollten? Gib deine Antwort einfach unten ein.
+  utter_ask_learn_with_bot:
+    - buttons:
+        - payload: Ja, im Kurs
+          title: Ja, in einem Kurs
+        - payload: Ja, Kurs und Alleine
+          title: Ja, in einem Kurs und Alleine
+        - payload: Nein, eher nicht
+          title: Nein, eher nicht
+      text: Könntest du dir vorstellen, mit einer App wie Lalo zu lernen?
+  utter_ask_learn_why:
+    - buttons:
+        - payload: Kein Kommentar
+          title: Kein Kommentar
+      text: Welchen Vorteil siehst du in einem Chatbot?
+  utter_ask_learn_not:
+    - buttons:
+       - payload: Kein Kommentar
+         title: Kein Kommentar
+      text: Warum würdest du nicht mit einem Chatbot lernen wollen?
+  utter_submit_survey:
+  - text: Super, ich habe alles. Danke, dass du uns dabei hilfst, Lalo zu verbessern!
+```
+#### Actions
+```yaml
+actions:
+- action_submit_survey
+ utter_ask_learn_with_bot
+- utter_ask_learn_why
+- utter_ask_learn_not
+- utter_ask_smartphone
+- utter_ask_need_help
+- utter_ask_read_answers
+- utter_ask_understand_answers
+- utter_ask_critic_pos
+- utter_ask_critic_neg
+- utter_submit_survey
+- validate_simple_survey_form
+```
+
+#### Forms
+````yaml
+forms:
+  simple_survey_form:
+    required_slots:
+    - lot_number
+    - smartphone
+    - need_help
+    - read_answers
+    - understand_answers
+    - helpful
+    - learn_with_bot
+    - learn_why
+    - learn_not
+    - critic_pos
+    - critic_neg
+````

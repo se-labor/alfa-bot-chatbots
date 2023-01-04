@@ -64,10 +64,26 @@ rules:
 #    - action: action_clear_slots
 #    - action: utter_interruption
 
+# ALFA-Bot survey Form
+- rule: Activate simple survey form
+  steps:
+    - intent: start_survey
+    - action: simple_survey_form
+    - active_loop: simple_survey_form
+
+- rule: Submit simple survey
+  condition:
+    - active_loop: simple_survey_form
+  steps:
+    - action: simple_survey_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: action_submit_survey
+
+# Forms for seit / seid
 - rule: Activate as_than_form
   steps:
-    - intent: compare_as_than_test_start
- #   - action: utter_test_than
     - action: as_than_form
     - active_loop: as_than_form
 
@@ -82,6 +98,7 @@ rules:
     - action: utter_test_success
     - action: action_clear_as_than
 
+# Forms for scheinbar / anscheinend
 - rule: Activate apparently_seemingly_form
   steps:
     - action: apparently_seemingly_form
@@ -97,4 +114,3 @@ rules:
         - requested_slot: null
     - action: utter_success_apparently_seemingly
     - action: action_clear_seemingly_apparently
-    - action: action_clear_as_than

@@ -1,15 +1,44 @@
 version: "3.1"
 
 stories:
-  - story: compare_as_than_happy
+
+# Stories als / wie
+# --------------------------------------------
+  - story: compare_as_than_long
+    steps:
+    - intent: compare_as_than
+    - action: utter_compare_as_than
+    - intent: deny
+    - action: utter_compare_as
+    - or:
+        - intent: affirm
+        - intent: go_on
+    - action: utter_compare_than
+    - or:
+        - intent: affirm
+        - intent: go_on
+    - action: as_than_form
+    - active_loop: as_than_form
+
+  - story: compare_as_than_short
     steps:
       - intent: compare_as_than
       - action: utter_compare_as_than
-      - intent: deny
-      - action: utter_compare_as
-      - intent: affirm
-      - action: utter_compare_than
+      - intent: try
+      - action: as_than_form
+      - active_loop: as_than_form
 
+  - story: compare_as_than_no
+    steps:
+      - intent: compare_as_than
+      - action: utter_compare_as_than
+      - intent: affirm
+      - action: utter_anything_else
+      - action: utter_themen
+# --------------------------------------------
+
+# Stories anscheinend / scheinbar
+# --------------------------------------------
   - story: apparently_seemingly_long
     steps:
     - intent: compare_seemingly_apparently
@@ -41,3 +70,4 @@ stories:
     - intent: affirm
     - action: utter_anything_else
     - action: utter_themen
+# --------------------------------------------

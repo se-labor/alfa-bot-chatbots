@@ -28,12 +28,104 @@ intents:
 - out_of_scope
 - testintent
 - try
+- start_survey
+- lot_number
 entities:
+- lot_number
 - as
 - than
 - apparently
 - seemingly
 slots:
+  lot_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: lot_number
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: lot_number
+  helpful:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: helpful
+  smartphone:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: smartphone
+  need_help:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: need_help
+  read_answers:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: read_answers
+  understand_answers:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: understand_answers
+  critic_pos:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: critic_pos
+  critic_neg:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: simple_survey_form
+            requested_slot: critic_neg
+  learn_with_bot:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: learn_with_bot
+  learn_why:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: learn_why
+  learn_not:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: learn_not
   as:
     type: text
     influence_conversation: true
@@ -67,6 +159,88 @@ slots:
       - active_loop: apparently_seemingly_form
         requested_slot: seemingly
 responses:
+  utter_ask_lot_number:
+    - text: 'Ok, du möchtest an der Befragung teilnehmen. Nenne mir dafür bitte eine Teilnahme-Nummer:'
+  utter_ask_helpful:
+    - buttons:
+        - payload: Sehr hilfreich
+          title: Sehr hilfreich
+        - payload: Hilfreich
+          title: Hilfreich
+        - payload: Geht so
+          title: Geht so
+        - payload: Nicht hilfreich
+          title: Nicht hilfreich
+        - payload: Unbrauchbar
+          title: Unbrauchbar
+      text: Wie hilfreich fandest du meine Antworten?
+  utter_ask_understand_answers:
+    - buttons:
+        - payload: Ja, alles gut verstanden
+          title: Ja, alles gut verstanden
+        - payload: Ja, das meiste verstanden
+          title: Ja, das meiste verstanden
+        - payload: Einiges nicht verstanden
+          title: Einiges nicht verstanden
+        - payload: Viele Antworten zu schwer
+          title: Viele Antworten zu schwer
+      text: Hast du meine Antworten gut verstanden?
+  utter_ask_smartphone:
+    - buttons:
+        - payload: Ja
+          title: Ja
+        - payload: Nein
+          title: Nein
+      text: Hast du ein eigenes Smartphone?
+  utter_ask_need_help:
+    - buttons:
+        - payload: Ja
+          title: Ja
+        - payload: Ja, aber nur am Anfang
+          title: Ja, aber nur am Anfang
+        - payload: Nein, ich konnte alles alleine
+          title: Nein, ich konnte alles alleine
+      text: Hast du Hilfe bei der Arbeit mit dem Chatbot benötigt?
+  utter_ask_read_answers:
+    - buttons:
+        - payload: Alles selbst gelesen
+          title: Alles selbst gelesen
+        - payload: teils gelesen, teils vorlesen lassen
+          title: teils gelesen, teils vorlesen lassen
+        - payload: Alles vorlesen lassen
+          title: Alles vorlesen lassen
+      text: Hast du meine Antworten selbst gelesen oder sie dir vorlesen lassen?
+  utter_ask_critic_pos:
+    - buttons:
+        - payload: Kein Kommentar
+          title: Kein Kommentar
+      text: Was hat dir an Lalo gut gefallen? Gib deine Antwort einfach unten ein.
+  utter_ask_critic_neg:
+    - buttons:
+        - payload: Kein Kommentar
+          title: Kein Kommentar
+      text: Gibt es auch etwas, das wir besser machen sollten? Gib deine Antwort einfach unten ein.
+  utter_ask_learn_with_bot:
+    - buttons:
+        - payload: Ja, im Kurs
+          title: Ja, in einem Kurs
+        - payload: Ja, Kurs und Alleine
+          title: Ja, in einem Kurs und Alleine
+        - payload: Nein, eher nicht
+          title: Nein, eher nicht
+      text: Könntest du dir vorstellen, mit einer App wie Lalo zu lernen?
+  utter_ask_learn_why:
+    - buttons:
+        - payload: Kein Kommentar
+          title: Kein Kommentar
+      text: Welchen Vorteil siehst du in einem Chatbot?
+  utter_ask_learn_not:
+    - buttons:
+        - payload: Kein Kommentar
+          title: Kein Kommentar
+      text: Warum würdest du nicht mit einem Chatbot lernen wollen?
+  utter_submit_survey:
+    - text: Super, ich habe alles. Danke, dass du uns dabei hilfst, Lalo zu verbessern!
   utter_greet:
   - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
     text: Willkommen zum Chat. Frage mich gerne, was du über Wahlen wissen möchtest. Tippe auf den Lautsprecher, damit ich dir die Nachricht vorlese.
@@ -86,15 +260,19 @@ responses:
   - text: Ok. Falls ich dir anders helfen kann, frage mich gerne danach.
   utter_themen:
   - buttons:
-    - payload: Wörter zum Verwechseln
-      title: Wörter zum Verwechseln
+    - payload: /compare_as_than
+      title: Unterschied Als / Wie
+    - paylaod: /compare_seemingly_apparently
+      title: Unterschied Scheinbar / Anscheinend
     text: Hier sind Beispiele, was ich dir zeigen kann.
   utter_compare_as_than:
   - buttons:
-    - payload: /compare_as_than_test_start
-      title: Ja
     - payload: /deny
       title: Nein, zeig es mir
+    - payload: Ausprobieren
+      title: Ausprobieren
+    - payload: /affirm
+      title: Ja
     text: Du kennst bestimmt die Wörter **WIE** und **ALS**? Mit beiden Wörtern vergleicht man etwas. Aber wann verwendet man welches Wort? Weißt du es?
   utter_compare_as:
   - buttons:
@@ -104,11 +282,11 @@ responses:
     image: https://www.alfa-bot.de/wp-content/uploads/2022/12/so_gross_wie.png
   utter_compare_than:
   - buttons:
-    - payload: /compare_as_than_test_start
+    - payload: /go_on
       title: Weiter
     text: 'Nimm **als**, wenn du sagen willst, dass etwas *ungleich* ist. \n Beispiel: "Ich bin größer als ein Rasenmäher.'
-    image: http://www.alfa-bot.de/wp-content/uploads/2022/12/groesser_als.png
-  utter_test_as:
+    image: https://www.alfa-bot.de/wp-content/uploads/2022/12/groesser_als.png
+  utter_test_as_wrong:
   - buttons:
     - payload: wie
       title: wie
@@ -122,7 +300,7 @@ responses:
     - payload: als
       title: als
     text: OK, probiere es mal selbst. Welches Wort musst du nehmen? \n "Meine Mutter ist älter ___ ich."
-  utter_test_than:
+  utter_test_than_wrong:
   - buttons:
     - payload: wie
       title: wie
@@ -217,7 +395,33 @@ actions:
 - utter_themen
 - validate_apparently_seemingly_form
 - validate_as_than_form
+- utter_ask_lot_number
+- utter_ask_helpful
+- utter_ask_learn_with_bot
+- utter_ask_learn_why
+- utter_ask_learn_not
+- utter_ask_smartphone
+- utter_ask_need_help
+- utter_ask_read_answers
+- utter_ask_understand_answers
+- utter_ask_critic_pos
+- utter_ask_critic_neg
+- action_submit_survey
+- action_ask_google
 forms:
+  simple_survey_form:
+    required_slots:
+      - lot_number
+      - smartphone
+      - need_help
+      - read_answers
+      - understand_answers
+      - helpful
+      - learn_with_bot
+      - learn_why
+      - learn_not
+      - critic_pos
+      - critic_neg
   as_than_form:
     required_slots:
     - as
