@@ -374,7 +374,7 @@ nlu:
     - [5320](lot_number)
     - [5325](lot_number)
     - [5382](lot_number)
-- intent: compare_as_than
+- intent: enter_as_like
   examples: |
     - Wie vergleiche ich?
     - Wann verwende ich wie?
@@ -384,10 +384,7 @@ nlu:
     - Wie sage ich, dass etwas ungleich ist?
     - vergleich als
     - als
-- intent: compare_as_than_test_start
-  examples: |
-    - start Test als-wie-Vergleich
-- intent: compare_seemingly_apparently
+- intent: enter_seemingly_apparently
   examples: |
     - Was ist der Unterschied zwischen anscheinend und scheinbar?
     - Unterschied anscheinend und scheinbar
@@ -398,6 +395,20 @@ nlu:
     - scheinbar
     - Vergleich scheinbar
     - vergleich scheinbar
+- intent: enter_same
+  examples: |
+    - Was ist der Unterschied zwischen dasselbe und das gleiche?
+    - Dassselbe
+    - Das gleiche
+    - Vergleich derselbe
+    - dieselbe
+    - Vergleich dasselbe
+    - vergleich das gleiche
+    - vergleiche dasselbe
+    - Was ist Unterschied dieselbe und die gleiche?
+    - Kennst du den Unterschied zwischen dasselbe und das Gleiche?
+    - Wann sagt man das gleiche und wann dasselbe?
+    - Unterschied dasselbe
 - intent: chitchat
   examples: |
     - wie

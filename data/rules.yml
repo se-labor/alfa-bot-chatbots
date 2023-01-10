@@ -82,21 +82,21 @@ rules:
     - action: action_submit_survey
 
 # Forms for seit / seid
-- rule: Activate as_than_form
+- rule: Activate as_like_form
   steps:
-    - action: as_than_form
-    - active_loop: as_than_form
+    - action: as_like_form
+    - active_loop: as_like_form
 
-- rule: Submit as_than_form
+- rule: Submit as_like_form
   condition:
-    - active_loop: as_than_form
+    - active_loop: as_like_form
   steps:
-    - action: as_than_form
+    - action: as_like_form
     - active_loop: null
     - slot_was_set:
         - requested_slot: null
-    - action: utter_test_success
-    - action: action_clear_as_than
+    - action: utter_success_as_like
+    - action: action_clear_as_like
 
 # Forms for scheinbar / anscheinend
 - rule: Activate apparently_seemingly_form
@@ -114,3 +114,20 @@ rules:
         - requested_slot: null
     - action: utter_success_apparently_seemingly
     - action: action_clear_seemingly_apparently
+
+# Forms for dasselbe / das gleiche
+- rule: Activate dasselbe_gleiche_form
+  steps:
+    - action: dasselbe_gleiche_form
+    - active_loop: dasselbe_gleiche_form
+
+- rule: Submit dasselbe_gleiche_form
+  condition:
+    - active_loop: dasselbe_gleiche_form
+  steps:
+    - action: dasselbe_gleiche_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: utter_success_same
+    - action: action_clear_same

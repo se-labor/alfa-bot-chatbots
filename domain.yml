@@ -10,11 +10,12 @@ intents:
     used_entities:
     - apparently
     - as
+    - lot_number
     - seemingly
     - than
-- compare_as_than
-- compare_as_than_test_start
-- compare_seemingly_apparently
+- enter_as_like
+- enter_same
+- enter_seemingly_apparently
 - deny
 - gen:
     is_retrieval_intent: true
@@ -24,16 +25,16 @@ intents:
 - interrupt
 - joke
 - kontakt
+- lot_number
 - nlu_fallback
 - out_of_scope
+- start_survey
 - testintent
 - try
-- start_survey
-- lot_number
 entities:
 - lot_number
 - as
-- than
+- like
 - apparently
 - seemingly
 slots:
@@ -66,42 +67,42 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
-        conditions:
-          - active_loop: simple_survey_form
-            requested_slot: need_help
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: need_help
   read_answers:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
-        conditions:
-          - active_loop: simple_survey_form
-            requested_slot: read_answers
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: read_answers
   understand_answers:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
-        conditions:
-          - active_loop: simple_survey_form
-            requested_slot: understand_answers
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: understand_answers
   critic_pos:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
-        conditions:
-          - active_loop: simple_survey_form
-            requested_slot: critic_pos
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: critic_pos
   critic_neg:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_text
-        conditions:
-          - active_loop: simple_survey_form
-            requested_slot: critic_neg
+    - type: from_text
+      conditions:
+      - active_loop: simple_survey_form
+        requested_slot: critic_neg
   learn_with_bot:
     type: text
     influence_conversation: true
@@ -132,16 +133,16 @@ slots:
     mappings:
     - type: from_text
       conditions:
-      - active_loop: as_than_form
+      - active_loop: as_like_form
         requested_slot: as
-  than:
+  like:
     type: text
     influence_conversation: true
     mappings:
     - type: from_text
       conditions:
-      - active_loop: as_than_form
-        requested_slot: than
+      - active_loop: as_like_form
+        requested_slot: like
   apparently:
     type: text
     influence_conversation: true
@@ -158,92 +159,107 @@ slots:
       conditions:
       - active_loop: apparently_seemingly_form
         requested_slot: seemingly
+  dasselbe:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: dasselbe_gleiche_form
+        requested_slot: dasselbe
+  dasgleiche:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: dasselbe_gleiche_form
+        requested_slot: dasgleiche
 responses:
   utter_ask_lot_number:
-    - text: 'Ok, du möchtest an der Befragung teilnehmen. Nenne mir dafür bitte eine Teilnahme-Nummer:'
+  - text: 'Ok, du möchtest an der Befragung teilnehmen. Nenne mir dafür bitte eine Teilnahme-Nummer:'
   utter_ask_helpful:
-    - buttons:
-        - payload: Sehr hilfreich
-          title: Sehr hilfreich
-        - payload: Hilfreich
-          title: Hilfreich
-        - payload: Geht so
-          title: Geht so
-        - payload: Nicht hilfreich
-          title: Nicht hilfreich
-        - payload: Unbrauchbar
-          title: Unbrauchbar
-      text: Wie hilfreich fandest du meine Antworten?
+  - buttons:
+    - payload: Sehr hilfreich
+      title: Sehr hilfreich
+    - payload: Hilfreich
+      title: Hilfreich
+    - payload: Geht so
+      title: Geht so
+    - payload: Nicht hilfreich
+      title: Nicht hilfreich
+    - payload: Unbrauchbar
+      title: Unbrauchbar
+    text: Wie hilfreich fandest du meine Antworten?
   utter_ask_understand_answers:
-    - buttons:
-        - payload: Ja, alles gut verstanden
-          title: Ja, alles gut verstanden
-        - payload: Ja, das meiste verstanden
-          title: Ja, das meiste verstanden
-        - payload: Einiges nicht verstanden
-          title: Einiges nicht verstanden
-        - payload: Viele Antworten zu schwer
-          title: Viele Antworten zu schwer
-      text: Hast du meine Antworten gut verstanden?
+  - buttons:
+    - payload: Ja, alles gut verstanden
+      title: Ja, alles gut verstanden
+    - payload: Ja, das meiste verstanden
+      title: Ja, das meiste verstanden
+    - payload: Einiges nicht verstanden
+      title: Einiges nicht verstanden
+    - payload: Viele Antworten zu schwer
+      title: Viele Antworten zu schwer
+    text: Hast du meine Antworten gut verstanden?
   utter_ask_smartphone:
-    - buttons:
-        - payload: Ja
-          title: Ja
-        - payload: Nein
-          title: Nein
-      text: Hast du ein eigenes Smartphone?
+  - buttons:
+    - payload: Ja
+      title: Ja
+    - payload: Nein
+      title: Nein
+    text: Hast du ein eigenes Smartphone?
   utter_ask_need_help:
-    - buttons:
-        - payload: Ja
-          title: Ja
-        - payload: Ja, aber nur am Anfang
-          title: Ja, aber nur am Anfang
-        - payload: Nein, ich konnte alles alleine
-          title: Nein, ich konnte alles alleine
-      text: Hast du Hilfe bei der Arbeit mit dem Chatbot benötigt?
+  - buttons:
+    - payload: Ja
+      title: Ja
+    - payload: Ja, aber nur am Anfang
+      title: Ja, aber nur am Anfang
+    - payload: Nein, ich konnte alles alleine
+      title: Nein, ich konnte alles alleine
+    text: Hast du Hilfe bei der Arbeit mit dem Chatbot benötigt?
   utter_ask_read_answers:
-    - buttons:
-        - payload: Alles selbst gelesen
-          title: Alles selbst gelesen
-        - payload: teils gelesen, teils vorlesen lassen
-          title: teils gelesen, teils vorlesen lassen
-        - payload: Alles vorlesen lassen
-          title: Alles vorlesen lassen
-      text: Hast du meine Antworten selbst gelesen oder sie dir vorlesen lassen?
+  - buttons:
+    - payload: Alles selbst gelesen
+      title: Alles selbst gelesen
+    - payload: teils gelesen, teils vorlesen lassen
+      title: teils gelesen, teils vorlesen lassen
+    - payload: Alles vorlesen lassen
+      title: Alles vorlesen lassen
+    text: Hast du meine Antworten selbst gelesen oder sie dir vorlesen lassen?
   utter_ask_critic_pos:
-    - buttons:
-        - payload: Kein Kommentar
-          title: Kein Kommentar
-      text: Was hat dir an Lalo gut gefallen? Gib deine Antwort einfach unten ein.
+  - buttons:
+    - payload: Kein Kommentar
+      title: Kein Kommentar
+    text: Was hat dir an Lalo gut gefallen? Gib deine Antwort einfach unten ein.
   utter_ask_critic_neg:
-    - buttons:
-        - payload: Kein Kommentar
-          title: Kein Kommentar
-      text: Gibt es auch etwas, das wir besser machen sollten? Gib deine Antwort einfach unten ein.
+  - buttons:
+    - payload: Kein Kommentar
+      title: Kein Kommentar
+    text: Gibt es auch etwas, das wir besser machen sollten? Gib deine Antwort einfach unten ein.
   utter_ask_learn_with_bot:
-    - buttons:
-        - payload: Ja, im Kurs
-          title: Ja, in einem Kurs
-        - payload: Ja, Kurs und Alleine
-          title: Ja, in einem Kurs und Alleine
-        - payload: Nein, eher nicht
-          title: Nein, eher nicht
-      text: Könntest du dir vorstellen, mit einer App wie Lalo zu lernen?
+  - buttons:
+    - payload: Ja, im Kurs
+      title: Ja, in einem Kurs
+    - payload: Ja, Kurs und Alleine
+      title: Ja, in einem Kurs und Alleine
+    - payload: Nein, eher nicht
+      title: Nein, eher nicht
+    text: Könntest du dir vorstellen, mit einer App wie Lalo zu lernen?
   utter_ask_learn_why:
-    - buttons:
-        - payload: Kein Kommentar
-          title: Kein Kommentar
-      text: Welchen Vorteil siehst du in einem Chatbot?
+  - buttons:
+    - payload: Kein Kommentar
+      title: Kein Kommentar
+    text: Welchen Vorteil siehst du in einem Chatbot?
   utter_ask_learn_not:
-    - buttons:
-        - payload: Kein Kommentar
-          title: Kein Kommentar
-      text: Warum würdest du nicht mit einem Chatbot lernen wollen?
+  - buttons:
+    - payload: Kein Kommentar
+      title: Kein Kommentar
+    text: Warum würdest du nicht mit einem Chatbot lernen wollen?
   utter_submit_survey:
-    - text: Super, ich habe alles. Danke, dass du uns dabei hilfst, Lalo zu verbessern!
+  - text: Super, ich habe alles. Danke, dass du uns dabei hilfst, Lalo zu verbessern!
   utter_greet:
-  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
-    text: Willkommen zum Chat. Frage mich gerne, was du über Wahlen wissen möchtest. Tippe auf den Lautsprecher, damit ich dir die Nachricht vorlese.
+  - text: Willkommen zum Chat. Hier habe ich dir einige Lern-Häppchen vorbereitet. Tippe auf den Lautsprecher, damit ich dir die Nachricht vorlese.
   utter_goodbye:
   - text: Machs gut!
   - text: Bis zum nächsten Mal!
@@ -260,12 +276,12 @@ responses:
   - text: Ok. Falls ich dir anders helfen kann, frage mich gerne danach.
   utter_themen:
   - buttons:
-    - payload: /compare_as_than
+    - payload: /enter_as_like
       title: Unterschied Als / Wie
-    - paylaod: /compare_seemingly_apparently
+    - paylaod: /enter_seemingly_apparently
       title: Unterschied Scheinbar / Anscheinend
     text: Hier sind Beispiele, was ich dir zeigen kann.
-  utter_compare_as_than:
+  utter_enter_as_like:
   - buttons:
     - payload: /deny
       title: Nein, zeig es mir
@@ -274,49 +290,96 @@ responses:
     - payload: /affirm
       title: Ja
     text: Du kennst bestimmt die Wörter **WIE** und **ALS**? Mit beiden Wörtern vergleicht man etwas. Aber wann verwendet man welches Wort? Weißt du es?
-  utter_compare_as:
+  utter_explain_as:
   - buttons:
     - payload: /affirm
       title: Weiter
-    text: Nimm **wie**, wenn du sagen willst, dass etwas *gleich* ist. \n "Dieser Schrank ist so groß wie ich."
+    text: |
+      Nimm **wie**, wenn du sagen willst, dass etwas *gleich* ist.
+      "Dieser Schrank ist so groß wie ich."
     image: https://www.alfa-bot.de/wp-content/uploads/2022/12/so_gross_wie.png
-  utter_compare_than:
+  utter_explain_like:
   - buttons:
     - payload: /go_on
       title: Weiter
-    text: 'Nimm **als**, wenn du sagen willst, dass etwas *ungleich* ist. \n Beispiel: "Ich bin größer als ein Rasenmäher.'
+    text: |
+      Nimm **als**, wenn du sagen willst, dass etwas *ungleich* ist.
+      Beispiel: "Ich bin größer als ein Rasenmäher.
     image: https://www.alfa-bot.de/wp-content/uploads/2022/12/groesser_als.png
   utter_test_as_wrong:
-  - buttons:
-    - payload: wie
-      title: wie
-    - payload: als
-      title: als
-    text: Probiere es noch mal. Dieser Satz sagt, dass etwas *ungleich* ist. \n "Meine Mutter ist älter ___ ich."
+  - text: |
+      Probiere es noch mal. Dieser Satz sagt, dass etwas *ungleich* ist.
   utter_ask_as:
   - buttons:
     - payload: wie
       title: wie
     - payload: als
       title: als
-    text: OK, probiere es mal selbst. Welches Wort musst du nehmen? \n "Meine Mutter ist älter ___ ich."
-  utter_test_than_wrong:
+    text: |
+      Welches Wort musst du nehmen?
+      "Meine Mutter ist älter ___ ich."
+  utter_test_like_wrong:
+  - text: Versuche es noch mal. Dieser Satz sagt, dass etwas *gleich* ist.
+  utter_ask_like:
   - buttons:
     - payload: wie
       title: wie
     - payload: als
       title: als
-    text: Versuche es noch mal. Dieser Satz sagt, dass etwas *gleich* ist. \n "Meine Freundin hat das gleiche Hobby ___ ich."
-  utter_ask_than:
-  - buttons:
-    - payload: wie
-      title: wie
-    - payload: als
-      title: als
-    text: Und welches Wort sollte hier rein? \n "Meine Freundin hat das gleiche Hobby ___ ich."
-  utter_test_success:
+    text: |
+      Wlches Wort sollte hier rein?
+      "Meine Freundin hat das gleiche Hobby ___ ich."
+  utter_success_as_like:
   - text: Super, du hast es verstanden 🙂
-  utter_compare_seemingly_apparently:
+  utter_enter_same:
+  - buttons:
+    - payload: /deny
+      title: Nein, zeig es mir
+    - payload: Ausprobieren
+      title: Ausprobieren
+    - payload: /affirm
+      title: Ja, kenne ich schon
+    text: Die Wörter **DASSELBE** und **DAS GLEICHE** werden häufig verwechselt. Weißt du, wann man welches Wort verwendet? Ich erkläre es dir gerne.
+  utter_explain_dasselbe:
+  - buttons:
+    - payload: /go_on
+      title: Weiter
+    text: |
+      Nimm **dasselbe**, wenn du sagen möchtest, dass es eine Sache nur *einmal* gibt.
+      Beispiel: "Ich trage dasselbe Kleid, das ich bei deinem Geburtstag an hatte."
+  utter_explain_dasgleiche:
+  - buttons:
+    - payload: /go_on
+      title: Weiter
+    text: |
+      Nimm **das gleiche**, wenn du sagen möchtest, dass es eine Sache mehrmals gibt.
+      Beispiel: "Unsere Nachbarn fahren das gleiche Auto wie wir"
+  utter_ask_dasselbe:
+  - buttons:
+    - payload: dasselbe
+      title: dasselbe
+    - payload: das gleiche
+      title: das gleiche
+    text: |
+      Welches Wort fehlt in diesem Satz:
+      "Ich trage noch immer ___ Shirt wie gestern."
+  utter_ask_dasgleiche:
+  - buttons:
+    - payload: dasselbe
+      title: dasselbe
+    - payload: das gleiche
+      title: das gleiche
+    text: |
+      Was musst du hier einsetzen?
+      "Ich habe mir ___ Fahrrad gekauft, wie mein Nachbar."
+  utter_test_dasselbe_wrong:
+  - text: 'Versuche es nochmal: Vermutlich hat die Person dieses *eine* Shirt seit gestern nicht gewechselt.'
+  utter_test_dasgleiche_wrong:
+  - text: Nicht ganz. Da der Nachbar bereits ein Fahrrad gekauft hat, muss ich mir ein *weiteres* Exemplar gekauft haben.
+  utter_success_same:
+  - image: null
+    text: Super, du hast es raus. Natürlich gilt diese Lektion auch für die Wörter *derselbe / dieselbe* und *der gleiche / die gleiche*.
+  utter_enter_seemingly_apparently:
   - buttons:
     - payload: Nein, zeig es mir
       title: Nein, zeig es mir
@@ -324,109 +387,125 @@ responses:
       title: Ausprobieren
     - payload: Ja, kenne ich
       title: Ja, kenne ich
-    text: Im Alltag hörst du oft die Wörter **ANSCHEINEND** und **SCHEINBAR**. Vielen Menschen ist nicht bewusst, dass es einen Unterschied zwischen diesen Wörtern gibt. \n Kennst du den Unterschied?
+    text: |
+      Im Alltag hörst du oft die Wörter **ANSCHEINEND** und **SCHEINBAR**. Vielen Menschen ist nicht bewusst, dass es einen Unterschied zwischen diesen Wörtern gibt.
+      Kennst du den Unterschied?
   utter_explain_apparently:
   - buttons:
     - payload: Weiter
       title: Weiter
-    text: 'Nimm **anscheinend**, wenn du sagen willst, dass etwas vermutlich *wirklich so* ist, wie es zu sein scheint. Du könntest alternativ auch *vermutlich* oder *wahrscheinlich* nehmen. \n Beispiel: "Anscheinend ist der Tank leer."'
+    text: |
+      Nimm **anscheinend**, wenn du sagen willst, dass etwas vermutlich *wirklich so* ist, wie es zu sein scheint. Du könntest alternativ auch *vermutlich* oder *wahrscheinlich* nehmen.
+      Beispiel: "Anscheinend ist der Tank leer."
   utter_explain_seemingly:
   - buttons:
     - payload: Weiter
       title: Weiter
-    text: 'Nimm **scheinbar**, wenn du sagen willst, dass etwas nur so wirkt, aber *in Wahrheit nicht so* ist. Du könntest alternativ auch *angeblich* nehmen. \n Beispiel: "Mein Freund hat jetzt ein E-Bike. Scheinbar fährt er damit immer zur Arbeit."'
+    text: |
+      Nimm **scheinbar**, wenn du sagen willst, dass etwas nur so wirkt, aber *in Wahrheit nicht so* ist. Du könntest alternativ auch *angeblich* nehmen.
+      Beispiel: "Mein Freund hat jetzt ein E-Bike. Scheinbar fährt er damit immer zur Arbeit."
   utter_test_seemingly_wrong:
-  - buttons:
-    - payload: anscheinend
-      title: Anscheinend
-    - payload: scheinbar
-      title: Scheinbar
-    text: 'Wenn das Auto schon 300.000 km gefahren wäre, wäre der Preis *in Wirklichkeit nicht so* gut. Deshalb sagst du: "___ ist das ein gutes Angebot."'
+  - text: |
+      Wenn das Auto schon 300.000 km gefahren wäre, wäre der Preis *in Wirklichkeit nicht so* gut.
   utter_test_apparently_wrong:
-  - buttons:
-    - payload: anscheinend
-      title: Anscheinend
-    - payload: scheinbar
-      title: Scheinbar
-    text: Der Gast ist *tatsächlich so* überrascht von der hohen Rechnung. ___ wusste er nicht, dass Hummer immer ziemlich teuer ist.
+  - text: Der Gast ist *tatsächlich so* überrascht von der hohen Rechnung.
   utter_ask_seemingly:
   - buttons:
     - payload: anscheinend
       title: Anscheinend
     - payload: scheinbar
       title: Scheinbar
-    text: 'Welches Wort musst du einsetzen? \n Dir erzählt ein Bekannter von einem günstigen Gebrauchtwagen, den er sich kaufen will. Du bist skeptisch und antwortest: " ___ ist das ein gutes Angebot. Aber hast du geguckt, wie viele Kilometer, der schon gefahren ist?"'
+    text: |
+      Welches Wort musst du einsetzen?
+      Dir erzählt ein Bekannter von einem günstigen Gebrauchtwagen, den er sich kaufen will. Du bist skeptisch und antwortest: 
+      " ___ ist das ein gutes Angebot. Aber hast du geguckt, wie viele Kilometer, der schon gefahren ist?"
   utter_ask_apparently:
   - buttons:
     - payload: anscheinend
       title: Anscheinend
     - payload: scheinbar
       title: Scheinbar
-    text: Welches Wort musst du einsetzen? \n In einem Restaurant ist ein Gast überrascht von der hohen Rechnung. ___ wusste er nicht, wie teuer Hummer ist.
+    text: |
+      Welches Wort musst du einsetzen?
+      In einem Restaurant ist ein Gast überrascht von der hohen Rechnung. ___ wusste er nicht, wie teuer Hummer ist.
   utter_success_apparently_seemingly:
   - text: Top! Das ist wirklich schon eine knifflige Lektion gewesen.
 actions:
-- action_clear_as_than
+- action_ask_google
+- action_clear_as_like
+- action_clear_same
 - action_clear_seemingly_apparently
 - action_clear_slots
+- action_submit_survey
 - action_tell_joke
 - action_test_action
 - utter_anything_else
 - utter_ask_apparently
 - utter_ask_as
+- utter_ask_critic_neg
+- utter_ask_critic_pos
+- utter_ask_dasgleiche
+- utter_ask_dasselbe
+- utter_ask_helpful
+- utter_ask_learn_not
+- utter_ask_learn_why
+- utter_ask_learn_with_bot
+- utter_ask_lot_number
+- utter_ask_need_help
+- utter_ask_read_answers
 - utter_ask_seemingly
-- utter_ask_than
+- utter_ask_smartphone
+- utter_ask_like
+- utter_ask_understand_answers
 - utter_chitchat
-- utter_compare_as
-- utter_compare_as_than
-- utter_compare_seemingly_apparently
-- utter_compare_than
+- utter_explain_as
+- utter_enter_as_like
+- utter_enter_same
+- utter_enter_seemingly_apparently
+- utter_explain_than
 - utter_explain_apparently
+- utter_explain_dasgleiche
+- utter_explain_dasselbe
 - utter_explain_seemingly
 - utter_gen
 - utter_interruption
 - utter_kontakt
 - utter_success_apparently_seemingly
+- utter_success_same
 - utter_test_apparently_wrong
-- utter_test_as
+- utter_test_like_wrong
+- utter_test_dasgleiche_wrong
+- utter_test_dasselbe_wrong
 - utter_test_seemingly_wrong
-- utter_test_success
-- utter_test_than
+- utter_success_as_like
+- utter_test_as_wrong
 - utter_themen
 - validate_apparently_seemingly_form
-- validate_as_than_form
-- utter_ask_lot_number
-- utter_ask_helpful
-- utter_ask_learn_with_bot
-- utter_ask_learn_why
-- utter_ask_learn_not
-- utter_ask_smartphone
-- utter_ask_need_help
-- utter_ask_read_answers
-- utter_ask_understand_answers
-- utter_ask_critic_pos
-- utter_ask_critic_neg
-- action_submit_survey
-- action_ask_google
+- validate_as_like_form
+- validate_dasselbe_gleiche_form
 forms:
   simple_survey_form:
     required_slots:
-      - lot_number
-      - smartphone
-      - need_help
-      - read_answers
-      - understand_answers
-      - helpful
-      - learn_with_bot
-      - learn_why
-      - learn_not
-      - critic_pos
-      - critic_neg
-  as_than_form:
+    - lot_number
+    - smartphone
+    - need_help
+    - read_answers
+    - understand_answers
+    - helpful
+    - learn_with_bot
+    - learn_why
+    - learn_not
+    - critic_pos
+    - critic_neg
+  as_like_form:
     required_slots:
     - as
-    - than
+    - like
   apparently_seemingly_form:
     required_slots:
     - seemingly
     - apparently
+  dasselbe_gleiche_form:
+    required_slots:
+    - dasselbe
+    - dasgleiche
