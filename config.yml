@@ -22,9 +22,9 @@ pipeline:
    - name: ResponseSelector
      epochs: 100
 # General Response Selector
-   - name: ResponseSelector
-     epochs: 100
-     retrieval_intent: gen
+#   - name: ResponseSelector
+#     epochs: 100
+#     retrieval_intent: gen
 # Chitchat ResponseSelector
    - name: ResponseSelector
      epochs: 100
