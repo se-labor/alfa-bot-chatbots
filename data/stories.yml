@@ -678,3 +678,10 @@ stories:
   - action: utter_anything_else
   - action: utter_themen
 # --------------------------------------------
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_get_random_words
+  - intent: random_similar_words
+  - action: action_get_random_words

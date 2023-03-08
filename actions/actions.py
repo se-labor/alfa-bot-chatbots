@@ -57,6 +57,15 @@ GAMES_START_DAY = 1
 polling_cities = ["Köln", "köln", "Koeln", "koeln", "cologne", "Cologne", "Kölln", "kölln", "K", "k",
                   "Münster", "münster", "Muenster", "muenster", "MS", "ms"]
 
+similarWords = {"Als | Wie": "/enter_as_like", "Launisch | Launig": "/enter_moody_witty", "Dasselbe | Das Gleiche": "/enter_same",
+                "Waage |Vage": "/enter_scale_vague", "Scheinbar | Anscheinend": "/enter_seemingly_apparently", "Seit | Seid": "/enter_since_be",
+                "Ein Paar | ein paar": "/enter_few_couple", "Saite | Seite": "/enter_string_page", "Gewähr | Gewehr": "/enter_warranty_rifle",
+                "Wieder | Wider": "/enter_again_against", "Seelisch | Selig": "/enter_mental_blessed", "Check | Scheck": "/enter_cheque_check", "Das | dass": "/enter_das_dass",
+                "Mehr | Meer": "/enter_more_sea", "Malen | Mahlen": "/enter_paint_grain", "Wart | Ward": "/enter_ward_were", "War | Wahr": "/enter_was_truth"}
+niceToKnow = {"Sicheres Passwort": "/enter_password", "Warum heißt es Silvester": "/enter_silvester", "Advent und Weihnachten": "/enter_christmas"}
+
+smart_nuggets = similarWords
+smart_nuggets.update(niceToKnow)
 
 # Helper class to create polling station objects with number and complete address and strings for bot answers
 class Pollingstation:
@@ -80,6 +89,16 @@ class Pollingstation:
 
 
 # Helper class for soccer games
+class QuickReplyButton:
+    def __init__(self, title: str, payload: str):
+        self.title = title
+        self.payload = payload
+
+    def getButton(self) -> dict:
+        button = {"title": self.title, "payload": self.payload}
+        return button
+
+
 class Game:
     def __init__(self, winner: str, looser: str, goals_winner: str, goals_looser: str, gameday: str):
         self.winner = winner
@@ -189,6 +208,18 @@ def randomise_praising_answer() -> str:
                       "Richtig ausgewählt", "Gut gewählt", "Deine Lösung ist richtig", "So ist es"]
     msg = random.choice(praise_answers)
     return msg
+
+
+# Getting random subset out of dictionary
+def randomSelection(pool: dict, size: int) -> list:
+    buttons = []
+    sample = dict(random.sample(pool.items(), size))
+    for key in sample:
+        qrButton = QuickReplyButton(key, sample[key])
+        print(qrButton.title + " | " +qrButton.payload)
+        buttons.append(qrButton.getButton())
+    print(buttons)
+    return buttons
 
 
 # Error-Printing
@@ -1079,7 +1110,7 @@ class StringPageForm(FormValidationAction):
             return {"page": None}
         dispatcher.utter_message(text=randomise_praising_answer())
         return {"page": slot_value}
-    
+
 
 # Validate Nugget string page
 class PaintGrainForm(FormValidationAction):
@@ -1115,7 +1146,7 @@ class PaintGrainForm(FormValidationAction):
             return {"grain": None}
         dispatcher.utter_message(text=randomise_praising_answer())
         return {"grain": slot_value}
-    
+
 
 # Validate Nugget cheque check
 class ChequeCheckForm(FormValidationAction):
@@ -1151,8 +1182,8 @@ class ChequeCheckForm(FormValidationAction):
             return {"check": None}
         dispatcher.utter_message(text=randomise_praising_answer())
         return {"check": slot_value}
-    
-    
+
+
 # Validate Nugget warranty rifle
 class WarrantyRifleForm(FormValidationAction):
     def name(self) -> Text:
@@ -1259,8 +1290,8 @@ class WasTruthForm(FormValidationAction):
             return {"truth": None}
         dispatcher.utter_message(text=randomise_praising_answer())
         return {"truth": slot_value}
-    
-    
+
+
 # Validate Nugget das / dass
 class DasDassForm(FormValidationAction):
     def name(self) -> Text:
@@ -1295,8 +1326,8 @@ class DasDassForm(FormValidationAction):
             return {"dass": None}
         dispatcher.utter_message(text=randomise_praising_answer())
         return {"dass": slot_value}
-    
-    
+
+
 # Validate Nugget was / were
 class WardWereForm(FormValidationAction):
     def name(self) -> Text:
@@ -1331,7 +1362,7 @@ class WardWereForm(FormValidationAction):
             return {"were": None}
         dispatcher.utter_message(text=randomise_praising_answer())
         return {"were": slot_value}
-    
+
 
 # Validate Nugget again / against
 class AgainAgainstForm(FormValidationAction):
@@ -1367,8 +1398,8 @@ class AgainAgainstForm(FormValidationAction):
             return {"against": None}
         dispatcher.utter_message(text=randomise_praising_answer())
         return {"against": slot_value}
-    
-  
+
+
 # Validate Nugget mental / blessed
 class MentalBlessedForm(FormValidationAction):
     def name(self) -> Text:
@@ -1440,6 +1471,7 @@ class MoreSeaForm(FormValidationAction):
         dispatcher.utter_message(text=randomise_praising_answer())
         return {"sea": slot_value}
 
+
 # Custom Action Code
 # ----------------------------------
 
@@ -1466,8 +1498,8 @@ class ActionClearSlots(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("polling_num", None), SlotSet("polling_city", None)]
-    
-    
+
+
 class ActionClearMoreSea(Action):
     def name(self) -> Text:
         return "action_clear_more_sea"
@@ -1486,7 +1518,7 @@ class ActionClearMentalBlessed(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("mental", None), SlotSet("blessed", None)]
-    
+
 
 class ActionClearAgainAgainst(Action):
     def name(self) -> Text:
@@ -1506,8 +1538,8 @@ class ActionClearWasTruth(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("was", None), SlotSet("truth", None)]
-    
-    
+
+
 class ActionClearWardWere(Action):
     def name(self) -> Text:
         return "action_clear_ward_were"
@@ -1516,8 +1548,8 @@ class ActionClearWardWere(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("ward", None), SlotSet("were", None)]
-    
-    
+
+
 class ActionClearDasDass(Action):
     def name(self) -> Text:
         return "action_clear_das_dass"
@@ -1526,7 +1558,7 @@ class ActionClearDasDass(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("das", None), SlotSet("dass", None)]
-    
+
 
 class ActionClearAsLike(Action):
     def name(self) -> Text:
@@ -1880,3 +1912,19 @@ class ActionTellRanking(Action):
             dispatcher.utter_message(text=msg)
 
         return [SlotSet("group", None)]
+
+
+# Select random subset of random nuggets
+class ActionGetRandomNuggets(Action):
+    def name(self) -> Text:
+        return "action_get_random_nuggets"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        randomButtons = 3
+        buttons = randomSelection(smart_nuggets, randomButtons)
+        buttons.append({"title": "Neue Auswahl", "payload": "/random_smart_nuggets"})
+        dispatcher.utter_message(text=f"Hier sind ein paar Vorschläge für kluge Häppchen", buttons=buttons)
+        # dispatcher.utter_message(response="utter_ask_other_teams")
+        return []

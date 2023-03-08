@@ -491,7 +491,7 @@ nlu:
     - Wie schreibt man mahlen?
     - Muss ich malen mit h schreiben?
 - intent: enter_more_sea
-  examples: | 
+  examples: |
     - Was ist der Unterschied zwischen mehr und Meer?
     - mehr meer
     - Wann schreibt man Meer mit h?
@@ -542,3 +542,8 @@ nlu:
     - Wann verwende ich seelisch und wann selig?
     - Gibt es einen Unterschied zwischen seelisch und selig?
     - Vergleich seelisch selig
+- intent: random_smart_nuggets
+  examples: |
+    - neue Auswahl ähnlicher Wörter
+    - neue ähnliche Wörter
+    - andere Auswahl an Worten

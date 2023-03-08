@@ -6,12 +6,17 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
-  - action: utter_themen
+  - action: action_get_random_nuggets
 
 - rule: Show contact
   steps:
     - intent: kontakt
     - action: utter_kontakt
+
+- rule: Select random smart nuggets
+  steps:
+    - intent: random_smart_nuggets
+    - action: action_get_random_nuggets
 
 - rule: nettiquette
   steps:
