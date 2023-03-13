@@ -1,5 +1,7 @@
-election-bot
-models
-doc
-tests
+tests/*
+models/*
+results/*
+**/*.md
 venv
+.idea
+rasa-oss.yml

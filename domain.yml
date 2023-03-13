@@ -14,6 +14,7 @@ intents:
     - seemingly
     - than
 - deny
+- help
 - enter_again_against
 - enter_as_like
 - enter_cheque_check
@@ -37,6 +38,9 @@ intents:
 - go_on
 - goodbye
 - greet
+- similar_words
+- nice_to_know
+- overview
 - interrupt
 - joke
 - kontakt
@@ -510,6 +514,26 @@ responses:
   - text: Ich bin ein Chatbot. Meine Entwickler sind die **FH Münster** und der **Bundesverband Alphabetisierung und Grundbildung**.
   utter_kontakt:
   - text: Meine Entwickler erreichst du im [Web](https://www.alfa-bot.de) oder schreibe ihnen eine [Mail](mailto:r.haeder@alphabetisierung.de).
+  utter_help:
+  - buttons:
+    - payload: /overview
+      title: Übersicht über die klugen Häppchen
+    - payload: /kontakt
+      title: Kontakt
+    - payload: /start_survey
+      title: Befragung
+    text: |
+      Falls du Hilfe brauchst, habe ich hier drei Vorschläge für dich.
+  utter_overview:
+  - buttons:
+    - payload: /similar_words
+      title: Ähnliche Wörter
+    - payload: /nice_to_know
+      title: Interessante Fakten
+    - payload: /random_smart_nuggets
+      title: zufällige Auswahl
+    text: |
+      Wenn du möchtest, zeige ich dir hier eine Liste aller Wortpaare und aller Fakten, die ich für dich habe. Ich zeige dir aber auch gerne eine zufällige Auswahl.
   utter_out_of_scope:
   - text: Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder kontaktiere meine Entwickler. Du findest sie [online](https://www.alfa-bot.de) oder schreib ihnen eine [Mail](mailto:r.haeder@alphabetisierung.de).
   utter_anything_else:
@@ -569,7 +593,7 @@ responses:
     - payload: als
       title: als
     text: |
-      Wlches Wort sollte hier rein?
+      Welches Wort sollte hier rein?
       "Meine Freundin hat das gleiche Hobby ___ ich."
   utter_success_as_like:
   - text: Super, du hast es verstanden 🙂
@@ -1421,10 +1445,12 @@ actions:
 - action_clear_ward_were
 - action_clear_warranty_rifle
 - action_clear_was_truth
-- action_get_random_words
+- action_get_random_nuggets
 - action_submit_survey
 - action_tell_joke
 - action_test_action
+- utter_help
+- utter_overview
 - utter_anything_else
 - utter_ask_again
 - utter_ask_against

@@ -8,6 +8,26 @@ rules:
   - action: utter_greet
   - action: action_get_random_nuggets
 
+- rule: Help
+  steps:
+  - intent: help
+  - action: utter_help
+
+- rule: Overview
+  steps:
+  - intent: overview
+  - action: utter_overview
+
+- rule: Similar Words
+  steps:
+  - intent: similar_words
+  - action: action_get_similar_words
+
+- rule: Nice to Know
+  steps:
+  - intent: nice_to_know
+  - action: action_get_nice_to_know
+
 - rule: Show contact
   steps:
     - intent: kontakt
@@ -41,7 +61,7 @@ rules:
 - rule: out-of-scope
   steps:
     - intent: out_of_scope
-    - action: utter_out_of_scope
+    - action: utter_help
 
 - rule: nlu fallback
   steps:

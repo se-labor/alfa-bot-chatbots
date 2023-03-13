@@ -20,7 +20,7 @@ stories:
       - intent: go_on
   - action: utter_password_final
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 
 - story: password_at_least_happy
   steps:
@@ -37,7 +37,7 @@ stories:
       - intent: go_on
   - action: utter_password_final
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 
 - story: password_unhappy
   steps:
@@ -47,7 +47,7 @@ stories:
   - action: utter_password_no
   - intent: deny
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories for silvster
@@ -65,7 +65,7 @@ stories:
       - intent: go_on
   - action: utter_explain_newyear
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 
 - story: silvester_unhappy
   steps:
@@ -73,7 +73,7 @@ stories:
   - action: utter_enter_silvester
   - intent: deny
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories for christmas
@@ -116,7 +116,7 @@ stories:
     - action: utter_enter_as_like
     - intent: affirm
     - action: utter_anything_else
-    - action: utter_themen
+    - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories anscheinend / scheinbar
@@ -151,7 +151,7 @@ stories:
   - action: utter_enter_seemingly_apparently
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories dasselbe / das gleiche
@@ -186,7 +186,7 @@ stories:
   - action: utter_enter_same
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories seid / seit
@@ -221,7 +221,7 @@ stories:
   - action: utter_enter_since_be
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories Waage / vage
@@ -256,7 +256,7 @@ stories:
   - action: utter_enter_scale_vague
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories launisch / launig
@@ -291,7 +291,7 @@ stories:
   - action: utter_enter_moody_witty
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories ein paar / Paar
@@ -326,7 +326,7 @@ stories:
   - action: utter_enter_few_couple
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories Saiten / Seiten
@@ -361,7 +361,7 @@ stories:
   - action: utter_enter_string_page
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories Gewähr / Gewehr
@@ -396,7 +396,7 @@ stories:
   - action: utter_enter_warranty_rifle
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories Scheck / Check
@@ -431,7 +431,7 @@ stories:
   - action: utter_enter_cheque_check
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories Malen / Mahlen
@@ -466,7 +466,7 @@ stories:
   - action: utter_enter_paint_grain
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
   
 # Stories wart / ward
@@ -501,7 +501,7 @@ stories:
   - action: utter_enter_ward_were
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
   
 # Stories das / dass
@@ -536,7 +536,7 @@ stories:
   - action: utter_enter_das_dass
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories war / wahr
@@ -571,7 +571,7 @@ stories:
   - action: utter_enter_was_truth
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories mehr / Meer
@@ -606,7 +606,7 @@ stories:
   - action: utter_enter_mental_blessed
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories wieder / wider
@@ -641,7 +641,7 @@ stories:
   - action: utter_enter_again_against
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
 
 # Stories mehr / Meer
@@ -676,12 +676,5 @@ stories:
   - action: utter_enter_more_sea
   - intent: affirm
   - action: utter_anything_else
-  - action: utter_themen
+  - action: action_get_random_nuggets
 # --------------------------------------------
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: action_get_random_words
-  - intent: random_similar_words
-  - action: action_get_random_words

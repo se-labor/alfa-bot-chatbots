@@ -1,14 +1,5 @@
-# Ignore folders
-venv/
-.rasa
-models/
-# Ignore visible files
-
-# Ignore hidden files
 .idea
-.idea*
-.idea/*
-__pycache__
+.rasa
+models
+venv
 actions/.env
-.DS_Store
-# exception to the rule

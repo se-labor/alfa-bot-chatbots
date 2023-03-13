@@ -305,6 +305,26 @@ nlu:
     - Nazi
     - Nazis
     - alle sind doof
+- intent: overview
+  examples: |
+    - Zeige mir eine Übersicht aller Themen
+    - Übersicht
+    - Übersicht aller Nuggets
+    - Zeige mir alle Nuggets
+    - Zeige mir alle Häppchen
+    - Alle Häppchen zeigen
+- intent: similar_words
+  examples: |
+    - Zeige mir alle ähnlichen Wörter
+    - Similar Words
+    - Alle ähnlichen Wörter
+    - Ähnliche Wörter
+- intent: nice_to_know
+  examples: |
+    - Interessante Fakten
+    - Nice to know
+    - Fakten
+    - Kleine Fakten
 - intent: start_survey
   examples: |
     - Ich möchte die Umfrage starten
@@ -547,3 +567,11 @@ nlu:
     - neue Auswahl ähnlicher Wörter
     - neue ähnliche Wörter
     - andere Auswahl an Worten
+- intent: help
+  examples: |
+    - Hilfe
+    - Hilf mir
+    - Ich brauche Hilfe
+    - Zeig mir deine Hilfe
+    - Zeig mir die Hilfe
+    - Kannst du mir helfen
