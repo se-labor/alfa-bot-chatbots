@@ -16,10 +16,10 @@ applicationSettings:
   debugMode: false
 
   # -- Initial model to download and load if a model server or remote storage is not used. It has to be a URL (without auth) that points to a tar.gz file
-  initialModel: "https://github.com/sjproost/rasa-testbot/raw/main/models/latest.tar.gz?raw=true"
+  initialModel: "https://nexus.beemo.eu/repository/raw-public/alfabot/learning-bot-model-latest.tar.gz"
 
   # -- Train a model if an initial model is not defined. This parameter is ignored if the `applicationSettings.initialModel` is defined
-  trainInitialModel: true
+  trainInitialModel: false
 
   # -- Port on which Rasa runs
   port: 5005
@@ -177,7 +177,7 @@ applicationSettings:
   # Rasa X / Enterprise settings
   rasaX:
     # -- Run Rasa X / Enterprise server
-    enabled: true
+    enabled: false
 
     # -- Token Rasa X / Enterprise accepts as authentication token from other Rasa services
     token: "qdSCxRnEhyEXAma25sNNw"
@@ -215,13 +215,13 @@ extraEnv: []
 ## Define the rasa image to work with
 image:
   # -- Rasa Open Source image name to use (relative to `registry`)
-  name: alfa-wahlbot
+  name: alfa-lernbot
 
   # -- Rasa Open Source image tag to use
-  tag: "0.0.1"
+  tag: "1.0.3"
 
   # -- Override default registry + image.name for Rasa Open Source
-  repository: "sjproost/alfa-wahlbot"
+  repository: "sjproost/alfa-lernbot"
 
   # -- Rasa Open Source image pullPolicy
   pullPolicy: IfNotPresent

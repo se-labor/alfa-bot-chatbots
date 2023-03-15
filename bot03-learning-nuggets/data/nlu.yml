@@ -1,0 +1,577 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hallo
+    - Grüß dich
+    - Guten Tag
+    - Hallöchen
+    - Grüzi
+    - Moin
+    - Hallo Lalo
+    - Hey du
+    - Hallo du
+    - Hallo
+    - Hallo, ich bin [Alfred](name)
+    - hey, ich heiße [Mareike](name)
+    - Grüß dich, ich bin [Werner](name)
+    - Ich bin [Klaus](name)
+    - Hallo, ich heiße [Alfred](name)
+    - Hallp
+    - Hey
+    - Hi
+    - Hallo, ich heiße Simon
+    - ich bin [Mareike](name)
+    - Hallo, ich bin Simon
+    - Hey, ich bin Simon
+    - Hallo!
+    - Hallo Alfa-Bot
+    - Hallo Bot
+    - Hi there!
+    - Guten Morgen
+    - ALFA
+    - moin
+    - Hallo Lichter an
+    - Willkommen
+    - Guten Mittag
+    - haöli
+    - neustart
+    - n3u
+    - neu
+    - Hallo la Lo
+    - alfabot
+    - Hello
+- intent: goodbye
+  examples: |
+    - cu
+    - bye
+    - byebye
+    - tschöö
+    - tschö
+    - tschüss
+    - bis dann
+    - bis bald
+    - auf wiedersehen
+    - machs gut
+    - tschüß
+    - öö
+    - Danke
+    - Machs gut
+    - Toll, machs gut
+    - Mir geht's gut danke:
+    - Danke lalo
+    - byfdb
+    - danke
+- intent: affirm
+  examples: |
+    - ja
+    - klar
+    - ok
+    - mach das
+    - in Ordnung
+    - o.k.
+    - geht klar
+    - warum nicht
+    - mach
+    - ja bitte
+    - yes
+    - okay
+    - Oh okay
+    - jhv
+    - verstanden
+    - Ja, kenne ich
+    - Ja
+- intent: go_on
+  examples: |
+    - weiter
+    - bitte weiter
+    - mach weiter
+    - nächstes
+    - nächstes bitte
+    - Weiter
+- intent: try
+  examples: |
+    - ausprobieren
+    - ich möchte es versuchen
+    - probieren
+    - versuchen
+    - lass es mich versuchen
+    - ich möchte es ausprobieren
+    - Ausprobieren
+- intent: deny
+  examples: |
+    - nein
+    - möchte ich nicht
+    - auf keinen Fall
+    - nö
+    - ne
+    - nicht wirklich
+    - muss nicht sein
+    - bitte nicht
+    - definitiv nicht
+    - nope
+    - Nein, zeig es mir
+- intent: bot_challenge
+  examples: |
+    - bist du ein Bot?
+    - bist du ein Mensch?
+    - bist du Menschlich?
+    - Spreche ich mit einem Menschen?
+    - Bist du eine KI?
+    - was bist du?
+    - Bist du ein Bot?
+    - Bist du ein bot?
+    - Wer bist du?
+    - lalou wer hat dich entwickelt
+    - la lu wer ist dein Bus
+    - lalou wer ist dein Boss
+    - Salou wer ist dein Besitzer
+    - Wer ist dein Boss
+    - Wer ist dein Chef?
+    - Wer hat dich gemacht?
+    - Wer hat dich programmiert?
+    - bist du da
+    - wer ist da
+    - You
+- intent: interrupt
+  examples: |
+    - stop
+    - aufhören
+    - lass das
+    - END
+    - ich möchte mein Wahllokal nicht wissen
+    - Stoppen bitte
+    - Hör auf mich das zu fragen
+    - Frag nicht weiter
+    - Du erkennst meine Stadt nicht
+    - ich habe keine Nummer
+    - Ich möchte nicht weiter machen
+    - ende
+    - Schluss
+    - Schluss jetzt
+    - Ende
+    - schluss damit
+- intent: nlu_fallback
+  examples: |
+    - djdlfkd
+    - skykgkff
+    - widbd rndlos
+    - alskdjalsdkj
+- intent: out_of_scope
+  examples: |
+    - Wer ist US-Präsident?
+    - Was läuft gerade im Kino?
+    - Kino?
+    - Barack Obama?
+    - Gottesdienst
+    - Wo kann ich baden gehen?
+    - Wer geht mit mir schwimmen?
+    - sldfjdsölgkj
+    - helgajagörrsnefall
+    - Was läuft im Kino?
+    - Wer ist Barack Obama?
+    - Blödsinn
+    - Theater
+    - Wo steht die Sphinx?
+    - Wo bitte geht's zum Militär?
+    - Wo geht es zur Bücherei?
+    - Ttsegsr
+    - dsa
+    - cool
+    - sldfjh ajldkjsa
+    - ajks laslk kalsdjka laskdj
+    - oper
+    - alskjdhalksdj
+    - blödes teil
+    - ksbdfld
+    - 123
+    - jkl
+    - kl
+    - gh
+    - Wie warm ist es
+    - wer noch?
+    - Hartz4
+    - xurk1+/"#0CuniiO:-)uzggyoqnr72xex:-(:-D
+    - text
+    - rezo
+    - was ist
+    - lalu kennst du Oliver Meisel
+    - ich habe dich gefragt was ich denn nicht nettes gesagt habe
+    - was habe ich denn nicht nettes gesagt
+    - 1 2 3
+    - gukgulgul
+    - gzkghkghkghk
+    - Hier ist meine Nachricht
+    - russland
+    - ukraine
+    - Krieg in der Ukraine
+    - ydfydfh
+    - , ,ljjbk
+    - gnsgfd
+    - mj j
+    - oh
+    - ,hklvjhj
+    - sfbsbaf
+    - fbasfb
+    - Are
+    - uztcou
+    - ghmdgm
+    - dfzdgk
+    - hdfmfm
+    - etjej
+    - rthwrtjr
+    - sfgnsfn
+    - dfhdgsn
+    - sdgnfng
+    - sgdnsnfg
+    - dfnsfgn
+    - snnw
+    - v
+    - m
+    - dhae
+    - Uhrzeit
+    - kannst du auch englisch
+    - Englisch
+- intent: kontakt
+  examples: |
+    - Ich möchte mit einem Menschen sprechen
+    - Menschen
+    - Handoff
+    - Kontakt
+    - Wer ist für dich verantwortlich?
+    - Kontakte
+    - Anrufen
+    - Anschreiben
+    - kontakt
+    - alfa telefon
+    - ich möchte mit jemanden sprechen
+- intent: testintent
+  examples: |
+    - zeige mir den Custom action Code!
+    - custom action
+    - CAS
+    - ich will die Custom Action sehen
+    - Custom action server
+    - custom action server
+    - Custom Action Server
+- intent: joke
+  examples: |
+    - Erzähle mir einen Witz
+    - Kannst du witzig sein?
+    - Kannst du mir einen Witz erzählen?
+    - Ich möchte einen Witz hören
+    - Witz
+    - Witz erzählen
+    - erzähle mir einen Witz
+    - ein anderer Witz
+    - Einen Witz bitte
+- intent: nettiquette
+  examples: |
+    - du bist Scheiße
+    - Kacke
+    - verdammte Scheiße
+    - Pimmel
+    - Sackgesicht
+    - Fotze
+    - Du Hure
+    - Hurensohn
+    - Du Nutte
+    - Schwanz
+    - Was ein Schrott
+    - verfickt noch mal
+    - beschissen
+    - das ist doch Mist
+    - scheiße
+    - Drecksding
+    - Dreck
+    - Schlampe
+    - Die Schlampe
+    - Du Shlampe
+    - Misthaufen
+    - mist
+    - misthaufen
+    - merkel muss weg
+    - nazi
+    - lügenpresse
+    - Penis
+    - Arschloch
+    - Arsch
+    - scheisse
+    - kacka
+    - pipi
+    - Nazi
+    - Nazis
+    - alle sind doof
+- intent: overview
+  examples: |
+    - Zeige mir eine Übersicht aller Themen
+    - Übersicht
+    - Übersicht aller Nuggets
+    - Zeige mir alle Nuggets
+    - Zeige mir alle Häppchen
+    - Alle Häppchen zeigen
+- intent: similar_words
+  examples: |
+    - Zeige mir alle ähnlichen Wörter
+    - Similar Words
+    - Alle ähnlichen Wörter
+    - Ähnliche Wörter
+- intent: nice_to_know
+  examples: |
+    - Interessante Fakten
+    - Nice to know
+    - Fakten
+    - Kleine Fakten
+- intent: start_survey
+  examples: |
+    - Ich möchte die Umfrage starten
+    - Umfrage starten
+    - Bitte die Umfrage starten
+    - Kann ich mit der Befragung anfangen
+    - App bewerten
+    - Bewerten
+    - Ich möchte die Befragung starten
+    - Befragung starten
+    - Ich möchte an der Befragung teilnehmen
+- intent: lot_number
+  examples: |
+    - Meine Teilnehmernummer lautet [123456](lot number)
+    - Meine Nummer ist [59427](lot_number)
+    - Das ist [94835](lot_number)
+    - Meine Nummer lautet [53757](lot_number)
+    - Meine Nummer lautet [007](lot_number)
+    - Nummer [96123](lot_number)
+    - [53757](lot_number)
+    - [48143](lot_number)
+    - [48341](lot_number)
+    - [48565](lot_number)
+    - [911](lot_number)
+    - [1092](lot_number)
+    - [1126](lot_number)
+    - [1263](lot_number)
+    - [1518](lot_number)
+    - [1645](lot_number)
+    - [1931](lot_number)
+    - [1932](lot_number)
+    - [2063](lot_number)
+    - [2147](lot_number)
+    - [2656](lot_number)
+    - [3094](lot_number)
+    - [3310](lot_number)
+    - [3349](lot_number)
+    - [3507](lot_number)
+    - [4098](lot_number)
+    - [4297](lot_number)
+    - [4667](lot_number)
+    - [4935](lot_number)
+    - [5010](lot_number)
+    - [5025](lot_number)
+    - [5050](lot_number)
+    - [5299](lot_number)
+    - [5320](lot_number)
+    - [5325](lot_number)
+    - [5382](lot_number)
+- intent: enter_as_like
+  examples: |
+    - Wie vergleiche ich?
+    - Wann verwende ich wie?
+    - Wann nutze ich als?
+    - Wann wie, wann als?
+    - Womit sage ich, dass etwas gleich ist?
+    - Wie sage ich, dass etwas ungleich ist?
+    - vergleich als
+    - als
+- intent: enter_seemingly_apparently
+  examples: |
+    - Was ist der Unterschied zwischen anscheinend und scheinbar?
+    - Unterschied anscheinend und scheinbar
+    - kennst du den Unterschied zwischen anscheinend und scheinbar?
+    - Gibt es einen Unterschied zwischen anscheinen und scheinbar?
+    - anscheinend scheinbar
+    - anscheinend
+    - scheinbar
+    - Vergleich scheinbar
+    - vergleich scheinbar
+- intent: enter_same
+  examples: |
+    - Was ist der Unterschied zwischen dasselbe und das gleiche?
+    - Dassselbe
+    - Das gleiche
+    - Vergleich derselbe
+    - dieselbe
+    - Vergleich dasselbe
+    - vergleich das gleiche
+    - vergleiche dasselbe
+    - Was ist Unterschied dieselbe und die gleiche?
+    - Kennst du den Unterschied zwischen dasselbe und das Gleiche?
+    - Wann sagt man das gleiche und wann dasselbe?
+    - Unterschied dasselbe
+- intent: enter_since_be
+  examples: |
+    - Wann schreibt man seit und wann seid?
+    - Was ist der Unterschied zwischen seit und Seid?
+    - Seit
+    - seid
+    - Wann schreibe ich seit mit t und wann mit d?
+    - vergleich seit und seid
+    - Unterscheidung seit und seid?
+- intent: enter_scale_vague
+  examples: |
+    - Was ist der Unterschied zwischen Waage und vage?
+    - Wann sagt man Waage und wann vage?
+    - Unterschied waage und vage
+    - Waage und vage
+    - Wann nehme ich Waage und wann vage?
+    - Vergleich Waage und vage
+- intent: enter_moody_witty
+  examples: |
+    - Was ist der UNterschied zwischen launisch und launig?
+    - launisch und launig
+    - Wann sagt man launisch und wann launig?
+    - Heißt es launig oder launisch?
+    - Es heißt, ich sei launisch, was heißt das?
+    - Wie schreibt man launisch?
+    - Was bedeutet launig?
+- intent: enter_password
+  examples: |
+    - Wie erstelle ich ein sicheres Passwort?
+    - Was ist ein sicheres Passwort?
+    - Sicheres Passwort
+    - Sicheres Passwort erstellen
+    - Wie kann man ein sicheres Passwort bekommen?
+    - Gute Passwörter machen
+    - Wie sieht ein gutes Passwort aus?
+    - Was ist ein gutes Passwort
+    - Gutes Passwort
+    - gutes Passwort erstellen
+- intent: enter_silvester
+  examples: |
+    - Wie schreibt man Silvester?
+    - Silvester oder Sylvester?
+    - Silvester
+    - Sylvester
+    - Wie ist die Schreibweise von Silvester
+    - Warum schreibt man Silvester nicht mit y?
+- intent: enter_christmas
+  examples: |
+    - Warum schreibt man Weihnachten mit h
+    - Was bedeutet advent?
+    - Warum Weihnachten und nicht Weinachten?
+    - Weihnachten
+    - Weinachten
+    - Avent
+    - Wie schreibt man Advent?
+    - Was heißt Advent?
+- intent: enter_few_couple
+  examples: |
+    - Wann schreibe ich ein paar und wann ein Paar?
+    - wann schreibe ich paar klein und wann groß?
+    - Vergleich paar
+    - Ein paar Paare
+    - Wie nennt man zwei Menschen die zusammen gehören?
+    - Wie sage ich zu einigen Früchten
+    - Vergleich ein Paar und ein paar
+- intent: enter_string_page
+  examples: |
+    - Wann heißt es Seite und wann Saite?
+    - Vergleich Seite Saite
+    - Was ist der Unterschied zwischen Seite und Saite?
+    - Wie unterscheide ich Seiten und Saiten?
+    - Hat meine Gitarre Seiten oder Saiten?
+    - Wann nehme ich Saite und wann Seite?
+- intent: enter_warranty_rifle
+  examples: |
+    - Vergleich Gewähr und Gewehr
+    - Gewehr Gewähr
+    - Warum schreibt man Gewehr mit ä?
+    - Was ist der Unterschied zwischen Gewähr und Gewehr
+    - Woher kommt Gewährleistung?
+    - Wann muss ich Gewähr schreiben?
+    - Hat ein Jäger ein Gewehr?
+- intent: enter_cheque_check
+  examples: |
+    - Was ist der Unterschied zwischen Scheck und Check
+    - Scheck und Check
+    - Vergleich scheck mit Check
+    - Wann schreibe ich Check
+    - Was ist ein Scheck
+    - Schreibt man Scheck mit Ch oder Sch?
+- intent: enter_paint_grain
+  examples: |
+    - Unterschied malen mahlen
+    - Was ist der Unterschied zwischen mahlen malen
+    - malen
+    - Mahlen
+    - Wie schreibt man mahlen, wenn es um Mehl geht?
+    - Wann nimmt man malen und wann mahlen?
+    - Wann schreibt man malen mit h?
+    - Wie schreibt man mahlen?
+    - Muss ich malen mit h schreiben?
+- intent: enter_more_sea
+  examples: |
+    - Was ist der Unterschied zwischen mehr und Meer?
+    - mehr meer
+    - Wann schreibt man Meer mit h?
+    - Wann nehme ich Meer und wann mehr?
+    - Wieso mehr mit und ohne h?
+    - Vergleich mehr Meer
+    - Vergleiche Meer und mehr
+- intent: enter_was_truth
+  examples: |
+    - Unterschied wahr und war
+    - Wann schreibe ich war mit h?
+    - Wieso war mit h?
+    - Vergleich wahr und war?
+    - War und wahr
+    - wahr
+    - wann nehme ich wahr?
+- intent: enter_das_dass
+  examples: |
+    - Wann schreibe ich das mit zwei s?
+    - Vergleich das und dass
+    - Vergleich das dass
+    - Wieso schreibt man mal das und mal dass?
+    - dass das
+    - das dass Vergleich
+    - das und dass
+- intent: enter_ward_were
+  examples: |
+    - ward wart
+    - Vergleich wart und ward
+    - Wann nutzt man wart und wann ward?
+    - Schreibweisen wart
+    - Wart mit d und mit t?
+    - Was ist der Unterschied zwischen wart und ward?
+    - Unterschied wart ward
+- intent: enter_again_against
+  examples: |
+    - Was ist der Unterschied zwischen wider und wieder?
+    - Unterschied wider wieder
+    - Wann benutze ich wieder und wann wider?
+    - Vergleich wieder wider
+    - Wann wieder, wann wider
+    - wieder wider
+- intent: enter_mental_blessed
+  examples: |
+    - Vergleich seelisch und selig
+    - Was ist der Unterschied zwischen seelisch und selig
+    - Selig seelisch
+    - Wann verwende ich seelisch und wann selig?
+    - Gibt es einen Unterschied zwischen seelisch und selig?
+    - Vergleich seelisch selig
+- intent: random_smart_nuggets
+  examples: |
+    - neue Auswahl ähnlicher Wörter
+    - neue ähnliche Wörter
+    - andere Auswahl an Worten
+- intent: help
+  examples: |
+    - Hilfe
+    - Hilf mir
+    - Ich brauche Hilfe
+    - Zeig mir deine Hilfe
+    - Zeig mir die Hilfe
+    - Kannst du mir helfen
