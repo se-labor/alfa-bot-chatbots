@@ -3,3 +3,4 @@
 models
 venv
 actions/.env
+.idea/*

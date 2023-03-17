@@ -159,7 +159,7 @@ def get_games(gameday: str) -> list:
 # Looks up a match in all match data and return a string with match and score
 def find_match(needle_1: str, needle_2: str, matches: List[Game]) -> str:
     if not needle_1 or not needle_2:
-        fail = "Variablen nicht korrekt übermittelt"
+        fail = "Ups, hier ist ein Fehler passiert. Versuche bitte nochmals, nach den Mannschaften zu fragen."
         return fail
     for game in matches:
         if needle_1.lower() in game.get_teams() and needle_2.lower() in game.get_teams():

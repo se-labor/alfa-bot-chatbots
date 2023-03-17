@@ -12,12 +12,12 @@ similarWords = {"Als | Wie": "/enter_as_like", "Launisch | Launig": "/enter_mood
                 "Dasselbe | Das Gleiche": "/enter_same",
                 "Waage |Vage": "/enter_scale_vague", "Scheinbar | Anscheinend": "/enter_seemingly_apparently",
                 "Seit | Seid": "/enter_since_be",
-                "Ein Paar | ein paar": "/enter_few_couple", "Saite | Seite": "/enter_string_page",
-                "Gewähr | Gewehr": "/enter_warranty_rifle",
+                "Ein Paar | ein paar": "/enter_few_couple", "Seite | Saite": "/enter_string_page",
+                "Gewehr | Gewähr": "/enter_warranty_rifle",
                 "Wieder | Wider": "/enter_again_against", "Seelisch | Selig": "/enter_mental_blessed",
-                "Check | Scheck": "/enter_cheque_check", "Das | dass": "/enter_das_dass",
+                "Scheck | Check": "/enter_cheque_check", "Das | dass": "/enter_das_dass",
                 "Mehr | Meer": "/enter_more_sea", "Malen | Mahlen": "/enter_paint_grain",
-                "Wart | Ward": "/enter_ward_were", "War | Wahr": "/enter_was_truth"}
+                "Wart | Ward": "/enter_ward_were", "Wahr | War": "/enter_was_truth"}
 niceToKnow = {"Sicheres Passwort": "/enter_password", "Warum heißt es Silvester": "/enter_silvester",
               "Advent und Weihnachten": "/enter_christmas"}
 
@@ -37,11 +37,13 @@ class QuickReplyButton:
 
 # Helper function to randomise praising answers
 def randomise_praising_answer() -> str:
-    praise_answers = ["Korrekt!", "Toll, das war die richtige Lösung",
+    praise_answers = ["Korrekt", "Toll, das war die richtige Lösung",
                       "Richtig ausgewählt", "Gut gewählt", "Deine Lösung ist richtig", "So ist es"]
-    msg = random.choice(praise_answers)
+    praise_reactions = ["!", ".", " 😊.", " 👍."]
+    random_answer = random.choice(praise_answers)
+    random_reaction = random.choice(praise_reactions)
+    msg = random_answer + random_reaction
     return msg
-
 
 # Get array of buttons
 def getButtonsFromDict(pool: dict) -> list:
@@ -363,7 +365,7 @@ class ChequeCheckForm(FormValidationAction):
             firstTry=bool(True)
     ) -> Dict[Text, Any]:
         solution_cheque = str(slot_value).lower()
-        if solution_cheque != 'check':
+        if solution_cheque != 'scheck':
             dispatcher.utter_message(response="utter_test_cheque_wrong")
             return {"cheque": None}
         dispatcher.utter_message(
@@ -378,7 +380,7 @@ class ChequeCheckForm(FormValidationAction):
             domain: DomainDict,
     ) -> Dict[Text, Any]:
         solution_check = str(slot_value).lower()
-        if solution_check != 'scheck':
+        if solution_check != 'check':
             dispatcher.utter_message(response="utter_test_check_wrong")
             return {"check": None}
         dispatcher.utter_message(text=randomise_praising_answer())
@@ -468,14 +470,12 @@ class WasTruthForm(FormValidationAction):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: DomainDict,
-            firstTry=bool(True)
     ) -> Dict[Text, Any]:
         solution_was = str(slot_value).lower()
         if solution_was != 'war':
             dispatcher.utter_message(response="utter_test_was_wrong")
             return {"was": None}
-        dispatcher.utter_message(
-            text=randomise_praising_answer())
+        dispatcher.utter_message(text=randomise_praising_answer())
         return {"was": slot_value}
 
     def validate_truth(

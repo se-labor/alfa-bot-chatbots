@@ -10,7 +10,8 @@ from typing import List
 
 # Helper vars and classes
 # ----------------------------------
-GAMES_START_DAY = 1
+
+# Reminder: If feature will be used again: Make a dictionary to reduce code duplication
 polling_cities = ["Köln", "köln", "Koeln", "koeln", "cologne", "Cologne", "Kölln", "kölln", "K", "k",
                   "Münster", "münster", "Muenster", "muenster", "MS", "ms"]
 

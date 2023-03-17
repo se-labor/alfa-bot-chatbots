@@ -476,11 +476,11 @@ stories:
   - intent: enter_ward_were
   - action: utter_enter_ward_were
   - intent: deny
-  - action: utter_explain_ward
+  - action: utter_explain_were
   - or:
       - intent: affirm
       - intent: go_on
-  - action: utter_explain_were
+  - action: utter_explain_ward
   - or:
       - intent: affirm
       - intent: go_on

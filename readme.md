@@ -225,11 +225,24 @@ bei laufendem rasa x über `http://localhost:5005/webhooks/rest/webhook` per JSO
 pypi-dotenv: https://pypi.org/project/python-dotenv/
 
 ### Docker Container für Rasa OSS bauen
-Aktuell genutzt rasa version: 3.2.8
+#### Aktuell genutzt: rasa version: 3.4.5 
 
-Docker Kommandos:
+Update per `pip install rasa --upgrade`
 
-Container bauen: `docker build -t repo/images:tag .`
+| Paket | Stand ab 16.03.2023 |
+| --- |---------------------|
+| Rasa Version  | 3.4.5               |
+| Rasa SDK Version  | 3.4.1               |
+| Minimum Compatible Version  | 3.0.0               |
+| Used Python Version | 3.9.6               |
+| Used Pip Version | 23.0.1              |
+
+#### Docker Kommandos:
+
+Container bauen: `docker build -t repo/image:tag .`
+* Wahl-Bot: `docker build -t sjproost/alfa-wahlbot:1.0.0 .`
+* WM-Bot: `docker build -t sjproost/alfa-wmbot:1.2.0 .`
+* Lern-Bot: `docker build -t sjproost/alfa-lernbot:1.1.0 .`
 
 Container starten und interaktiv (-it) mit shell nutzen 
 `docker run -it -p 8080:5005 -v $(pwd):/app repo/image:tag shell`
@@ -238,6 +251,8 @@ Container pushen `docker push repo/image:tag`
 
 Custom Action Container selbst bauen: `docker build -f Dockerfile.customAction -t sjproost/alfabot-ca:tag .
 `
+
+Aktuelle Version: 3.0.2
 Entscheidender Hinweis zum Custom-Action-Server SSL Problem:
 https://stackoverflow.com/questions/52805115/certificate-verify-failed-unable-to-get-local-issuer-certificate
 > I would like to provide a reference. I use cmd + space, then type Install Certificates.command, and then press Enter. After a short while, the command line interface pops up to start the installation.

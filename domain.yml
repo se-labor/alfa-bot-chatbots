@@ -14,7 +14,6 @@ intents:
     - seemingly
     - than
 - deny
-- help
 - enter_again_against
 - enter_as_like
 - enter_cheque_check
@@ -38,18 +37,19 @@ intents:
 - go_on
 - goodbye
 - greet
-- similar_words
-- nice_to_know
-- overview
+- help
 - interrupt
 - joke
 - kontakt
 - like
 - lot_number
 - nettiquette
+- nice_to_know
 - nlu_fallback
 - out_of_scope
+- overview
 - random_smart_nuggets
+- similar_words
 - start_survey
 - testintent
 - try
@@ -363,7 +363,7 @@ slots:
     mappings:
     - type: from_text
       conditions:
-      - active_loop: was_true_form
+      - active_loop: was_truth_form
         requested_slot: was
   truth:
     type: text
@@ -555,7 +555,7 @@ responses:
       title: Ausprobieren
     - payload: /affirm
       title: Ja
-    text: Du kennst bestimmt die Wörter **WIE** und **ALS**? Mit beiden Wörtern vergleicht man etwas. Aber wann verwendet man welches Wort? Weißt du es?
+    text: Du kennst bestimmt die Wörter **als** und **wie**? Mit beiden Wörtern vergleicht man etwas. Aber wann verwendet man welches Wort? Weißt du es?
   utter_explain_as:
   - buttons:
     - payload: /affirm
@@ -607,7 +607,7 @@ responses:
       title: Ausprobieren
     - payload: /affirm
       title: Ja, kenne ich schon
-    text: Die Wörter **DASSELBE** und **DAS GLEICHE** werden häufig verwechselt. Weißt du, wann man welches Wort verwendet? Ich erkläre es dir gerne.
+    text: Die Wörter **dasselbe** und **das gleiche** werden häufig verwechselt. Weißt du, wann man welches Wort verwendet? Ich erkläre es dir gerne.
   utter_explain_dasselbe:
   - buttons:
     - payload: /go_on
@@ -646,7 +646,7 @@ responses:
   - text: Nicht ganz. Da der Nachbar bereits ein Fahrrad gekauft hat, muss ich mir ein *weiteres* Exemplar gekauft haben.
   utter_success_same:
   - image: https://www.alfa-bot.de/wp-content/uploads/2023/01/dasselbe_dasgleiche.png
-    text: Super, du hast es raus. Natürlich gilt diese Lektion auch für die Wörter *derselbe / dieselbe* und *der gleiche / die gleiche*.
+    text: Super, du hast es raus. Natürlich gilt das auch für die Wörter *derselbe / dieselbe* und *der gleiche / die gleiche*.
   utter_enter_seemingly_apparently:
   - buttons:
     - payload: Nein, zeig es mir
@@ -656,7 +656,7 @@ responses:
     - payload: Ja, kenne ich
       title: Ja, kenne ich
     text: |
-      Im Alltag hörst du oft die Wörter **ANSCHEINEND** und **SCHEINBAR**. Vielen Menschen ist nicht bewusst, dass es einen Unterschied zwischen diesen Wörtern gibt.
+      Im Alltag hörst du oft die Wörter **anscheinend** und **scheinbar**. Vielen Menschen ist nicht bewusst, dass es einen Unterschied zwischen diesen Wörtern gibt.
       Kennst du den Unterschied?
   utter_explain_apparently:
   - buttons:
@@ -762,7 +762,7 @@ responses:
       title: Ausprobieren
     - payload: Ja, kenne ich
       title: Ja, kenne ich
-    text: Die Wörter **SEIT** und **SEID** klingen genau gleich. Aber wann benutzt man welches Wort? Weißt du es?
+    text: Die Wörter **seit** und **seid** klingen genau gleich. Aber wann benutzt man welches Wort? Weißt du es?
   utter_explain_since:
   - buttons:
     - payload: Weiter
@@ -909,7 +909,7 @@ responses:
       title: Ausprobieren
     - payload: Ja, kenne ich
       title: Ja, kenne ich
-    text: Die Wörter "ein paar" und "ein Paar" sind sehr schwer zu unterscheiden. Sie sehen gleich aus, sie klingen gleich und sagen doch etwas anderes. Weißt du, wann du es klein und wann groß schreiben musst?
+    text: Die Wörter "ein Paar" und "ein paar" sind sehr schwer zu unterscheiden. Sie sehen gleich aus, sie klingen gleich und sagen doch etwas anderes. Weißt du, wann du es klein und wann groß schreiben musst?
   utter_explain_few:
   - buttons:
     - payload: Weiter
@@ -954,7 +954,7 @@ responses:
       title: Ausprobieren
     - payload: Ja, kenne ich
       title: Ja, kenne ich
-    text: Wir standen **Seite** an **Saite**... 🤔 Moment mal. Was sind das denn für Wörter und wann benutzt man welches Wort. Weißt du es?
+    text: Wir standen **Seite** an **Saite**... 🤔 Moment mal. Das sind ja zwei verschiedene Wörter. Wann benutzt man welches Wort. Weißt du es?
   utter_explain_string:
   - buttons:
     - payload: Weiter
@@ -1059,14 +1059,15 @@ responses:
       title: Weiter
     image: https://www.alfa-bot.de/wp-content/uploads/2023/01/scheck.png
     text: |
-      *Mit einem **Scheck** kann man *bezahlen*. Der, der einen Scheck bekommt, kann damit zur Bank gehen. Die Bank zahlt ihm so viel *Geld* aus, wie auf dem Scheck steht. Das Geld nimmt die Bank vom Konto der Person, die den Scheck unterschrieben hat. Das funktioniert natürlich nur, wenn auch genug Geld auf dem Konto ist. Ist nicht genug Geld da, sagt man, der Scheck ist nicht gedeckt und *platzt*. Beispiel:
+      *Mit einem **Scheck** kann man *bezahlen*. Du kannst mit einem Scheck zur Bank gehen. Die Bank zahlt dir das Geld aus. Beispiel:
       "Am Ende des Monats bekomme ich von meinem Chef einen Scheck und hole mir damit meinen Lohn ab."
   utter_explain_check:
   - buttons:
     - payload: Weiter
       title: Weiter
+    image: https://www.alfa-bot.de/wp-content/uploads/2023/03/checkliste.png
     text: |
-      Nimm **Check**, wenn man etwas auf seine Funktion, Sicherheit oder ähnliches prüft. Beispiel:
+      Nimm **Check**, wenn man etwas prüft. Beispiel:
       "Das Flugzeug kann erst starten, wenn der Pilot den Sicherheits-Check gemacht hat."
   utter_ask_cheque:
   - buttons:
@@ -1091,7 +1092,7 @@ responses:
   utter_test_cheque_wrong:
   - text: Überlege noch mal. Hier soll jemand für seine Arbeit *bezahlt* werden.
   utter_success_cheque_check:
-  - text: Nun weißt du, dass man den Check in der Werkstatt theoretisch auch mit einem Scheck bezahlen kann. Tatsächlich bezahlt man heute kaum noch mit Checks.
+  - text: Nun weißt du, dass man den Check in der Werkstatt auch mit einem Scheck bezahlen kann.
   utter_enter_paint_grain:
   - buttons:
     - payload: Nein, zeig es mir
@@ -1139,7 +1140,7 @@ responses:
   utter_test_paint_wrong:
   - text: Nicht ganz. Hier erstellen die Schüler bestimmt *Bilder* mit *Pinseln*.
   utter_success_paint_grain:
-  - text: Klasse! Der Maler malt ein Bild vom mahlenden Müller.
+  - text: Klasse! Der Maler malt ein Bild. Der Müller mahlt das Mehl.
   utter_enter_das_dass:
   - buttons:
     - payload: Nein, zeig es mir
@@ -1148,7 +1149,7 @@ responses:
       title: Ausprobieren
     - payload: Ja, kenne ich
       title: Ja, kenne ich
-    text: Du hast bestimmt schon die Wörter *das* und *dass* gesehen. Sie klingen zwar gleich, aber weißt du, wann du "das/s" mit einem "s" und mit zwei "s" schreiben solltest?
+    text: Du hast bestimmt schon die Wörter *das* und *dass* gesehen. Sie klingen zwar gleich, aber weißt du, wann du das mit einem "s" und mit zwei "s" schreiben solltest?
   utter_explain_das:
   - buttons:
     - payload: Weiter
@@ -1280,7 +1281,7 @@ responses:
   utter_test_ward_wrong:
   - text: Hmm, frage dich mal, ob sie woanders gesehen *wurde*.
   utter_success_ward_were:
-  - text: Toll! Wahrscheinlich wirst du heute eher *wart* nutzen. Trotzdem ist es gut, wenn du auch *ward* kennst.
+  - text: Toll! Du kennst den Unterschied zwischen *wart* und *ward*.
   utter_enter_again_against:
   - buttons:
     - payload: Nein, zeig es mir
@@ -1289,14 +1290,14 @@ responses:
       title: Ausprobieren
     - payload: Ja, kenne ich
       title: Ja, kenne ich
-    text: Die Wörter **WIEDER** und **WIDER** sehen sehr ähnlich aus und klingen auch fast gleich. Weißt du, welches Wort du wann benutzen musst?
+    text: Die Wörter **wieder** und **wider** sehen sehr ähnlich aus und klingen auch fast gleich. Weißt du, welches Wort du wann benutzen musst?
   utter_explain_again:
   - buttons:
     - payload: Weiter
       title: Weiter
     text: |
-      Nimm **wieder**, wenn du sagen willst, dass etwas *noch mal* passiert. Auch kannst du damit *zurück* ausdrücken. Beispiel: 
-      "Gestern gab es Pizza. Heute gibt es wieder Pizza". "Ich gebe es dir dein Buch nächste Woche wieder."
+      Nimm **wieder**, wenn du sagen willst, dass etwas *noch mal* passiert. Du kannst mit *wieder* auch *zurück* ausdrücken. Beispiel: 
+      "Gestern gab es Pizza. Heute gibt es wieder Pizza". "Ich gebe dir dein Buch nächste Woche wieder."
   utter_explain_against:
   - buttons:
     - payload: Weiter
@@ -1336,7 +1337,7 @@ responses:
       title: Ausprobieren
     - payload: Ja, kenne ich
       title: Ja, kenne ich
-    text: Die Wörter **seelisch** und **selig** klingen manchmal sehr ähnlich, meinen aber etwas anderes. Weißt du, welches Wort du wann nehmen solltest?
+    text: Die Wörter **seelisch** und **selig** klingen sehr ähnlich, meinen aber etwas anderes. Weißt du, welches Wort du wann nehmen solltest?
   utter_explain_mental:
   - buttons:
     - payload: Weiter
@@ -1424,6 +1425,10 @@ responses:
   utter_success_more_sea:
   - text: Gut gemacht. Wünschen wir uns nicht alle *mehr* vom *Meer*.
 actions:
+- action_get_random_nuggets
+- utter_enter_was_truth
+- utter_success_was_truth
+- utter_anything_else
 - action_ask_google
 - action_get_nice_to_know
 - action_get_similar_words
@@ -1445,13 +1450,11 @@ actions:
 - action_clear_ward_were
 - action_clear_warranty_rifle
 - action_clear_was_truth
-- action_get_random_nuggets
 - action_submit_survey
 - action_tell_joke
 - action_test_action
 - utter_help
 - utter_overview
-- utter_anything_else
 - utter_ask_again
 - utter_ask_against
 - utter_ask_apparently
@@ -1517,7 +1520,6 @@ actions:
 - utter_enter_string_page
 - utter_enter_ward_were
 - utter_enter_warranty_rifle
-- utter_enter_was_truth
 - utter_explain_against
 - utter_explain_apparently
 - utter_explain_as
@@ -1571,7 +1573,6 @@ actions:
 - utter_success_string_page
 - utter_success_ward_were
 - utter_success_warranty_rifle
-- utter_success_was_truth
 - utter_test_again_wrong
 - utter_test_against_wrong
 - utter_test_apparently_wrong
