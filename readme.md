@@ -29,7 +29,7 @@ run pip install -U rasa-x --extra-index-url https://pypi.rasa.com/simple
 ###Rasa Open Source Befehle
 
 * `rasa init`: Neues Projekt erstellen
-* `rasa x`: Start rasa X Plattform
+* `rasa x`: ~~Start rasa X Plattform~~
 * `rasa train`: Trainiere ein CB-Model (models-Ordner steht in gitignore)
 * `rasa shell`: Starte eine Unterhaltung über die Konsole
 * `rasa interactive`: Starte eine Unterhaltung per Konsole mit Training
@@ -231,7 +231,7 @@ Update per `pip install rasa --upgrade`
 
 | Paket | Stand ab 16.03.2023 |
 | --- |---------------------|
-| Rasa Version  | 3.4.5               |
+| Rasa Version  | 3.4.6               |
 | Rasa SDK Version  | 3.4.1               |
 | Minimum Compatible Version  | 3.0.0               |
 | Used Python Version | 3.9.6               |
@@ -252,7 +252,7 @@ Container pushen `docker push repo/image:tag`
 Custom Action Container selbst bauen: `docker build -f Dockerfile.customAction -t sjproost/alfabot-ca:tag .
 `
 
-Aktuelle Version: 3.0.2
+Aktuelle Version: 3.0.3
 Entscheidender Hinweis zum Custom-Action-Server SSL Problem:
 https://stackoverflow.com/questions/52805115/certificate-verify-failed-unable-to-get-local-issuer-certificate
 > I would like to provide a reference. I use cmd + space, then type Install Certificates.command, and then press Enter. After a short while, the command line interface pops up to start the installation.

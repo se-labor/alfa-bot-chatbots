@@ -1059,7 +1059,7 @@ responses:
       title: Weiter
     image: https://www.alfa-bot.de/wp-content/uploads/2023/01/scheck.png
     text: |
-      *Mit einem **Scheck** kann man *bezahlen*. Du kannst mit einem Scheck zur Bank gehen. Die Bank zahlt dir das Geld aus. Beispiel:
+      Mit einem **Scheck** kann man *bezahlen*. Du kannst mit einem Scheck zur Bank gehen. Die Bank zahlt dir das Geld aus. Beispiel:
       "Am Ende des Monats bekomme ich von meinem Chef einen Scheck und hole mir damit meinen Lohn ab."
   utter_explain_check:
   - buttons:

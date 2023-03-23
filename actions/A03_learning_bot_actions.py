@@ -6,7 +6,6 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 from typing import List
 
-
 # Helper vars and classes
 similarWords = {"Als | Wie": "/enter_as_like", "Launisch | Launig": "/enter_moody_witty",
                 "Dasselbe | Das Gleiche": "/enter_same",
@@ -45,6 +44,7 @@ def randomise_praising_answer() -> str:
     msg = random_answer + random_reaction
     return msg
 
+
 # Get array of buttons
 def getButtonsFromDict(pool: dict) -> list:
     buttons = []
@@ -57,7 +57,7 @@ def getButtonsFromDict(pool: dict) -> list:
 # Getting random subset out of dictionary
 def randomSelection(pool: dict, size: int) -> list:
     buttons = []
-    sample = dict(random.sample(pool.items(), size))
+    sample = dict(random.sample(list(pool.items()), size))
     buttons = getButtonsFromDict(sample)
     return buttons
 
@@ -855,7 +855,6 @@ class ActionGetRandomNuggets(Action):
         buttons = randomSelection(smart_nuggets, randomButtons)
         buttons.append({"title": "Neue Auswahl", "payload": "/random_smart_nuggets"})
         dispatcher.utter_message(text=f"Hier sind ein paar Vorschläge für kluge Häppchen", buttons=buttons)
-        # dispatcher.utter_message(response="utter_ask_other_teams")
         return []
 
 

@@ -1,6 +1,5 @@
-.idea
+.idea/
 .rasa
 models
 venv
 actions/.env
-.idea/*
