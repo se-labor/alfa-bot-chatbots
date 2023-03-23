@@ -252,7 +252,7 @@ Container pushen `docker push repo/image:tag`
 Custom Action Container selbst bauen: `docker build -f Dockerfile.customAction -t sjproost/alfabot-ca:tag .
 `
 
-Aktuelle Version: 3.0.3
+Aktuelle Version: 3.0.4
 Entscheidender Hinweis zum Custom-Action-Server SSL Problem:
 https://stackoverflow.com/questions/52805115/certificate-verify-failed-unable-to-get-local-issuer-certificate
 > I would like to provide a reference. I use cmd + space, then type Install Certificates.command, and then press Enter. After a short while, the command line interface pops up to start the installation.
@@ -291,7 +291,8 @@ Vielleicht auch hilfreich: RasaLit
 ```
 Um den Chatroom nutzen zu können, muss rasa als Server gestartet werden:
 
-`rasa run --port 5005 --enable-api --cors "*"`
+`rasa run --port 5005 --enable-api --cors "*"` oder 
+`rasa run -vv --port 5005 --enable-api --cors "*"` für den debug-Modus.
 
 ### Bot-Bestandteile für Befragung
 

@@ -2,6 +2,7 @@ from typing import Any, Text, Dict
 import os
 import smtplib
 import csv
+import pytz
 from datetime import datetime
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
@@ -76,7 +77,7 @@ def create_survey_msg(survey_result: List[List[str]]) -> str:
 
 
 def send_survey_mail(survey_result: List[List[str]]) -> None:
-    load_dotenv('.env')
+    load_dotenv('./actions/.env')
     attachment_path = 'survey_data.csv'
     sender = os.getenv('FROM')
     receivers = [os.getenv('TOFH'), os.getenv('TOBVAG')]
@@ -170,7 +171,7 @@ class ActionSubmitSurvey(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         slot_lotnum = tracker.get_slot('lot_number')
-        today = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+        today = datetime.now(pytz.timezone("Europe/Berlin")).strftime("%m/%d/%Y, %H:%M:%S")
         slot_smartphone = tracker.get_slot('smartphone')
         slot_need_help = tracker.get_slot('need_help')
         slot_read = tracker.get_slot('read_answers')
