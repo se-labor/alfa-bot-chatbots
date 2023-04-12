@@ -305,277 +305,53 @@ nlu:
     - Nazi
     - Nazis
     - alle sind doof
-- intent: overview
+- intent: chitchat/cc1
   examples: |
-    - Zeige mir eine Übersicht aller Themen
-    - Übersicht
-    - Übersicht aller Nuggets
-    - Zeige mir alle Nuggets
-    - Zeige mir alle Häppchen
-    - Alle Häppchen zeigen
-- intent: similar_words
+    - Frage zu Chitchat
+    - sonstige Fragen
+- intent: chitchat/cc2
   examples: |
-    - Zeige mir alle ähnlichen Wörter
-    - Similar Words
-    - Alle ähnlichen Wörter
-    - Ähnliche Wörter
-- intent: nice_to_know
+    - Scheint bei dir die Sonne?
+    - Wie ist das Wetter bei dir?
+- intent: insurance/ins1
   examples: |
-    - Interessante Fakten
-    - Nice to know
-    - Fakten
-    - Kleine Fakten
-- intent: start_survey
+    - Frage zu Versicherungen
+    - Was weißt du über Versicherungen?
+- intent: insurance/ins2
   examples: |
-    - Ich möchte die Umfrage starten
-    - Umfrage starten
-    - Bitte die Umfrage starten
-    - Kann ich mit der Befragung anfangen
-    - App bewerten
-    - Bewerten
-    - Ich möchte die Befragung starten
-    - Befragung starten
-    - Ich möchte an der Befragung teilnehmen
-- intent: lot_number
+    - welche Versicherungen brauche ich?
+    - Welche Versicherungen würdest du mir empfehlen?
+    - Welche Versicherungen sind wirklich nötig?
+- intent: banking/ban1
   examples: |
-    - Meine Teilnehmernummer lautet [123456](lot number)
-    - Meine Nummer ist [59427](lot_number)
-    - Das ist [94835](lot_number)
-    - Meine Nummer lautet [53757](lot_number)
-    - Meine Nummer lautet [007](lot_number)
-    - Nummer [96123](lot_number)
-    - [53757](lot_number)
-    - [48143](lot_number)
-    - [48341](lot_number)
-    - [48565](lot_number)
-    - [911](lot_number)
-    - [1092](lot_number)
-    - [1126](lot_number)
-    - [1263](lot_number)
-    - [1518](lot_number)
-    - [1645](lot_number)
-    - [1931](lot_number)
-    - [1932](lot_number)
-    - [2063](lot_number)
-    - [2147](lot_number)
-    - [2656](lot_number)
-    - [3094](lot_number)
-    - [3310](lot_number)
-    - [3349](lot_number)
-    - [3507](lot_number)
-    - [4098](lot_number)
-    - [4297](lot_number)
-    - [4667](lot_number)
-    - [4935](lot_number)
-    - [5010](lot_number)
-    - [5025](lot_number)
-    - [5050](lot_number)
-    - [5299](lot_number)
-    - [5320](lot_number)
-    - [5325](lot_number)
-    - [5382](lot_number)
-- intent: enter_as_like
+    - Frage zum Banking
+    - Sage mir etwas über Banken
+- intent: banking/ban2
   examples: |
-    - Wie vergleiche ich?
-    - Wann verwende ich wie?
-    - Wann nutze ich als?
-    - Wann wie, wann als?
-    - Womit sage ich, dass etwas gleich ist?
-    - Wie sage ich, dass etwas ungleich ist?
-    - vergleich als
-    - als
-- intent: enter_seemingly_apparently
+    - Wie funktioniert Onlinebanking?
+    - Brauche ich Onlinebanking?
+- intent: pay/pay1
   examples: |
-    - Was ist der Unterschied zwischen anscheinend und scheinbar?
-    - Unterschied anscheinend und scheinbar
-    - kennst du den Unterschied zwischen anscheinend und scheinbar?
-    - Gibt es einen Unterschied zwischen anscheinen und scheinbar?
-    - anscheinend scheinbar
-    - anscheinend
-    - scheinbar
-    - Vergleich scheinbar
-    - vergleich scheinbar
-- intent: enter_same
+    - Wie kann ich bezahlen?
+    - Mobiles bezahlen
+- intent: pay/pay2
   examples: |
-    - Was ist der Unterschied zwischen dasselbe und das gleiche?
-    - Dassselbe
-    - Das gleiche
-    - Vergleich derselbe
-    - dieselbe
-    - Vergleich dasselbe
-    - vergleich das gleiche
-    - vergleiche dasselbe
-    - Was ist Unterschied dieselbe und die gleiche?
-    - Kennst du den Unterschied zwischen dasselbe und das Gleiche?
-    - Wann sagt man das gleiche und wann dasselbe?
-    - Unterschied dasselbe
-- intent: enter_since_be
+    - Sollte ich noch Bargeld nutzen?
+    - Ist Bargeld noch zeitgemäß?
+    - Brauche ich noch Bargeld?
+- intent: invest/inv1
   examples: |
-    - Wann schreibt man seit und wann seid?
-    - Was ist der Unterschied zwischen seit und Seid?
-    - Seit
-    - seid
-    - Wann schreibe ich seit mit t und wann mit d?
-    - vergleich seit und seid
-    - Unterscheidung seit und seid?
-- intent: enter_scale_vague
+    - Sollte ich investieren?
+    - Kann ich investieren?
+- intent: invest/inv2
   examples: |
-    - Was ist der Unterschied zwischen Waage und vage?
-    - Wann sagt man Waage und wann vage?
-    - Unterschied waage und vage
-    - Waage und vage
-    - Wann nehme ich Waage und wann vage?
-    - Vergleich Waage und vage
-- intent: enter_moody_witty
+    - Ist ein Sparbuch heute noch sinnvoll?
+    - Welche Zinsen kann ich auf einem Sparbuch bekommen?
+- intent: counseling/cou1
   examples: |
-    - Was ist der UNterschied zwischen launisch und launig?
-    - launisch und launig
-    - Wann sagt man launisch und wann launig?
-    - Heißt es launig oder launisch?
-    - Es heißt, ich sei launisch, was heißt das?
-    - Wie schreibt man launisch?
-    - Was bedeutet launig?
-- intent: enter_password
+    - Frage zu Beratungsmöglichkeiten
+    - Ich brauche Beratung
+- intent: counseling/cou2
   examples: |
-    - Wie erstelle ich ein sicheres Passwort?
-    - Was ist ein sicheres Passwort?
-    - Sicheres Passwort
-    - Sicheres Passwort erstellen
-    - Wie kann man ein sicheres Passwort bekommen?
-    - Gute Passwörter machen
-    - Wie sieht ein gutes Passwort aus?
-    - Was ist ein gutes Passwort
-    - Gutes Passwort
-    - gutes Passwort erstellen
-- intent: enter_silvester
-  examples: |
-    - Wie schreibt man Silvester?
-    - Silvester oder Sylvester?
-    - Silvester
-    - Sylvester
-    - Wie ist die Schreibweise von Silvester
-    - Warum schreibt man Silvester nicht mit y?
-- intent: enter_christmas
-  examples: |
-    - Warum schreibt man Weihnachten mit h
-    - Was bedeutet advent?
-    - Warum Weihnachten und nicht Weinachten?
-    - Weihnachten
-    - Weinachten
-    - Avent
-    - Wie schreibt man Advent?
-    - Was heißt Advent?
-- intent: enter_few_couple
-  examples: |
-    - Wann schreibe ich ein paar und wann ein Paar?
-    - wann schreibe ich paar klein und wann groß?
-    - Vergleich paar
-    - Ein paar Paare
-    - Wie nennt man zwei Menschen die zusammen gehören?
-    - Wie sage ich zu einigen Früchten
-    - Vergleich ein Paar und ein paar
-- intent: enter_string_page
-  examples: |
-    - Wann heißt es Seite und wann Saite?
-    - Vergleich Seite Saite
-    - Was ist der Unterschied zwischen Seite und Saite?
-    - Wie unterscheide ich Seiten und Saiten?
-    - Hat meine Gitarre Seiten oder Saiten?
-    - Wann nehme ich Saite und wann Seite?
-- intent: enter_warranty_rifle
-  examples: |
-    - Vergleich Gewähr und Gewehr
-    - Gewehr Gewähr
-    - Warum schreibt man Gewehr mit ä?
-    - Was ist der Unterschied zwischen Gewähr und Gewehr
-    - Woher kommt Gewährleistung?
-    - Wann muss ich Gewähr schreiben?
-    - Hat ein Jäger ein Gewehr?
-- intent: enter_cheque_check
-  examples: |
-    - Was ist der Unterschied zwischen Scheck und Check
-    - Scheck und Check
-    - Vergleich scheck mit Check
-    - Wann schreibe ich Check
-    - Was ist ein Scheck
-    - Schreibt man Scheck mit Ch oder Sch?
-- intent: enter_paint_grain
-  examples: |
-    - Unterschied malen mahlen
-    - Was ist der Unterschied zwischen mahlen malen
-    - malen
-    - Mahlen
-    - Wie schreibt man mahlen, wenn es um Mehl geht?
-    - Wann nimmt man malen und wann mahlen?
-    - Wann schreibt man malen mit h?
-    - Wie schreibt man mahlen?
-    - Muss ich malen mit h schreiben?
-- intent: enter_more_sea
-  examples: |
-    - Was ist der Unterschied zwischen mehr und Meer?
-    - mehr meer
-    - Wann schreibt man Meer mit h?
-    - Wann nehme ich Meer und wann mehr?
-    - Wieso mehr mit und ohne h?
-    - Vergleich mehr Meer
-    - Vergleiche Meer und mehr
-- intent: enter_was_truth
-  examples: |
-    - Unterschied wahr und war
-    - Wann schreibe ich war mit h?
-    - Wieso war mit h?
-    - Vergleich wahr und war?
-    - War und wahr
-    - wahr
-    - wann nehme ich wahr?
-    - war wahr
-    . vergleich war wahr
-- intent: enter_das_dass
-  examples: |
-    - Wann schreibe ich das mit zwei s?
-    - Vergleich das und dass
-    - Vergleich das dass
-    - Wieso schreibt man mal das und mal dass?
-    - dass das
-    - das dass Vergleich
-    - das und dass
-- intent: enter_ward_were
-  examples: |
-    - ward wart
-    - Vergleich wart und ward
-    - Wann nutzt man wart und wann ward?
-    - Schreibweisen wart
-    - Wart mit d und mit t?
-    - Was ist der Unterschied zwischen wart und ward?
-    - Unterschied wart ward
-- intent: enter_again_against
-  examples: |
-    - Was ist der Unterschied zwischen wider und wieder?
-    - Unterschied wider wieder
-    - Wann benutze ich wieder und wann wider?
-    - Vergleich wieder wider
-    - Wann wieder, wann wider
-    - wieder wider
-- intent: enter_mental_blessed
-  examples: |
-    - Vergleich seelisch und selig
-    - Was ist der Unterschied zwischen seelisch und selig
-    - Selig seelisch
-    - Wann verwende ich seelisch und wann selig?
-    - Gibt es einen Unterschied zwischen seelisch und selig?
-    - Vergleich seelisch selig
-- intent: random_smart_nuggets
-  examples: |
-    - neue Auswahl ähnlicher Wörter
-    - neue ähnliche Wörter
-    - andere Auswahl an Worten
-    - Zufallsauswahl
-    - Zufällige Vorschläge
-- intent: help
-  examples: |
-    - Hilfe
-    - Hilf mir
-    - Ich brauche Hilfe
-    - Zeig mir deine Hilfe
-    - Zeig mir die Hilfe
-    - Kannst du mir helfen
+    - Ich habe Schulden
+    - Ich habe eine negative Schufa-Auskunft

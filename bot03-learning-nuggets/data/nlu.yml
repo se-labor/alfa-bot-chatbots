@@ -528,6 +528,8 @@ nlu:
     - War und wahr
     - wahr
     - wann nehme ich wahr?
+    - war wahr
+    . vergleich war wahr
 - intent: enter_das_dass
   examples: |
     - Wann schreibe ich das mit zwei s?
@@ -567,6 +569,8 @@ nlu:
     - neue Auswahl ähnlicher Wörter
     - neue ähnliche Wörter
     - andere Auswahl an Worten
+    - Zufallsauswahl
+    - Zufällige Vorschläge
 - intent: help
   examples: |
     - Hilfe

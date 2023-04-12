@@ -1,40 +1,101 @@
-# Rasa-Chatbot für Projekt ALFA-Bot - LT-Wahl NRW Prototyp
+# Rasa-Chatbot für Projekt ALFA-Bot
+
+#### Stand: 03. April 2023
+
+## Chatbots in diesem Projekt
+
+* Wahl-Bot: Genutzt für Bundestagswahl 2021 und Landtagswahl 2022 NRW. Anschließend generisch abgeleitet.
+* WM-Bot: Bot anlässlich der Fußball-WM 2022. Beinhaltet Regeln und Erklärungen zu Fußball allgemein und Antworten
+zur WM 2022 in Katar.
+* Lern-Bot: Bietet Wissens-Häppchen an. Bisher in Form von Paaren ähnlicher Wörter und kleinerer Informationen.
+* Finanz-Bot: Noch im Aufbau
+
+## Software-Stand
+Aktuell genutzter Software-Stand
+
+| Paket | Stand ab 16.03.2023 |
+| --- |---------------------|
+| Rasa Version  | 3.4.6               |
+| Rasa SDK Version  | 3.4.1               |
+| Minimum Compatible Version  | 3.0.0               |
+| Used Python Version | 3.9.6               |
+| Used Pip Version | 23.0.1              |
+
+Rasa-Update per `pip install rasa --upgrade`, ggf. mit konkreter Versionsangabe
 
 ## Installation und Inbetriebnahme
-###Python3 (venv)
-Rasa wird in einer python3 virtual environment (venv) ausgeführt. Benötigt wird Pyhton3 und pip3
+ALFA-Bot verwendet Rasa Open Source. Dieses läuft vorzugsweise in einer virtuellen Umgebung von Python. 
+Zunächst das Projekt auschecken und anschließend die Installationsanweisungen von Rasa ausführen. 
+Diese sind unten angegeben, sollten aber mit der 
+[Rasa-Dokumentation](nhttps://rasa.com/docs/rasa/installation/environment-set-up) abgeglichen werden, insbesondere
+die derzeit unterstützen Versionen.
+
+### Python3 (venv)
+Rasa wird in einer python3 virtual environment (venv) ausgeführt. Benötigt wird Pyhton3 mit pip3:
 * Erstellen: `python3 -m venv ./venv`
 * Aktivieren: `source ./venv/bin/activate`
 * Deaktivieren: `deactivate`
 
-###Installieren von Rasa
+### Installieren von Rasa
 1. Aktivieren der virtuellen Umgebung
 2. Update pip `pip3 install -U pip`
-3. Installiere Rasa Open Source `pip3 install rasa`
+3. Installiere Rasa Open Source `pip3 install rasa` (ggf. eine konkrete Rasa-Verion angeben 'pip3 install rasa==3.4.6')
 
-Installieren von [Rasa X](https://rasa.com/docs/rasa-x/installation-and-setup/installation-guide) (GUI Wrapper):
-Sicherstellen, dass man in der gleichen virtuellen Umgebung arbeitet, wo rasa selbst installiert wurde.
+### Installieren der Requirements für Custom-Action-Server
+1. Aus dem ./actions-Ordner: `pip3 install -r requirements.txt`
 
-* Virtuelle Umgebung starten: `source ./venv/bin/activate`
-* Rasa X installieren `pip install -U rasa-x --extra-index-url https://pypi.rasa.com/simple`
+### Bestimmte Bot-Modelle trainieren und aktualisieren
+1. Dateien aus dem jeweiligen Bot-Ordner auswählen
+2. In Stammverzeichnis des Projektordners kopieren (überschreiben)
+3. In Konsole `rasa train` ausführen
+4. Sofern neue Daten zum Bot hinzu kommen, die Dateien im entsprechenden Bot-Ordner aktualisieren. Dazu gehört
+immer im Stammverzeichnis `domain.yml, config.yml`, sowie der Ordner `./data` mit den Dateien `nlu.yml, rules.yml, stories.yml`
+Eventuell werden auch die
 
-**Hinweis zur Installation von Rasa X (Stand 1.4.21):**
-Maybe this is incorrect but I noticed I have to downgrade the pip version in the respective virtual environment as well. So make sure the virtual environment with rasa is active and:
-```
-pip install --upgrade pip==20.2
-run pip -V to make sure the right version is installed
-run pip install -U rasa-x --extra-index-url https://pypi.rasa.com/simple
-```
-
-###Rasa Open Source Befehle
-
-* `rasa init`: Neues Projekt erstellen
-* `rasa x`: ~~Start rasa X Plattform~~
+### Rasa Open Source Befehle
+* `rasa init`: Neues Projekt erstellen (nicht verwenden, wenn Projekt ausgecheckt wurde)
 * `rasa train`: Trainiere ein CB-Model (models-Ordner steht in gitignore)
-* `rasa shell`: Starte eine Unterhaltung über die Konsole
-* `rasa interactive`: Starte eine Unterhaltung per Konsole mit Training
-* `rasa run actions -vv`: Relevant für custom actions
+* `rasa shell`: Starte eine Unterhaltung über die Konsole, benötigt trainiertes Modell
+* `rasa interactive`: Starte eine Unterhaltung per Konsole mit Trainingsmöglichkeit
+* `rasa run actions`: Starte Custom-Action-Server auf Port 5005
 * `rasa run -m models --enable-api --cors "*" -p 5021`: Wird benutzt, wenn ein Bot deployed ist und par API aktiviert werden soll.
+* `-vv`: Debug-Flag
+
+## Docker Container für Rasa OSS
+Für das Projekt selbst gebaute Docker-Container und Chatbot-Modelle:
+
+| Container    *auf [dockerhub](https://hub.docker.com)*                                               | Model im beemo-nexus                                                                                                      |
+|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| [Custom Action Server](https://hub.docker.com/repository/docker/sjproost/alfabot-ca/general)         |                                                                                                                           |
+| Wahl-Bot: [alfa-wahlbot](https://hub.docker.com/repository/docker/sjproost/alfa-wahlbot/general)     | [election-bot-model-latest.tar.gz](https://nexus.beemo.eu/repository/raw-public/alfabot/election-bot-model-latest.tar.gz) |
+| WM-Bot: [alfa-wmbot](https://hub.docker.com/repository/docker/sjproost/alfa-wmbot/general)           | [wm-bot-model-latest.tar.gz](https://nexus.beemo.eu/repository/raw-public/alfabot/wm-bot-model-latest.tar.gz)             |
+| Lern-Bot: [alfa-lernbot](https://hub.docker.com/repository/docker/sjproost/alfa-lernbot/general)     | [learning-bot-model-latest.tar.gz](https://nexus.beemo.eu/repository/raw-public/alfabot/learning-bot-model-latest.tar.gz) |
+| Finanz-Bot: [alfa-finanzbot](https://hub.docker.com/repository/docker/sjproost/alfa-finanzbot/general) | [finance-bot-model-latest.tar.gz](https://nexus.beemo.eu/repository/raw-public/alfabot/finance-bot-model-latest.tar.gz)  |
+
+### Docker Kommandos:
+#### Chatbot-Container
+Container bauen: `docker build -t repo/image:tag .`
+* Wahl-Bot: `docker build -t sjproost/alfa-wahlbot:1.0.0 .`
+* WM-Bot: `docker build -t sjproost/alfa-wmbot:1.2.0 .`
+* Lern-Bot: `docker build -t sjproost/alfa-lernbot:1.1.0 .`
+* Finanz-Bot: `docker build -t sjproost/alfa-finanzbot:0.0.1 .`
+
+Container starten und interaktiv (-it) mit shell nutzen 
+`docker run -it -p 8080:5005 -v $(pwd):/app repo/image:tag shell`
+
+
+#### Custom Action Container
+Aktuelle Version: 3.0.4
+
+Container bauen: `docker build -f Dockerfile.customAction -t sjproost/alfabot-ca:tag .`
+
+#### Container pushen
+Container pushen `docker push repo/image:tag`
+
+### ALFA-Bot API
+[Swagger-API](https://alfabot.se-labor.de/alfabotapi/swagger-ui/index.html?configUrl=/alfabotapi/v3/api-docs/swagger-config) zur Kommunikation von App und Chatbots.
+
+
 
 ## Zentrale Dateien und Konfigurationen
 
@@ -94,7 +155,7 @@ Die Domain.yml besteht aus bis zu sieben Abschnitten:
 
 Die Bereiche 3, 4 und 6 sind optional und kommen nur vor, wenn die Aspekte im Bot auch verwendet werden.
 ```yaml
-version: "2.0"
+version: "3.1"
 
 intents: 
   - greet
@@ -128,12 +189,12 @@ actions:
   - action_name_of_custom_action
 ```
 
-####Stories.yml
+#### Stories.yml
 Die Stories.yml enthält Beispiel-Konversationen, die dem einerseits vorgeben, auf welchen Intent er wie reagieren soll und darüber hinaus konkrete Dialoge mit mehreren Turn-Takings darstellen.
 Im Sinne von [Conversation-Driven-Development](https://rasa.com/docs/rasa/conversation-driven-development/) sollten diese Stories am besten über die Interaktion mit dem Bot erstellt werden (bspw. über rasa interactive oder rasa x).
 
 
-###Kurzdialoge: Chitchat und FAQs
+### Kurzdialoge: Chitchat und FAQs
 Kurzdialoge wie Chitchat und FAQ unterscheiden sich vom sonstigen Dialog dahingehend, dass es sich um Fragen handelt, die i.d.R. mit einer Antwort erledigt sind. Längere Dialogverläufe sind nicht notwendig.
 In Rasa werden diese Gesprächsformen wie folgt implementiert:
 1. In der **config.yml** muss die `Rule Policy` zu den Policies hinzugefügt sein, damit **rules.yml** überhaupt vom Datenmodel beachtet wird.
@@ -203,19 +264,18 @@ responses:
 7. Bot erneut mit `rasa train` trainieren. Danach sollte es funktionieren. 
    Eventuelle Warnings wie *UserWarning: Action 'utter_faq' is listed as a response action in the domain file, but there is no matching response defined. Please check your domain.* können ignoriert werden. Stand April 2021 ist das ein [offener Bug](https://github.com/RasaHQ/rasa/issues/7645) im Rasa-Github
 
-###Sonstiges:
+## Sonstiges:
 spaCy: https://spacy.io/usage/models#languages
 
 Rasa und Docker:
 
-https://rasa.com/docs/rasa-x/installation-and-setup/install/docker-compose/
+* https://rasa.com/docs/rasa-x/installation-and-setup/install/docker-compose/
 
-https://rasa.com/docs/rasa/docker/building-in-docker/
+* https://rasa.com/docs/rasa/docker/building-in-docker/
 
-https://hub.docker.com/r/rasa/rasa/
+* https://hub.docker.com/r/rasa/rasa/
 
-REST-Endpoint: https://rasa.com/docs/rasa/2.2.x/connectors/your-own-website
-bei laufendem rasa x über `http://localhost:5005/webhooks/rest/webhook` per JSON-Objekt, bspw.
+[REST-API](https://rasa.com/docs/rasa/pages/http-api):
 ```JSON
 {
     "message": "Wer ist der Kandidat der CDU?",
@@ -224,35 +284,6 @@ bei laufendem rasa x über `http://localhost:5005/webhooks/rest/webhook` per JSO
 ```
 pypi-dotenv: https://pypi.org/project/python-dotenv/
 
-### Docker Container für Rasa OSS bauen
-#### Aktuell genutzt: rasa version: 3.4.5 
-
-Update per `pip install rasa --upgrade`
-
-| Paket | Stand ab 16.03.2023 |
-| --- |---------------------|
-| Rasa Version  | 3.4.6               |
-| Rasa SDK Version  | 3.4.1               |
-| Minimum Compatible Version  | 3.0.0               |
-| Used Python Version | 3.9.6               |
-| Used Pip Version | 23.0.1              |
-
-#### Docker Kommandos:
-
-Container bauen: `docker build -t repo/image:tag .`
-* Wahl-Bot: `docker build -t sjproost/alfa-wahlbot:1.0.0 .`
-* WM-Bot: `docker build -t sjproost/alfa-wmbot:1.2.0 .`
-* Lern-Bot: `docker build -t sjproost/alfa-lernbot:1.1.0 .`
-
-Container starten und interaktiv (-it) mit shell nutzen 
-`docker run -it -p 8080:5005 -v $(pwd):/app repo/image:tag shell`
-
-Container pushen `docker push repo/image:tag`
-
-Custom Action Container selbst bauen: `docker build -f Dockerfile.customAction -t sjproost/alfabot-ca:tag .
-`
-
-Aktuelle Version: 3.0.4
 Entscheidender Hinweis zum Custom-Action-Server SSL Problem:
 https://stackoverflow.com/questions/52805115/certificate-verify-failed-unable-to-get-local-issuer-certificate
 > I would like to provide a reference. I use cmd + space, then type Install Certificates.command, and then press Enter. After a short while, the command line interface pops up to start the installation.
@@ -267,7 +298,7 @@ https://forum.rasa.com/t/solved-predicted-action-not-following-the-story/3364/8
 Vielleicht auch hilfreich: RasaLit
 `https://github.com/RasaHQ/rasalit`
 
-### Chatroom zur einfachen lokalen Probe des Chatbots
+## Chatroom zur einfachen lokalen Probe des Chatbots
 
 ```html
 <head>
@@ -294,7 +325,7 @@ Um den Chatroom nutzen zu können, muss rasa als Server gestartet werden:
 `rasa run --port 5005 --enable-api --cors "*"` oder 
 `rasa run -vv --port 5005 --enable-api --cors "*"` für den debug-Modus.
 
-### Bot-Bestandteile für Befragung
+## Bot-Bestandteile für Befragung
 
 #### Intents
 ````yaml

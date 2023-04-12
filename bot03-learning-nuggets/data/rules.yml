@@ -66,7 +66,7 @@ rules:
 - rule: nlu fallback
   steps:
     - intent: nlu_fallback
-    - action: utter_out_of_scope
+    - action: utter_help
 
 - rule: ca test
   steps:
@@ -117,6 +117,7 @@ rules:
         - requested_slot: null
     - action: utter_success_as_like
     - action: action_clear_as_like
+    - action: action_get_random_nuggets
 
 # Forms for scheinbar / anscheinend
 - rule: Activate apparently_seemingly_form
@@ -134,6 +135,7 @@ rules:
         - requested_slot: null
     - action: utter_success_apparently_seemingly
     - action: action_clear_seemingly_apparently
+    - action: action_get_random_nuggets
 
 # Forms for dasselbe / das gleiche
 - rule: Activate dasselbe_gleiche_form
@@ -151,6 +153,7 @@ rules:
         - requested_slot: null
     - action: utter_success_same
     - action: action_clear_same
+    - action: action_get_random_nuggets
 
 # Forms for since / be
 - rule: Activate since_be_form
@@ -168,6 +171,7 @@ rules:
         - requested_slot: null
     - action: utter_success_since_be
     - action: action_clear_since_be
+    - action: action_get_random_nuggets
 
 # Forms for scale / vague
 - rule: Activate scale_vague_form
@@ -185,6 +189,7 @@ rules:
         - requested_slot: null
     - action: utter_success_scale_vague
     - action: action_clear_scale_vague
+    - action: action_get_random_nuggets
 
 # Forms for moody / witty
 - rule: Activate moody_witty_form
@@ -202,6 +207,7 @@ rules:
         - requested_slot: null
     - action: utter_success_moody_witty
     - action: action_clear_moody_witty
+    - action: action_get_random_nuggets
       
 # Forms for few / couple
 - rule: Activate few_couple_form
@@ -219,6 +225,7 @@ rules:
         - requested_slot: null
     - action: utter_success_few_couple
     - action: action_clear_few_couple
+    - action: action_get_random_nuggets
       
 # Forms for string / page
 - rule: Activate string_page_form
@@ -236,6 +243,7 @@ rules:
         - requested_slot: null
     - action: utter_success_string_page
     - action: action_clear_string_page
+    - action: action_get_random_nuggets
       
 # Forms for warranty / rifle
 - rule: Activate warranty_rifle_form
@@ -253,6 +261,7 @@ rules:
         - requested_slot: null
     - action: utter_success_warranty_rifle
     - action: action_clear_warranty_rifle
+    - action: action_get_random_nuggets
 
 # Forms for cheque / check
 - rule: Activate cheque_check_form
@@ -270,6 +279,7 @@ rules:
         - requested_slot: null
     - action: utter_success_cheque_check
     - action: action_clear_cheque_check
+    - action: action_get_random_nuggets
       
 # Forms for paint / grain
 - rule: Activate paint_grain_form
@@ -287,6 +297,7 @@ rules:
         - requested_slot: null
     - action: utter_success_paint_grain
     - action: action_clear_paint_grain
+    - action: action_get_random_nuggets
 
 # Forms for das / dass
 - rule: Activate das_dass_form
@@ -304,6 +315,7 @@ rules:
         - requested_slot: null
     - action: utter_success_das_dass
     - action: action_clear_das_dass
+    - action: action_get_random_nuggets
 
 # Forms for was / truth
 - rule: Activate was_truth_form
@@ -321,6 +333,8 @@ rules:
         - requested_slot: null
     - action: utter_success_was_truth
     - action: action_clear_was_truth
+    - action: utter_anything_else
+    - action: action_get_random_nuggets
 
 # Forms for ward / were
 - rule: Activate ward_were_form
@@ -338,6 +352,7 @@ rules:
         - requested_slot: null
     - action: utter_success_ward_were
     - action: action_clear_ward_were
+    - action: action_get_random_nuggets
       
 # Forms for mental / blessed
 - rule: Activate mental_blessed_form
@@ -355,6 +370,7 @@ rules:
         - requested_slot: null
     - action: utter_success_mental_blessed
     - action: action_clear_mental_blessed
+    - action: action_get_random_nuggets
 
 # Forms for again / against
 - rule: Activate again_against_form
@@ -372,6 +388,7 @@ rules:
         - requested_slot: null
     - action: utter_success_again_against
     - action: action_clear_again_against
+    - action: action_get_random_nuggets
       
 # Forms for more / sea
 - rule: Activate more_sea_form
@@ -389,3 +406,4 @@ rules:
         - requested_slot: null
     - action: utter_success_more_sea
     - action: action_clear_more_sea
+    - action: action_get_random_nuggets
