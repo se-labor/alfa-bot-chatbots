@@ -17,10 +17,13 @@ intents:
 - interrupt
 - joke
 - kontakt
+- fachbegriffe_versicherungen
 - nettiquette
 - nlu_fallback
 - out_of_scope
 - testintent
+- random_insurance_terms
+- all_insurance_terms
 entities:
 - lot_number
 
@@ -43,8 +46,186 @@ responses:
   - text: Das war keine nette Eingabe oder? Bitte bleibe freundlich.
   utter_chitchat/cc1:
   - text: Antwort aus den Intents zur Chitchat
-  utter_insurance/ins1:
-  - text: Antwort aus den Intents zu Versicherungen
+  utter_insurance/versicherungen_was:
+  - buttons:
+      - payload: Wofür gibt es Versicherungen?
+        title: Wofür Versicherungen?
+      - payload: Welche Arten von Versicherungen gibt es?
+        title: Versicherungs-Arten
+      - payload: Fachbegriffe zu Versicherungen
+        title: Fachbegriffe
+    text: 'Eine Versicherung ist ein Vertrag zwischen dir und einer Versicherungs-Firma. Die Versicherung garantiert dir in bestimmten Fällen Hilfe, wenn dir etwas Schlimmes passiert. Du musst dafür regelmäßig Beiträge bezahlen. Beispiel: Wenn du krank wirst, zahlt die **Krankenversicherung** den Arzt.'
+  utter_insurance/versicherungen_arten:
+  - buttons:
+      - payload: Pflichtversicherungen
+        title: Pflichtversicherungen
+      - payload: Sozialversicherungen
+        title: Sozialversicherungen
+      - payload: Sinnvolle Versicherungen
+        title: Sinnvolle Versicherungen
+      - payload: Individuelle Versicherungen
+        title: Individuelle Versicherungen
+      - payload: Überflüssige Versicherungen
+        title: Überflüssige Versicherungen
+    text: 'Es gibt verschiedene Arten von Versicherungen. Tippe die Art von Versicherung an, zu der du mehr wissen möchtest:'
+  utter_insurance/versicherungen_wofuer:
+  - buttons:
+      - payload: Sozialversicherungen
+        title: Dummy Sozialversicherungen
+      - payload: Versicherungs-Arten
+        title: Dummy Versicherungs-Arten
+    text: 'Unglücke passieren sehr selten. Aber wenn, dann ist der Schaden für dich groß. Die Beiträge für die Versicherung sind meistens gering.'
+  utter_insurance/pflichtversicherung:
+  - buttons:
+      - payload: Sozialversicherungen
+        title: Sozialversicherungen
+      - payload: Versicherungs-Arten
+        title: Versicherungs-Arten
+    text: '**Pflichtversicherungen** sind Versicherungen, die eine Person in Deutschland haben muss. Das ist zunächst nur die **Krankenversicherung**. Als Arbeitnehmer musst du mehr Versicherungen haben. Die sogenannten *Sozialversicherungen*.'
+  utter_insurance/sozialversicherungen:
+  - buttons:
+      - payload: Krankenversicherung
+        title: Weiter
+      - payload: Versicherungs-Arten
+        title: Versicherungs-Arten
+    text: 'Es gibt 5 **Sozialversicherungen**. Sie gelten als Basisversicherungen, die jede Person haben sollte. Dazu gehören *Krankenversicherung*, *Pflegeversicherung*, *Unfallversicherung*, *Rentenversicherung* und *Arbeitslosenversicherung*. Tippe auf “Weiter” für mehr Informationen.'
+  utter_insurance/krankenversicherung:
+  - buttons:
+      - payload: Pflegeversicherung
+        title: Weiter
+      - payload: Versicherungs-Arten
+        title: Versicherungs-Arten
+    text: 'Die Krankenversicherung zahlt, wenn du zum Arzt oder ins Krankenhaus musst. Auch bei Kosten für Medikamente hilft die Krankenversicherung. Bei Kindern übernimmt die Versicherung der Eltern den Schutz.'
+  utter_insurance/pflegeversicherung:
+  - buttons:
+      - payload: Unfallversicherung
+        title: Weiter
+      - payload: Versicherungs-Arten
+        title: Versicherungs-Arten
+    text: 'Die **Pflegeversicherung** sorgt für dich, wenn du pflegebedürftig wirst. Dadurch kannst du Hilfe bekommen, wenn du dich nicht mehr selbst versorgen kannst. Als Arbeitnehmer hast du automatisch eine Pflegeversicherung.'
+  utter_insurance/unfallversicherung:
+  - buttons:
+      - payload: Rentenversicherung
+        title: Weiter
+      - payload: Versicherungs-Arten
+        title: Versicherungs-Arten
+    text: 'Die **Unfallversicherung** sichert dich ab, wenn du einen Unfall bei der Arbeit hast oder dort krank wirst. Als Arbeitnehmer bist du automatisch versichert. Die Beiträge zahlt dein Arbeitgeber.'
+  utter_insurance/rentenversicherung:
+  - buttons:
+      - payload: Arbeitslosenversicherung
+        title: Weiter
+      - payload: Versicherungs-Arten
+        title: Versicherungs-Arten
+    text: 'Die **Rentenversicherung** zahlt dir monatlich Geld, wenn du in Rente gehst. Für Arbeitnehmer  ist die Rentenversicherung eine Pflichtversicherung.'
+  utter_insurance/arbeitslosenversicherung:
+  - buttons:
+      - payload: Versicherungs-Arten
+        title: Versicherungs-Arten
+    text: 'Wenn du deine Arbeit verlierst, hilft die **Arbeitslosenversicherung**. Sie zahlt dir für eine gewisse Zeit monatlich Geld. Für Arbeitnehmer ist die Arbeitslosenversicherung eine Pflichtversicherung.'
+  utter_insurance/sinnvolle_versicherung:
+  - buttons:
+      - payload: Was ist eine Berufsunfähigkeitsversicherung
+        title: Berufsunfähigkeitsversicherung
+      - payload: Was ist eine Privat-Haftpflichtversicherung
+        title: Privat-Haftpflicht
+    text: 'Es gibt einige Versicherungen, die zusätzlich zu den Pflichtversicherungen für alle Menschen sinnvoll sind. Zum Beispiel diese:'
+  utter_insurance/berufsunfaehigkeit:
+  - buttons:
+      - payload: Welche Versicherungen sind sinnvoll
+        title: Sinnvolle Versicherungen
+      - payload: Was ist eine Privat-Haftpflichtversicherung
+        title: Privat-Haftpflicht
+    text: 'Die **Berufsunfähigkeitsversicherung** ist eine der wichtigsten freiwilligen Versicherungen. Sie zahlt dir monatlich eine Rente, wenn du in deinem Beruf nicht mehr arbeiten kannst.'
+  utter_insurance/privat_haftpflicht:
+  - buttons:
+      - payload: Welche Versicherungen sind sinnvoll
+        title: Sinnvolle Versicherungen
+      - payload: Was ist eine Berufsunfähigkeitsversicherung
+        title: Berufsunfähigkeitsversicherung
+    text: 'Die **Privat-Haftpflichtversicherung** ist freiwillig, aber du solltest sie auf jeden Fall haben. Diese Versicherung zahlt, wenn jemand durch deine Schuld einen Schaden erleidet. Das schützt dich vor sehr hohen Kosten.'
+  utter_insurance/individuelle_vers:
+  - buttons:
+      - payload: Betriebliche Altersvorsorge
+        title: Betriebliche Altersvorsorge
+      - payload: Hausratversicherung
+        title: Hausrat
+      - payload: Kaskoversicherung
+        title: Kasko-Versicherung
+      - payload: KFZ-Haftpflicht
+        title: KFZ-Haftpflicht
+    text: 'Es gibt viele Versicherungen, die nicht jeder haben muss. Dennoch können einzelne für dich persönlich sinnvoll sein. Davon stelle ich dir vier Versicherungen vor.'
+  utter_insurance/bet_altersvorsorge:
+  - buttons:
+      - payload: Hausratversicherung
+        title: Hausrat
+      - payload: Kaskoversicherung
+        title: Kasko-Versicherung
+      - payload: KFZ-Haftpflicht
+        title: KFZ-Haftpflicht
+      - payload: Individuell sinnvolle Versicherungen
+        title: Individuelle Versicherungen
+    text: 'Die **betriebliche Altersvorsorge** heißt auch Betriebsrente. Das ist eine monatliche Zahlung, die man zusätzlich zur gesetzlichen Rente bekommen kann. Oft teilen sich Arbeitgeber und Arbeitnehmer die Beiträge.'
+  utter_insurance/hausrat:
+  - buttons:
+      - payload: Betriebliche Altersvorsorge
+        title: Betriebliche Altersvorsorge
+      - payload: Kaskoversicherung
+        title: Kasko-Versicherung
+      - payload: KFZ-Haftpflicht
+        title: KFZ-Haftpflicht
+      - payload: Individuell sinnvolle Versicherungen
+        title: Individuelle Versicherungen
+    text: 'Zum Hausrat gehören alle beweglichen Sachen einer Wohnung. Z.B. Möbel, Kleidung, Fernseher. Du kannst Schäden am Hausrat gegen Feuer, Leitungswasser, Einbruch und anderen Gründen versichern.
+Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den Schaden.'
+  utter_insurance/kasko_versicherung:
+  - buttons:
+      - payload: Betriebliche Altersvorsorge
+        title: Betriebliche Altersvorsorge
+      - payload: Hausratversicherung
+        title: Hausrat
+      - payload: KFZ-Haftpflicht
+        title: KFZ-Haftpflicht
+      - payload: Individuell sinnvolle Versicherungen
+        title: Individuelle Versicherungen
+    text: 'Eine **Kasko-Versicherung** sichert Schäden an deinem eigenen Auto ab. Du musst dann für die Reparatur weniger oder kein Geld zahlen. Die *Voll-Kasko* übernimmt mehr Schäden als die *Teil-Kasko*, ist aber teurer.'
+  utter_insurance/kfz_haftpflicht:
+  - buttons:
+      - payload: Betriebliche Altersvorsorge
+        title: Betriebliche Altersvorsorge
+      - payload: Hausratversicherung
+        title: Hausrat
+      - payload: Kaskoversicherung
+        title: Kasko-Versicherung
+      - payload: Individuell sinnvolle Versicherungen
+        title: Individuelle Versicherungen
+    text: 'Wenn du ein eigenes Auto hast, brauchst du eine **KFZ-Haftpflicht**. Falls du mit deinem Auto die Schuld an einem Unfall hast, übernimmt diese Versicherung die Kosten. Wichtig: Deinen eigenen Schaden zahlt diese Versicherung nicht.'
+  utter_insurance/versicherungen_ueberfluessig:
+  - buttons:
+      - payload: Versicherungs-Arten
+        title: Versicherungs-Arten
+    text: 'Manche Versicherungen sind nicht oder nur in Ausnahmefällen notwendig. Zum Beispiel lohnen sich Lebensversicherungen meistens nicht. Ebenso Versicherungen für Handys, Brillen, Reisegepäck, Haustiere oder elektronische Geräte. Wenn du Zweifel hast, frage hier:'
+  utter_fachbegriffe_versicherungen:
+  - text: 'Hier findest du wichtige Begriffe zu Versicherungen. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.'
+  utter_insurance/fb_basistarif:
+  - text: 'Einige Versicherungen bieten einen Basistarif an. Dieser sichert nur die wesentlichen Risiken ab und kostet dafür am wenigsten. Du kannst auch andere Tarife mit mehr Leistungen wählen. Diese Tarife kosten mehr. Den Basistarif gibt es zum Beispiel bei der KFZ-Haftpflichtversicherung.'
+  utter_insurance/fb_versicherungsnehmer:
+    - text: 'Versicherungsnehmer bist meistens Du. Als Versicherungsnehmer bekommst du die Leistung im Falle eines Schadens. In der Regel zahlt der Versicherungsnehmer auch den Beitrag.'
+  utter_insurance/fb_riester:
+    - text: 'Die Riester-Rente ist eine freiwillige Altersvorsorge. Du musst über viele Jahre regelmäßig einen Beitrag einzahlen. Wenn du das machst, zahlt der Staat eine Zulage in deinen Vertrag ein. Wenn du in Rente gehst, bekommst du Geld ausgezahlt.'
+  utter_insurance/fb_beitrag:
+    - text: 'Für jede Versicherung musst du Geld bezahlen. Dieses Geld nennt man Beitrag. Zahlst du deinen Beitrag nicht rechtzeitig, kannst du deinen Versicherungsschutz verlieren.'
+  utter_insurance/fb_garantieleistung:
+    - text: 'Die Garantieleistung ist ein Betrag, den die versicherte Person am Ende der Versicherung bekommt, wenn sie vorher alle Beiträge bezahlt hat. Zum Beispiel bei einer Lebensversicherung. Bei Abschluss des Vertrages ist diese Garantieleistung bereits bekannt.'
+  utter_insurance/fb_gesundheitspruefung:
+    - text: 'Manche Versicherungen prüfen erst, ob du gesund bist, bevor sie einen Vertrag mit dir abschließen. Damit berechnen Versicherungen ihr Risiko und deinen Beitrag. Allgemein gilt: Je gesünder du bist, desto weniger musst du bezahlen.'
+  utter_insurance/fb_versicherungsvertreter:
+    - text: 'Versicherungsvertreter verkaufen Versicherungen. Sie beraten dich und helfen dir beim Ausfüllen des Versicherungsvertrages. Wenn du einen Vertrag unterschreibst, bekommt der Vertreter dafür Geld von der Versicherung.'
+  utter_insurance/fb_schadensfall:
+    - text: 'Wenn dir etwas passiert, wogegen du dich versichert hast, ist das ein Schadensfall. Beispielsweise wenn du einen Unfall hast oder arbeitslos wirst. Bei einem Schadensfall zahlt die Versicherung die vereinbarte Leistung.'
+  utter_insurance/fb_police:
+    - text: 'Als Police bezeichnet man eine Urkunde, die man von der Versicherung erhält. Diese Urkunde steht für den Vertrag, den du mit der Versicherung geschlossen hast. Du solltest diese Urkunde gut aufheben.'
+  utter_insurance/fb_risiko:
+    - text: 'Eine Versicherung berechnet immer, wie hoch die Wahrscheinlichkeit ist, dass ein Schadensfall eintritt und sie zahlen müssen. Das ist das Risiko. Je höher das Risiko, desto teurer wird die Versicherung.'
   utter_invest/inv1:
   - text: Antwort aus den Intents zu Investments
   utter_banking/ban1:
@@ -65,6 +246,8 @@ responses:
   - text: Klar, Bargeld dabei zu haben ist immer sinnvoll. Es braucht keinen Strom
   utter_counseling/cou2:
   - text: Nicht gut gelaufen. Ich überlege mir was.
+  utter_go_on:
+    - text: bei mir kam "weiter" an.
 
 actions:
 - utter_anything_else
@@ -74,6 +257,7 @@ actions:
 - utter_chitchat
 - utter_greet
 - utter_interruption
+- utter_fachbegriffe_versicherungen
 - utter_kontakt
 - utter_nettiquette
 - utter_insurance
@@ -81,3 +265,7 @@ actions:
 - utter_banking
 - utter_pay
 - utter_counseling
+- action_get_all_insurance_terms
+- action_get_random_insurance_terms
+- action_insurance_terms
+- utter_go_on

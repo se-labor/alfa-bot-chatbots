@@ -305,6 +305,14 @@ nlu:
     - Nazi
     - Nazis
     - alle sind doof
+- intent: random_insurance_terms
+  examples: |
+    - Vorschläge für insurance_terms
+    - Zufällige insurance_terms
+- intent: all_insurance_terms
+  examples: |
+    - Liste aller insurance_terms
+    - Alle insurance_terms
 - intent: chitchat/cc1
   examples: |
     - Frage zu Chitchat
@@ -313,15 +321,239 @@ nlu:
   examples: |
     - Scheint bei dir die Sonne?
     - Wie ist das Wetter bei dir?
-- intent: insurance/ins1
+- intent: insurance/versicherungen_was
   examples: |
-    - Frage zu Versicherungen
-    - Was weißt du über Versicherungen?
-- intent: insurance/ins2
+    - Was sind Versicherungen?
+    - Kannst du mir sagen, was Versicherungen sind?
+    - Ich weiß nicht, was Versicherungen sind
+    - Was Versicherungen?
+    - Was ist eine Versicherung?
+    - Was macht eine Versicherung?
+- intent: insurance/versicherungen_arten
   examples: |
-    - welche Versicherungen brauche ich?
-    - Welche Versicherungen würdest du mir empfehlen?
-    - Welche Versicherungen sind wirklich nötig?
+    - Welche Arten von Versicherungen gibt es?
+    - Arten von Versicherungen
+    - Versicherungs-Arten
+    - Versicherungs Arten
+    - Gibt es Typen von Versicherungen
+    - Versicherungs-Typen?
+- intent: insurance/versicherungen_wofuer
+  examples: |
+    - Wofür gibt es Versicherungen?
+    - Warum brauche ich eine Versicherung?
+    - Warum gibt es Versicherungen?
+    - Versicherung wofür?
+    - Für was brauche ich eine Versicherung?
+- intent: insurance/pflichtversicherung
+  examples: |
+    - Pflichtversicherungen
+    - Pflichtversicherung
+    - Gibt es Pflichtversicherungen?
+    - Welche Versicherungen sind Pflicht?
+    - Muss ich eine Versicherung haben?
+    - Gibt es eine Versicherung, die jeder haben muss?
+- intent: insurance/sozialversicherungen
+  examples: |
+    - Was sind die Sozialversicherungen
+    - Was sind Sozialversicherungen
+    - Sozialversicherungen
+    - Welche Versicherungen gehören zu den Sozialversicherungen
+    - Wie viele Sozialversicherungen gibt es?
+    - Kannst du mir die Sozialversicherungen nennen?
+- intent: insurance/krankenversicherung
+  examples: |
+    - Was ist eine Krankenversicherung?
+    - Krankenversicherung
+    - Was macht eine Krankenversicherung?
+    - Wie versichere ich mich gegen Krankheit?
+    - Ist die Krankenversicherung eine Pflichtversicherung?
+    - Muss ich eine Krankenversicherung haben?
+    - Sollte ich eine Krankenversicherung haben?
+- intent: insurance/pflegeversicherung
+  examples: |
+    - Was ist eine Pflegeversicherung?
+    - Pflegeversicherung
+    - Was macht eine Pflegeversicherung?
+    - Wer braucht eine Pflegeversicherung?
+    - Muss ich eine Pflegeversicherung haben?
+    - Wie kommt man an eine Pflegeversicherung?
+- intent: insurance/unfallversicherung
+  examples: |
+    - Was ist eine Unfallversicherung?
+    - Unfallversicherung?
+    - Wer braucht eine Unfallversicherung?
+    - Wer bezahlt die Unfallversicherung?
+    - Muss ich eine Unfallversicherung haben?
+    - Wer bezahlt bei einem Unfall im Betrieb?
+- intent: insurance/rentenversicherung
+  examples: |
+    - Versicherung um auch im Alter Geld zu bekommen?
+    - Rentenversicherung
+    - Was ist eine Rentenversicherung?
+    - Muss ich eine Versicherung für meine Rente haben?
+    - Rente versichern
+    - Was weißt du über die Rentenversicherung?
+- intent: insurance/arbeitslosenversicherung
+  examples: |
+    - Arbeitslosenversicherung
+    - Was ist Aufgabe der Arbeitslosenversicherung
+    - Wer braucht eine Arbeitslosenversicherung
+    - Brauche ich eine Versicherung gegen Arbeitslosigkeit?
+    - Muss ich eine Arbeitslosenversicherung haben?
+    - Wer sollte eine Arbeitslosenversicherung haben?
+    - Was ist die Arbeitslosenversicherung?
+- intent: insurance/sinnvolle_versicherung
+  examples: |
+    - Welche Versicherungen sind generell sinnvoll?
+    - generell sinnvolle Versicherungen
+    - Welche Versicherungen sind für jeden sinnvoll?
+    - sinnvolle Versicherungen
+- intent: insurance/berufsunfaehigkeit
+  examples: |
+    - Was ist eine Berufsunfähigkeitsversicherungen
+    - Berufsunfähigkeitsversicherung
+    - Berufsunfähigkeit
+    - Wie sichere ich mich gegen Berufsunfähigkeit ab?
+    - Versicherung gegen Berufsunfähigkeit
+    - Was macht eine Berufsunfähigkeitsversicherung
+    - Verischerung Berufsunfähig
+- intent: insurance/privat_haftpflicht
+  examples: |
+    - Was ist eine Privat-Haftpflicht
+    - Privat-Haftpflicht
+    - Privat-Haftpflichtversicherung
+    - Was macht eine private Haftpflichtversicherung?
+    - Welche Versicherung brauche ich, wenn ich etwas kaputt mache?
+- intent: insurance/individuelle_vers
+  examples: |
+    - Welche Versicherungen sind für mich persönlich sinnvoll?
+    - Individuell sinnvolle Versicherungen
+    - Welche Versicherung sollte ich noch haben?
+    - Welche Versicherungen sind für mich sinnvoll?
+    - Individuelle Versicherungen
+- intent: insurance/bet_altersvorsorge
+  examples: |
+    - Was ist die betriebliche Altersvorsorge?
+    - Was ist die Betriebsrente
+    - Ist eine betriebliche Altersvorsorge gut?
+    - Wer bezahlt die betriebliche Altersvorsorge
+    - Betriebliche Altersvorsorge
+    - Betriebsrente
+    - Betrieb Rente
+    - Betrieb Altersvorsorge
+- intent: insurance/hausrat
+  examples: |
+    - Hausrat
+    - Hausratversicherung
+    - Was ist eine Hausratversicherung?
+    - Wie versichere ich meine Möbel?
+    - Wie versichere ich meine Sachen im Haus?
+    - Welche Versicherung übernimmt bei einem Rohrbruch?
+    - Wie kann ich meine Gegenstände im Haus versichern?
+- intent: insurance/kasko_versicherung
+  examples: |
+    - Wie kann ich mein Auto versichern?
+    - KFZ-Verischerung
+    - Kasko Versicherung
+    - Kasko-Versicherung
+    - Was ist eine Kasko-Versicherung
+    - Was ist eine Vollkasko-Versicherung
+    - Was ist eine Teilkasko-Versicherung?
+    - Voll und teilkasko
+    - Kaskoversicherung
+- intent: insurance/kfz_haftpflicht
+  examples: |
+    - KFZ-Haftpflichtversicherung
+    - Was ist KFZ-Haftpflicht?
+    - KFZ Haftpflichtversicherung
+    - KFZ-Haftpflicht
+    - Wer braucht eine KFZ Haftpflichtversicherung
+    - Was ist eine Haftpflichtversicherung fürs Auto
+    - Welche Versicherung übernimmt Schäden an anderen Autos?
+- intent: insurance/versicherungen_ueberfluessig
+  examples: |
+    - Überflüssige Versicherungen
+    - Unnötige Versicherungen
+    - Welche Versicherungen braucht niemand
+    - Welche Versicherungen brauche ich nicht?
+    - Gibt es unnötige Versicherungen?
+    - Kannst du mir sagen, welche Versicherungen ich nicht brauche?
+- intent: fachbegriffe_versicherungen
+  examples: |
+    - Fachbegriffe Versicherung
+    - Fachbegriffe für Versicherungen
+    - Kannst du mir Fachbegriffe für Versicherungen erklären?
+    - Welche Fachbegriffe zu Versicherungen sollte ich kennen?
+- intent: insurance/fb_basistarif
+  examples: |
+    - Was ist der Basistarif?
+    - Was ist ein Basistarif
+    - Basistarif
+    - Brauche ich nur den Basistarif?
+- intent: insurance/fb_versicherungsnehmer
+  examples: |
+    - Versicherungsnehmer
+    - Was ist ein Versicherungsnehmer?
+    - Wer ist Versicherungsnehmer?
+    - Bekommt der Versicherungsnehmer immer das Geld?
+    - Wer bezahlt die Beiträge?
+    - Was ist mit Versicherungsnehmer gemeint?
+- intent: insurance/fb_riester
+  examples: |
+    - Riester Rente
+    - Riesterrente
+    - Was ist die Riester Rente
+    - Wer sollte Riester Rente haben?
+    - Ist die Riesterrente eine gute Idee?
+- intent: insurance/fb_beitrag
+  examples: |
+    - Was sind Beiträge?
+    - Beitrag
+    - Monatlicher Beitrag
+    - regelmäßige Gebühr
+    - Beiträge?
+    - Sag mir, was ein Beitrag ist
+- intent: insurance/fb_garantieleistung
+  examples: |
+    - Garantieleistung
+    - Was ist eine Garantieleistung?
+    - Gibt es garantierte Leistungen?
+    - Welche Leistungen sind bei einer Versicherung garantiert?
+- intent: insurance/fb_gesundheitspruefung
+  examples: |
+    - Gesundheitsprüfung
+    - Was ist eine Gesundheitsprüfung
+    - Warum prüft die Versicherung, ob ich gesund bin?
+    - Was macht die Gesundheitsprüfung?
+    - Ist es schlimm, wenn ich krank bin?
+- intent: insurance/fb_versicherungsvertreter
+  examples: |
+    - Versicherungsvertreter
+    - Wer verkauft Versicherungen?
+    - Was machen Versicherungsvertreter?
+    - Was ist ein Versicherungsvertreter?
+- intent: insurance/fb_schadensfall
+  examples: |
+    - Was ist ein Schadenfall?
+    - Was ist ein Schadensfall?
+    - Schadensfall
+    - Schadenfall
+    - Wann tritt ein Schaden ein?
+    - Was passiert, wenn ein Schaden eintritt?
+    - Zahlt die Versicherung bei einem Schadensfall?
+- intent: insurance/fb_police
+  examples: |
+    - Was ist eine Versicherungspolice?
+    - Was ist eine Police?
+    - Urkunde über die Versicherung
+    - Versicherungspolice
+    - Police
+- intent: insurance/fb_risiko
+  examples: |
+    - Was bedeutet Risiko bei Versicherungen?
+    - Risiko?
+    - Warum berechnet die Versicherung ein Risiko?
+    - Berechnung des Risikos
 - intent: banking/ban1
   examples: |
     - Frage zum Banking

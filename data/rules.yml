@@ -37,6 +37,10 @@ rules:
     - intent: counseling
     - action: utter_counseling
 
+- rule: go on
+  steps:
+    - intent: go_on
+    - action: utter_go_on
 
 - rule: Say hello
   steps:
@@ -47,6 +51,21 @@ rules:
   steps:
     - intent: kontakt
     - action: utter_kontakt
+
+- rule: overview insurance terms
+  steps:
+    - intent: fachbegriffe_versicherungen
+    - action: action_insurance_terms
+
+- rule: Random insurance terms
+  steps:
+    - intent: random_insurance_terms
+    - action: action_get_random_insurance_terms
+
+- rule: List all insurance terms
+  steps:
+    - intent: all_insurance_terms
+    - action: action_get_all_insurance_terms
 
 - rule: nettiquette
   steps:
