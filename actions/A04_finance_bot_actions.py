@@ -69,7 +69,7 @@ class ActionInsuranceTerms(Action):
         buttons = randomSelection(termsInsurance, randomButtons)
         buttons.append({"title": "Neue Auswahl", "payload": "/random_insurance_terms"})
         buttons.append({"title": "Alle Fachbegriffe", "payload": "/all_insurance_terms"})
-        dispatcher.utter_message(text="utter_fachbegriffe_versicherungen")
+        dispatcher.utter_message(response="utter_fachbegriffe_versicherungen", buttons=buttons)
         return []
 
 # List all insurance terms

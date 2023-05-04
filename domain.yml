@@ -203,7 +203,9 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
   - buttons:
       - payload: Versicherungs-Arten
         title: Versicherungs-Arten
-    text: 'Manche Versicherungen sind nicht oder nur in Ausnahmefällen notwendig. Zum Beispiel lohnen sich Lebensversicherungen meistens nicht. Ebenso Versicherungen für Handys, Brillen, Reisegepäck, Haustiere oder elektronische Geräte. Wenn du Zweifel hast, frage hier:'
+      - payload: Versicherungsvertreter
+        title: Versicherungsvertreter.
+    text: 'Manche Versicherungen sind nicht oder nur in Ausnahmefällen notwendig. Zum Beispiel lohnen sich Lebensversicherungen meistens nicht. Ebenso Versicherungen für Handys, Brillen, Reisegepäck, Haustiere oder elektronische Geräte. Ein Versicherungsvertreter kann dich beraten.'
   utter_fachbegriffe_versicherungen:
   - text: 'Hier findest du wichtige Begriffe zu Versicherungen. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.'
   utter_insurance/fb_basistarif:
