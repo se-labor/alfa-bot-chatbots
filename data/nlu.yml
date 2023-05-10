@@ -554,14 +554,203 @@ nlu:
     - Risiko?
     - Warum berechnet die Versicherung ein Risiko?
     - Berechnung des Risikos
-- intent: banking/ban1
+- intent: alle_fachbegriff_themen
   examples: |
-    - Frage zum Banking
-    - Sage mir etwas über Banken
-- intent: banking/ban2
+    - Fachbegriffe
+    - Hilfe bei Fachbegriffen
+    - Alle Fachbegriffe
+    - Welche Fachbegriffe kennst du?
+- intent: random_banking_terms
   examples: |
-    - Wie funktioniert Onlinebanking?
-    - Brauche ich Onlinebanking?
+    - random_banking_terms
+    - zufällige banking_terms
+    - random banking_terms
+- intent: all_banking_terms
+  examples: |
+    - all_banking_terms
+    - alle banking_terms
+    - sämtliche banking_terms
+- intent: fachbegriffe_banking
+  examples: |
+    - Banking-Fachbegriffe
+    - Geld-Fachbegriffe
+    - Banking Fachbegriffe
+    - Fachbegriffe rund um Banken
+- intent: banking/fb_basis_konto
+  examples: |
+    - Basis-Konto
+    - Was ist ein Basiskonto?
+    - Was mache ich mit einem Basiskonto?
+    - Basiskonto
+    - Wer hat ein Basiskonto
+    - Bekomme ich ein Basiskonto?
+- intent: banking/fb_bonitatsprufung
+  examples: |
+    - Bonitätsprüfung
+    - Bonitäts-Prüfung
+    - Was ist die Bonitätsprüfung?
+    - Bekomme ich immer einen Kredit?
+    - Wann bekomme ich keinen Kredit?
+    - Was macht die Bonitätsprüfung?
+- intent: banking/fb_schufa
+  examples: |
+    - Schufe
+    - Schufa
+    - Was macht die Schufa?
+    - Was ist die Schufa?
+    - Ist die Schufa schlimm?
+    - Negativer Schufaeintrag
+- intent: banking/fb_dauerauftrag
+  examples: |
+    - Dauerauftrag
+    - Was ist ein Dauerauftrag?
+    - Brauche ich einen Dauerauftrag?
+    - Wer macht einen Dauerauftrag?
+    - Was mache ich mit einem Dauerauftrag?
+    - Regelmäßige Zahlungen
+- intent: banking/fb_dispo_kredit
+  examples: |
+    - Was ist ein Dispo?
+    - Dispo-Kredit
+    - Dispokredit
+    - Dispositions-Kredit
+    - Was ist ein Dispositionskredit?
+    - Woher bekomme ich einen Dispositionskredit?
+    - Was kostet ein Dispolredit
+    - Ist der Dispo teuer?
+- intent: banking/fb_ec_karte
+  examples: |
+    - EC-Karte
+    - Debit-Karte
+    - Was ist eine EC-Karte?
+    - Was ist eine Debit-Karte?
+    - Was mache ich mit einer EC Karte?
+    - EC Karte
+    - Woher bekomme ich eine EC Karte
+- intent: banking/fb_sepa
+  examples: |
+    - SEPA-Lastschrift
+    - sepa lastschrift
+    - Was ist ein Lastschriftmandat?
+    - Was ist eine SEPA-Lastschrift?
+    - Wofür nutzt man eine Sepa-Lastschrift?
+    - Wie kann man Geld von meinem Konto abbuchen
+    - Wer kann Geld von meinem Konto abbuchen?
+- intent: banking/fb_girokonto
+  examples: |
+    - Was ist ein Girokonto?
+    - Girokonto
+    - Gehaltskonto
+    - Was ist ein normales Konto?
+    - Welches Konto hat jeder?
+    - Standardkonto
+    - Welches Konto gehört zu einer EC-Karte?
+- intent: banking/fb_glaubiger
+  examples: |
+    - Was ist ein Gläubiger?
+    - Gläubiger
+    - Wem schulde ich Geld?
+    - Wie nennt man jemanden, dem ich Geld schulde?
+    - Was ist ein Gläubiger?
+    - Was macht ein Gläubiger?
+    - Wie heißt die Person, der man Geld schuldet?
+- intent: banking/fb_guthaben_konto
+  examples: |
+    - Guthabenkonto
+    - Guthaben-Konto
+    - Was ist ein Guthabenkonto?
+    - Was ist das Besondere an einem Guthabenkonto?
+    - Kann man ein Guthabenkonto überziehen?
+    - Schulden beim Guthabenkonto
+- intent: banking/fb_inkasso
+  examples: |
+    - Inkasso
+    - Inkasso-Büro
+    - Was macht ein Inkasso-Büro
+    - Warum bekomme ich Post vom Inkasso-Büro?
+    - Was mache ich, wenn ein Inkasso-Unternehmen bei mir ist?
+    - Geldeintreiber
+    - Wie nennt man Geldeintreiber?
+- intent: banking/fb_kontoauszug
+  examples: |
+    - Kontoauszug
+    - Was ist ein Kontoauszug?
+    - Was steht auf einem Kontoauszug?
+    - Wofür brauche ich einen Kontoauszug?
+    - Wo sehe ich, wie viel Geld ich noch habe?
+    - So finde ich meine Einnahmen und Ausgaben
+    - Woher bekomme ich einen Kontoauszug?
+- intent: banking/fb_kontopfandung
+  examples: |
+    - Was ist eine Kontopfändung?
+    - Konto-Pfändung
+    - Kontopfändung?
+    - Was heißt Konto-Pfändung?
+    - Kann mein Konto komplett gepfändet werden?
+- intent: banking/fb_kredit
+  examples: |
+    - Kredit
+    - Was ist ein Kredit?
+    - Erzähl mir was über Kredite
+    - Was mache ich mit einem Kredit?
+    - Ist ein Kredit gut?
+- intent: banking/fb_kredit_karte
+  examples: |
+    - Was mache ich mit einer Kreditkarte?
+    - Wofür brauche ich eine Kreditkarte?
+    - Kreditkarte
+    - Kredit-Karte
+    - Wie nutze ich eine Kreditkarte?
+    - Ist eine Kreditkarte gefährlich?
+- intent: banking/fb_kredit_wurdigkeit
+  examples: |
+    - Kreditwürdigkeit
+    - Was ist Kreditwürdigkeit?
+    - Was ist die Kreditwürdigkeit?
+    - Wofür brauche ich Kredit-Würdigkeit?
+    - Bin ich Kreditwürdig?
+    - Ist Kreditwürdigkeit wichtig?
+- intent: banking/fb_ruck_lastschrift
+  examples: |
+    - Rücklastschrift
+    - Rück-Lastschrift
+    - Was ist eine Rücklastschrift
+    - Was ist wenn ich nicht genug Geld auf dem Konto für eine Lastschrift habe?
+    - Was passiert, wenn man von leerem Konto Geld einzieht?
+    - Wann kommt es zu einer Rücklastschrift?
+- intent: banking/fb_mahnverfahren
+  examples: |
+    - Was ist ein Mahnverfahren?
+    - Mahnverfahren
+    - Mahn-Verfahren
+    - Wann kommt es zu einem Mahnverfahren?
+    - Was passiert bei einem Mahnverfahren?
+    - Ist ein Mahnverfahren teuer?
+    - Muss ich mir bei einer Mahnung Sorgen machen?
+- intent: banking/fb_schuldner_beratung
+  examples: |
+    - Wo bekomme ich Hilfe, wenn ich Schulden habe?
+    - Schuldnerberatung
+    - Wer hilft mir bei Schulden?
+    - Schuldner-Beratung
+    - Schulden Berater
+    - Wo finde ich die Schuldner-beratung?
+    - Was ist die Schuldner-Beratung?
+- intent: banking/fb_uberweisung
+  examples: |
+    - Überweisung
+    - Was ist eine überweisung?
+    - Wann macht man eine Überweisung?
+    - Was soll eine Überweisung sein?
+    - Wofür brauche ich eine Überweisung?
+- intent: banking/fb_sparbuch
+  examples: |
+    - Sparbuch
+    - Was ist ein Sparbuch?
+    - Kann man ein Sparbuch überziehen?
+    - Wozu brauche ich ein Sparbuch?
+    - Nutzen eines Sparbuchs
+    - Wofür Sparbuch?
 - intent: pay/pay1
   examples: |
     - Wie kann ich bezahlen?

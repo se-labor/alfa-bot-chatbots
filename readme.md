@@ -85,7 +85,7 @@ Container starten und interaktiv (-it) mit shell nutzen
 
 
 #### Custom Action Container
-Aktuelle Version: 3.1.3
+Aktuelle Version: 3.1.4
 
 Container bauen: `docker build -f Dockerfile.customAction -t sjproost/alfabot-ca:tag .`
 

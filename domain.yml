@@ -17,13 +17,17 @@ intents:
 - interrupt
 - joke
 - kontakt
+- alle_fachbegriff_themen
 - fachbegriffe_versicherungen
+- fachbegriffe_banking
 - nettiquette
 - nlu_fallback
 - out_of_scope
 - testintent
 - random_insurance_terms
 - all_insurance_terms
+- random_banking_terms
+- all_banking_terms
 entities:
 - lot_number
 
@@ -230,8 +234,55 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
     - text: 'Eine Versicherung berechnet immer, wie hoch die Wahrscheinlichkeit ist, dass ein Schadensfall eintritt und sie zahlen müssen. Das ist das Risiko. Je höher das Risiko, desto teurer wird die Versicherung.'
   utter_invest/inv1:
   - text: Antwort aus den Intents zu Investments
-  utter_banking/ban1:
-  - text: Antwort aus den Intents zu Banken und Banking
+  utter_fachbegriffe_banking:
+    - text: 'Hier findest du wichtige Begriffe im Bereich Geld und Banken. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.'
+  utter_banking/fb_basis_konto:
+    - text: 'Jeder hat ein Recht auf ein *+Basiskonto**. Sogar wenn du nur wenig Geld hast. Oder Schulden. Die Bank muss dir ein Konto geben.'
+  utter_banking/fb_bonitatsprufung:
+    - text: 'Du willst ein Konto eröffnen? Die Bank kann eine **Bonitäts-Prüfung** bei dir vornehmen. Sie prüfen dann, ob du Schulden hast oder Rechnungen nicht bezahlt hast. Dazu fragen sie zum Beispiel bei der Schufa nach.'
+  utter_banking/fb_schufa:
+    - text: 'Die **Schufa** sammelt Informationen über Kunden. Viele Banken fragen bei der Schufa nach Informationen über dich. Wenn du Rechnungen nicht bezahlt hast, bekommst du den Vertrag vielleicht nicht.'
+  utter_banking/fb_dauerauftrag:
+    - text: 'Du kannst der Bank einen **Dauerauftrag** geben. Sie zahlt dann regelmäßig den gleichen Betrag von deinem Konto. Zum Beispiel die Miete.'
+  utter_banking/fb_dispo_kredit:
+    - text: 'Die Bank kann dir einen **Dispo-Kredit** geben. Wenn du mehr Geld ausgibst, als du hast, kann der Dispo-Kredit dir helfen. Du musst aber Zinsen dafür zahlen.'
+  utter_banking/fb_ec_karte:
+    - text: 'Eine **EC-Karte** ist zum Bezahlen und Geld abheben. Wenn du mit der Karte bezahlst, wird das Geld von deinem Konto abgebucht. Bei kleinen Beträgen musst du nicht einmal unterschreiben. Oder deine PIN eingeben.'
+  utter_banking/fb_sepa:
+    - text: 'Eine **SEPA-Lastschrift** ist sinnvoll, wenn du regelmäßig etwas bezahlst. Zum Beispiel die Stromrechnung oder die Telefongebühren. Du musst dann nicht immer daran denken. Du kannst jederzeit den Auftrag wieder löschen.'
+  utter_banking/fb_girokonto:
+    - text: '**Girokonto** nennt man das normale Konto bei einer Bank. Hier werden deine Einnahmen und Ausgaben notiert.'
+  utter_banking/fb_glaubiger:
+    - text: 'Ein **Gläubiger** ist jemand, dem du Geld schuldest. Der Gläubiger kann eine Person, eine Bank, eine Behörde oder eine Firma sein.'
+  utter_banking/fb_guthaben_konto:
+    - text: 'Bei einem **Guthaben-Konto** kannst du nur das Geld ausgeben, das du auf dem Konto hast. Du kannst keine Schulden machen.'
+  utter_banking/fb_inkasso:
+    - text: 'Das **Inkasso-Büro** arbeitet im Auftrag des Gläubigers und möchte das Geld und Gebühren einziehen. Sie verschicken dann zum Beispiel Briefe. Wenn du so einen Brief bekommst, musst du schnell handeln. Hier hilft die Verbraucherzentrale (www.verbraucherzentrale.de) oder die Schuldnerberatung (www.finanztip.de/schuldnerberatung/).'
+  utter_banking/fb_kontoauszug:
+    - text: 'Ein **Kontoauszug** zeigt dir die Geldeingänge und Geldausgänge. Du siehst auch, wie viel Geld du gerade hast.'
+  utter_banking/fb_kontopfandung:
+    - text: 'Wenn du Schulden hast, kann der Gläubiger vom Gericht einen Pfändungsbeschluss bekommen. Der Gläubiger kann dann das Geld von deinem Konto einziehen. Er darf aber nicht dein ganzes Geld nehmen. Es gibt eine Pfändungs-Freigrenze.'
+  utter_banking/fb_kredit:
+    - text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Du musst das Geld und die Zinsen in kleinen Raten zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst.'
+  utter_banking/fb_kredit_karte:
+    - text: 'Es gibt viele unterschiedliche **Kreditkarten**. Du kannst mit ihnen bezahlen. Das Geld wird erst später vom Konto abgebucht. Bei vielen Kreditkarten kann man das Konto überziehen und muss dann hohe Zinsen zahlen. Es ist schwierig, die Ausgaben zu überblicken.'
+  utter_banking/fb_kredit_wurdigkeit:
+    - text: 'Wenn du einen Kredit möchtest, prüft die Bank deine **Kredit-Würdigkeit**. Hast du Schulden oder keine Arbeit? Dann bekommst du vielleicht keinen Kredit.'
+  utter_banking/fb_ruck_lastschrift:
+    - buttons:
+        - payload: SEPA-Lastschrift
+          title: SEPA-Lastschrift
+        - payload: Mahnverfahren
+          title: Mahnverfahren
+      text: 'Du hast einer Firma die Erlaubnis gegeben, Geld von deinem Konto per Lastschrift abzubuchen. Es ist aber nicht genug Geld auf deinem Konto. Dann kommt es zu einer **Rück-Lastschrift**. Die Gebühren musst du bezahlen und häufig beginnt danach ein Mahnverfahren.'
+  utter_banking/fb_mahnverfahren:
+  - text: 'Mit einem **Mahnverfahren** erinnert der Gläubiger an die Zahlung. Das Mahnverfahren kostet Geld und hat mehrere Stufen. Im schlimmsten Fall kann es zur Zwangsvollstreckung führen.'
+  utter_banking/fb_schuldner_beratung:
+  - text: 'Wenn du Schulden hast, kann die **Schuldner-Beratung** (www.finanztip.de/schuldnerberatung/) helfen. Die Berater kennen sich mit Schulden aus und helfen dir. Viele Beratungsstellen arbeiten kostenlos. '
+  utter_banking/fb_uberweisung:
+  - text: 'Schickt man Geld von einem Konto auf ein anderes Konto, nennt man das eine **Überweisung**.'
+  utter_banking/fb_sparbuch:
+  - text: 'Ein **Sparbuch** ist zum Ansparen von Geld gedacht. Es kann nicht überzogen werden. Du bekommst nur geringe Zinsen und kannst nicht überweisen.'
   utter_pay/pay1:
   - text: Antwort aus den Intents zum Bezahlen
   utter_counseling/cou1:
@@ -265,9 +316,15 @@ actions:
 - utter_insurance
 - utter_invest
 - utter_banking
+- utter_fachbegriffe_banking
 - utter_pay
 - utter_counseling
 - action_get_all_insurance_terms
 - action_get_random_insurance_terms
 - action_insurance_terms
 - utter_go_on
+- action_all_sort_of_terms
+- action_banking_terms
+- action_get_random_banking_terms
+- action_get_all_banking_terms
+- action_list_all_terms

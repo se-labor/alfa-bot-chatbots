@@ -52,6 +52,11 @@ rules:
     - intent: kontakt
     - action: utter_kontakt
 
+- rule: overview all terms
+  steps:
+    - intent: alle_fachbegriff_themen
+    - action: action_all_sort_of_terms
+
 - rule: overview insurance terms
   steps:
     - intent: fachbegriffe_versicherungen
@@ -66,6 +71,21 @@ rules:
   steps:
     - intent: all_insurance_terms
     - action: action_get_all_insurance_terms
+
+- rule: overview banking terms
+  steps:
+    - intent: fachbegriffe_banking
+    - action: action_banking_terms
+
+- rule: Random banking terms
+  steps:
+    - intent: random_banking_terms
+    - action: action_get_random_banking_terms
+
+- rule: List all banking terms
+  steps:
+    - intent: all_banking_terms
+    - action: action_get_all_banking_terms
 
 - rule: nettiquette
   steps:
