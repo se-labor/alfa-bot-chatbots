@@ -283,6 +283,64 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
   - text: 'Schickt man Geld von einem Konto auf ein anderes Konto, nennt man das eine **Überweisung**.'
   utter_banking/fb_sparbuch:
   - text: 'Ein **Sparbuch** ist zum Ansparen von Geld gedacht. Es kann nicht überzogen werden. Du bekommst nur geringe Zinsen und kannst nicht überweisen.'
+  utter_banking/fb_tagesgeld:
+  - text: 'Du kannst von deinem **Tagesgeldkonto** immer Geld abheben. Zurzeit erhältst du nur geringe oder keine Zinsen.'
+  utter_banking/fb_festgeld:
+  - text: 'Beim **Festgeld** vereinbarst du mit der Bank eine feste Laufzeit und Zinssätze. Je länger das Geld bei der Bank bleibt, desto höher ist der Zinssatz. Du kannst während der Laufzeit nicht an das Geld heran.'
+  utter_banking/fb_zwangsvollstreckung:
+  - text: 'Du kannst deine Schulden nicht bezahlen? Nach einem Mahnverfahren kann der *Gläubiger* beim Gericht eine **Zwangsvollstreckung** beantragen. Dann kann es zur *Konto-Pfändung* kommen. Oder der Gerichtsvollzieher kommt zu Dir nach Hause.'
+  utter_banking/fb_effektivzins:
+  - text: 'Wenn du den **Effektivzins** von *Krediten* kennst, kannst du die Angebote vergleichen. Der Effektivzins gibt dir Auskunft über alle Kosten eines Kredits. Hier sind zum Beispiel auch die Bearbeitungsgebühren eingerechnet.'
+  utter_banking/fb_sicherheit:
+  - text: 'Der Kreditgeber verlangt häufig eine **Sicherheit** für den *Kredit* von dir. Das können zum Beispiel Wertgegenstände wie dein Auto sein. Wenn du den Kredit nicht zurückzahlen kannst, gehört das Auto dem Kreditgeber.'
+  utter_banking/fb_grundbuch:
+  - text: 'Das **Grundbuch** ist ein amtliches Verzeichnis, das vom Grundbuchamt in deiner Stadt geführt wird. Das Grundbuch enthält Angaben zu den Eigentümern von Immobilien und Grundstücken. Hier wird auch der Kreditgeber eines Immobilienkredits eingetragen.'
+  utter_banking/fb_darlehen:
+  - text: 'Ein **Darlehen** ist auch ein *Kredit*. Darlehen haben bei Vertragsabschluss eine Mindestlaufzeit von 5 Jahren. Die Kreditsumme ist hoch.'
+  utter_banking/fb_eigenkapital:
+  - text: 'Bei einem Immobilienkredit wird häufig das **Eigenkapital** berechnet. Das ist das Geld, das du hast. Aber auch die Zeit und Arbeit, die du zum Beispiel beim Renovieren leisten kannst. Alle Arbeiten, die du machst, müssen nicht über den Kredit gekauft werden. Somit hast du mehr Eigenkapital.'
+  utter_banking/kredit_was:
+  - text: 'Wenn du dir Geld bei der Bank leihst, ist das ein Kredit. Du musst das Geld und die Zinsen  zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst. Als Voraussetzung für einen Kredit, musst du…
+          
+          - 18 Jahre alt sein
+          
+          - ein Bankkonto besitzen
+          
+          - regelmäßiges Einkommen haben
+          
+          - und einen Vertrag unterschreiben'
+  utter_banking/kredit_warum:
+  - text: 'Wenn du dir etwas kaufen willst, aber nicht genug Geld hast, kann ein Kredit hilfreich sein. Du musst dann zu einem späteren Zeitpunkt das Geld und Zinsen zurückzahlen.'
+  utter_banking/kredit_welche:
+    - buttons:
+        - payload: Ratenkredit
+          title: Ratenkredit
+        - payload: Dispo
+          title: Dispo
+        - payload: Autokredit
+          title: Autokredit
+        - payload: Überziehungskredit
+          title: Überziehungskredit
+        - payload: Blankokredit
+          title: Blankokredit
+        - payload: Immobilienkredit
+          title: Immobilienkredit
+      text: 'Es gibt eine Vielzahl verschiedener Kredite. Hier sind ein paar, die du kennen solltest.'
+  utter_banking/kredit_raten:
+  - text: 'Bei einem **Ratenkredit** erhältst du Geld von der Bank. Du zahlst dann jeden Monat eine gleichen Geldbetrag zurück. Im Kreditvertrag werden die Höhe des Ratenkredits, die Zinsen, die Laufzeit und der monatliche Geldbetrag festgelegt.'
+  utter_banking/kredit_auto:
+  - text: 'Der **Autokredit** ist für den Kauf eines Autos vorgesehen. Du kannst den Autokredit bei der Bank oder beim Autohaus erhalten. Die Zinsen sind meistens niedriger als bei einem Ratenkredit. Damit du den Kredit erhältst, musst du den Fahrzeugbrief als Sicherheit beim Gläubiger lassen.'
+  utter_banking/kredit_immobilien:
+    - buttons:
+        - payload: Darlehen
+          title: Darlehen
+      text: 'Ein **Immobilienkredit** ist zum Beispiel für den Kauf einer Wohnung bestimmt. Als Sicherheit wird die Bank in das *Grundbuch* eingetragen. Wenn du alle Schulden bezahlt hast, gehört das Haus dir.'
+  utter_banking/kredit_blanko:
+  - text: 'Der **Blankokredit** wird ohne eine Prüfung der *Kreditwürdigkei*t vergeben. Er ist für Kunden, die regelmäßig Einkommen erhalten und keine hohen Schulden haben. Ein Beispiel dafür ist der Überziehungskredit deines Girokontos.'
+  utter_banking/kredit_dispo:
+  - text: 'Der **Dispositionskredit** erlaubt dir, dein *Girokonto* oder deine Kreditkarte zu überziehen. Die Höhe des Dispositionskredits legt deine Bank fest. Die Zinsen sind recht hoch. Oft nennt man diesen Kredit einfach Dispo.'
+  utter_banking/kredit_uberziehung:
+  - text: 'Ein **Überziehungskredit** kommt zustande, wenn du dein *Girokonto* oder deinen *Dispo* auf dem *Girokonto* überziehst. Die Zinsen für einen Überziehungskredit sind sehr hoch. Du solltest schnell ein Gespräch mit deiner Bank vereinbaren.'
   utter_pay/pay1:
   - text: Antwort aus den Intents zum Bezahlen
   utter_counseling/cou1:

@@ -26,7 +26,10 @@ termsBanking = {"Basiskonto": "Was ist ein Basiskonto?", "Bonitätsprüfung": "B
                 "Guthaben-Konto": "Was ist ein Guthabenkonto?", "Inkasso": "Was macht ein Inkasso-Büro", "Kontoauszug": "Was ist ein Kontoauszug?",
                 "Konto-Pfändung": "Was ist eine Kontopfändung?", "Kredit": "Was ist ein Kredit?", "Kredit-Karte": "Was mache ich mit einer Kreditkarte?",
                 "Kreditwürdigkeit": "Was ist Kreditwürdigkeit?", "Rück-Lastschrift": "Rücklastschrift", "Mahnverfahren": "Was ist ein Mahnverfahren?",
-                "Schuldner-Beratung": "Schuldner-Beratung", "Überweisung": "Was ist eine Überweisung?", "Sparbuch": "Was ist ein Sparbuch?"}
+                "Schuldner-Beratung": "Schuldner-Beratung", "Überweisung": "Was ist eine Überweisung?", "Sparbuch": "Was ist ein Sparbuch?",
+                "Tagesgeld": "Tagesgeld", "Festgeld": "Was ist Festgeld", "Zwangsvollstreckung": "Was ist eine Zwangsvollstreckung",
+                "Effektivzins": "Effektivzins", "Sicherheit": "Kredit Sicherheit", "Grundbuch": "Was steht im Grundbuch?",
+                "Darlehen": "Darlehen", "Eigenkapital": "Brauche ich Eigenkapital?"}
 
 class QuickReplyButton:
     def __init__(self, title: str, payload: str):

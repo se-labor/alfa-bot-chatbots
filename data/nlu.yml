@@ -751,6 +751,119 @@ nlu:
     - Wozu brauche ich ein Sparbuch?
     - Nutzen eines Sparbuchs
     - Wofür Sparbuch?
+- intent: banking/fb_tagesgeld
+  examples: |
+    - Tagesgeld
+    - Was ist Tagesgeld?
+    - Wofür ist Tagesgeld?
+    - Erkläre mir Tagesgeld
+    - Was Tagesgeld?
+- intent: banking/fb_festgeld
+  examples: |
+    - Festgeld
+    - Was ist Festgeld?
+    - Brauche ich Festgeld?
+    - Erkläre Festgeld
+- intent: banking/fb_zwangsvollstreckung
+  examples: |
+    - ZWangsvollstreckung
+    - Was ist eine Zwangsvollstreckung
+    - Wann kommt eien ZWangsvollstreckung
+    - Wann kommt es zu einer Zwangsvollstreckung?
+- intent: banking/fb_effektivzins
+  examples: |
+    - Effektivzins
+    - Was ist der Effektivzins
+    - Erkläre mir den Effektivzins
+    - Ist der Effektivzins wichtig?
+- intent: banking/fb_sicherheit
+  examples: |
+    - Sicherheiten
+    - wofür brauche ich Sicherheit?
+    - Kredit Sicherheit
+    - Wofür braucht die Bank Sicherheit
+    - Was ist Sicherheit für einen Kredit?
+- intent: banking/fb_grundbuch
+  examples: |
+    - Grundbuch
+    - Was steht im Grundbuch?
+    - Wo ist das Grundbuch?
+    - Was ist ein Grundbuch?
+    - Wofür braucht man ein Grundbuch?
+- intent: banking/fb_darlehen
+  examples: |
+    - Was ist ein Darlehen?
+    - Darlehen
+    - Wann brauche ich ein Darlehen?
+    - Wofür brauche ich ein Darlehen?
+    - Bekomme ich ein Darlehen?
+- intent: banking/fb_eigenkapital
+  examples: |
+    - Eigenkapital
+    - Brauche ich Eigenkapital?
+    - Wie hoch kann ich mein Eigenkapital ansetzen?
+    - Höhe des Eigenkapitals
+- intent: banking/kredit_was
+  examples: |
+    - Was ist ein Kredit?
+    - Was muss ich bei einem Kredit machen?
+    - Kredit was
+    - VOraussetzungen für einen Kredit
+    - Welche Voraussetzungen muss ich für einen Kredit erfüllen?
+    - Was sind Kredite
+- intent: banking/kredit_warum
+  examples: |
+    - Warum gibt es Kredite?
+    - Kredite warum?
+    - Was machen Kredite?
+    - Wofür brauche ich einen Kredit
+- intent: banking/kredit_welche
+  examples: |
+    - Welche Kredite gibt es?
+    - Was für Kredite gibt es?
+    - Welche Kredite sollte ich kennen?
+    - Welche Kredite
+    - Sorten von Krediten?
+- intent: banking/kredit_raten
+  examples: |
+    - Ratenkredit
+    - Was ist ein Ratenkredit
+    - Erklärung Ratenkredit
+- intent: banking/kredit_auto
+  examples: |
+    - Autokredit
+    - Was ist ein Autokredit?
+    - Erklärung Autokredit
+    - Kredit für Auto
+    - Welchen Kredit brauche ich, um ein Auto zu kaufen?
+- intent: banking/kredit_immobilien
+  examples: |
+    - Immobilienkredit
+    - Kredit Immobilien
+    - Kredit für Immobilien
+    - Ein Kredit um ein Haus zu kaufen
+    - Kredit um eine Wohnung zu kaufen
+    - Eigentumskredit
+- intent: banking/kredit_blanko
+  examples: |
+    - Blankokredit
+    - Kredit ohne Prüfung
+    - Blanko kredit
+    - pauschaler Kredit
+- intent: banking/kredit_dispo
+  examples: |
+    - Dispositionskredit
+    - Dispokredit
+    - Was ist ein Dispo
+    - Habe ich einen Dispo?
+    - Wie bekomme ich eine Dispositionskredit
+- intent: banking/kredit_uberziehung
+  examples: |
+    - Überziehungskredit
+    - Was ist ein Überziehungskredit?
+    - Wie kriege einen Überziehungskredit?
+    - Ist ein Überziehungskredit gefährlich?
+    - Wie teuer ist ein Überziehungskredit
 - intent: pay/pay1
   examples: |
     - Wie kann ich bezahlen?
