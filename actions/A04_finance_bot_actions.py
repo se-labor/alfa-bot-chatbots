@@ -167,6 +167,40 @@ class ActionListAllTerms(Action):
                                  buttons=buttons)
         return []
 
+class ActionRepeat(Action):
+    def name(self) -> Text:
+        return "action_repeat"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Counter to fetch the last three utterances (0 bot - 1 user - 2 bot)
+        user_ignore_count = 3
+        count = 0
+        tracker_list = []
+
+        # filter user utterances
+        while user_ignore_count > 0:
+            event = tracker.events[count].get('event')
+            if event == 'user':
+                user_ignore_count = user_ignore_count - 1
+            if event == 'bot':
+                tracker_list.append(tracker.events[count])
+            count = count - 1
+
+        # i controls the output. With -1 it will output only the next to last bot answer
+        i = len(tracker_list) - 1
+        while i >= 1:
+            data = tracker_list[i].get('data')
+            if data:
+                if "buttons" in data:
+                    dispatcher.utter_message(text=tracker_list[i].get('text'), buttons=data["buttons"])
+                else:
+                    dispatcher.utter_message(text=tracker_list[i].get('text'))
+            i -= 1
+
+        return []
+
 # List all nice to knows
 #class ActionGetNiceToKnow(Action):
 #    def name(self) -> Text:

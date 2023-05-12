@@ -8,6 +8,7 @@ intents:
 - insurance
 - invest
 - banking
+- repeat
 - pay
 - counseling
 - deny
@@ -75,9 +76,9 @@ responses:
   utter_insurance/versicherungen_wofuer:
   - buttons:
       - payload: Sozialversicherungen
-        title: Dummy Sozialversicherungen
+        title: Sozialversicherungen
       - payload: Versicherungs-Arten
-        title: Dummy Versicherungs-Arten
+        title: Versicherungs-Arten
     text: 'Unglücke passieren sehr selten. Aber wenn, dann ist der Schaden für dich groß. Die Beiträge für die Versicherung sind meistens gering.'
   utter_insurance/pflichtversicherung:
   - buttons:
@@ -85,7 +86,7 @@ responses:
         title: Sozialversicherungen
       - payload: Versicherungs-Arten
         title: Versicherungs-Arten
-    text: '**Pflichtversicherungen** sind Versicherungen, die eine Person in Deutschland haben muss. Das ist zunächst nur die **Krankenversicherung**. Als Arbeitnehmer musst du mehr Versicherungen haben. Die sogenannten *Sozialversicherungen*.'
+    text: '**Pflichtversicherungen** sind Versicherungen, die eine Person in Deutschland haben muss. Das ist zunächst nur die **Krankenversicherung**. Als Arbeitnehmer musst du weitere Versicherungen haben. Die sogenannten *Sozialversicherungen*.'
   utter_insurance/sozialversicherungen:
   - buttons:
       - payload: Krankenversicherung
@@ -99,7 +100,7 @@ responses:
         title: Weiter
       - payload: Versicherungs-Arten
         title: Versicherungs-Arten
-    text: 'Die Krankenversicherung zahlt, wenn du zum Arzt oder ins Krankenhaus musst. Auch bei Kosten für Medikamente hilft die Krankenversicherung. Bei Kindern übernimmt die Versicherung der Eltern den Schutz.'
+    text: 'Die **Krankenversicherung** zahlt, wenn du zum Arzt oder ins Krankenhaus musst. Auch bei Kosten für Medikamente hilft die Krankenversicherung. Bei Kindern übernimmt die Versicherung der Eltern den Schutz.'
   utter_insurance/pflegeversicherung:
   - buttons:
       - payload: Unfallversicherung
@@ -132,6 +133,8 @@ responses:
         title: Berufsunfähigkeitsversicherung
       - payload: Was ist eine Privat-Haftpflichtversicherung
         title: Privat-Haftpflicht
+      - payload: Versicherungs-Arten
+        title: Versicherungs-Arten
     text: 'Es gibt einige Versicherungen, die zusätzlich zu den Pflichtversicherungen für alle Menschen sinnvoll sind. Zum Beispiel diese:'
   utter_insurance/berufsunfaehigkeit:
   - buttons:
@@ -179,7 +182,7 @@ responses:
         title: KFZ-Haftpflicht
       - payload: Individuell sinnvolle Versicherungen
         title: Individuelle Versicherungen
-    text: 'Zum Hausrat gehören alle beweglichen Sachen einer Wohnung. Z.B. Möbel, Kleidung, Fernseher. Du kannst Schäden am Hausrat gegen Feuer, Leitungswasser, Einbruch und anderen Gründen versichern.
+    text: 'Zum Hausrat gehören alle beweglichen Sachen einer Wohnung. Zum Beispiel Möbel, Kleidung, Fernseher. Du kannst Schäden am Hausrat gegen Feuer, Leitungswasser, Einbruch und anderen Gründen versichern.
 Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den Schaden.'
   utter_insurance/kasko_versicherung:
   - buttons:
@@ -208,8 +211,8 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
       - payload: Versicherungs-Arten
         title: Versicherungs-Arten
       - payload: Versicherungsvertreter
-        title: Versicherungsvertreter.
-    text: 'Manche Versicherungen sind nicht oder nur in Ausnahmefällen notwendig. Zum Beispiel lohnen sich Lebensversicherungen meistens nicht. Ebenso Versicherungen für Handys, Brillen, Reisegepäck, Haustiere oder elektronische Geräte. Ein Versicherungsvertreter kann dich beraten.'
+        title: Versicherungsvertreter
+    text: 'Manche Versicherungen sind nicht oder nur in Ausnahmefällen notwendig. Zum Beispiel lohnen sich Lebensversicherungen meistens nicht. Ebenso Versicherungen für Handys, Brillen, Reisegepäck oder elektronische Geräte. Ein Versicherungsvertreter kann dich beraten.'
   utter_fachbegriffe_versicherungen:
   - text: 'Hier findest du wichtige Begriffe zu Versicherungen. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.'
   utter_insurance/fb_basistarif:
@@ -249,7 +252,7 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
   utter_banking/fb_ec_karte:
     - text: 'Eine **EC-Karte** ist zum Bezahlen und Geld abheben. Wenn du mit der Karte bezahlst, wird das Geld von deinem Konto abgebucht. Bei kleinen Beträgen musst du nicht einmal unterschreiben. Oder deine PIN eingeben.'
   utter_banking/fb_sepa:
-    - text: 'Eine **SEPA-Lastschrift** ist sinnvoll, wenn du regelmäßig etwas bezahlst. Zum Beispiel die Stromrechnung oder die Telefongebühren. Du musst dann nicht immer daran denken. Du kannst jederzeit den Auftrag wieder löschen.'
+    - text: 'Eine **sepa-Lastschrift** ist sinnvoll, wenn du regelmäßig etwas bezahlst. Zum Beispiel die Stromrechnung oder die Telefongebühren. Du musst dann nicht immer daran denken. Du kannst jederzeit den Auftrag wieder löschen.'
   utter_banking/fb_girokonto:
     - text: '**Girokonto** nennt man das normale Konto bei einer Bank. Hier werden deine Einnahmen und Ausgaben notiert.'
   utter_banking/fb_glaubiger:
@@ -267,14 +270,14 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
   utter_banking/fb_kredit_karte:
     - text: 'Es gibt viele unterschiedliche **Kreditkarten**. Du kannst mit ihnen bezahlen. Das Geld wird erst später vom Konto abgebucht. Bei vielen Kreditkarten kann man das Konto überziehen und muss dann hohe Zinsen zahlen. Es ist schwierig, die Ausgaben zu überblicken.'
   utter_banking/fb_kredit_wurdigkeit:
-    - text: 'Wenn du einen Kredit möchtest, prüft die Bank deine **Kredit-Würdigkeit**. Hast du Schulden oder keine Arbeit? Dann bekommst du vielleicht keinen Kredit.'
+    - text: 'Wenn du einen Kredit möchtest, prüft die Bank deine **Kreditwürdigkeit**. Hast du Schulden oder keine Arbeit? Dann bekommst du vielleicht keinen Kredit.'
   utter_banking/fb_ruck_lastschrift:
     - buttons:
         - payload: SEPA-Lastschrift
           title: SEPA-Lastschrift
         - payload: Mahnverfahren
           title: Mahnverfahren
-      text: 'Du hast einer Firma die Erlaubnis gegeben, Geld von deinem Konto per Lastschrift abzubuchen. Es ist aber nicht genug Geld auf deinem Konto. Dann kommt es zu einer **Rück-Lastschrift**. Die Gebühren musst du bezahlen und häufig beginnt danach ein Mahnverfahren.'
+      text: 'Du hast einer Firma die Erlaubnis gegeben, Geld von deinem Konto per Lastschrift abzubuchen. Es ist aber nicht genug Geld auf deinem Konto. Dann kommt es zu einer **Rücklastschrift**. Die Gebühren musst du bezahlen und häufig beginnt danach ein Mahnverfahren.'
   utter_banking/fb_mahnverfahren:
   - text: 'Mit einem **Mahnverfahren** erinnert der Gläubiger an die Zahlung. Das Mahnverfahren kostet Geld und hat mehrere Stufen. Im schlimmsten Fall kann es zur Zwangsvollstreckung führen.'
   utter_banking/fb_schuldner_beratung:
@@ -327,7 +330,7 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
           title: Immobilienkredit
       text: 'Es gibt eine Vielzahl verschiedener Kredite. Hier sind ein paar, die du kennen solltest.'
   utter_banking/kredit_raten:
-  - text: 'Bei einem **Ratenkredit** erhältst du Geld von der Bank. Du zahlst dann jeden Monat eine gleichen Geldbetrag zurück. Im Kreditvertrag werden die Höhe des Ratenkredits, die Zinsen, die Laufzeit und der monatliche Geldbetrag festgelegt.'
+  - text: 'Bei einem **Ratenkredit** erhältst du Geld von der Bank. Du zahlst dann jeden Monat einen gleichen Geldbetrag zurück. Im Kreditvertrag werden die Höhe des Ratenkredits, die Zinsen, die Laufzeit und der monatliche Geldbetrag festgelegt.'
   utter_banking/kredit_auto:
   - text: 'Der **Autokredit** ist für den Kauf eines Autos vorgesehen. Du kannst den Autokredit bei der Bank oder beim Autohaus erhalten. Die Zinsen sind meistens niedriger als bei einem Ratenkredit. Damit du den Kredit erhältst, musst du den Fahrzeugbrief als Sicherheit beim Gläubiger lassen.'
   utter_banking/kredit_immobilien:
@@ -336,7 +339,7 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
           title: Darlehen
       text: 'Ein **Immobilienkredit** ist zum Beispiel für den Kauf einer Wohnung bestimmt. Als Sicherheit wird die Bank in das *Grundbuch* eingetragen. Wenn du alle Schulden bezahlt hast, gehört das Haus dir.'
   utter_banking/kredit_blanko:
-  - text: 'Der **Blankokredit** wird ohne eine Prüfung der *Kreditwürdigkei*t vergeben. Er ist für Kunden, die regelmäßig Einkommen erhalten und keine hohen Schulden haben. Ein Beispiel dafür ist der Überziehungskredit deines Girokontos.'
+  - text: 'Der **Blankokredit** wird ohne eine Prüfung der *Kreditwürdigkeit* und ohne neuen Vertrag vergeben. Er ist für Kunden, die regelmäßig Einkommen erhalten und keine hohen Schulden haben. Ein Beispiel dafür ist der Überziehungskredit deines Girokontos.'
   utter_banking/kredit_dispo:
   - text: 'Der **Dispositionskredit** erlaubt dir, dein *Girokonto* oder deine Kreditkarte zu überziehen. Die Höhe des Dispositionskredits legt deine Bank fest. Die Zinsen sind recht hoch. Oft nennt man diesen Kredit einfach Dispo.'
   utter_banking/kredit_uberziehung:
@@ -386,3 +389,4 @@ actions:
 - action_get_random_banking_terms
 - action_get_all_banking_terms
 - action_list_all_terms
+- action_repeat

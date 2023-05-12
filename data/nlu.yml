@@ -92,6 +92,15 @@ nlu:
     - nächstes
     - nächstes bitte
     - Weiter
+- intent: repeat
+  examples: |
+    - Nochmal
+    - Zurück
+    - Wiederhole das bitte
+    - Nochmal
+    - wiederholen
+    - zurück zur letzten Nachricht
+    - ZUrück zur Auswahl
 - intent: try
   examples: |
     - ausprobieren

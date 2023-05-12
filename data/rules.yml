@@ -42,6 +42,11 @@ rules:
     - intent: go_on
     - action: utter_go_on
 
+- rule: repeat last bot utterance
+  steps:
+    - intent: repeat
+    - action: action_repeat
+
 - rule: Say hello
   steps:
   - intent: greet
