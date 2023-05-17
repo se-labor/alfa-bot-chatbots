@@ -5,31 +5,44 @@ from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 from typing import List
+
 # from .A03_learning_bot_actions import randomSelection, getButtonsFromDict, QuickReplyButton
 
 
 # Helper vars and classes
 termsSections = {"Versicherungen": "Fachbegriffe Versicherungen",
-                 "Banken & Geld": "Fachbegriffe Banking"}
+                 "Kredite": "Fachbegriffe Kredit",
+                 "Banken": "Fachbegriffe Banken"
+                 }
 
 termsInsurance = {"Basistarif": "Was ist ein Basistarif", "Versicherungsnehmer": "Was ist ein Versicherungsnehmer",
-                "Riester Rente": "Was ist die Riester Rente",
-                "Beitrag": "Was sind Beiträge?", "Garantieleistung": "Was sind Garantieleistungen",
-                "Gesundheitsprüfung": "Was ist eine Gesundheitsprüfung",
-                "Versicherungsvertreter": "Versicherungsvertreter", "Schadensfall": "Was ist ein Schadensfall",
-                "Police": "Was ist eine Police",
-                "Risiko": "Was bedeutet Risiko bei Versicherungen"}
+                  "Riester Rente": "Was ist die Riester Rente",
+                  "Beitrag": "Was sind Beiträge?", "Garantieleistung": "Was sind Garantieleistungen",
+                  "Gesundheitsprüfung": "Was ist eine Gesundheitsprüfung",
+                  "Versicherungsvertreter": "Versicherungsvertreter", "Schadensfall": "Was ist ein Schadensfall",
+                  "Police": "Was ist eine Police",
+                  "Risiko": "Was bedeutet Risiko bei Versicherungen"}
 
-termsBanking = {"Basiskonto": "Was ist ein Basiskonto?", "Bonitätsprüfung": "Bonitätsprüfung", "Schufa": "Was macht die Schufa?",
-                "Dauerauftrag": "Was ist ein Dauerauftrag?", "Dispo-Kredit": "Was ist ein Dispo?", "EC-Karte": "Was ist eine EC-Karte?",
-                "SEPA-Lastschrift": "Was ist ein Lastschriftmandat?", "Girokonto": "Was ist ein Girokonto", "Gläubiger": "Was ist ein Gläubiger",
-                "Guthaben-Konto": "Was ist ein Guthabenkonto?", "Inkasso": "Was macht ein Inkasso-Büro", "Kontoauszug": "Was ist ein Kontoauszug?",
-                "Konto-Pfändung": "Was ist eine Kontopfändung?", "Kredit": "Was ist ein Kredit?", "Kredit-Karte": "Was mache ich mit einer Kreditkarte?",
-                "Kreditwürdigkeit": "Was ist Kreditwürdigkeit?", "Rück-Lastschrift": "Rücklastschrift", "Mahnverfahren": "Was ist ein Mahnverfahren?",
-                "Schuldner-Beratung": "Schuldner-Beratung", "Überweisung": "Was ist eine Überweisung?", "Sparbuch": "Was ist ein Sparbuch?",
-                "Tagesgeld": "Tagesgeld", "Festgeld": "Was ist Festgeld", "Zwangsvollstreckung": "Was ist eine Zwangsvollstreckung",
-                "Effektivzins": "Effektivzins", "Sicherheit": "Kredit Sicherheit", "Grundbuch": "Was steht im Grundbuch?",
-                "Darlehen": "Darlehen", "Eigenkapital": "Brauche ich Eigenkapital?"}
+termsCredit = {"Bonitätsprüfung": "Bonitätsprüfung", "Schufa": "Was macht die Schufa?",
+               "Dispo-Kredit": "Was ist ein Dispo?", "Gläubiger": "Was ist ein Gläubiger",
+               "Inkasso": "Was macht ein Inkasso-Büro", "Kontoauszug": "Was ist ein Kontoauszug?",
+               "Konto-Pfändung": "Was ist eine Kontopfändung?", "Kredit": "Was ist ein Kredit?",
+               "Kredit-Karte": "Was mache ich mit einer Kreditkarte?",
+               "Kreditwürdigkeit": "Was ist Kreditwürdigkeit?", "Mahnverfahren": "Was ist ein Mahnverfahren?",
+               "Schuldner-Beratung": "Schuldner-Beratung", "Überweisung": "Was ist eine Überweisung?",
+               "Zwangsvollstreckung": "Was ist eine Zwangsvollstreckung", "Effektivzins": "Effektivzins",
+               "Sicherheit": "Kredit Sicherheit", "Grundbuch": "Was steht im Grundbuch?",
+               "Eigenkapital": "Brauche ich Eigenkapital?"}
+
+termsBanking = {"Basiskonto": "Was ist ein Basiskonto?",
+                "Dauerauftrag": "Was ist ein Dauerauftrag?", "EC-Karte": "Was ist eine EC-Karte?",
+                "sepa-Lastschrift": "Was ist ein Lastschriftmandat?", "Girokonto": "Was ist ein Girokonto",
+                "Guthaben-Konto": "Was ist ein Guthabenkonto?", "Kontoauszug": "Was ist ein Kontoauszug?",
+                "Kredit": "Was ist ein Kredit?", "Kredit-Karte": "Was mache ich mit einer Kreditkarte?",
+                "Rück-Lastschrift": "Rücklastschrift", "Überweisung": "Was ist eine Überweisung?",
+                "Sparbuch": "Was ist ein Sparbuch?", "Tagesgeld": "Tagesgeld", "Festgeld": "Was ist Festgeld",
+                }
+
 
 class QuickReplyButton:
     def __init__(self, title: str, payload: str):
@@ -57,7 +70,8 @@ def randomSelection(pool: dict, size: int) -> list:
     buttons = getButtonsFromDict(sample)
     return buttons
 
-# Gernate buttons for all terms subset of insurance terms
+
+# Generate buttons for all terms subset of insurance terms
 class ActionAllSortOfTerms(Action):
     def name(self) -> Text:
         return "action_all_sort_of_terms"
@@ -68,6 +82,8 @@ class ActionAllSortOfTerms(Action):
         buttons = getButtonsFromDict(dict(sorted(termsSections.items())))
         dispatcher.utter_message(text="Hier sind die Themen, zu denen ich Fachbegriffe habe", buttons=buttons)
         return []
+
+
 # Select random subset of insurance terms
 class ActionGetRandomInsuranceTerms(Action):
     def name(self) -> Text:
@@ -82,10 +98,12 @@ class ActionGetRandomInsuranceTerms(Action):
         dispatcher.utter_message(text="Hier ist eine weitere Auswahl an Fachbegriffen", buttons=buttons)
         return []
 
+
 # Present insurance terms
 class ActionInsuranceTerms(Action):
     def name(self) -> Text:
         return "action_insurance_terms"
+
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
@@ -95,6 +113,7 @@ class ActionInsuranceTerms(Action):
         buttons.append({"title": "Alle Fachbegriffe", "payload": "/all_insurance_terms"})
         dispatcher.utter_message(response="utter_fachbegriffe_versicherungen", buttons=buttons)
         return []
+
 
 # List all insurance terms
 class ActionGetAllInsuranceTerms(Action):
@@ -106,10 +125,57 @@ class ActionGetAllInsuranceTerms(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         buttons = getButtonsFromDict(dict(sorted(termsInsurance.items())))
         print(dict(sorted(termsInsurance.items())))
-        dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe für Versicherungen, die ich dir anbieten kann:", buttons=buttons)
+        dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe für Versicherungen, die ich dir anbieten kann:",
+                                 buttons=buttons)
         return []
 
-# Select random subset of insurance terms
+
+# Select random subset of credit terms
+class ActionGetRandomCreditTerms(Action):
+    def name(self) -> Text:
+        return "action_get_random_credit_terms"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        randomButtons = 3
+        buttons = randomSelection(termsCredit, randomButtons)
+        buttons.append({"title": "Neue Auswahl", "payload": "/random_credit_terms"})
+        dispatcher.utter_message(text="Hier ist eine weitere Auswahl an Fachbegriffen", buttons=buttons)
+        return []
+
+
+# Present credit terms
+class ActionCreditTerms(Action):
+    def name(self) -> Text:
+        return "action_credit_terms"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        randomButtons = 2
+        buttons = randomSelection(termsCredit, randomButtons)
+        buttons.append({"title": "Neue Auswahl", "payload": "/random_credit_terms"})
+        buttons.append({"title": "Alle Fachbegriffe", "payload": "/all_credit_terms"})
+        dispatcher.utter_message(response="utter_fachbegriffe_credit", buttons=buttons)
+        return []
+
+
+# List all credit terms
+class ActionGetAllCreditTerms(Action):
+    def name(self) -> Text:
+        return "action_get_all_credit_terms"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        buttons = getButtonsFromDict(dict(sorted(termsCredit.items())))
+        dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe für Banken & Geld, die ich dir anbieten kann:",
+                                 buttons=buttons)
+        return []
+
+
+# Select random subset of banking terms
 class ActionGetRandomBankingTerms(Action):
     def name(self) -> Text:
         return "action_get_random_banking_terms"
@@ -123,10 +189,12 @@ class ActionGetRandomBankingTerms(Action):
         dispatcher.utter_message(text="Hier ist eine weitere Auswahl an Fachbegriffen", buttons=buttons)
         return []
 
-# Present insurance terms
+
+# Present banking terms
 class ActionBankingTerms(Action):
     def name(self) -> Text:
         return "action_banking_terms"
+
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
@@ -137,7 +205,8 @@ class ActionBankingTerms(Action):
         dispatcher.utter_message(response="utter_fachbegriffe_banking", buttons=buttons)
         return []
 
-# List all insurance terms
+
+# List all banking terms
 class ActionGetAllBankingTerms(Action):
     def name(self) -> Text:
         return "action_get_all_banking_terms"
@@ -146,11 +215,9 @@ class ActionGetAllBankingTerms(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         buttons = getButtonsFromDict(dict(sorted(termsBanking.items())))
-        dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe für Banken & Geld, die ich dir anbieten kann:", buttons=buttons)
+        dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe für Banken & Geld, die ich dir anbieten kann:",
+                                 buttons=buttons)
         return []
-
-        termsAll = termsInsurance
-        termsAll.update(termsBanking)
 
 
 class ActionListAllTerms(Action):
@@ -160,12 +227,14 @@ class ActionListAllTerms(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        termsAll = {k:v for k,v in termsInsurance.items()}
+        termsAll = {k: v for k, v in termsInsurance.items()}
+        termsAll.update(termsCredit)
         termsAll.update(termsBanking)
         buttons = getButtonsFromDict(dict(sorted(termsAll.items())))
         dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe über alle Themen, die ich dir anbieten kann:",
                                  buttons=buttons)
         return []
+
 
 class ActionRepeat(Action):
     def name(self) -> Text:
@@ -188,7 +257,7 @@ class ActionRepeat(Action):
                 tracker_list.append(tracker.events[count])
             count = count - 1
 
-        # i controls the output. With -1 it will output only the next to last bot answer
+        # Variable i controls the output. With -1 it will output only the next to last bot answer
         i = len(tracker_list) - 1
         while i >= 1:
             data = tracker_list[i].get('data')
@@ -200,15 +269,3 @@ class ActionRepeat(Action):
             i -= 1
 
         return []
-
-# List all nice to knows
-#class ActionGetNiceToKnow(Action):
-#    def name(self) -> Text:
-#        return "action_get_nice_to_know"
-
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#        buttons = getButtonsFromDict(niceToKnow)
-#        dispatcher.utter_message(text=f"Hier sind alle interessanten Fakten", buttons=buttons)
-#        return []

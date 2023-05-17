@@ -41,7 +41,7 @@ ingress:
   extraPaths: {}
   hostname: alfaca.se-labor.de
   labels: {}
-  path: /
+  path: /webhook
   pathType: ImplementationSpecific
   tls:
     - hosts:

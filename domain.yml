@@ -8,6 +8,7 @@ intents:
 - insurance
 - invest
 - banking
+- credit
 - repeat
 - pay
 - counseling
@@ -21,6 +22,7 @@ intents:
 - alle_fachbegriff_themen
 - fachbegriffe_versicherungen
 - fachbegriffe_banking
+- fachbegriffe_credit
 - nettiquette
 - nlu_fallback
 - out_of_scope
@@ -216,94 +218,203 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
   utter_fachbegriffe_versicherungen:
   - text: 'Hier findest du wichtige Begriffe zu Versicherungen. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.'
   utter_insurance/fb_basistarif:
-  - text: 'Einige Versicherungen bieten einen Basistarif an. Dieser sichert nur die wesentlichen Risiken ab und kostet dafür am wenigsten. Du kannst auch andere Tarife mit mehr Leistungen wählen. Diese Tarife kosten mehr. Den Basistarif gibt es zum Beispiel bei der KFZ-Haftpflichtversicherung.'
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Einige Versicherungen bieten einen Basistarif an. Dieser sichert nur die wesentlichen Risiken ab und kostet dafür am wenigsten. Du kannst auch andere Tarife mit mehr Leistungen wählen. Diese Tarife kosten mehr. Den Basistarif gibt es zum Beispiel bei der KFZ-Haftpflichtversicherung.'
   utter_insurance/fb_versicherungsnehmer:
-    - text: 'Versicherungsnehmer bist meistens Du. Als Versicherungsnehmer bekommst du die Leistung im Falle eines Schadens. In der Regel zahlt der Versicherungsnehmer auch den Beitrag.'
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Versicherungsnehmer bist meistens Du. Als Versicherungsnehmer bekommst du die Leistung im Falle eines Schadens. In der Regel zahlt der Versicherungsnehmer auch den Beitrag.'
   utter_insurance/fb_riester:
-    - text: 'Die Riester-Rente ist eine freiwillige Altersvorsorge. Du musst über viele Jahre regelmäßig einen Beitrag einzahlen. Wenn du das machst, zahlt der Staat eine Zulage in deinen Vertrag ein. Wenn du in Rente gehst, bekommst du Geld ausgezahlt.'
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Die Riester-Rente ist eine freiwillige Altersvorsorge. Du musst jedes Jahr regelmäßig einen Beitrag einzahlen. Wenn du das machst, zahlt der Staat eine Zulage in deinen Vertrag ein. Wenn du in Rente gehst, bekommst du das Geld ausgezahlt.'
   utter_insurance/fb_beitrag:
-    - text: 'Für jede Versicherung musst du Geld bezahlen. Dieses Geld nennt man Beitrag. Zahlst du deinen Beitrag nicht rechtzeitig, kannst du deinen Versicherungsschutz verlieren.'
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Für jede Versicherung musst du Geld bezahlen. Dieses Geld nennt man Beitrag. Zahlst du deinen Beitrag nicht rechtzeitig, kannst du deinen Versicherungsschutz verlieren.'
   utter_insurance/fb_garantieleistung:
-    - text: 'Die Garantieleistung ist ein Betrag, den die versicherte Person am Ende der Versicherung bekommt, wenn sie vorher alle Beiträge bezahlt hat. Zum Beispiel bei einer Lebensversicherung. Bei Abschluss des Vertrages ist diese Garantieleistung bereits bekannt.'
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Die Garantieleistung ist ein Betrag, den die versicherte Person am Ende der Versicherung bekommt, wenn sie vorher alle Beiträge bezahlt hat. Zum Beispiel bei einer Lebensversicherung. Bei Abschluss des Vertrages ist diese Garantieleistung bereits bekannt.'
   utter_insurance/fb_gesundheitspruefung:
-    - text: 'Manche Versicherungen prüfen erst, ob du gesund bist, bevor sie einen Vertrag mit dir abschließen. Damit berechnen Versicherungen ihr Risiko und deinen Beitrag. Allgemein gilt: Je gesünder du bist, desto weniger musst du bezahlen.'
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Manche Versicherungen prüfen erst, ob du gesund bist, bevor sie einen Vertrag mit dir abschließen. Damit berechnen Versicherungen ihr Risiko und deinen Beitrag. Allgemein gilt: Je gesünder du bist, desto weniger musst du bezahlen.'
   utter_insurance/fb_versicherungsvertreter:
-    - text: 'Versicherungsvertreter verkaufen Versicherungen. Sie beraten dich und helfen dir beim Ausfüllen des Versicherungsvertrages. Wenn du einen Vertrag unterschreibst, bekommt der Vertreter dafür Geld von der Versicherung.'
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Versicherungsvertreter verkaufen Versicherungen. Sie beraten dich und helfen dir beim Ausfüllen des Versicherungsvertrages. Wenn du einen Vertrag unterschreibst, bekommt der Vertreter dafür Geld von der Versicherung.'
   utter_insurance/fb_schadensfall:
-    - text: 'Wenn dir etwas passiert, wogegen du dich versichert hast, ist das ein Schadensfall. Beispielsweise wenn du einen Unfall hast oder arbeitslos wirst. Bei einem Schadensfall zahlt die Versicherung die vereinbarte Leistung.'
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Wenn dir etwas passiert, wogegen du dich versichert hast, ist das ein Schadensfall. Beispielsweise wenn du einen Unfall hast oder arbeitslos wirst. Bei einem Schadensfall zahlt die Versicherung die vereinbarte Leistung.'
   utter_insurance/fb_police:
-    - text: 'Als Police bezeichnet man eine Urkunde, die man von der Versicherung erhält. Diese Urkunde steht für den Vertrag, den du mit der Versicherung geschlossen hast. Du solltest diese Urkunde gut aufheben.'
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Als Police bezeichnet man eine Urkunde, die man von der Versicherung erhält. Diese Urkunde steht für den Vertrag, den du mit der Versicherung geschlossen hast. Du solltest diese Urkunde gut aufheben.'
   utter_insurance/fb_risiko:
-    - text: 'Eine Versicherung berechnet immer, wie hoch die Wahrscheinlichkeit ist, dass ein Schadensfall eintritt und sie zahlen müssen. Das ist das Risiko. Je höher das Risiko, desto teurer wird die Versicherung.'
-  utter_invest/inv1:
-  - text: Antwort aus den Intents zu Investments
+  - buttons:
+      - payload: fachbegriffe versicherung
+        title: Weitere Fachbegriffe
+    text: 'Eine Versicherung berechnet immer, wie hoch die Wahrscheinlichkeit ist, dass ein Schadensfall eintritt und sie zahlen müssen. Das ist das Risiko. Je höher das Risiko, desto teurer wird die Versicherung.'
+  utter_fachbegriffe_credit:
+    - text: 'Hier findest du wichtige Begriffe, die etwas mit Krediten zu tun haben. Wenn du möchtest, lasse dir die ganze Liste anzeigen.'
   utter_fachbegriffe_banking:
     - text: 'Hier findest du wichtige Begriffe im Bereich Geld und Banken. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.'
   utter_banking/fb_basis_konto:
-    - text: 'Jeder hat ein Recht auf ein *+Basiskonto**. Sogar wenn du nur wenig Geld hast. Oder Schulden. Die Bank muss dir ein Konto geben.'
-  utter_banking/fb_bonitatsprufung:
-    - text: 'Du willst ein Konto eröffnen? Die Bank kann eine **Bonitäts-Prüfung** bei dir vornehmen. Sie prüfen dann, ob du Schulden hast oder Rechnungen nicht bezahlt hast. Dazu fragen sie zum Beispiel bei der Schufa nach.'
-  utter_banking/fb_schufa:
-    - text: 'Die **Schufa** sammelt Informationen über Kunden. Viele Banken fragen bei der Schufa nach Informationen über dich. Wenn du Rechnungen nicht bezahlt hast, bekommst du den Vertrag vielleicht nicht.'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Jeder hat ein Recht auf ein *+Basiskonto**. Sogar wenn du nur wenig Geld hast. Oder Schulden. Die Bank muss dir ein Konto geben.'
+  utter_credit/fb_bonitatsprufung:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Weitere Fachbegriffe
+    text: 'Du willst ein Konto eröffnen? Die Bank kann eine **Bonitäts-Prüfung** bei dir vornehmen. Sie prüfen dann, ob du Schulden hast oder Rechnungen nicht bezahlt hast. Dazu fragen sie zum Beispiel bei der Schufa nach.'
+  utter_credit/fb_schufa:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Weitere Fachbegriffe
+    text: 'Die **Schufa** sammelt Informationen über Kunden. Viele Banken fragen bei der Schufa nach Informationen über dich. Wenn du Rechnungen nicht bezahlt hast, bekommst du den Vertrag vielleicht nicht.'
   utter_banking/fb_dauerauftrag:
-    - text: 'Du kannst der Bank einen **Dauerauftrag** geben. Sie zahlt dann regelmäßig den gleichen Betrag von deinem Konto. Zum Beispiel die Miete.'
-  utter_banking/fb_dispo_kredit:
-    - text: 'Die Bank kann dir einen **Dispo-Kredit** geben. Wenn du mehr Geld ausgibst, als du hast, kann der Dispo-Kredit dir helfen. Du musst aber Zinsen dafür zahlen.'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Du kannst der Bank einen **Dauerauftrag** geben. Sie zahlt dann regelmäßig den gleichen Betrag von deinem Konto. Zum Beispiel die Miete.'
+  utter_credit/fb_dispo_kredit:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Weitere Fachbegriffe
+    text: 'Die Bank kann dir einen **Dispo-Kredit** geben. Wenn du mehr Geld ausgibst, als du hast, kann der Dispo-Kredit dir helfen. Du musst aber Zinsen dafür zahlen.'
   utter_banking/fb_ec_karte:
-    - text: 'Eine **EC-Karte** ist zum Bezahlen und Geld abheben. Wenn du mit der Karte bezahlst, wird das Geld von deinem Konto abgebucht. Bei kleinen Beträgen musst du nicht einmal unterschreiben. Oder deine PIN eingeben.'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Eine **EC-Karte** ist zum Bezahlen und Geld abheben. Wenn du mit der Karte bezahlst, wird das Geld von deinem Konto abgebucht. Bei kleinen Beträgen musst du nicht einmal unterschreiben. Oder deine PIN eingeben.'
   utter_banking/fb_sepa:
-    - text: 'Eine **sepa-Lastschrift** ist sinnvoll, wenn du regelmäßig etwas bezahlst. Zum Beispiel die Stromrechnung oder die Telefongebühren. Du musst dann nicht immer daran denken. Du kannst jederzeit den Auftrag wieder löschen.'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Eine **sepa-Lastschrift** ist sinnvoll, wenn du regelmäßig etwas bezahlst. Zum Beispiel die Stromrechnung oder die Telefongebühren. Du musst dann nicht immer daran denken. Du kannst jederzeit den Auftrag wieder löschen.'
   utter_banking/fb_girokonto:
-    - text: '**Girokonto** nennt man das normale Konto bei einer Bank. Hier werden deine Einnahmen und Ausgaben notiert.'
-  utter_banking/fb_glaubiger:
-    - text: 'Ein **Gläubiger** ist jemand, dem du Geld schuldest. Der Gläubiger kann eine Person, eine Bank, eine Behörde oder eine Firma sein.'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: '**Girokonto** nennt man das normale Konto bei einer Bank. Hier werden deine Einnahmen und Ausgaben notiert.'
+  utter_credit/fb_glaubiger:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Weitere Fachbegriffe
+    text: 'Ein **Gläubiger** ist jemand, dem du Geld schuldest. Der Gläubiger kann eine Person, eine Bank, eine Behörde oder eine Firma sein.'
   utter_banking/fb_guthaben_konto:
-    - text: 'Bei einem **Guthaben-Konto** kannst du nur das Geld ausgeben, das du auf dem Konto hast. Du kannst keine Schulden machen.'
-  utter_banking/fb_inkasso:
-    - text: 'Das **Inkasso-Büro** arbeitet im Auftrag des Gläubigers und möchte das Geld und Gebühren einziehen. Sie verschicken dann zum Beispiel Briefe. Wenn du so einen Brief bekommst, musst du schnell handeln. Hier hilft die Verbraucherzentrale (www.verbraucherzentrale.de) oder die Schuldnerberatung (www.finanztip.de/schuldnerberatung/).'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Bei einem **Guthaben-Konto** kannst du nur das Geld ausgeben, das du auf dem Konto hast. Du kannst keine Schulden machen.'
+  utter_credit/fb_inkasso:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Weitere Fachbegriffe
+    text: 'Das **Inkasso-Büro** arbeitet im Auftrag des Gläubigers und möchte das Geld und Gebühren einziehen. Sie verschicken dann zum Beispiel Briefe. Wenn du so einen Brief bekommst, musst du schnell handeln. Hier hilft die Verbraucherzentrale (www.verbraucherzentrale.de) oder die Schuldnerberatung (www.finanztip.de/schuldnerberatung/).'
   utter_banking/fb_kontoauszug:
-    - text: 'Ein **Kontoauszug** zeigt dir die Geldeingänge und Geldausgänge. Du siehst auch, wie viel Geld du gerade hast.'
-  utter_banking/fb_kontopfandung:
-    - text: 'Wenn du Schulden hast, kann der Gläubiger vom Gericht einen Pfändungsbeschluss bekommen. Der Gläubiger kann dann das Geld von deinem Konto einziehen. Er darf aber nicht dein ganzes Geld nehmen. Es gibt eine Pfändungs-Freigrenze.'
-  utter_banking/fb_kredit:
-    - text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Du musst das Geld und die Zinsen in kleinen Raten zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst.'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Ein **Kontoauszug** zeigt dir die Geldeingänge und Geldausgänge. Du siehst auch, wie viel Geld du gerade hast.'
+  utter_credit/fb_kontopfandung:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Weitere Fachbegriffe
+    text: 'Wenn du Schulden hast, kann der Gläubiger vom Gericht einen Pfändungsbeschluss bekommen. Der Gläubiger kann dann das Geld von deinem Konto einziehen. Er darf aber nicht dein ganzes Geld nehmen. Es gibt eine Pfändungs-Freigrenze.'
+  utter_credit/fb_kredit:
+  - buttons:
+      - payload: Zurück
+        title: Weitere Fachbegriffe
+    text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Du musst das Geld und die Zinsen in kleinen Raten zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst.'
   utter_banking/fb_kredit_karte:
-    - text: 'Es gibt viele unterschiedliche **Kreditkarten**. Du kannst mit ihnen bezahlen. Das Geld wird erst später vom Konto abgebucht. Bei vielen Kreditkarten kann man das Konto überziehen und muss dann hohe Zinsen zahlen. Es ist schwierig, die Ausgaben zu überblicken.'
-  utter_banking/fb_kredit_wurdigkeit:
-    - text: 'Wenn du einen Kredit möchtest, prüft die Bank deine **Kreditwürdigkeit**. Hast du Schulden oder keine Arbeit? Dann bekommst du vielleicht keinen Kredit.'
+  - buttons:
+      - payload: Zurück
+        title: Weitere Fachbegriffe
+    text: 'Es gibt viele unterschiedliche **Kreditkarten**. Du kannst mit ihnen bezahlen. Das Geld wird erst später vom Konto abgebucht. Bei vielen Kreditkarten kann man das Konto überziehen und muss dann hohe Zinsen zahlen. Es ist schwierig, die Ausgaben zu überblicken.'
+  utter_credit/fb_kredit_wurdigkeit:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Weitere Fachbegriffe
+    text: 'Wenn du einen Kredit möchtest, prüft die Bank deine **Kreditwürdigkeit**. Hast du Schulden oder keine Arbeit? Dann bekommst du vielleicht keinen Kredit.'
   utter_banking/fb_ruck_lastschrift:
     - buttons:
-        - payload: SEPA-Lastschrift
-          title: SEPA-Lastschrift
+        - payload: sepa-Lastschrift
+          title: sepa-Lastschrift
         - payload: Mahnverfahren
           title: Mahnverfahren
       text: 'Du hast einer Firma die Erlaubnis gegeben, Geld von deinem Konto per Lastschrift abzubuchen. Es ist aber nicht genug Geld auf deinem Konto. Dann kommt es zu einer **Rücklastschrift**. Die Gebühren musst du bezahlen und häufig beginnt danach ein Mahnverfahren.'
-  utter_banking/fb_mahnverfahren:
-  - text: 'Mit einem **Mahnverfahren** erinnert der Gläubiger an die Zahlung. Das Mahnverfahren kostet Geld und hat mehrere Stufen. Im schlimmsten Fall kann es zur Zwangsvollstreckung führen.'
-  utter_banking/fb_schuldner_beratung:
-  - text: 'Wenn du Schulden hast, kann die **Schuldner-Beratung** (www.finanztip.de/schuldnerberatung/) helfen. Die Berater kennen sich mit Schulden aus und helfen dir. Viele Beratungsstellen arbeiten kostenlos. '
+  utter_credit/fb_mahnverfahren:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Weitere Fachbegriffe
+    text: 'Mit einem **Mahnverfahren** erinnert der Gläubiger an die Zahlung. Das Mahnverfahren kostet Geld und hat mehrere Stufen. Im schlimmsten Fall kann es zur *Zwangsvollstreckung* führen.'
+  utter_credit/fb_schuldner_beratung:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Weitere Fachbegriffe
+    text: 'Wenn du Schulden hast, kann die **Schuldner-Beratung** (www.finanztip.de/schuldnerberatung/) helfen. Die Berater kennen sich mit Schulden aus und helfen dir. Viele Beratungsstellen arbeiten kostenlos. '
   utter_banking/fb_uberweisung:
-  - text: 'Schickt man Geld von einem Konto auf ein anderes Konto, nennt man das eine **Überweisung**.'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Schickt man Geld von einem Konto auf ein anderes Konto, nennt man das eine **Überweisung**.'
   utter_banking/fb_sparbuch:
-  - text: 'Ein **Sparbuch** ist zum Ansparen von Geld gedacht. Es kann nicht überzogen werden. Du bekommst nur geringe Zinsen und kannst nicht überweisen.'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Ein **Sparbuch** ist zum Ansparen von Geld gedacht. Es kann nicht überzogen werden. Du bekommst nur geringe Zinsen und kannst nicht überweisen.'
   utter_banking/fb_tagesgeld:
-  - text: 'Du kannst von deinem **Tagesgeldkonto** immer Geld abheben. Zurzeit erhältst du nur geringe oder keine Zinsen.'
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Du kannst von deinem **Tagesgeldkonto** immer Geld abheben. Zurzeit erhältst du nur geringe oder keine Zinsen.'
   utter_banking/fb_festgeld:
-  - text: 'Beim **Festgeld** vereinbarst du mit der Bank eine feste Laufzeit und Zinssätze. Je länger das Geld bei der Bank bleibt, desto höher ist der Zinssatz. Du kannst während der Laufzeit nicht an das Geld heran.'
-  utter_banking/fb_zwangsvollstreckung:
-  - text: 'Du kannst deine Schulden nicht bezahlen? Nach einem Mahnverfahren kann der *Gläubiger* beim Gericht eine **Zwangsvollstreckung** beantragen. Dann kann es zur *Konto-Pfändung* kommen. Oder der Gerichtsvollzieher kommt zu Dir nach Hause.'
-  utter_banking/fb_effektivzins:
-  - text: 'Wenn du den **Effektivzins** von *Krediten* kennst, kannst du die Angebote vergleichen. Der Effektivzins gibt dir Auskunft über alle Kosten eines Kredits. Hier sind zum Beispiel auch die Bearbeitungsgebühren eingerechnet.'
-  utter_banking/fb_sicherheit:
-  - text: 'Der Kreditgeber verlangt häufig eine **Sicherheit** für den *Kredit* von dir. Das können zum Beispiel Wertgegenstände wie dein Auto sein. Wenn du den Kredit nicht zurückzahlen kannst, gehört das Auto dem Kreditgeber.'
-  utter_banking/fb_grundbuch:
-  - text: 'Das **Grundbuch** ist ein amtliches Verzeichnis, das vom Grundbuchamt in deiner Stadt geführt wird. Das Grundbuch enthält Angaben zu den Eigentümern von Immobilien und Grundstücken. Hier wird auch der Kreditgeber eines Immobilienkredits eingetragen.'
-  utter_banking/fb_darlehen:
-  - text: 'Ein **Darlehen** ist auch ein *Kredit*. Darlehen haben bei Vertragsabschluss eine Mindestlaufzeit von 5 Jahren. Die Kreditsumme ist hoch.'
-  utter_banking/fb_eigenkapital:
-  - text: 'Bei einem Immobilienkredit wird häufig das **Eigenkapital** berechnet. Das ist das Geld, das du hast. Aber auch die Zeit und Arbeit, die du zum Beispiel beim Renovieren leisten kannst. Alle Arbeiten, die du machst, müssen nicht über den Kredit gekauft werden. Somit hast du mehr Eigenkapital.'
-  utter_banking/kredit_was:
-  - text: 'Wenn du dir Geld bei der Bank leihst, ist das ein Kredit. Du musst das Geld und die Zinsen  zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst. Als Voraussetzung für einen Kredit, musst du…
+  - buttons:
+      - payload: fachbegriffe banking
+        title: Weitere Fachbegriffe
+    text: 'Beim **Festgeld** vereinbarst du mit der Bank eine feste Laufzeit und Zinssätze. Je länger das Geld bei der Bank bleibt, desto höher ist der Zinssatz. Du kannst während der Laufzeit nicht an das Geld heran.'
+  utter_credit/fb_zwangsvollstreckung:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Fachbegriffe Kredit
+    text: 'Du kannst deine Schulden nicht bezahlen? Nach einem Mahnverfahren kann der *Gläubiger* beim Gericht eine **Zwangsvollstreckung** beantragen. Dann kann es zur *Konto-Pfändung* kommen. Oder der Gerichtsvollzieher kommt zu Dir nach Hause.'
+  utter_credit/fb_effektivzins:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Fachbegriffe Kredit
+    text: 'Wenn du den **Effektivzins** von *Krediten* kennst, kannst du die Angebote vergleichen. Der Effektivzins gibt dir Auskunft über alle Kosten eines Kredits. Hier sind zum Beispiel auch die Bearbeitungsgebühren eingerechnet.'
+  utter_credit/fb_sicherheit:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Fachbegriffe Kredit
+    text: 'Der Kreditgeber verlangt häufig eine **Sicherheit** für den *Kredit* von dir. Das können zum Beispiel Wertgegenstände wie dein Auto sein. Wenn du den Kredit nicht zurückzahlen kannst, gehört das Auto dem Kreditgeber.'
+  utter_credit/fb_grundbuch:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Fachbegriffe Kredit
+    text: 'Das **Grundbuch** ist ein amtliches Verzeichnis, das vom Grundbuchamt in deiner Stadt geführt wird. Das Grundbuch enthält Angaben zu den Eigentümern von Immobilien und Grundstücken. Hier wird auch der Kreditgeber eines Immobilienkredits eingetragen.'
+  utter_credit/fb_eigenkapital:
+  - buttons:
+      - payload: fachbegriffe credit
+        title: Fachbegriffe Kredit
+    text: 'Bei einem Immobilienkredit wird häufig das **Eigenkapital** berechnet. Das ist das Geld, das du hast. Aber auch die Zeit und Arbeit, die du zum Beispiel beim Renovieren leisten kannst. Alle Arbeiten, die du machst, müssen nicht über den Kredit gekauft werden. Somit hast du mehr Eigenkapital.'
+  utter_credit/kredit_was:
+  - text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Ein Kredit wird auch **Darlehen** genannt. Du musst das Geld und die Zinsen  zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst. Als Voraussetzung für einen Kredit, musst du…
           
           - 18 Jahre alt sein
           
@@ -312,9 +423,9 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
           - regelmäßiges Einkommen haben
           
           - und einen Vertrag unterschreiben'
-  utter_banking/kredit_warum:
+  utter_credit/kredit_warum:
   - text: 'Wenn du dir etwas kaufen willst, aber nicht genug Geld hast, kann ein Kredit hilfreich sein. Du musst dann zu einem späteren Zeitpunkt das Geld und Zinsen zurückzahlen.'
-  utter_banking/kredit_welche:
+  utter_credit/kredit_welche:
     - buttons:
         - payload: Ratenkredit
           title: Ratenkredit
@@ -329,21 +440,36 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
         - payload: Immobilienkredit
           title: Immobilienkredit
       text: 'Es gibt eine Vielzahl verschiedener Kredite. Hier sind ein paar, die du kennen solltest.'
-  utter_banking/kredit_raten:
-  - text: 'Bei einem **Ratenkredit** erhältst du Geld von der Bank. Du zahlst dann jeden Monat einen gleichen Geldbetrag zurück. Im Kreditvertrag werden die Höhe des Ratenkredits, die Zinsen, die Laufzeit und der monatliche Geldbetrag festgelegt.'
-  utter_banking/kredit_auto:
-  - text: 'Der **Autokredit** ist für den Kauf eines Autos vorgesehen. Du kannst den Autokredit bei der Bank oder beim Autohaus erhalten. Die Zinsen sind meistens niedriger als bei einem Ratenkredit. Damit du den Kredit erhältst, musst du den Fahrzeugbrief als Sicherheit beim Gläubiger lassen.'
-  utter_banking/kredit_immobilien:
-    - buttons:
-        - payload: Darlehen
-          title: Darlehen
-      text: 'Ein **Immobilienkredit** ist zum Beispiel für den Kauf einer Wohnung bestimmt. Als Sicherheit wird die Bank in das *Grundbuch* eingetragen. Wenn du alle Schulden bezahlt hast, gehört das Haus dir.'
-  utter_banking/kredit_blanko:
-  - text: 'Der **Blankokredit** wird ohne eine Prüfung der *Kreditwürdigkeit* und ohne neuen Vertrag vergeben. Er ist für Kunden, die regelmäßig Einkommen erhalten und keine hohen Schulden haben. Ein Beispiel dafür ist der Überziehungskredit deines Girokontos.'
-  utter_banking/kredit_dispo:
-  - text: 'Der **Dispositionskredit** erlaubt dir, dein *Girokonto* oder deine Kreditkarte zu überziehen. Die Höhe des Dispositionskredits legt deine Bank fest. Die Zinsen sind recht hoch. Oft nennt man diesen Kredit einfach Dispo.'
-  utter_banking/kredit_uberziehung:
-  - text: 'Ein **Überziehungskredit** kommt zustande, wenn du dein *Girokonto* oder deinen *Dispo* auf dem *Girokonto* überziehst. Die Zinsen für einen Überziehungskredit sind sehr hoch. Du solltest schnell ein Gespräch mit deiner Bank vereinbaren.'
+  utter_credit/kredit_raten:
+  - buttons:
+      - payload: Welche Kredite gibt es
+        title: Übersicht Kredite
+    text: 'Bei einem **Ratenkredit** erhältst du Geld von der Bank. Du zahlst dann jeden Monat einen gleichen Geldbetrag zurück. Im Kreditvertrag werden die Höhe des Ratenkredits, die Zinsen, die Laufzeit und der monatliche Geldbetrag festgelegt.'
+  utter_credit/kredit_auto:
+  - buttons:
+      - payload: Welche Kredite gibt es
+        title: Übersicht Kredite
+    text: 'Der **Autokredit** ist für den Kauf eines Autos vorgesehen. Du kannst den Autokredit bei der Bank oder beim Autohaus erhalten. Die Zinsen sind meistens niedriger als bei einem Ratenkredit. Damit du den Kredit erhältst, musst du den Fahrzeugbrief als Sicherheit beim Gläubiger lassen.'
+  utter_credit/kredit_immobilien:
+  - buttons:
+      - payload: Welche Kredite gibt es
+        title: Übersicht Kredite
+    text: 'Ein **Immobilienkredit** ist zum Beispiel für den Kauf einer Wohnung bestimmt. Als Sicherheit wird die Bank in das *Grundbuch* eingetragen. Wenn du alle Schulden bezahlt hast, gehört das Haus dir.'
+  utter_credit/kredit_blanko:
+  - buttons:
+      - payload: Welche Kredite gibt es
+        title: Übersicht Kredite
+    text: 'Der **Blankokredit** wird ohne eine Prüfung der *Kreditwürdigkeit* und ohne neuen Vertrag vergeben. Er ist für Kunden, die regelmäßig Einkommen erhalten und keine hohen Schulden haben. Ein Beispiel dafür ist der Überziehungskredit deines Girokontos.'
+  utter_credit/kredit_dispo:
+  - buttons:
+      - payload: Welche Kredite gibt es
+        title: Übersicht Kredite
+    text: 'Der **Dispositionskredit** erlaubt dir, dein *Girokonto* oder deine Kreditkarte zu überziehen. Die Höhe des Dispositionskredits legt deine Bank fest. Die Zinsen sind recht hoch. Oft nennt man diesen Kredit einfach Dispo.'
+  utter_credit/kredit_uberziehung:
+  - buttons:
+      - payload: Welche Kredite gibt es
+        title: Übersicht Kredite
+    text: 'Ein **Überziehungskredit** kommt zustande, wenn du dein *Girokonto* oder deinen *Dispo* auf dem *Girokonto* überziehst. Die Zinsen für einen Überziehungskredit sind sehr hoch. Du solltest schnell ein Gespräch mit deiner Bank vereinbaren.'
   utter_pay/pay1:
   - text: Antwort aus den Intents zum Bezahlen
   utter_counseling/cou1:
@@ -378,6 +504,7 @@ actions:
 - utter_invest
 - utter_banking
 - utter_fachbegriffe_banking
+- utter_fachbegriffe_credit
 - utter_pay
 - utter_counseling
 - action_get_all_insurance_terms
@@ -386,7 +513,10 @@ actions:
 - utter_go_on
 - action_all_sort_of_terms
 - action_banking_terms
+- action_credit_terms
 - action_get_random_banking_terms
+- action_get_random_credit_terms
 - action_get_all_banking_terms
+- action_get_all_credit_terms
 - action_list_all_terms
 - action_repeat

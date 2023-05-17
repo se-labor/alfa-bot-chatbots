@@ -490,6 +490,7 @@ nlu:
 - intent: fachbegriffe_versicherungen
   examples: |
     - Fachbegriffe Versicherung
+    - fachbegriffe versicherung
     - Fachbegriffe für Versicherungen
     - Kannst du mir Fachbegriffe für Versicherungen erklären?
     - Welche Fachbegriffe zu Versicherungen sollte ich kennen?
@@ -585,6 +586,30 @@ nlu:
     - Geld-Fachbegriffe
     - Banking Fachbegriffe
     - Fachbegriffe rund um Banken
+- intent: random_credit_terms
+  examples: |
+    - random_credit_terms
+    - zufällige credit_terms
+    - random credit_terms
+- intent: all_credit_terms
+  examples: |
+    - all_credit_terms
+    - alle credit_terms
+    - sämtliche credit_terms
+- intent: fachbegriffe_banking
+  examples: |
+    - Banking-Fachbegriffe
+    - Geld-Fachbegriffe
+    - Banking Fachbegriffe
+    - Fachbegriffe rund um Banken
+    - fachbegriffe banking
+- intent: fachbegriffe_credit
+  examples: |
+    - Kredit-Fachbegriffe
+    - Kredit Fachbegriffe
+    - Fachbegriffe rund um Kredite
+    - Fachbegriffe zu Darlehen
+    - fachbegriffe credit
 - intent: banking/fb_basis_konto
   examples: |
     - Basis-Konto
@@ -593,7 +618,7 @@ nlu:
     - Basiskonto
     - Wer hat ein Basiskonto
     - Bekomme ich ein Basiskonto?
-- intent: banking/fb_bonitatsprufung
+- intent: credit/fb_bonitatsprufung
   examples: |
     - Bonitätsprüfung
     - Bonitäts-Prüfung
@@ -601,7 +626,7 @@ nlu:
     - Bekomme ich immer einen Kredit?
     - Wann bekomme ich keinen Kredit?
     - Was macht die Bonitätsprüfung?
-- intent: banking/fb_schufa
+- intent: credit/fb_schufa
   examples: |
     - Schufe
     - Schufa
@@ -617,7 +642,7 @@ nlu:
     - Wer macht einen Dauerauftrag?
     - Was mache ich mit einem Dauerauftrag?
     - Regelmäßige Zahlungen
-- intent: banking/fb_dispo_kredit
+- intent: credit/fb_dispo_kredit
   examples: |
     - Was ist ein Dispo?
     - Dispo-Kredit
@@ -654,7 +679,7 @@ nlu:
     - Welches Konto hat jeder?
     - Standardkonto
     - Welches Konto gehört zu einer EC-Karte?
-- intent: banking/fb_glaubiger
+- intent: credit/fb_glaubiger
   examples: |
     - Was ist ein Gläubiger?
     - Gläubiger
@@ -671,7 +696,7 @@ nlu:
     - Was ist das Besondere an einem Guthabenkonto?
     - Kann man ein Guthabenkonto überziehen?
     - Schulden beim Guthabenkonto
-- intent: banking/fb_inkasso
+- intent: credit/fb_inkasso
   examples: |
     - Inkasso
     - Inkasso-Büro
@@ -689,14 +714,14 @@ nlu:
     - Wo sehe ich, wie viel Geld ich noch habe?
     - So finde ich meine Einnahmen und Ausgaben
     - Woher bekomme ich einen Kontoauszug?
-- intent: banking/fb_kontopfandung
+- intent: credit/fb_kontopfandung
   examples: |
     - Was ist eine Kontopfändung?
     - Konto-Pfändung
     - Kontopfändung?
     - Was heißt Konto-Pfändung?
     - Kann mein Konto komplett gepfändet werden?
-- intent: banking/fb_kredit
+- intent: credit/fb_kredit
   examples: |
     - Kredit
     - Was ist ein Kredit?
@@ -711,7 +736,7 @@ nlu:
     - Kredit-Karte
     - Wie nutze ich eine Kreditkarte?
     - Ist eine Kreditkarte gefährlich?
-- intent: banking/fb_kredit_wurdigkeit
+- intent: credit/fb_kredit_wurdigkeit
   examples: |
     - Kreditwürdigkeit
     - Was ist Kreditwürdigkeit?
@@ -727,7 +752,7 @@ nlu:
     - Was ist wenn ich nicht genug Geld auf dem Konto für eine Lastschrift habe?
     - Was passiert, wenn man von leerem Konto Geld einzieht?
     - Wann kommt es zu einer Rücklastschrift?
-- intent: banking/fb_mahnverfahren
+- intent: credit/fb_mahnverfahren
   examples: |
     - Was ist ein Mahnverfahren?
     - Mahnverfahren
@@ -736,7 +761,7 @@ nlu:
     - Was passiert bei einem Mahnverfahren?
     - Ist ein Mahnverfahren teuer?
     - Muss ich mir bei einer Mahnung Sorgen machen?
-- intent: banking/fb_schuldner_beratung
+- intent: credit/fb_schuldner_beratung
   examples: |
     - Wo bekomme ich Hilfe, wenn ich Schulden habe?
     - Schuldnerberatung
@@ -773,46 +798,39 @@ nlu:
     - Was ist Festgeld?
     - Brauche ich Festgeld?
     - Erkläre Festgeld
-- intent: banking/fb_zwangsvollstreckung
+- intent: credit/fb_zwangsvollstreckung
   examples: |
     - ZWangsvollstreckung
     - Was ist eine Zwangsvollstreckung
     - Wann kommt eien ZWangsvollstreckung
     - Wann kommt es zu einer Zwangsvollstreckung?
-- intent: banking/fb_effektivzins
+- intent: credit/fb_effektivzins
   examples: |
     - Effektivzins
     - Was ist der Effektivzins
     - Erkläre mir den Effektivzins
     - Ist der Effektivzins wichtig?
-- intent: banking/fb_sicherheit
+- intent: credit/fb_sicherheit
   examples: |
     - Sicherheiten
     - wofür brauche ich Sicherheit?
     - Kredit Sicherheit
     - Wofür braucht die Bank Sicherheit
     - Was ist Sicherheit für einen Kredit?
-- intent: banking/fb_grundbuch
+- intent: credit/fb_grundbuch
   examples: |
     - Grundbuch
     - Was steht im Grundbuch?
     - Wo ist das Grundbuch?
     - Was ist ein Grundbuch?
     - Wofür braucht man ein Grundbuch?
-- intent: banking/fb_darlehen
-  examples: |
-    - Was ist ein Darlehen?
-    - Darlehen
-    - Wann brauche ich ein Darlehen?
-    - Wofür brauche ich ein Darlehen?
-    - Bekomme ich ein Darlehen?
-- intent: banking/fb_eigenkapital
+- intent: credit/fb_eigenkapital
   examples: |
     - Eigenkapital
     - Brauche ich Eigenkapital?
     - Wie hoch kann ich mein Eigenkapital ansetzen?
     - Höhe des Eigenkapitals
-- intent: banking/kredit_was
+- intent: credit/kredit_was
   examples: |
     - Was ist ein Kredit?
     - Was muss ich bei einem Kredit machen?
@@ -820,32 +838,32 @@ nlu:
     - VOraussetzungen für einen Kredit
     - Welche Voraussetzungen muss ich für einen Kredit erfüllen?
     - Was sind Kredite
-- intent: banking/kredit_warum
+- intent: credit/kredit_warum
   examples: |
     - Warum gibt es Kredite?
     - Kredite warum?
     - Was machen Kredite?
     - Wofür brauche ich einen Kredit
-- intent: banking/kredit_welche
+- intent: credit/kredit_welche
   examples: |
     - Welche Kredite gibt es?
     - Was für Kredite gibt es?
     - Welche Kredite sollte ich kennen?
     - Welche Kredite
     - Sorten von Krediten?
-- intent: banking/kredit_raten
+- intent: credit/kredit_raten
   examples: |
     - Ratenkredit
     - Was ist ein Ratenkredit
     - Erklärung Ratenkredit
-- intent: banking/kredit_auto
+- intent: credit/kredit_auto
   examples: |
     - Autokredit
     - Was ist ein Autokredit?
     - Erklärung Autokredit
     - Kredit für Auto
     - Welchen Kredit brauche ich, um ein Auto zu kaufen?
-- intent: banking/kredit_immobilien
+- intent: credit/kredit_immobilien
   examples: |
     - Immobilienkredit
     - Kredit Immobilien
@@ -853,20 +871,20 @@ nlu:
     - Ein Kredit um ein Haus zu kaufen
     - Kredit um eine Wohnung zu kaufen
     - Eigentumskredit
-- intent: banking/kredit_blanko
+- intent: credit/kredit_blanko
   examples: |
     - Blankokredit
     - Kredit ohne Prüfung
     - Blanko kredit
     - pauschaler Kredit
-- intent: banking/kredit_dispo
+- intent: credit/kredit_dispo
   examples: |
     - Dispositionskredit
     - Dispokredit
     - Was ist ein Dispo
     - Habe ich einen Dispo?
     - Wie bekomme ich eine Dispositionskredit
-- intent: banking/kredit_uberziehung
+- intent: credit/kredit_uberziehung
   examples: |
     - Überziehungskredit
     - Was ist ein Überziehungskredit?

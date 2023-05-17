@@ -14,16 +14,16 @@ rules:
     - action: utter_insurance
 
 # Buying and investment ResponseSelector
-- rule: Invest Responses
-  steps:
-    - intent: invest
-    - action: utter_invest
-
-# Banks and banking ResponseSelector
 - rule: Banking Responses
   steps:
     - intent: banking
     - action: utter_banking
+
+# Banks and credit ResponseSelector
+- rule: credit Responses
+  steps:
+    - intent: credit
+    - action: utter_credit
 
 # Payment online and offline ResponseSelector
 - rule: Payment Responses
@@ -70,12 +70,27 @@ rules:
 - rule: Random insurance terms
   steps:
     - intent: random_insurance_terms
-    - action: action_get_random_insurance_terms
+    - action: action_insurance_terms
 
 - rule: List all insurance terms
   steps:
     - intent: all_insurance_terms
     - action: action_get_all_insurance_terms
+
+- rule: overview credit terms
+  steps:
+    - intent: fachbegriffe_credit
+    - action: action_credit_terms
+
+- rule: Random credit terms
+  steps:
+    - intent: random_credit_terms
+    - action: action_credit_terms
+
+- rule: List all credit terms
+  steps:
+    - intent: all_credit_terms
+    - action: action_get_all_credit_terms
 
 - rule: overview banking terms
   steps:
@@ -85,7 +100,7 @@ rules:
 - rule: Random banking terms
   steps:
     - intent: random_banking_terms
-    - action: action_get_random_banking_terms
+    - action: action_banking_terms
 
 - rule: List all banking terms
   steps:

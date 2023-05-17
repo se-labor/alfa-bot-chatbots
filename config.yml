@@ -37,7 +37,7 @@ pipeline:
 # Buying and investment ResponseSelector
    - name: ResponseSelector
      epochs: 100
-     retrieval_intent: invest
+     retrieval_intent: credit
      constrain_similarities: true
 # Banks and banking ResponseSelector
    - name: ResponseSelector
