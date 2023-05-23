@@ -20,13 +20,13 @@ termsInsurance = {"Basistarif": "Was ist ein Basistarif", "Versicherungsnehmer":
                   "Beitrag": "Was sind Beiträge?", "Garantieleistung": "Was sind Garantieleistungen",
                   "Gesundheitsprüfung": "Was ist eine Gesundheitsprüfung",
                   "Versicherungsvertreter": "Versicherungsvertreter", "Schadensfall": "Was ist ein Schadensfall",
-                  "Police": "Was ist eine Police",
+                  "Police": "Was ist eine Police", "Teilkasko": "Teilkasko", "Vollkasko": "Vollkasko",
                   "Risiko": "Was bedeutet Risiko bei Versicherungen"}
 
 termsCredit = {"Bonitätsprüfung": "Bonitätsprüfung", "Schufa": "Was macht die Schufa?",
                "Dispo-Kredit": "Was ist ein Dispo?", "Gläubiger": "Was ist ein Gläubiger",
                "Inkasso": "Was macht ein Inkasso-Büro", "Kontoauszug": "Was ist ein Kontoauszug?",
-               "Konto-Pfändung": "Was ist eine Kontopfändung?", "Kredit": "Was ist ein Kredit?",
+               "Konto-Pfändung": "Was ist eine Kontopfändung?", "Kredit": "Kredit",
                "Kredit-Karte": "Was mache ich mit einer Kreditkarte?",
                "Kreditwürdigkeit": "Was ist Kreditwürdigkeit?", "Mahnverfahren": "Was ist ein Mahnverfahren?",
                "Schuldner-Beratung": "Schuldner-Beratung", "Überweisung": "Was ist eine Überweisung?",
@@ -170,7 +170,7 @@ class ActionGetAllCreditTerms(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         buttons = getButtonsFromDict(dict(sorted(termsCredit.items())))
-        dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe für Banken & Geld, die ich dir anbieten kann:",
+        dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe zu Krediten, die ich dir anbieten kann:",
                                  buttons=buttons)
         return []
 

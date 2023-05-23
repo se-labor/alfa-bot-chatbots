@@ -25,18 +25,6 @@ rules:
     - intent: credit
     - action: utter_credit
 
-# Payment online and offline ResponseSelector
-- rule: Payment Responses
-  steps:
-    - intent: pay
-    - action: utter_pay
-
-# ResponseSelector about counselings
-- rule: Counselings Responses
-  steps:
-    - intent: counseling
-    - action: utter_counseling
-
 - rule: go on
   steps:
     - intent: go_on
@@ -47,7 +35,14 @@ rules:
     - intent: repeat
     - action: action_repeat
 
-- rule: Say hello
+- rule: Start
+  conversation_start: true
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_under_construction
+
+- rule: Show intro
   steps:
   - intent: greet
   - action: utter_greet

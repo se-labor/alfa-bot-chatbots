@@ -6,12 +6,9 @@ intents:
 - affirm
 - chitchat
 - insurance
-- invest
 - banking
 - credit
 - repeat
-- pay
-- counseling
 - deny
 - go_on
 - goodbye
@@ -36,7 +33,16 @@ entities:
 
 responses:
   utter_greet:
-  - text: Willkommen zum Finanzbot. Tippe auf den Lautsprecher, damit ich dir die Nachricht vorlese. Derzeit bin ich noch im Training. Es dauert also noch etwas, bis ich dir hier helfen kann.
+  - buttons:
+      - payload: Was sind Banken?
+        title: Über Banken
+      - payload: Was sind Kredite?
+        title: Über Kredite
+      - payload: Was sind Versicherungen?
+        title: Über Versicherungen
+    text: Willkommen zum Finanzbot. Ich helfe dir gerne mit einfachen Erklärungen zu Fragen rund um Finanzen. Tippe auf den Lautsprecher, damit ich dir meine Nachrichten vorlese.
+  utter_under_construction:
+  - text: Derzeit bin ich noch im Training. Probiere gerne aus, was ich bereits kann. Wenn du ein Tester bist, notiere dir, was noch nicht wie erwartet funktioniert.
   utter_goodbye:
   - text: Machs gut!
   - text: Bis zum nächsten Mal!
@@ -184,7 +190,7 @@ responses:
         title: KFZ-Haftpflicht
       - payload: Individuell sinnvolle Versicherungen
         title: Individuelle Versicherungen
-    text: 'Zum Hausrat gehören alle beweglichen Sachen einer Wohnung. Zum Beispiel Möbel, Kleidung, Fernseher. Du kannst Schäden am Hausrat gegen Feuer, Leitungswasser, Einbruch und anderen Gründen versichern.
+    text: 'Zum Hausrat gehören alle beweglichen Sachen einer Wohnung. Zum Beispiel Möbel, Kleidung, Fernseher. Du kannst den Hausrat gegen Feuer, Leitungswasser, Einbruch und andere Gründe versichern.
 Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den Schaden.'
   utter_insurance/kasko_versicherung:
   - buttons:
@@ -215,6 +221,16 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
       - payload: Versicherungsvertreter
         title: Versicherungsvertreter
     text: 'Manche Versicherungen sind nicht oder nur in Ausnahmefällen notwendig. Zum Beispiel lohnen sich Lebensversicherungen meistens nicht. Ebenso Versicherungen für Handys, Brillen, Reisegepäck oder elektronische Geräte. Ein Versicherungsvertreter kann dich beraten.'
+  utter_insurance/fb_vollkasko:
+  - buttons:
+      - payload: Teilkasko
+        title: Teilkasko
+    text: 'Die **Vollkaskoversicherung** ist eine freiwillige Versicherung für dein Auto. Sie ersetzt fast alle Schäden am eigenen Auto. Auch wenn du den Unfall selbst verursacht hast.'
+  utter_insurance/fb_teilkasko:
+  - buttons:
+      - payload: Vollkasko
+        title: Vollkasko
+    text: 'Die **Teilkaskoversicherung** ist eine freiwillige Versicherung für dein Auto. Sie ergänzt die KFZ-Haftpflichtversicherung. Du hast dein Auto dann zusätzlich gegen Diebstahl, Wetterschäden, Steinschlag oder Brandschäden geschützt.'
   utter_fachbegriffe_versicherungen:
   - text: 'Hier findest du wichtige Begriffe zu Versicherungen. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.'
   utter_insurance/fb_basistarif:
@@ -280,7 +296,7 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
   - buttons:
       - payload: fachbegriffe credit
         title: Weitere Fachbegriffe
-    text: 'Du willst ein Konto eröffnen? Die Bank kann eine **Bonitäts-Prüfung** bei dir vornehmen. Sie prüfen dann, ob du Schulden hast oder Rechnungen nicht bezahlt hast. Dazu fragen sie zum Beispiel bei der Schufa nach.'
+    text: 'Du willst ein Konto eröffnen? Die Bank kann eine **Bonitäts-Prüfung** bei dir vornehmen. Sie prüfen dann, ob du Schulden oder Rechnungen nicht bezahlt hast. Dazu fragen sie zum Beispiel bei der Schufa nach.'
   utter_credit/fb_schufa:
   - buttons:
       - payload: fachbegriffe credit
@@ -339,12 +355,12 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
   utter_credit/fb_kredit:
   - buttons:
       - payload: Zurück
-        title: Weitere Fachbegriffe
+        title: Zurück
     text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Du musst das Geld und die Zinsen in kleinen Raten zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst.'
   utter_banking/fb_kredit_karte:
   - buttons:
       - payload: Zurück
-        title: Weitere Fachbegriffe
+        title: Zurück
     text: 'Es gibt viele unterschiedliche **Kreditkarten**. Du kannst mit ihnen bezahlen. Das Geld wird erst später vom Konto abgebucht. Bei vielen Kreditkarten kann man das Konto überziehen und muss dann hohe Zinsen zahlen. Es ist schwierig, die Ausgaben zu überblicken.'
   utter_credit/fb_kredit_wurdigkeit:
   - buttons:
@@ -414,7 +430,12 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
         title: Fachbegriffe Kredit
     text: 'Bei einem Immobilienkredit wird häufig das **Eigenkapital** berechnet. Das ist das Geld, das du hast. Aber auch die Zeit und Arbeit, die du zum Beispiel beim Renovieren leisten kannst. Alle Arbeiten, die du machst, müssen nicht über den Kredit gekauft werden. Somit hast du mehr Eigenkapital.'
   utter_credit/kredit_was:
-  - text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Ein Kredit wird auch **Darlehen** genannt. Du musst das Geld und die Zinsen  zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst. Als Voraussetzung für einen Kredit, musst du…
+  - buttons:
+      - payload: Welche Arten von Krediten gibt es?
+        title: Arten von Krediten
+      - payload: fachbegriffe credit
+        title: Fachbegriffe Kredite
+    text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Ein Kredit wird auch **Darlehen** genannt. Du musst das Geld und die Zinsen  zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst. Als Voraussetzung für einen Kredit, musst du…
           
           - 18 Jahre alt sein
           
@@ -425,6 +446,24 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
           - und einen Vertrag unterschreiben'
   utter_credit/kredit_warum:
   - text: 'Wenn du dir etwas kaufen willst, aber nicht genug Geld hast, kann ein Kredit hilfreich sein. Du musst dann zu einem späteren Zeitpunkt das Geld und Zinsen zurückzahlen.'
+  utter_credit/kredit_woher:
+  - buttons:
+      - payload: credit from bank
+        title: Banken
+      - payload: Pfandleiher
+        title: Pfandleiher
+      - payload: Unternehmen
+        title: Unternehmen
+    text: 'Es gibt viele verschiedene Anbieter von Krediten. Alle haben das Ziel, Geld zu verdienen.'
+  utter_credit/kredit_vonBank:
+  - buttons:
+      - payload: Arten von Krediten
+        title: Arten von Krediten
+    text: 'Banken und Sparkassen haben sehr viele unterschiedliche Kredite im Angebot. Hier findest du einige.'
+  utter_credit/kredit_vonPfandleiher:
+    - text: 'Ein Pfandleiher nimmt Wertgegenstände entgegen und gibt dir ungefähr die Hälfte des Wertes in Bargeld. Du musst das Geld und die Zinsen innerhalb von drei Monaten zurückgeben und erhältst den Gegenstand zurück.'
+  utter_credit/kredit_vonUnternehmen:
+    - text: 'Viele Kaufhäuser und Unternehmen bieten dir Kredite an. Das ist zum Beispiel der Fall, wenn du eine Ware direkt bekommst und später in einzelnen Raten den Preis und Zinsen bezahlst.'
   utter_credit/kredit_welche:
     - buttons:
         - payload: Ratenkredit
@@ -470,22 +509,87 @@ Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den 
       - payload: Welche Kredite gibt es
         title: Übersicht Kredite
     text: 'Ein **Überziehungskredit** kommt zustande, wenn du dein *Girokonto* oder deinen *Dispo* auf dem *Girokonto* überziehst. Die Zinsen für einen Überziehungskredit sind sehr hoch. Du solltest schnell ein Gespräch mit deiner Bank vereinbaren.'
-  utter_pay/pay1:
-  - text: Antwort aus den Intents zum Bezahlen
-  utter_counseling/cou1:
-  - text: Antwort aus den Intents zu Beratungsangeboten
-  utter_chitchat/cc2:
-  - text: Mal scheint die Sonne, mal nicht
-  utter_insurance/ins2:
-  - text: Auf jeden Fall eine Krankenversicherung
-  utter_invest/inv2:
-  - text: Gute Zinsen gibt es auf einem Sparbuch nie, aber es werden wieder mehr.
-  utter_banking/ban2:
-  - text: Mobiles Bezahlen und Onlinebankinge hängen eng zusammen.
-  utter_pay/pay2:
-  - text: Klar, Bargeld dabei zu haben ist immer sinnvoll. Es braucht keinen Strom
-  utter_counseling/cou2:
-  - text: Nicht gut gelaufen. Ich überlege mir was.
+  utter_banking/bank_was:
+  - buttons:
+      - payload: Bank wofur
+        title: Wofür brauche ich eine Bank
+      - payload: Welche Banken gibt es?
+        title: Welche Banken gibt es
+      - payload: Bezahlen
+        title: Bezahlen
+    text: 'Banken in Deutschland haben die Aufgabe, die Geldversorgung zu regeln. Dazu zählen zum Beispiel Girokonten und Bargeld, aber auch Sparen, Kredite und Wertpapiere. '
+  utter_banking/bank_wofur:
+  - buttons:
+      - payload: Bezahlen
+        title: Bezahlen
+      - payload: Konto
+        title: Konto
+      - payload: Geld anlegen
+        title: Geld anlegen
+      - payload: Was ist ein Kredit
+        title: Kredit
+    text: 'Eine Bank oder Sparkasse unterstützt dich bei allen Dingen rund um die Themen Geld, Bezahlen und Sparen'
+  utter_banking/bank_welche:
+  - buttons:
+      - payload: Universalbanken
+        title: Universalbanken
+      - payload: Spezialbanken
+        title: Spezialbanken
+      - payload: Filialbanken
+        title: Filialbanken
+      - payload: Direktbanken
+        title: Direktbanken
+    text: 'Du kannst verschiedene Arten von Banken unterscheiden. Es gibt *Universalbanken* und *Spezialbanken*. Zudem unterteilen Banken sich in *Filialbanken* und *Direktbanken*.'
+  utter_banking/bezahlen:
+  - buttons:
+      - payload: Klassische Bezahlverfahren
+        title: Klassiche Bezahlverfahren
+      - payload: Online bezahlen
+        title: Online bezahlen
+      - payload: Mobiles bezahlen
+        title: Mobiles bezahlen
+    text: 'Es gibt ganz unterschiedliche Möglichkeiten eine Ware oder Dienstleistung zu bezahlen. Möchtest du mehr dazu wissen?'
+  utter_banking/klassisches_bezahlen:
+  - buttons:
+      - payload: Barzahlung
+        title: Barzahlung
+      - payload: Vorkasse
+        title: Vorkasse
+      - payload: Rechnung
+        title: Rechnung
+    text: 'Neben der Bezahlung mit Scheinen und Münzen bietet unser Girokonto weitere Möglichkeiten der Bezahlung. Wähle aus.'
+  utter_banking/barzahlung:
+    - text: 'In Deutschland ist das Bezahlen mit Münzen und Scheinen sehr beliebt. Es wurden im Jahr 2021 mehr als die Hälfte der alltäglichen Zahlungen in Bargeld getätigt. Du erhältst die Ware direkt nach dem Bezahlen.'
+  utter_banking/vorkasse:
+    - text: 'Wenn du beim einkaufen **Vorkasse** auswählst, schickt der Verkäufer die Ware nach dem Eingang des Geldes los. Vorher hast du die Ware mit einer Überweisung oder einer Lastschrift bezahlt. Dafür benötigst du ein Girokonto.'
+  utter_banking/rechnung:
+    - text: 'Viele Versandhändler schicken dir die Ware mit einer **Rechnung**. In der Rechnung steht eine Frist oder ein Datum, bis zu dem die Rechnung bezahlt werden muss. Dafür benötigst du ein Girokonto.'
+  utter_banking/online_bezahlen:
+    - text: 'Bei **Einkäufen im Internet** kannst du oft auch über sogenannte Zahlungsdienstleister bezahlen. Die größten Anbieter heißen Paypal, Klarna und giropay. Du musst dich bei den Anbietern zum Beispiel mit deiner Email-Adresse anmelden und dein Girokonto angeben.'
+  utter_banking/mobiles_bezahlen:
+    - text: 'Für das **mobile Bezahlen** benötigst du ein Smartphone oder eine Smartwatch. Bekannte Anbieter sind Apple-Pay und google-Pay. Du kannst dann an der Kasse das Handy oder die Smartwatch vor ein Lesegerät halten. Der Betrag wird per *Lastschrift* von deinem Konto abgebucht.'
+  utter_banking/universalbanken:
+  - text: '**Universalbanken** bieten alle Dienstleistungen an, die für dich als Privatperson wichtig sind. Du kannst dort dein Girokonto haben, Geld anlegen und Kredite beantragen.'
+  utter_banking/spezialbanken:
+  - text: '**Spezialbanken** haben sich auf besondere Themen spezialisiert. So gibt es zum Beispiel die Bausparkassen. Dort kannst du für den Kauf oder den Bau eines Hauses sparen und Geld aufnehmen. Du kannst dort aber kein Girokonto eröffnen.'
+  utter_banking/filialbanken:
+  - buttons:
+      - payload: Sparkassen
+        title: Sparkassen
+      - payload: Volksbanken
+        title: Sparkassen
+    text: '**Filialbanken** haben Geschäftsräume, die du aufsuchen kannst. Dort kannst du Geld abheben und dich persönlich beraten lassen. Die bekanntesten Filialbanken sind die Sparkassen und Volksbanken.'
+  utter_banking/sparkassen:
+  - text: 'Es gibt über 500 **Sparkassen** in Deutschland. Sie haben 16.000 Filialen und arbeiten fast immer in öffentlichem Auftrag. Sie werden von den Städten und Gemeinden getragen.'
+  utter_banking/volksbanken:
+    - text: 'Die **Volksbanken** gehören zu den Genossenschaftsbanken. Alle Kunden können Mitglieder der Bank werden. Mitglieder können an der Entwicklung der Bank mitbestimmen.'
+  utter_banking/direktbanken:
+  - text: 'Bei **Direktbanken** gibt es keinen Ansprechpartner vor Ort. Du eröffnest dein Konto über das Internet. Direktbanken können ihre Dienste meistens günstiger anbieten. Die bekanntesten Anbieter sind die DKB, die Consorsbank und die ING-DiBa.'
+  utter_banking/fb_filiale:
+  - buttons:
+      - payload: Fachbegriffe Banken
+        title: Fachbegriffe Banken
+    text: 'Filialen sind Geschäftsräume, die zum Beispiel zu einer Bank gehören. Sie werden auch als Zweigniederlassungen bezeichnet. Die Bank möchte mit ihren Filialen nah bei den Kunden sein.'
   utter_go_on:
     - text: bei mir kam "weiter" an.
 

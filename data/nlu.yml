@@ -433,6 +433,21 @@ nlu:
     - Privat-Haftpflichtversicherung
     - Was macht eine private Haftpflichtversicherung?
     - Welche Versicherung brauche ich, wenn ich etwas kaputt mache?
+- intent: insurance/fb_teilkasko
+  examples: |
+    - Teilkasko
+    - Was ist eine Teilkasko-Versicherung?
+    - Teilkasko-Versicherung
+    - Teilweise Auto-Versicherung
+    - Kleine Autoversicherung
+- intent: insurance/fb_vollkasko
+  examples: |
+    - Vollkasko
+    - Was ist eine Vollkasko-Versicherung?
+    - Vollkasko-Versicherung
+    - Welche Autoversicherung übernimmt die meisten Schäden?
+    - Volle Autoversicherung
+    - Volle Kasko Versicherung
 - intent: insurance/individuelle_vers
   examples: |
     - Welche Versicherungen sind für mich persönlich sinnvoll?
@@ -844,6 +859,32 @@ nlu:
     - Kredite warum?
     - Was machen Kredite?
     - Wofür brauche ich einen Kredit
+- intent: credit/kredit_woher
+  examples: |
+    - Woher kann ich einen Kredit bekommen?
+    - Kredit woher?
+    - Kredit wo
+    - Wo bekomme ich einen Kredit her
+    - Wer gibt mir einen Kredit
+- intent: credit/kredit_vonBank
+  examples: |
+    - credit from bank
+    - Kredit von einer Bank
+    - Kredit von einer Bank bekommen
+- intent: credit/kredit_vonPfandleiher
+  examples: |
+    - Pfandleiher
+    - Was macht ein Pfandleiher
+    - Was ist ein Pfandleiher
+    - Kredit vom Pfandleiher
+    - Wie funktioniert ein Pfandleiher
+- intent: credit/kredit_vonUnternehmen
+  examples: |
+    - Unternehmen
+    - Kredit von Unternehmen
+    - Kredit für Waren
+    - Kredit für Fernseher
+    - Kredit um Handy zu kaufen
 - intent: credit/kredit_welche
   examples: |
     - Welche Kredite gibt es?
@@ -891,28 +932,131 @@ nlu:
     - Wie kriege einen Überziehungskredit?
     - Ist ein Überziehungskredit gefährlich?
     - Wie teuer ist ein Überziehungskredit
-- intent: pay/pay1
+- intent: banking/bank_was
   examples: |
-    - Wie kann ich bezahlen?
+    - Was ist eine Bank?
+    - Was sind Banken?
+    - Bank
+- intent: banking/bank_wofur
+  examples: |
+    - Wofür gibt es Banken?
+    - Aufgaben von Banken
+    - Was geht bei einer Bank
+    - Bank wofur
+- intent: banking/bezahlen
+  examples: |
+    - Bezahlen
+    - Wie kann ich bezahlen
+    - Auf welche Arten kann ich bezahlen
+    - Welche Möglichkeiten habe ich, um etwas zu bezahlen
+- intent: banking/klassisches_bezahlen
+  examples: |
+    - Klassische Bezahlverfahren
+    - Bezahlen wie früher
+    - Klassisch bezahlen
+- intent: banking/barzahlung
+  examples: |
+    - Barzahlung
+    - Mit Bargeld bezahlen
+    - Bargeld zum Bezahlen nutzen
+    - Münzen und Scheine
+    - Mit Bargeld bezahlen
+    - Bezahlen mit Scheinen
+    - Hartgeld
+    - Bargeld
+- intent: banking/vorkasse
+  examples: |
+    - Vorkasse
+    - Bezahlen per Vorkasse
+    - Im Voraus bezahlen
+    - Bezahlen bevor man die Ware bekommt
+    - Vorkassenzahlung
+- intent: banking/rechnung
+  examples: |
+    - Rechnung
+    - Per Rechnung bezahlen
+    - Auf Rechnung bezahlen
+    - Eine Rechnung bekommen
+- intent: banking/online_bezahlen
+  examples: |
+    - Online bezahlen
+    - Im Internet bezahlen
+    - Mit Paypal bezahlen
+    - Einkäufe im Internet bezaheln
+    - Onlinekäufe bezahlen
+- intent: banking/mobiles_bezahlen
+  examples: |
+    - MIt Smartphone bezahlen
     - Mobiles bezahlen
-- intent: pay/pay2
+    - Mobile Payment
+    - Mit dem Handy bezahlen
+    - Bezahlen per Handy
+    - Bezahlen mit Smartwatch
+    - Smartwatch bezahlen
+    - Mit AppleWatch bezahlen
+    - Zahlen mit der Uhr
+- intent: banking/universalbanken
   examples: |
-    - Sollte ich noch Bargeld nutzen?
-    - Ist Bargeld noch zeitgemäß?
-    - Brauche ich noch Bargeld?
-- intent: invest/inv1
+    - Universalbank
+    - Universalbanken
+    - Was sind Universalbanken
+    - Ich kenne Universalbanken nicht
+    - Was machen Universalbanken?
+    - Bei welcher Bank kann ich ein Konto einrichten
+- intent: banking/spezialbanken
   examples: |
-    - Sollte ich investieren?
-    - Kann ich investieren?
-- intent: invest/inv2
+    - Spezialbanken
+    - Spezialbank
+    - Was sind Spezialbanken
+    - Was machen Spezialbanken
+    - Wofür braucht man Spezialbanken?
+- intent: banking/filialbanken
   examples: |
-    - Ist ein Sparbuch heute noch sinnvoll?
-    - Welche Zinsen kann ich auf einem Sparbuch bekommen?
-- intent: counseling/cou1
+    - Filialbanken
+    - Filialbank
+    - Was sind Filialbanken?
+    - Was ist eine Filialbank?
+    - Welche Banken sind vor Ort?
+    - Zu welchen Banken kann ich hingehen?
+- intent: banking/sparkassen
   examples: |
-    - Frage zu Beratungsmöglichkeiten
-    - Ich brauche Beratung
-- intent: counseling/cou2
+    - Was sind Sparkassen?
+    - Sparkassen
+    - Sparkasse
+    - Was ist eine Sparkasse?
+    - Was macht eine Sparkasse
+    - Öffentliche Bank
+- intent: banking/volksbanken
   examples: |
-    - Ich habe Schulden
-    - Ich habe eine negative Schufa-Auskunft
+    - Volksbank
+    - Volksbanken
+    - Was sind Volksbanken
+    - Was sind Raiffeisenbanken
+    - Genossenschaftsbanken
+    - Bei welcher Bank können Kunden auch Mitglieder sein?
+- intent: banking/bank_welche
+  examples: |
+    - Welche Banken gibt es?
+    - Welche Banken
+    - Arten von Banken
+    - Welche Banken
+- intent: banking/bezahlen
+  examples: |
+    - Wie kann ich bezahlen
+    - Bezahlen
+    - Welche Möglichkeiten hat man, um zu bezahlen?
+- intent: banking/direktbanken
+  examples: |
+    - Direktbanken
+    - Direktbank
+    - Was ist eine Direktbank?
+    - Onlinebank
+    - Internetbank
+    - Was ist eine Internetbank?
+- intent: banking/fb_filiale
+  examples: |
+    - Was ist eine Filiale?
+    - Filiale
+    - Fillialen
+    . Was sind die Standorte von Banken?
+    - Wo kann ich Bankgeschäfte erledigen?

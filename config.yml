@@ -44,16 +44,6 @@ pipeline:
      epochs: 100
      retrieval_intent: banking
      constrain_similarities: true
-# Payment online and offline ResponseSelector
-   - name: ResponseSelector
-     epochs: 100
-     retrieval_intent: pay
-     constrain_similarities: true
-# ResponseSelector about counselings
-   - name: ResponseSelector
-     epochs: 100
-     retrieval_intent: counseling
-     constrain_similarities: true
 # Fallback Classifier
    - name: FallbackClassifier
      threshold: 0.3
