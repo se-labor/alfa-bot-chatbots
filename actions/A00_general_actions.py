@@ -155,7 +155,7 @@ class ActionAskGoogle(Action):
 
         request_string = googleSearchRequest(utterance)
 
-        msg = f"Leider kann ich deine Nachricht nicht verstehen. Frag mich gerne noch mal. Wenn du möchtest," \
+        msg = f"Leider kann ich deine Nachricht nicht verstehen. Frag mich gerne noch mal. Wenn du möchtest, " \
               f"kannst du deine Frage auch bei [Google suchen]({request_string})"
 
         dispatcher.utter_message(text=msg)

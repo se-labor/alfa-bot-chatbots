@@ -1,3 +1,69 @@
 version: "3.1"
 
 stories:
+  # Finanzquiz Frage 1
+  # --------------------------------------------
+  - story: finanzquiz 1
+    steps:
+      - intent: start_quiz
+      - action: utter_start_quiz
+      - or:
+          - intent: affirm
+          - intent: enter_question_1
+      - action: quiz_question1_form
+      - active_loop: quiz_question1_form
+
+  # --------------------------------------------
+  
+  # Finanzquiz Frage 2
+  # --------------------------------------------
+  - story: finanzquiz 2
+    steps:
+      - intent: enter_question_2
+      - action: quiz_question2_form
+      - active_loop: quiz_question2_form
+
+  # --------------------------------------------
+  
+  # Finanzquiz Frage 3
+  # --------------------------------------------
+  - story: finanzquiz 3
+    steps:
+      - intent: enter_question_3
+      - action: quiz_question3_form
+      - active_loop: quiz_question3_form
+
+  # --------------------------------------------
+
+
+  # Finanzquiz Frage 4
+  # --------------------------------------------
+  - story: finanzquiz 4
+    steps:
+      - intent: enter_question_4
+      - action: quiz_question4_form
+      - active_loop: quiz_question4_form
+
+  # --------------------------------------------
+
+
+  # Finanzquiz Frage 5
+  # --------------------------------------------
+  - story: finanzquiz 5
+    steps:
+      - intent: enter_question_5
+      - action: quiz_question5_form
+      - active_loop: quiz_question5_form
+
+  # --------------------------------------------
+  
+  
+  # Finanzquiz Frage 6
+  # --------------------------------------------
+  - story: finanzquiz 6
+    steps:
+      - intent: enter_question_6
+      - action: quiz_question6_form
+      - active_loop: quiz_question6_form
+
+  # --------------------------------------------

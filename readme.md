@@ -78,14 +78,14 @@ Container bauen: `docker build -t repo/image:tag .`
 * Wahl-Bot: `docker build -t sjproost/alfa-wahlbot:1.0.0 .`
 * WM-Bot: `docker build -t sjproost/alfa-wmbot:1.2.0 .`
 * Lern-Bot: `docker build -t sjproost/alfa-lernbot:1.1.0 .`
-* Finanz-Bot: `docker build -t sjproost/alfa-finanzbot:0.0.3 .`
+* Finanz-Bot: `docker build -t sjproost/alfa-finanzbot:1.0.0 .`
 
 Container starten und interaktiv (-it) mit shell nutzen 
 `docker run -it -p 8080:5005 -v $(pwd):/app repo/image:tag shell`
 
 
 #### Custom Action Container
-Aktuelle Version: 3.2.3
+Aktuelle Version: 3.2.4
 
 Container bauen: `docker build -f Dockerfile.customAction -t sjproost/alfabot-ca:tag .`
 
@@ -128,7 +128,7 @@ steps:                      // Dialogverlauf
 
 Hilfstool zum verifizieren der yml-Dateien: https://yamlchecker.com
 
-####NLU.yml
+#### nlu.yml
 Die NLU-Datei enthält Intents **zusammen** mit Beispielen. Zu jedem Intent gehört eine Liste an Beispielsätzen, die diesem Intent zugeordnet werden sollen. 
 Es können auch mehrere NLU-Dateien verwendet werden, um eine bessere Übersicht zu gewährleisten.
 Pro Intent sind 7-10 Beispielsätze empfehlenswert. Ggf. kann es auch nützlich sein, bei bestimmten Wörtern häufige Rechtschreibfehler mit aufzunehmen.
@@ -144,7 +144,7 @@ Beispiel. Ähnliche Eingaben, die so nicht in den Beispielsätzen stehen, werden
     - ...
 ```
 
-####Domain.yml
+#### domain.yml
 Die Domain.yml besteht aus bis zu sieben Abschnitten:
 1. Angabe der Rasa-Version, in diesem Projekt 2.0
 2. Eine Auflistung aller Intents (**ohne** Beispiele), die der Chatbot "kennt".

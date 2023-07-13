@@ -34,10 +34,15 @@ pipeline:
      epochs: 100
      retrieval_intent: insurance
      constrain_similarities: true
-# Buying and investment ResponseSelector
+# credit ResponseSelector
    - name: ResponseSelector
      epochs: 100
      retrieval_intent: credit
+     constrain_similarities: true
+# Buying and investment ResponseSelector
+   - name: ResponseSelector
+     epochs: 100
+     retrieval_intent: support
      constrain_similarities: true
 # Banks and banking ResponseSelector
    - name: ResponseSelector
@@ -46,7 +51,7 @@ pipeline:
      constrain_similarities: true
 # Fallback Classifier
    - name: FallbackClassifier
-     threshold: 0.3
+     threshold: 0.16
      ambiguity_threshold: 0.1
 
 # Configuration for Rasa Core.

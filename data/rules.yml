@@ -25,6 +25,12 @@ rules:
     - intent: credit
     - action: utter_credit
 
+# Banks and credit ResponseSelector
+- rule: support Responses
+  steps:
+    - intent: support
+    - action: utter_support
+
 - rule: go on
   steps:
     - intent: go_on
@@ -117,6 +123,11 @@ rules:
     - intent: joke
     - action: action_tell_joke
 
+- rule: Survey completed
+  steps:
+    - intent: survey_completed
+    - action: utter_survey_completed
+
 - rule: out-of-scope
   steps:
     - intent: out_of_scope
@@ -132,13 +143,138 @@ rules:
     - intent: testintent
     - action: action_test_action
 
+- rule: begfragung
+  steps:
+    - intent: befragung
+    - action: utter_befragung
 
-#- rule: interrupt form
-#  steps:
-#    - intent: interrupt
-#    - action: action_deactivate_loop
-#    - active_loop: null
-#    - slot_was_set:
-#        - requested_slot: null
-#    - action: action_clear_slots
-#    - action: utter_interruption
+- rule: load_right_answer_1
+  steps:
+    - intent: q1_right
+    - action: utter_q1_right
+
+- rule: load_right_answer_2
+  steps:
+    - intent: q2_right
+    - action: utter_q2_right
+
+- rule: load_right_answer_3
+  steps:
+    - intent: q3_right
+    - action: utter_q3_right
+      
+- rule: load_right_answer_4
+  steps:
+    - intent: q4_right
+    - action: utter_q4_right
+      
+- rule: load_right_answer_5
+  steps:
+    - intent: q5_right
+    - action: utter_q5_right
+      
+- rule: load_right_answer_6
+  steps:
+    - intent: q6_right
+    - action: utter_q6_right
+      
+# Finance quiz question1
+- rule: Activate finance quiz question1 form
+  steps:
+    - action: quiz_question1_form
+    - active_loop: quiz_question1_form
+
+- rule: Submit finance quiz question1 form
+  condition:
+    - active_loop: quiz_question1_form
+  steps:
+    - action: quiz_question1_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+
+# Finance quiz question2
+- rule: Activate finance quiz question2 form
+  steps:
+    - action: quiz_question2_form
+    - active_loop: quiz_question2_form
+
+- rule: Submit finance quiz question2 form
+  condition:
+    - active_loop: quiz_question2_form
+  steps:
+    - action: quiz_question2_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+            
+# Finance quiz question3
+- rule: Activate finance quiz question3 form
+  steps:
+    - action: quiz_question3_form
+    - active_loop: quiz_question3_form
+
+- rule: Submit finance quiz question3 form
+  condition:
+    - active_loop: quiz_question3_form
+  steps:
+    - action: quiz_question3_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+            
+# Finance quiz question4
+- rule: Activate finance quiz question4 form
+  steps:
+    - action: quiz_question4_form
+    - active_loop: quiz_question4_form
+
+- rule: Submit finance quiz question4 form
+  condition:
+    - active_loop: quiz_question4_form
+  steps:
+    - action: quiz_question4_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+            
+# Finance quiz question5
+- rule: Activate finance quiz question5 form
+  steps:
+    - action: quiz_question5_form
+    - active_loop: quiz_question5_form
+
+- rule: Submit finance quiz question5 form
+  condition:
+    - active_loop: quiz_question5_form
+  steps:
+    - action: quiz_question5_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+            
+# Finance quiz question6
+- rule: Activate finance quiz question6 form
+  steps:
+    - action: quiz_question6_form
+    - active_loop: quiz_question6_form
+
+- rule: Submit finance quiz question6 form
+  condition:
+    - active_loop: quiz_question6_form
+  steps:
+    - action: quiz_question6_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: utter_quiz_finished
+
+- rule: interrupt form
+  steps:
+    - intent: interrupt
+    - action: action_deactivate_loop
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: action_clear_quiz_slots
+    - action: utter_interruption

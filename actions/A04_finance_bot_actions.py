@@ -70,6 +70,14 @@ def randomSelection(pool: dict, size: int) -> list:
     buttons = getButtonsFromDict(sample)
     return buttons
 
+def randomise_fail_answer() -> str:
+    fail_answers = ["Leider die falsche Lösung", "Leider falsch", "Das ist nicht richtig",
+                      "Tut mir Leid, das ist nicht korrekt."]
+    fail_reactions = ["!", ".", " 😊.", " 👍."]
+    random_answer = random.choice(fail_answers)
+    random_reaction = random.choice(fail_reactions)
+    msg = random_answer + random_reaction
+    return msg
 
 # Generate buttons for all terms subset of insurance terms
 class ActionAllSortOfTerms(Action):
@@ -124,7 +132,6 @@ class ActionGetAllInsuranceTerms(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         buttons = getButtonsFromDict(dict(sorted(termsInsurance.items())))
-        print(dict(sorted(termsInsurance.items())))
         dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe für Versicherungen, die ich dir anbieten kann:",
                                  buttons=buttons)
         return []
@@ -269,3 +276,150 @@ class ActionRepeat(Action):
             i -= 1
 
         return []
+
+# Validate finance quiz question 1
+class QuizQuestion1Form(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_quiz_question1_form"
+
+    def validate_question1     (
+            self,
+            slot_value: Any,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,
+            firstTry=bool(True)
+    ) -> Dict[Text, Any]:
+        solution_question = str(slot_value)
+        if solution_question != 'q1_right':
+            res_string = f"utter_{solution_question}"
+            dispatcher.utter_message(response=res_string)
+            return {"question1": slot_value}
+        dispatcher.utter_message(
+            response="utter_q1_right")
+        return {"question1": slot_value}
+
+
+# Validate finance quiz question 2
+class QuizQuestion2Form(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_quiz_question2_form"
+
+    def validate_question2     (
+            self,
+            slot_value: Any,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,
+            firstTry=bool(True)
+    ) -> Dict[Text, Any]:
+        solution_question = str(slot_value)
+        if solution_question != 'q2_right':
+            res_string = f"utter_{solution_question}"
+            dispatcher.utter_message(response=res_string)
+            return {"question2": slot_value}
+        dispatcher.utter_message(
+            response="utter_q2_right")
+        return {"question2": slot_value}
+    
+    
+# Validate finance quiz question 3
+class QuizQuestion3Form(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_quiz_question3_form"
+
+    def validate_question3     (
+            self,
+            slot_value: Any,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,
+            firstTry=bool(True)
+    ) -> Dict[Text, Any]:
+        solution_question = str(slot_value)
+        if solution_question != 'q3_right':
+            res_string = f"utter_{solution_question}"
+            dispatcher.utter_message(response=res_string)
+            return {"question3": slot_value}
+        dispatcher.utter_message(
+            response="utter_q3_right")
+        return {"question3": slot_value}
+    
+    
+# Validate finance quiz question 4
+class QuizQuestion4Form(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_quiz_question4_form"
+
+    def validate_question4     (
+            self,
+            slot_value: Any,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,
+            firstTry=bool(True)
+    ) -> Dict[Text, Any]:
+        solution_question = str(slot_value)
+        if solution_question != 'q4_right':
+            res_string = f"utter_{solution_question}"
+            dispatcher.utter_message(response=res_string)
+            return {"question4": slot_value}
+        dispatcher.utter_message(
+            response="utter_q4_right")
+        return {"question4": slot_value}
+    
+    
+# Validate finance quiz question 5
+class QuizQuestion5Form(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_quiz_question5_form"
+
+    def validate_question5     (
+            self,
+            slot_value: Any,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,
+            firstTry=bool(True)
+    ) -> Dict[Text, Any]:
+        solution_question = str(slot_value)
+        if solution_question != 'q5_right':
+            res_string = f"utter_{solution_question}"
+            dispatcher.utter_message(response=res_string)
+            return {"question5": slot_value}
+        dispatcher.utter_message(
+            response="utter_q5_right")
+        return {"question5": slot_value}
+    
+    
+# Validate finance quiz question 6
+class QuizQuestion6Form(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_quiz_question6_form"
+
+    def validate_question6     (
+            self,
+            slot_value: Any,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict,
+            firstTry=bool(True)
+    ) -> Dict[Text, Any]:
+        solution_question = str(slot_value)
+        if solution_question != 'q6_right':
+            res_string = f"utter_{solution_question}"
+            dispatcher.utter_message(response=res_string)
+            return {"question6": slot_value}
+        dispatcher.utter_message(
+            response="utter_q6_right")
+        return {"question6": slot_value}
+
+class ActionClearQuizSlots(Action):
+    def name(self) -> Text:
+        return "action_clear_quiz_slots"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("question1", None), SlotSet("question2", None), SlotSet("question3", None),
+                SlotSet("question4", None), SlotSet("question5", None), SlotSet("question6", None)]

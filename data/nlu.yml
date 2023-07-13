@@ -97,7 +97,6 @@ nlu:
     - Nochmal
     - Zurück
     - Wiederhole das bitte
-    - Nochmal
     - wiederholen
     - zurück zur letzten Nachricht
     - ZUrück zur Auswahl
@@ -277,6 +276,12 @@ nlu:
     - erzähle mir einen Witz
     - ein anderer Witz
     - Einen Witz bitte
+- intent: survey_completed
+  examples: |
+    - surveyCompleted
+    - survey completed
+    - survey abgeschlossen
+    - umfrage beendet
 - intent: nettiquette
   examples: |
     - du bist Scheiße
@@ -601,6 +606,7 @@ nlu:
     - Geld-Fachbegriffe
     - Banking Fachbegriffe
     - Fachbegriffe rund um Banken
+    - fachbegriffe banking
 - intent: random_credit_terms
   examples: |
     - random_credit_terms
@@ -611,13 +617,6 @@ nlu:
     - all_credit_terms
     - alle credit_terms
     - sämtliche credit_terms
-- intent: fachbegriffe_banking
-  examples: |
-    - Banking-Fachbegriffe
-    - Geld-Fachbegriffe
-    - Banking Fachbegriffe
-    - Fachbegriffe rund um Banken
-    - fachbegriffe banking
 - intent: fachbegriffe_credit
   examples: |
     - Kredit-Fachbegriffe
@@ -700,7 +699,6 @@ nlu:
     - Gläubiger
     - Wem schulde ich Geld?
     - Wie nennt man jemanden, dem ich Geld schulde?
-    - Was ist ein Gläubiger?
     - Was macht ein Gläubiger?
     - Wie heißt die Person, der man Geld schuldet?
 - intent: banking/fb_guthaben_konto
@@ -949,6 +947,7 @@ nlu:
     - Wie kann ich bezahlen
     - Auf welche Arten kann ich bezahlen
     - Welche Möglichkeiten habe ich, um etwas zu bezahlen
+    - Welche Möglichkeiten hat man, um zu bezahlen?
 - intent: banking/klassisches_bezahlen
   examples: |
     - Klassische Bezahlverfahren
@@ -960,7 +959,6 @@ nlu:
     - Mit Bargeld bezahlen
     - Bargeld zum Bezahlen nutzen
     - Münzen und Scheine
-    - Mit Bargeld bezahlen
     - Bezahlen mit Scheinen
     - Hartgeld
     - Bargeld
@@ -1039,12 +1037,6 @@ nlu:
     - Welche Banken gibt es?
     - Welche Banken
     - Arten von Banken
-    - Welche Banken
-- intent: banking/bezahlen
-  examples: |
-    - Wie kann ich bezahlen
-    - Bezahlen
-    - Welche Möglichkeiten hat man, um zu bezahlen?
 - intent: banking/direktbanken
   examples: |
     - Direktbanken
@@ -1058,5 +1050,193 @@ nlu:
     - Was ist eine Filiale?
     - Filiale
     - Fillialen
-    . Was sind die Standorte von Banken?
+    - Was sind die Standorte von Banken?
     - Wo kann ich Bankgeschäfte erledigen?
+- intent: support/intro
+  examples: |
+    - Beratung
+    - Wo bekomme ich Beratung?
+    - Wer kann mir helfen?
+    - Kann mir jemand helfen?
+    - Wo finde ich eine Beratung?
+    - Unterstützung
+    - Unterstützung bei Fragen
+- intent: support/ueberschuldung
+  examples: |
+    - Was mache ich bei Überschuldung?
+    - Was mache ich, wenn ich zu viele Schulden habe?
+    - Überschuldung?
+    - Kann meine Schulden nicht mehr bezahlen
+- intent: support/streitigkeiten
+  examples: |
+    - Streitigkeiten
+    - Ich habe Probleme
+    - Was kann ich bei Streitigkeit tun?
+    - Wo bekomme ich Hilfe, wenn ich Streit habe?
+    - Schlichtung
+- intent: support/energieversorger
+  examples: |
+    - Probleme mit dem Energieversorger
+    - Schwierigkeiten mit Stromversorger
+    - Energieversorger
+    - Strom und Gas zu teuer
+    - Streitigkeit Energieversorger
+- intent: support/versicherungen
+  examples: |
+    - Probleme mit Versicherungen
+    - Kann Versicherung nicht mehr bezahlen
+    - Versicherungen zu teuer
+    - Schulden bei der Versicherung
+    - Streit mit Versicherung
+    - Streitigkeit Versicherung
+- intent: support/bank
+  examples: |
+    - Schwierigkeiten mit der Bank
+    - Kann die Zinsen nicht mehr bezahlen
+    - Schulden bei der Bank
+    - Zu viele Schulden bei der Bank
+    - Konto überzogen
+    - Streitigkeit Bank
+- intent: support/more
+  examples: |
+    - Weitere Hilfe
+    - Weitere Beratungsmöglichkeiten
+    - Weitere Unterstützungsmöglichkeiten
+    - Mehr Unterstützung
+    - Wo gibt es noch mehr Hilfe
+    - Wo finde ich noch mehr Unterstützung
+- intent: support/verbraucherzentrale
+  examples: |
+    - Verbraucherzentrale
+    - Hilfe bei der Verbraucherzentrale
+    - Verbraucherschutz
+- intent: support/alfatel
+  examples: |
+    - Alfa-Telefon
+    - alfatelefon
+    - Alfa telefon
+    - Alphatel
+- intent: befragung
+  examples: |
+    - Befragung starten
+    - Finanzbefragung
+    - Befragung
+    - SoSci Survey
+    - Umfrage
+- intent: quiz_next
+  examples: |
+    - Nächste Frage
+    - quiz_next
+    - next_question
+- intent: enter_question_1
+  examples: |
+    - enter_question_1
+    - Frage 1
+    - Quizfrage 1
+- intent: enter_question_2
+  examples: |
+    - enter_question_2
+    - Frage 2
+    - Quizfrage 2
+    - Frage zwei
+    - Quiz frage 2
+    - enter_question2
+- intent: enter_question_3
+  examples: |
+    - enter_question_3
+    - Frage 3
+    - Quizfrage 3
+- intent: enter_question_4
+  examples: |
+    - enter_question_4
+    - Frage 4
+    - Quizfrage 4
+- intent: enter_question_5
+  examples: |
+    - enter_question_5
+    - Frage 5
+    - Quizfrage 5
+- intent: enter_question_6
+  examples: |
+    - enter_question_6
+    - Frage 6
+    - Quizfrage 6
+- intent: q1_right
+  examples: |
+    - q1_right
+- intent: q1_wrong_1
+  examples: |
+    - q1_wrong_1
+- intent: q1_wrong_2
+  examples: |
+    - q1_wrong_2
+- intent: q1_wrong_3
+  examples: |
+    - q1_wrong_3
+- intent: q2_right
+  examples: |
+    - q2_right
+- intent: q2_wrong_1
+  examples: |
+    - q2_wrong_1
+- intent: q2_wrong_2
+  examples: |
+    - q2_wrong_2
+- intent: q2_wrong_3
+  examples: |
+    - q2_wrong_3
+- intent: q3_right
+  examples: |
+    - q3_right
+- intent: q3_wrong_1
+  examples: |
+    - q3_wrong_1
+- intent: q3_wrong_2
+  examples: |
+    - q3_wrong_2
+- intent: q3_wrong_3
+  examples: |
+    - q3_wrong_3
+- intent: q4_right
+  examples: |
+    - q4_right
+- intent: q4_wrong_1
+  examples: |
+    - q4_wrong_1
+- intent: q4_wrong_2
+  examples: |
+    - q4_wrong_2
+- intent: q4_wrong_3
+  examples: |
+    - q4_wrong_3
+- intent: q5_right
+  examples: |
+    - q5_right
+- intent: q5_wrong_1
+  examples: |
+    - q5_wrong_1
+- intent: q5_wrong_2
+  examples: |
+    - q5_wrong_2
+- intent: q5_wrong_3
+  examples: |
+    - q5_wrong_3
+- intent: q6_right
+  examples: |
+    - q6_right
+- intent: q6_wrong_1
+  examples: |
+    - q6_wrong_1
+- intent: q6_wrong_2
+  examples: |
+    - q6_wrong_2
+- intent: q6_wrong_3
+  examples: |
+    - q6_wrong_3
+- intent: start_quiz
+  examples: |
+    - Beginne das Quiz
+    - Quiz beginnen
+    - Quiz start
+    - Starte das Quiz
+    - Ich möchte das Finanzquiz starten

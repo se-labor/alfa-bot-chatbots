@@ -4,42 +4,138 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - affirm
-- chitchat
-- insurance
-- banking
-- credit
-- repeat
+- all_banking_terms
+- all_credit_terms
+- all_insurance_terms
+- alle_fachbegriff_themen
+- banking:
+    used_entities:
+    - lot_number
+    is_retrieval_intent: true
+- befragung
+- chitchat:
+    used_entities:
+    - lot_number
+    is_retrieval_intent: true
+- credit:
+    used_entities:
+    - lot_number
+    is_retrieval_intent: true
 - deny
+- enter_question_1
+- enter_question_2
+- enter_question_3
+- enter_question_4
+- enter_question_5
+- enter_question_6
+- fachbegriffe_banking
+- fachbegriffe_credit
+- fachbegriffe_versicherungen
 - go_on
 - goodbye
 - greet
+- insurance:
+    used_entities:
+    - lot_number
+    is_retrieval_intent: true
 - interrupt
 - joke
 - kontakt
-- alle_fachbegriff_themen
-- fachbegriffe_versicherungen
-- fachbegriffe_banking
-- fachbegriffe_credit
 - nettiquette
 - nlu_fallback
 - out_of_scope
-- testintent
-- random_insurance_terms
-- all_insurance_terms
+- q1_right
+- q2_right
 - random_banking_terms
-- all_banking_terms
+- random_credit_terms
+- random_insurance_terms
+- repeat
+- start_quiz
+- support:
+    used_entities:
+    - lot_number
+    is_retrieval_intent: true
+- survey_completed
+- testintent
 entities:
 - lot_number
-
+slots:
+  question1:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: quiz_question1_form
+        requested_slot: question1
+  question2:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: quiz_question2_form
+        requested_slot: question2
+  question3:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: quiz_question3_form
+        requested_slot: question3
+  question4:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: quiz_question4_form
+        requested_slot: question4
+  question5:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: quiz_question5_form
+        requested_slot: question5
+  question6:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: quiz_question6_form
+        requested_slot: question6
+forms:
+  quiz_question1_form:
+    required_slots:
+    - question1
+  quiz_question2_form:
+    required_slots:
+    - question2
+  quiz_question3_form:
+    required_slots:
+    - question3
+  quiz_question4_form:
+    required_slots:
+    - question4
+  quiz_question5_form:
+    required_slots:
+    - question5
+  quiz_question6_form:
+    required_slots:
+    - question6
 responses:
   utter_greet:
   - buttons:
-      - payload: Was sind Banken?
-        title: Über Banken
-      - payload: Was sind Kredite?
-        title: Über Kredite
-      - payload: Was sind Versicherungen?
-        title: Über Versicherungen
+    - payload: Was sind Banken?
+      title: Über Banken
+    - payload: Was sind Kredite?
+      title: Über Kredite
+    - payload: Was sind Versicherungen?
+      title: Über Versicherungen
     text: Willkommen zum Finanzbot. Ich helfe dir gerne mit einfachen Erklärungen zu Fragen rund um Finanzen. Tippe auf den Lautsprecher, damit ich dir meine Nachrichten vorlese.
   utter_under_construction:
   - text: Derzeit bin ich noch im Training. Probiere gerne aus, was ich bereits kann. Wenn du ein Tester bist, notiere dir, was noch nicht wie erwartet funktioniert.
@@ -57,560 +153,843 @@ responses:
   - text: Ok. Falls ich dir anders helfen kann, frage mich gerne danach.
   utter_nettiquette:
   - text: Das war keine nette Eingabe oder? Bitte bleibe freundlich.
+  utter_survey_completed:
+  - text: Danke, dass du an der Umfrage teilgenommen hast!
   utter_chitchat/cc1:
   - text: Antwort aus den Intents zur Chitchat
   utter_insurance/versicherungen_was:
   - buttons:
-      - payload: Wofür gibt es Versicherungen?
-        title: Wofür Versicherungen?
-      - payload: Welche Arten von Versicherungen gibt es?
-        title: Versicherungs-Arten
-      - payload: Fachbegriffe zu Versicherungen
-        title: Fachbegriffe
-    text: 'Eine Versicherung ist ein Vertrag zwischen dir und einer Versicherungs-Firma. Die Versicherung garantiert dir in bestimmten Fällen Hilfe, wenn dir etwas Schlimmes passiert. Du musst dafür regelmäßig Beiträge bezahlen. Beispiel: Wenn du krank wirst, zahlt die **Krankenversicherung** den Arzt.'
+    - payload: Wofür gibt es Versicherungen?
+      title: Wofür Versicherungen?
+    - payload: Welche Arten von Versicherungen gibt es?
+      title: Versicherungsarten
+    - payload: Fachbegriffe zu Versicherungen
+      title: Fachbegriffe
+    text: 'Eine Versicherung ist ein Vertrag zwischen dir und einer Versicherungsfirma. Die Versicherung garantiert dir in bestimmten Fällen Hilfe, wenn dir etwas Schlimmes passiert. Du musst dafür regelmäßig Beiträge bezahlen. Beispiel: Wenn du krank wirst, zahlt die **Krankenversicherung** den Arzt.'
   utter_insurance/versicherungen_arten:
   - buttons:
-      - payload: Pflichtversicherungen
-        title: Pflichtversicherungen
-      - payload: Sozialversicherungen
-        title: Sozialversicherungen
-      - payload: Sinnvolle Versicherungen
-        title: Sinnvolle Versicherungen
-      - payload: Individuelle Versicherungen
-        title: Individuelle Versicherungen
-      - payload: Überflüssige Versicherungen
-        title: Überflüssige Versicherungen
+    - payload: Pflichtversicherungen
+      title: Pflichtversicherungen
+    - payload: Sozialversicherungen
+      title: Sozialversicherungen
+    - payload: Sinnvolle Versicherungen
+      title: Sinnvolle Versicherungen
+    - payload: Individuelle Versicherungen
+      title: Individuelle Versicherungen
+    - payload: Überflüssige Versicherungen
+      title: Überflüssige Versicherungen
     text: 'Es gibt verschiedene Arten von Versicherungen. Tippe die Art von Versicherung an, zu der du mehr wissen möchtest:'
   utter_insurance/versicherungen_wofuer:
   - buttons:
-      - payload: Sozialversicherungen
-        title: Sozialversicherungen
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
-    text: 'Unglücke passieren sehr selten. Aber wenn, dann ist der Schaden für dich groß. Die Beiträge für die Versicherung sind meistens gering.'
+    - payload: Sozialversicherungen
+      title: Sozialversicherungen
+    - payload: Versicherungs-Arten
+      title: Versicherungs-Arten
+    text: Unglücke passieren sehr selten. Aber wenn, dann ist der Schaden für dich groß. Die Beiträge für die Versicherung sind meistens niedrig.
   utter_insurance/pflichtversicherung:
   - buttons:
-      - payload: Sozialversicherungen
-        title: Sozialversicherungen
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
-    text: '**Pflichtversicherungen** sind Versicherungen, die eine Person in Deutschland haben muss. Das ist zunächst nur die **Krankenversicherung**. Als Arbeitnehmer musst du weitere Versicherungen haben. Die sogenannten *Sozialversicherungen*.'
+    - payload: Sozialversicherungen
+      title: Sozialversicherungen
+    - payload: Versicherungs-Arten
+      title: Versicherungs-Arten
+    text: '**Pflichtversicherungen** sind Versicherungen, die eine Person in Deutschland haben muss. Das ist zunächst nur die **Krankenversicherung**. Als Arbeitnehmer musst du weitere Versicherungen haben, nämlich die sogenannten *Sozialversicherungen*.'
   utter_insurance/sozialversicherungen:
   - buttons:
-      - payload: Krankenversicherung
-        title: Weiter
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
-    text: 'Es gibt 5 **Sozialversicherungen**. Sie gelten als Basisversicherungen, die jede Person haben sollte. Dazu gehören *Krankenversicherung*, *Pflegeversicherung*, *Unfallversicherung*, *Rentenversicherung* und *Arbeitslosenversicherung*. Tippe auf “Weiter” für mehr Informationen.'
+    - payload: Krankenversicherung
+      title: Weiter
+    - payload: Versicherungsarten
+      title: Versicherungsarten
+    text: Es gibt 5 **Sozialversicherungen**. Sie gelten als Grundlage, die jede Person haben sollte. Dazu gehören *Krankenversicherung*, *Pflegeversicherung*, *Unfallversicherung*, *Rentenversicherung* und *Arbeitslosenversicherung*. Tippe auf “Weiter” für mehr Informationen.
   utter_insurance/krankenversicherung:
   - buttons:
-      - payload: Pflegeversicherung
-        title: Weiter
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
-    text: 'Die **Krankenversicherung** zahlt, wenn du zum Arzt oder ins Krankenhaus musst. Auch bei Kosten für Medikamente hilft die Krankenversicherung. Bei Kindern übernimmt die Versicherung der Eltern den Schutz.'
+    - payload: Pflegeversicherung
+      title: Weiter
+    - payload: Versicherungs-Arten
+      title: Versicherungs-Arten
+    text: Die **Krankenversicherung** zahlt, wenn du zum Arzt oder ins Krankenhaus musst. Auch bei Kosten für Medikamente hilft die Krankenversicherung. Bei Kindern übernimmt die Versicherung der Eltern den Schutz.
   utter_insurance/pflegeversicherung:
   - buttons:
-      - payload: Unfallversicherung
-        title: Weiter
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
-    text: 'Die **Pflegeversicherung** sorgt für dich, wenn du pflegebedürftig wirst. Dadurch kannst du Hilfe bekommen, wenn du dich nicht mehr selbst versorgen kannst. Als Arbeitnehmer hast du automatisch eine Pflegeversicherung.'
+    - payload: Unfallversicherung
+      title: Weiter
+    - payload: Versicherungs-Arten
+      title: Versicherungs-Arten
+    text: Die **Pflegeversicherung** sorgt für dich, wenn du pflegebedürftig wirst. Dadurch kannst du Hilfe bekommen, wenn du dich nicht mehr selbst versorgen kannst. Als Arbeitnehmer hast du automatisch eine Pflegeversicherung.
   utter_insurance/unfallversicherung:
   - buttons:
-      - payload: Rentenversicherung
-        title: Weiter
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
-    text: 'Die **Unfallversicherung** sichert dich ab, wenn du einen Unfall bei der Arbeit hast oder dort krank wirst. Als Arbeitnehmer bist du automatisch versichert. Die Beiträge zahlt dein Arbeitgeber.'
+    - payload: Rentenversicherung
+      title: Weiter
+    - payload: Versicherungs-Arten
+      title: Versicherungs-Arten
+    text: Die **Unfallversicherung** sichert dich ab, wenn du einen Unfall bei der Arbeit hast oder dort krank wirst. Als Arbeitnehmer bist du automatisch versichert. Die Beiträge zahlt dein Arbeitgeber.
   utter_insurance/rentenversicherung:
   - buttons:
-      - payload: Arbeitslosenversicherung
-        title: Weiter
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
-    text: 'Die **Rentenversicherung** zahlt dir monatlich Geld, wenn du in Rente gehst. Für Arbeitnehmer  ist die Rentenversicherung eine Pflichtversicherung.'
+    - payload: Arbeitslosenversicherung
+      title: Weiter
+    - payload: Versicherungs-Arten
+      title: Versicherungs-Arten
+    text: Die **Rentenversicherung** zahlt dir monatlich Geld, wenn du in Rente gehst. Für Arbeitnehmer ist die Rentenversicherung eine Pflichtversicherung.
   utter_insurance/arbeitslosenversicherung:
   - buttons:
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
-    text: 'Wenn du deine Arbeit verlierst, hilft die **Arbeitslosenversicherung**. Sie zahlt dir für eine gewisse Zeit monatlich Geld. Für Arbeitnehmer ist die Arbeitslosenversicherung eine Pflichtversicherung.'
+    - payload: Versicherungs-Arten
+      title: Versicherungs-Arten
+    text: Wenn du deine Arbeit verlierst, hilft die **Arbeitslosenversicherung**. Sie zahlt dir für eine gewisse Zeit monatlich Geld. Für Arbeitnehmer ist die Arbeitslosenversicherung eine Pflichtversicherung.
   utter_insurance/sinnvolle_versicherung:
   - buttons:
-      - payload: Was ist eine Berufsunfähigkeitsversicherung
-        title: Berufsunfähigkeitsversicherung
-      - payload: Was ist eine Privat-Haftpflichtversicherung
-        title: Privat-Haftpflicht
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
+    - payload: Was ist eine Berufsunfähigkeitsversicherung
+      title: Berufsunfähigkeitsversicherung
+    - payload: Was ist eine Privat-Haftpflichtversicherung
+      title: Privat-Haftpflicht
+    - payload: Versicherungs-Arten
+      title: Versicherungs-Arten
     text: 'Es gibt einige Versicherungen, die zusätzlich zu den Pflichtversicherungen für alle Menschen sinnvoll sind. Zum Beispiel diese:'
   utter_insurance/berufsunfaehigkeit:
   - buttons:
-      - payload: Welche Versicherungen sind sinnvoll
-        title: Sinnvolle Versicherungen
-      - payload: Was ist eine Privat-Haftpflichtversicherung
-        title: Privat-Haftpflicht
-    text: 'Die **Berufsunfähigkeitsversicherung** ist eine der wichtigsten freiwilligen Versicherungen. Sie zahlt dir monatlich eine Rente, wenn du in deinem Beruf nicht mehr arbeiten kannst.'
+    - payload: Welche Versicherungen sind sinnvoll
+      title: Sinnvolle Versicherungen
+    - payload: Was ist eine Privat-Haftpflichtversicherung
+      title: Privat-Haftpflicht
+    text: 'Die **Berufsunfähigkeitsversicherung** ist eine der wichtigsten freiwilligen Versicherungen. Wenn du gesundheitlich nicht mehr in deinem Beruf arbeiten kannst, zahlt dir diese Versicherung monatlich eine Rente.'
   utter_insurance/privat_haftpflicht:
   - buttons:
-      - payload: Welche Versicherungen sind sinnvoll
-        title: Sinnvolle Versicherungen
-      - payload: Was ist eine Berufsunfähigkeitsversicherung
-        title: Berufsunfähigkeitsversicherung
-    text: 'Die **Privat-Haftpflichtversicherung** ist freiwillig, aber du solltest sie auf jeden Fall haben. Diese Versicherung zahlt, wenn jemand durch deine Schuld einen Schaden erleidet. Das schützt dich vor sehr hohen Kosten.'
+    - payload: Welche Versicherungen sind sinnvoll
+      title: Sinnvolle Versicherungen
+    - payload: Was ist eine Berufsunfähigkeitsversicherung
+      title: Berufsunfähigkeitsversicherung
+    text: Die **Privat-Haftpflichtversicherung** ist freiwillig, aber du solltest sie auf jeden Fall haben. Diese Versicherung zahlt, wenn jemand durch deine Schuld einen Schaden erleidet. Das schützt dich vor sehr hohen Kosten.
   utter_insurance/individuelle_vers:
   - buttons:
-      - payload: Betriebliche Altersvorsorge
-        title: Betriebliche Altersvorsorge
-      - payload: Hausratversicherung
-        title: Hausrat
-      - payload: Kaskoversicherung
-        title: Kasko-Versicherung
-      - payload: KFZ-Haftpflicht
-        title: KFZ-Haftpflicht
-    text: 'Es gibt viele Versicherungen, die nicht jeder haben muss. Dennoch können einzelne für dich persönlich sinnvoll sein. Davon stelle ich dir vier Versicherungen vor.'
+    - payload: Betriebliche Altersvorsorge
+      title: Betriebliche Altersvorsorge
+    - payload: Hausratversicherung
+      title: Hausrat
+    - payload: Kaskoversicherung
+      title: Kasko-Versicherung
+    - payload: KFZ-Haftpflicht
+      title: KFZ-Haftpflicht
+    text: Es gibt viele Versicherungen, die nicht jeder haben muss. Dennoch können einzelne für dich persönlich sinnvoll sein. Davon stelle ich dir vier Versicherungen vor.
   utter_insurance/bet_altersvorsorge:
   - buttons:
-      - payload: Hausratversicherung
-        title: Hausrat
-      - payload: Kaskoversicherung
-        title: Kasko-Versicherung
-      - payload: KFZ-Haftpflicht
-        title: KFZ-Haftpflicht
-      - payload: Individuell sinnvolle Versicherungen
-        title: Individuelle Versicherungen
-    text: 'Die **betriebliche Altersvorsorge** heißt auch Betriebsrente. Das ist eine monatliche Zahlung, die man zusätzlich zur gesetzlichen Rente bekommen kann. Oft teilen sich Arbeitgeber und Arbeitnehmer die Beiträge.'
+    - payload: Hausratversicherung
+      title: Hausrat
+    - payload: Kaskoversicherung
+      title: Kasko-Versicherung
+    - payload: KFZ-Haftpflicht
+      title: KFZ-Haftpflicht
+    - payload: Individuell sinnvolle Versicherungen
+      title: Individuelle Versicherungen
+    text: Die **betriebliche Altersvorsorge** heißt auch Betriebsrente. Das ist eine monatliche Zahlung, die man zusätzlich zur gesetzlichen Rente bekommen kann. Oft teilen sich Arbeitgeber und Arbeitnehmer die Beiträge.
   utter_insurance/hausrat:
   - buttons:
-      - payload: Betriebliche Altersvorsorge
-        title: Betriebliche Altersvorsorge
-      - payload: Kaskoversicherung
-        title: Kasko-Versicherung
-      - payload: KFZ-Haftpflicht
-        title: KFZ-Haftpflicht
-      - payload: Individuell sinnvolle Versicherungen
-        title: Individuelle Versicherungen
-    text: 'Zum Hausrat gehören alle beweglichen Sachen einer Wohnung. Zum Beispiel Möbel, Kleidung, Fernseher. Du kannst den Hausrat gegen Feuer, Leitungswasser, Einbruch und andere Gründe versichern.
-Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den Schaden.'
+    - payload: Betriebliche Altersvorsorge
+      title: Betriebliche Altersvorsorge
+    - payload: Kaskoversicherung
+      title: Kasko-Versicherung
+    - payload: KFZ-Haftpflicht
+      title: KFZ-Haftpflicht
+    - payload: Individuell sinnvolle Versicherungen
+      title: Individuelle Versicherungen
+    text: 'Zum Hausrat gehören alle beweglichen Sachen einer Wohnung, zum Beispiel Möbel, Kleidung, Fernseher. Du kannst den Hausrat gegen Feuer, Leitungswasser, Einbruch und andere Schäden  versichern. Wenn diese Dinge deswegen kaputt gehen, ersetzt die **Hausratversicherung** den Schaden.'
   utter_insurance/kasko_versicherung:
   - buttons:
-      - payload: Betriebliche Altersvorsorge
-        title: Betriebliche Altersvorsorge
-      - payload: Hausratversicherung
-        title: Hausrat
-      - payload: KFZ-Haftpflicht
-        title: KFZ-Haftpflicht
-      - payload: Individuell sinnvolle Versicherungen
-        title: Individuelle Versicherungen
-    text: 'Eine **Kasko-Versicherung** sichert Schäden an deinem eigenen Auto ab. Du musst dann für die Reparatur weniger oder kein Geld zahlen. Die *Voll-Kasko* übernimmt mehr Schäden als die *Teil-Kasko*, ist aber teurer.'
+    - payload: Betriebliche Altersvorsorge
+      title: Betriebliche Altersvorsorge
+    - payload: Hausratversicherung
+      title: Hausrat
+    - payload: KFZ-Haftpflicht
+      title: KFZ-Haftpflicht
+    - payload: Individuell sinnvolle Versicherungen
+      title: Individuelle Versicherungen
+    text: Eine **Kasko-Versicherung** sichert Schäden an deinem eigenen Auto ab. Du musst dann für die Reparatur weniger oder kein Geld zahlen. Die *Voll-Kasko* übernimmt mehr Schäden als die *Teil-Kasko*, ist aber teurer.
   utter_insurance/kfz_haftpflicht:
   - buttons:
-      - payload: Betriebliche Altersvorsorge
-        title: Betriebliche Altersvorsorge
-      - payload: Hausratversicherung
-        title: Hausrat
-      - payload: Kaskoversicherung
-        title: Kasko-Versicherung
-      - payload: Individuell sinnvolle Versicherungen
-        title: Individuelle Versicherungen
+    - payload: Betriebliche Altersvorsorge
+      title: Betriebliche Altersvorsorge
+    - payload: Hausratversicherung
+      title: Hausrat
+    - payload: Kaskoversicherung
+      title: Kasko-Versicherung
+    - payload: Individuell sinnvolle Versicherungen
+      title: Individuelle Versicherungen
     text: 'Wenn du ein eigenes Auto hast, brauchst du eine **KFZ-Haftpflicht**. Falls du mit deinem Auto die Schuld an einem Unfall hast, übernimmt diese Versicherung die Kosten. Wichtig: Deinen eigenen Schaden zahlt diese Versicherung nicht.'
   utter_insurance/versicherungen_ueberfluessig:
   - buttons:
-      - payload: Versicherungs-Arten
-        title: Versicherungs-Arten
-      - payload: Versicherungsvertreter
-        title: Versicherungsvertreter
-    text: 'Manche Versicherungen sind nicht oder nur in Ausnahmefällen notwendig. Zum Beispiel lohnen sich Lebensversicherungen meistens nicht. Ebenso Versicherungen für Handys, Brillen, Reisegepäck oder elektronische Geräte. Ein Versicherungsvertreter kann dich beraten.'
+    - payload: Versicherungs-Arten
+      title: Versicherungs-Arten
+    - payload: Versicherungsvertreter
+      title: Versicherungsvertreter
+    text: Manche Versicherungen sind nicht oder nur in Ausnahmefällen notwendig. Zum Beispiel lohnen sich Lebensversicherungen meistens nicht. Ebenso Versicherungen für Handys, Brillen, Reisegepäck oder elektronische Geräte. Ein Versicherungsvertreter kann dich beraten.
   utter_insurance/fb_vollkasko:
   - buttons:
-      - payload: Teilkasko
-        title: Teilkasko
-    text: 'Die **Vollkaskoversicherung** ist eine freiwillige Versicherung für dein Auto. Sie ersetzt fast alle Schäden am eigenen Auto. Auch wenn du den Unfall selbst verursacht hast.'
+    - payload: Teilkasko
+      title: Teilkasko
+    text: Die **Vollkaskoversicherung** ist eine freiwillige Versicherung für dein Auto. Sie ersetzt fast alle Schäden am eigenen Auto. Auch wenn du den Unfall selbst verursacht hast.
   utter_insurance/fb_teilkasko:
   - buttons:
-      - payload: Vollkasko
-        title: Vollkasko
-    text: 'Die **Teilkaskoversicherung** ist eine freiwillige Versicherung für dein Auto. Sie ergänzt die KFZ-Haftpflichtversicherung. Du hast dein Auto dann zusätzlich gegen Diebstahl, Wetterschäden, Steinschlag oder Brandschäden geschützt.'
+    - payload: Vollkasko
+      title: Vollkasko
+    text: Die **Teilkaskoversicherung** ist eine freiwillige Versicherung für dein Auto. Sie ergänzt die KFZ-Haftpflichtversicherung. Du hast dein Auto dann zusätzlich gegen Diebstahl, Wetterschäden, Steinschlag oder Brandschäden geschützt.
   utter_fachbegriffe_versicherungen:
-  - text: 'Hier findest du wichtige Begriffe zu Versicherungen. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.'
+  - text: Hier findest du wichtige Begriffe zu Versicherungen. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.
   utter_insurance/fb_basistarif:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Einige Versicherungen bieten einen Basistarif an. Dieser sichert nur die wesentlichen Risiken ab und kostet dafür am wenigsten. Du kannst auch andere Tarife mit mehr Leistungen wählen. Diese Tarife kosten mehr. Den Basistarif gibt es zum Beispiel bei der KFZ-Haftpflichtversicherung.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: Einige Versicherungen bieten einen Basistarif an. Dieser sichert nur die wesentlichen Risiken ab und kostet dafür am wenigsten. Du kannst auch andere Tarife mit mehr Leistungen wählen. Diese Tarife kosten mehr. Den Basistarif gibt es zum Beispiel bei der KFZ-Haftpflichtversicherung.
   utter_insurance/fb_versicherungsnehmer:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Versicherungsnehmer bist meistens Du. Als Versicherungsnehmer bekommst du die Leistung im Falle eines Schadens. In der Regel zahlt der Versicherungsnehmer auch den Beitrag.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: 'Der Versicherungsnehmer bekommt die Leistung im Falle eines Schadens. In der Regel zahlt der Versicherungsnehmer auch den Beitrag. Bei den meisten Versicherungen, die dich schützen, bist du der Versicherungsnehmer.'
   utter_insurance/fb_riester:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Die Riester-Rente ist eine freiwillige Altersvorsorge. Du musst jedes Jahr regelmäßig einen Beitrag einzahlen. Wenn du das machst, zahlt der Staat eine Zulage in deinen Vertrag ein. Wenn du in Rente gehst, bekommst du das Geld ausgezahlt.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: 'Die Riester-Rente ist eine freiwillige Altersvorsorge. Hier zahlst du über viele Jahre regelmäßig einen Beitrag. Wenn du das machst, zahlt der Staat eine Zulage in deinen Vertrag ein. Wenn du in Rente gehst, bekommst du Geld ausgezahlt.'
   utter_insurance/fb_beitrag:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Für jede Versicherung musst du Geld bezahlen. Dieses Geld nennt man Beitrag. Zahlst du deinen Beitrag nicht rechtzeitig, kannst du deinen Versicherungsschutz verlieren.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: Für jede Versicherung musst du Geld bezahlen. Dieses Geld nennt man Beitrag. Zahlst du deinen Beitrag nicht rechtzeitig, kannst du deinen Versicherungsschutz verlieren.
   utter_insurance/fb_garantieleistung:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Die Garantieleistung ist ein Betrag, den die versicherte Person am Ende der Versicherung bekommt, wenn sie vorher alle Beiträge bezahlt hat. Zum Beispiel bei einer Lebensversicherung. Bei Abschluss des Vertrages ist diese Garantieleistung bereits bekannt.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: Die Garantieleistung ist eine Summe, den die versicherte Person am Ende der Versicherung bekommt, wenn sie vorher alle Beiträge bezahlt hat. Zum Beispiel bei einer Lebensversicherung. Bei Abschluss des Vertrages ist diese Garantieleistung bereits bekannt.
   utter_insurance/fb_gesundheitspruefung:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Manche Versicherungen prüfen erst, ob du gesund bist, bevor sie einen Vertrag mit dir abschließen. Damit berechnen Versicherungen ihr Risiko und deinen Beitrag. Allgemein gilt: Je gesünder du bist, desto weniger musst du bezahlen.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: 'Manche Versicherungen prüfen erst, ob du Vorerkrankungen hast, bevor sie einen Vertrag mit dir abschließen. Damit berechnen Versicherungen ihr Risiko und deinen Beitrag. Allgemein gilt: Je gesünder du bist, desto weniger musst du bezahlen.'
   utter_insurance/fb_versicherungsvertreter:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Versicherungsvertreter verkaufen Versicherungen. Sie beraten dich und helfen dir beim Ausfüllen des Versicherungsvertrages. Wenn du einen Vertrag unterschreibst, bekommt der Vertreter dafür Geld von der Versicherung.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: Versicherungsvertreter verkaufen Versicherungen. Sie beraten dich und helfen dir beim Ausfüllen des Versicherungsvertrages. Wenn du einen Vertrag unterschreibst, bekommt der Vertreter dafür Geld von der Versicherung.
   utter_insurance/fb_schadensfall:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Wenn dir etwas passiert, wogegen du dich versichert hast, ist das ein Schadensfall. Beispielsweise wenn du einen Unfall hast oder arbeitslos wirst. Bei einem Schadensfall zahlt die Versicherung die vereinbarte Leistung.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: Wenn dir etwas passiert, wogegen du dich versichert hast, ist das ein Schadensfall. Beispielsweise wenn du einen Unfall hast oder arbeitslos wirst. Bei einem Schadensfall zahlt die Versicherung die vereinbarte Leistung.
   utter_insurance/fb_police:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Als Police bezeichnet man eine Urkunde, die man von der Versicherung erhält. Diese Urkunde steht für den Vertrag, den du mit der Versicherung geschlossen hast. Du solltest diese Urkunde gut aufheben.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: Als Police bezeichnet man eine Urkunde, die man von der Versicherung erhält. Diese Urkunde steht für den Vertrag, den du mit der Versicherung geschlossen hast. Du solltest diese Urkunde gut aufheben.
   utter_insurance/fb_risiko:
   - buttons:
-      - payload: fachbegriffe versicherung
-        title: Weitere Fachbegriffe
-    text: 'Eine Versicherung berechnet immer, wie hoch die Wahrscheinlichkeit ist, dass ein Schadensfall eintritt und sie zahlen müssen. Das ist das Risiko. Je höher das Risiko, desto teurer wird die Versicherung.'
+    - payload: fachbegriffe versicherung
+      title: Weitere Fachbegriffe
+    text: Eine Versicherung berechnet immer, wie hoch die Wahrscheinlichkeit ist, dass ein Schadensfall eintritt und sie zahlen müssen. Das ist das Risiko. Je höher das Risiko, desto teurer wird die Versicherung.
   utter_fachbegriffe_credit:
-    - text: 'Hier findest du wichtige Begriffe, die etwas mit Krediten zu tun haben. Wenn du möchtest, lasse dir die ganze Liste anzeigen.'
+  - text: Hier findest du wichtige Begriffe, die etwas mit Krediten zu tun haben. Wenn du möchtest, lasse dir die ganze Liste anzeigen.
   utter_fachbegriffe_banking:
-    - text: 'Hier findest du wichtige Begriffe im Bereich Geld und Banken. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.'
+  - text: Hier findest du wichtige Begriffe im Bereich Geld und Banken. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.
   utter_banking/fb_basis_konto:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Jeder hat ein Recht auf ein *+Basiskonto**. Sogar wenn du nur wenig Geld hast. Oder Schulden. Die Bank muss dir ein Konto geben.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    text: 'Jeder hat ein Recht auf ein **Basiskonto**. Sogar wenn du nur wenig Geld oder Schulden hast. Die Bank muss dir ein Konto geben.'
   utter_credit/fb_bonitatsprufung:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Weitere Fachbegriffe
-    text: 'Du willst ein Konto eröffnen? Die Bank kann eine **Bonitäts-Prüfung** bei dir vornehmen. Sie prüfen dann, ob du Schulden oder Rechnungen nicht bezahlt hast. Dazu fragen sie zum Beispiel bei der Schufa nach.'
+    - payload: fachbegriffe credit
+      title: Weitere Fachbegriffe
+    text: 'Du willst ein Konto eröffnen? Die Bank kann eine **Bonitäts-Prüfung** bei dir vornehmen. Sie prüfen dann, ob du Schulden oder Rechnungen nicht bezahlt hast. Dazu fragen sie zum Beispiel bei der *Schufa* nach.'
   utter_credit/fb_schufa:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Weitere Fachbegriffe
-    text: 'Die **Schufa** sammelt Informationen über Kunden. Viele Banken fragen bei der Schufa nach Informationen über dich. Wenn du Rechnungen nicht bezahlt hast, bekommst du den Vertrag vielleicht nicht.'
+    - payload: fachbegriffe credit
+      title: Weitere Fachbegriffe
+    text: Die [**Schufa**](https://www.finanzfluss.de/kredit/was-macht-die-schufa/) sammelt Informationen über Kunden. Wenn ein Kunde Rechnungen nicht bezahlt, verschlechtert sich seine Schufa-Bewertung. Banken und Vermieter fragen nach der Schufa-Bewertung, bevor sie einen Vertrag mit dir schließen. Du kannst einmal pro Jahr eine kostenlose [Selbstauskunft](https://www.schufa.de/themenportal/22-01-serviceanbieter-kostenlose-datenkopie/) anfordern.
   utter_banking/fb_dauerauftrag:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Du kannst der Bank einen **Dauerauftrag** geben. Sie zahlt dann regelmäßig den gleichen Betrag von deinem Konto. Zum Beispiel die Miete.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    text: 'Du kannst der Bank einen **Dauerauftrag** geben. Sie zahlt dann regelmäßig den gleichen Betrag von deinem Konto auf ein anderes Konto. Zum Beispiel die Miete.'
   utter_credit/fb_dispo_kredit:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Weitere Fachbegriffe
-    text: 'Die Bank kann dir einen **Dispo-Kredit** geben. Wenn du mehr Geld ausgibst, als du hast, kann der Dispo-Kredit dir helfen. Du musst aber Zinsen dafür zahlen.'
+    - payload: fachbegriffe credit
+      title: Weitere Fachbegriffe
+    text: Die Bank kann dir einen **Dispo-Kredit** geben. Wenn du mehr Geld ausgibst, als du hast, kann der Dispo-Kredit dir helfen. Du musst aber Zinsen dafür zahlen.
   utter_banking/fb_ec_karte:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Eine **EC-Karte** ist zum Bezahlen und Geld abheben. Wenn du mit der Karte bezahlst, wird das Geld von deinem Konto abgebucht. Bei kleinen Beträgen musst du nicht einmal unterschreiben. Oder deine PIN eingeben.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    text: 'Eine **EC-Karte** nutzt man zum Bezahlen und Geld abheben. Wenn du mit der Karte bezahlst, wird das Geld von deinem Konto abgebucht. Bei kleinen Beträgen musst du nicht einmal unterschreiben oder deine PIN eingeben.'
   utter_banking/fb_sepa:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Eine **sepa-Lastschrift** ist sinnvoll, wenn du regelmäßig etwas bezahlst. Zum Beispiel die Stromrechnung oder die Telefongebühren. Du musst dann nicht immer daran denken. Du kannst jederzeit den Auftrag wieder löschen.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    text: 'Eine **sepa-Lastschrift** ist sinnvoll, wenn du regelmäßig etwas bezahlst. Zum Beispiel die Stromrechnung oder die Telefongebühren. Du erlaubst jemand anderem, Geld von deinem Konto abzubuchen und musst nicht selbst ans Bezahlen denken. Du kannst jederzeit den Auftrag wieder löschen.'
   utter_banking/fb_girokonto:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
     text: '**Girokonto** nennt man das normale Konto bei einer Bank. Hier werden deine Einnahmen und Ausgaben notiert.'
   utter_credit/fb_glaubiger:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Weitere Fachbegriffe
-    text: 'Ein **Gläubiger** ist jemand, dem du Geld schuldest. Der Gläubiger kann eine Person, eine Bank, eine Behörde oder eine Firma sein.'
+    - payload: fachbegriffe credit
+      title: Weitere Fachbegriffe
+    text: Ein **Gläubiger** ist jemand, dem du Geld schuldest. Der Gläubiger kann eine Person, eine Bank, eine Behörde oder eine Firma sein. Ein anderes Wort für Gläubiger ist Kreditgeber.
   utter_banking/fb_guthaben_konto:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Bei einem **Guthaben-Konto** kannst du nur das Geld ausgeben, das du auf dem Konto hast. Du kannst keine Schulden machen.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    - payload: Tagesgeld
+      title: Tagesgeld
+    - payload: Sparbuch
+      title: Sparbuch
+    - payload: Festgeld
+      title: Festgeld
+    text: Bei einem **Guthaben-Konto** kannst du nur das Geld ausgeben, das du auf dem Konto hast. Du kannst keine Schulden machen.
   utter_credit/fb_inkasso:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Weitere Fachbegriffe
-    text: 'Das **Inkasso-Büro** arbeitet im Auftrag des Gläubigers und möchte das Geld und Gebühren einziehen. Sie verschicken dann zum Beispiel Briefe. Wenn du so einen Brief bekommst, musst du schnell handeln. Hier hilft die Verbraucherzentrale (www.verbraucherzentrale.de) oder die Schuldnerberatung (www.finanztip.de/schuldnerberatung/).'
+    - payload: fachbegriffe credit
+      title: Weitere Fachbegriffe
+    text: Das **Inkasso-Büro** arbeitet im Auftrag des *Gläubigers* und möchte das Geld und Gebühren einziehen. Sie verschicken dann zum Beispiel Briefe. Wenn du so einen Brief bekommst, musst du schnell handeln. Hier hilft die [Verbraucherzentrale](www.verbraucherzentrale.de) oder die [Schuldnerberatung](www.finanztip.de/schuldnerberatung/).
   utter_banking/fb_kontoauszug:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Ein **Kontoauszug** zeigt dir die Geldeingänge und Geldausgänge. Du siehst auch, wie viel Geld du gerade hast.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    text: Ein **Kontoauszug** zeigt dir die Geldeingänge und Geldausgänge. Du siehst auch, wie viel Geld du gerade hast.
   utter_credit/fb_kontopfandung:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Weitere Fachbegriffe
-    text: 'Wenn du Schulden hast, kann der Gläubiger vom Gericht einen Pfändungsbeschluss bekommen. Der Gläubiger kann dann das Geld von deinem Konto einziehen. Er darf aber nicht dein ganzes Geld nehmen. Es gibt eine Pfändungs-Freigrenze.'
+    - payload: fachbegriffe credit
+      title: Weitere Fachbegriffe
+    text: Wenn du Schulden hast, kann der Gläubiger vom Gericht einen Pfändungsbeschluss bekommen. Der Gläubiger kann dann das Geld von deinem Konto einziehen. Er darf aber nicht dein ganzes Geld nehmen. Es gibt ein [Pfändungsschutzkonto](https://www.google.com/url?q=https://www.verbraucherzentrale.de/wissen/geld-versicherungen/kredit-schulden-insolvenz/das-pfaendungsschutzkonto-79078&sa=D&source=docs&ust=1687873687368061&usg=AOvVaw1LvGmDLpMCPJphwVFHNz8b).
   utter_credit/fb_kredit:
   - buttons:
-      - payload: Zurück
-        title: Zurück
-    text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Du musst das Geld und die Zinsen in kleinen Raten zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst.'
+    - payload: Zurück
+      title: Zurück
+    text: Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Du musst das Geld und die Zinsen in kleinen Raten zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst.
   utter_banking/fb_kredit_karte:
   - buttons:
-      - payload: Zurück
-        title: Zurück
-    text: 'Es gibt viele unterschiedliche **Kreditkarten**. Du kannst mit ihnen bezahlen. Das Geld wird erst später vom Konto abgebucht. Bei vielen Kreditkarten kann man das Konto überziehen und muss dann hohe Zinsen zahlen. Es ist schwierig, die Ausgaben zu überblicken.'
+    - payload: Zurück
+      title: Zurück
+    text: Kreditkarten sind Zahlungsmittel. Du brauchst sie, wenn du ein Auto mietest, Urlaub buchst oder per Handy bezahlst. Das Geld wird erst später vom Konto abgebucht. Bei vielen Kreditkarten kann man das Konto überziehen und muss dann hohe Zinsen zahlen. Es ist schwierig, die Ausgaben zu überblicken.
   utter_credit/fb_kredit_wurdigkeit:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Weitere Fachbegriffe
+    - payload: fachbegriffe credit
+      title: Weitere Fachbegriffe
     text: 'Wenn du einen Kredit möchtest, prüft die Bank deine **Kreditwürdigkeit**. Hast du Schulden oder keine Arbeit? Dann bekommst du vielleicht keinen Kredit.'
   utter_banking/fb_ruck_lastschrift:
-    - buttons:
-        - payload: sepa-Lastschrift
-          title: sepa-Lastschrift
-        - payload: Mahnverfahren
-          title: Mahnverfahren
-      text: 'Du hast einer Firma die Erlaubnis gegeben, Geld von deinem Konto per Lastschrift abzubuchen. Es ist aber nicht genug Geld auf deinem Konto. Dann kommt es zu einer **Rücklastschrift**. Die Gebühren musst du bezahlen und häufig beginnt danach ein Mahnverfahren.'
+  - buttons:
+    - payload: sepa-Lastschrift
+      title: sepa-Lastschrift
+    - payload: Mahnverfahren
+      title: Mahnverfahren
+    text: 'Du hast einer Firma die Erlaubnis gegeben, Geld von deinem Konto per Lastschrift abzubuchen. Ist nicht genug Geld auf deinem Konto. Dann kommt es zu einer **Rücklastschrift**. Die Gebühren musst du bezahlen und vielleicht kommt es zu einem Mahnverfahren.'
   utter_credit/fb_mahnverfahren:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Weitere Fachbegriffe
-    text: 'Mit einem **Mahnverfahren** erinnert der Gläubiger an die Zahlung. Das Mahnverfahren kostet Geld und hat mehrere Stufen. Im schlimmsten Fall kann es zur *Zwangsvollstreckung* führen.'
+    - payload: fachbegriffe credit
+      title: Weitere Fachbegriffe
+    text: Mit einem **Mahnverfahren** erinnert der Gläubiger an die Zahlung. Das Mahnverfahren kostet Geld und hat mehrere Stufen. Im schlimmsten Fall kann es zur *Zwangsvollstreckung* führen.
   utter_credit/fb_schuldner_beratung:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Weitere Fachbegriffe
-    text: 'Wenn du Schulden hast, kann die **Schuldner-Beratung** (www.finanztip.de/schuldnerberatung/) helfen. Die Berater kennen sich mit Schulden aus und helfen dir. Viele Beratungsstellen arbeiten kostenlos. '
+    - payload: fachbegriffe credit
+      title: Weitere Fachbegriffe
+    text: 'Wenn du Schulden hast, kann die [**Schuldnerberatung**](www.finanztip.de/schuldnerberatung/) helfen. Die Berater kennen sich mit Schulden aus und helfen dir. Viele Beratungsstellen arbeiten kostenlos.'
   utter_banking/fb_uberweisung:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Schickt man Geld von einem Konto auf ein anderes Konto, nennt man das eine **Überweisung**.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    text: Schickt man Geld von einem Konto auf ein anderes Konto, nennt man das eine **Überweisung**.
   utter_banking/fb_sparbuch:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Ein **Sparbuch** ist zum Ansparen von Geld gedacht. Es kann nicht überzogen werden. Du bekommst nur geringe Zinsen und kannst nicht überweisen.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    - payload: Zurück
+      title: Zurück
+    text: 'Ein **Sparbuch** ist zum Ansparen von Geld gedacht. Zum Abheben musst du in die Bankfiliale kommen. Es kann nicht überzogen werden. Du bekommst zurzeit nur geringe oder keine Zinsen und kannst vom Sparbuch nicht überweisen.'
   utter_banking/fb_tagesgeld:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Du kannst von deinem **Tagesgeldkonto** immer Geld abheben. Zurzeit erhältst du nur geringe oder keine Zinsen.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    - payload: Zurück
+      title: Zurück
+    text: Das **Tagesgeldkonto** ist zum Ansparen von Geld gedacht. Du kannst von deinem Tagesgeldkonto Geld abheben. Dafür wird das Geld zunächst auf dein Girokonto übertragen. Zurzeit erhältst du nur geringe Zinsen.
   utter_banking/fb_festgeld:
   - buttons:
-      - payload: fachbegriffe banking
-        title: Weitere Fachbegriffe
-    text: 'Beim **Festgeld** vereinbarst du mit der Bank eine feste Laufzeit und Zinssätze. Je länger das Geld bei der Bank bleibt, desto höher ist der Zinssatz. Du kannst während der Laufzeit nicht an das Geld heran.'
+    - payload: fachbegriffe banking
+      title: Weitere Fachbegriffe
+    - payload: Zurück
+      title: Zurück
+    text: Beim **Festgeld** vereinbarst du mit der Bank eine feste Laufzeit und Zinssätze. Je länger das Geld bei der Bank bleibt, desto höher ist der Zinssatz. Du kannst während der Laufzeit nicht an das Geld heran.
   utter_credit/fb_zwangsvollstreckung:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Fachbegriffe Kredit
-    text: 'Du kannst deine Schulden nicht bezahlen? Nach einem Mahnverfahren kann der *Gläubiger* beim Gericht eine **Zwangsvollstreckung** beantragen. Dann kann es zur *Konto-Pfändung* kommen. Oder der Gerichtsvollzieher kommt zu Dir nach Hause.'
+    - payload: fachbegriffe credit
+      title: Fachbegriffe Kredit
+    text: Nach einem Mahnverfahren kann der Gläubiger beim Gericht eine Zwangsvollstreckung beantragen. Dann kann es zur *Kontopfändung* kommen. Oder der Gerichtsvollzieher kommt zum Schuldner nach Hause. Dort pfändet er Wertgegenstände.
   utter_credit/fb_effektivzins:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Fachbegriffe Kredit
-    text: 'Wenn du den **Effektivzins** von *Krediten* kennst, kannst du die Angebote vergleichen. Der Effektivzins gibt dir Auskunft über alle Kosten eines Kredits. Hier sind zum Beispiel auch die Bearbeitungsgebühren eingerechnet.'
+    - payload: fachbegriffe credit
+      title: Fachbegriffe Kredit
+    text: Wenn du den **Effektivzins** von *Krediten* kennst, kannst du die Angebote vergleichen. Der Effektivzins gibt dir Auskunft über alle Kosten eines Kredits. Hier sind zum Beispiel auch die Bearbeitungsgebühren eingerechnet.
   utter_credit/fb_sicherheit:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Fachbegriffe Kredit
-    text: 'Der Kreditgeber verlangt häufig eine **Sicherheit** für den *Kredit* von dir. Das können zum Beispiel Wertgegenstände wie dein Auto sein. Wenn du den Kredit nicht zurückzahlen kannst, gehört das Auto dem Kreditgeber.'
+    - payload: fachbegriffe credit
+      title: Fachbegriffe Kredit
+    text: Der Kreditgeber verlangt häufig eine **Sicherheit** für den *Kredit* von dir. Das können zum Beispiel Wertgegenstände wie dein Auto sein. Wenn du den Kredit nicht zurückzahlen kannst, gehört das Auto dem Kreditgeber.
   utter_credit/fb_grundbuch:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Fachbegriffe Kredit
-    text: 'Das **Grundbuch** ist ein amtliches Verzeichnis, das vom Grundbuchamt in deiner Stadt geführt wird. Das Grundbuch enthält Angaben zu den Eigentümern von Immobilien und Grundstücken. Hier wird auch der Kreditgeber eines Immobilienkredits eingetragen.'
+    - payload: fachbegriffe credit
+      title: Fachbegriffe Kredit
+    text: Das **Grundbuch** ist ein amtliches Verzeichnis, das vom Grundbuchamt in deiner Stadt geführt wird. Das Grundbuch enthält Angaben zu den Eigentümern von Immobilien und Grundstücken. Hier wird auch der *Kreditgeber* eines *Immobilienkredits* eingetragen.
   utter_credit/fb_eigenkapital:
   - buttons:
-      - payload: fachbegriffe credit
-        title: Fachbegriffe Kredit
-    text: 'Bei einem Immobilienkredit wird häufig das **Eigenkapital** berechnet. Das ist das Geld, das du hast. Aber auch die Zeit und Arbeit, die du zum Beispiel beim Renovieren leisten kannst. Alle Arbeiten, die du machst, müssen nicht über den Kredit gekauft werden. Somit hast du mehr Eigenkapital.'
+    - payload: fachbegriffe credit
+      title: Fachbegriffe Kredit
+    text: Bei einem Immobilienkredit wird häufig das **Eigenkapital** berechnet. Das ist das Geld, das du hast. Aber auch die Zeit und Arbeit, die du zum Beispiel beim Renovieren leisten kannst. Alle Arbeiten, die du machst, müssen nicht über den Kredit gekauft werden. Somit hast du mehr Eigenkapital.
   utter_credit/kredit_was:
   - buttons:
-      - payload: Welche Arten von Krediten gibt es?
-        title: Arten von Krediten
-      - payload: fachbegriffe credit
-        title: Fachbegriffe Kredite
-    text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Ein Kredit wird auch **Darlehen** genannt. Du musst das Geld und die Zinsen  zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst. Als Voraussetzung für einen Kredit, musst du…
-          
-          - 18 Jahre alt sein
-          
-          - ein Bankkonto besitzen
-          
-          - regelmäßiges Einkommen haben
-          
-          - und einen Vertrag unterschreiben'
+    - payload: Welche Arten von Krediten gibt es?
+      title: Arten von Krediten
+    - payload: fachbegriffe credit
+      title: Fachbegriffe Kredite
+    text: |-
+      Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Ein Kredit wird auch **Darlehen** genannt. Du musst das Geld und die Zinsen  zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst. Als Voraussetzung für einen Kredit, musst du…
+      - 18 Jahre alt sein
+      - ein Bankkonto besitzen
+      - regelmäßiges Einkommen haben
+      - und einen Vertrag unterschreiben
   utter_credit/kredit_warum:
-  - text: 'Wenn du dir etwas kaufen willst, aber nicht genug Geld hast, kann ein Kredit hilfreich sein. Du musst dann zu einem späteren Zeitpunkt das Geld und Zinsen zurückzahlen.'
+  - text: Wenn du dir etwas kaufen willst, aber nicht genug Geld hast, kann ein Kredit hilfreich sein. Du musst dann zu einem späteren Zeitpunkt das Geld und Zinsen zurückzahlen.
   utter_credit/kredit_woher:
   - buttons:
-      - payload: credit from bank
-        title: Banken
-      - payload: Pfandleiher
-        title: Pfandleiher
-      - payload: Unternehmen
-        title: Unternehmen
-    text: 'Es gibt viele verschiedene Anbieter von Krediten. Alle haben das Ziel, Geld zu verdienen.'
+    - payload: credit from bank
+      title: Banken
+    - payload: Pfandleiher
+      title: Pfandleiher
+    - payload: Unternehmen
+      title: Unternehmen
+    text: Es gibt viele verschiedene Anbieter von Krediten. Alle haben das Ziel, Geld zu verdienen.
   utter_credit/kredit_vonBank:
   - buttons:
-      - payload: Arten von Krediten
-        title: Arten von Krediten
-    text: 'Banken und Sparkassen haben sehr viele unterschiedliche Kredite im Angebot. Hier findest du einige.'
+    - payload: Zurück
+      title: Zurück
+    text: Banken und Sparkassen haben sehr viele unterschiedliche Kredite im Angebot. Hier findest du einige.
   utter_credit/kredit_vonPfandleiher:
-    - text: 'Ein Pfandleiher nimmt Wertgegenstände entgegen und gibt dir ungefähr die Hälfte des Wertes in Bargeld. Du musst das Geld und die Zinsen innerhalb von drei Monaten zurückgeben und erhältst den Gegenstand zurück.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: Ein Pfandleiher nimmt Wertgegenstände entgegen und gibt dir ungefähr die Hälfte des Wertes in Bargeld. Du musst das Geld und die Zinsen innerhalb von drei Monaten zurückgeben und erhältst den Gegenstand zurück.
   utter_credit/kredit_vonUnternehmen:
-    - text: 'Viele Kaufhäuser und Unternehmen bieten dir Kredite an. Das ist zum Beispiel der Fall, wenn du eine Ware direkt bekommst und später in einzelnen Raten den Preis und Zinsen bezahlst.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: 'Viele Kaufhäuser und Unternehmen bieten dir Kredite an. Du bekommst eine Ware sofort und bezahlst nachträglich in Raten den Preis und die Zinsen.'
   utter_credit/kredit_welche:
-    - buttons:
-        - payload: Ratenkredit
-          title: Ratenkredit
-        - payload: Dispo
-          title: Dispo
-        - payload: Autokredit
-          title: Autokredit
-        - payload: Überziehungskredit
-          title: Überziehungskredit
-        - payload: Blankokredit
-          title: Blankokredit
-        - payload: Immobilienkredit
-          title: Immobilienkredit
-      text: 'Es gibt eine Vielzahl verschiedener Kredite. Hier sind ein paar, die du kennen solltest.'
+  - buttons:
+    - payload: Ratenkredit
+      title: Ratenkredit
+    - payload: Dispo
+      title: Dispo
+    - payload: Autokredit
+      title: Autokredit
+    - payload: Überziehungskredit
+      title: Überziehungskredit
+    - payload: Blankokredit
+      title: Blankokredit
+    - payload: Immobilienkredit
+      title: Immobilienkredit
+    text: Es gibt eine Vielzahl verschiedener Kredite. Hier sind ein paar, die du kennen solltest.
   utter_credit/kredit_raten:
   - buttons:
-      - payload: Welche Kredite gibt es
-        title: Übersicht Kredite
-    text: 'Bei einem **Ratenkredit** erhältst du Geld von der Bank. Du zahlst dann jeden Monat einen gleichen Geldbetrag zurück. Im Kreditvertrag werden die Höhe des Ratenkredits, die Zinsen, die Laufzeit und der monatliche Geldbetrag festgelegt.'
+    - payload: Welche Kredite gibt es
+      title: Übersicht Kredite
+    text: 'Bei einem Ratenkredit erhältst du Geld von der Bank. Du zahlst jeden Monat den gleichen Geldbetrag zurück. Im Kreditvertrag werden die Höhe des Ratenkredits, die Zinsen, die Laufzeit und der monatliche Geldbetrag festgelegt.'
   utter_credit/kredit_auto:
   - buttons:
-      - payload: Welche Kredite gibt es
-        title: Übersicht Kredite
-    text: 'Der **Autokredit** ist für den Kauf eines Autos vorgesehen. Du kannst den Autokredit bei der Bank oder beim Autohaus erhalten. Die Zinsen sind meistens niedriger als bei einem Ratenkredit. Damit du den Kredit erhältst, musst du den Fahrzeugbrief als Sicherheit beim Gläubiger lassen.'
+    - payload: Welche Kredite gibt es
+      title: Übersicht Kredite
+    text: Der **Autokredit** ist für den Kauf eines Autos vorgesehen. Du kannst den Autokredit bei der Bank oder beim Autohaus erhalten. Die Zinsen sind meistens niedriger als bei einem Ratenkredit. Damit du den Kredit erhältst, musst du den Fahrzeugbrief als Sicherheit beim Gläubiger lassen.
   utter_credit/kredit_immobilien:
   - buttons:
-      - payload: Welche Kredite gibt es
-        title: Übersicht Kredite
-    text: 'Ein **Immobilienkredit** ist zum Beispiel für den Kauf einer Wohnung bestimmt. Als Sicherheit wird die Bank in das *Grundbuch* eingetragen. Wenn du alle Schulden bezahlt hast, gehört das Haus dir.'
+    - payload: Welche Kredite gibt es
+      title: Übersicht Kredite
+    text: Ein **Immobilienkredit** ist zum Beispiel für den Kauf einer Wohnung bestimmt. Als Sicherheit wird die Bank in das *Grundbuch* eingetragen. Wenn du alle Schulden bezahlt hast, gehört die Wohnung dir.
   utter_credit/kredit_blanko:
   - buttons:
-      - payload: Welche Kredite gibt es
-        title: Übersicht Kredite
-    text: 'Der **Blankokredit** wird ohne eine Prüfung der *Kreditwürdigkeit* und ohne neuen Vertrag vergeben. Er ist für Kunden, die regelmäßig Einkommen erhalten und keine hohen Schulden haben. Ein Beispiel dafür ist der Überziehungskredit deines Girokontos.'
+    - payload: Welche Kredite gibt es
+      title: Übersicht Kredite
+    text: Der **Blankokredit** wird ohne eine Prüfung der *Kreditwürdigkeit* und ohne neuen Vertrag vergeben. Er ist für Kunden, die regelmäßig Einkommen erhalten und keine hohen Schulden haben. Ein Beispiel dafür ist der *Überziehungskredit* deines *Girokontos*.
   utter_credit/kredit_dispo:
   - buttons:
-      - payload: Welche Kredite gibt es
-        title: Übersicht Kredite
-    text: 'Der **Dispositionskredit** erlaubt dir, dein *Girokonto* oder deine Kreditkarte zu überziehen. Die Höhe des Dispositionskredits legt deine Bank fest. Die Zinsen sind recht hoch. Oft nennt man diesen Kredit einfach Dispo.'
+    - payload: Welche Kredite gibt es
+      title: Übersicht Kredite
+    text: Der **Dispositionskredit** erlaubt dir, dein *Girokonto* oder deine Kreditkarte zu überziehen. Die Höhe des Dispositionskredits legt deine Bank fest. Die Zinsen sind recht hoch. Oft nennt man diesen Kredit einfach Dispo.
   utter_credit/kredit_uberziehung:
   - buttons:
-      - payload: Welche Kredite gibt es
-        title: Übersicht Kredite
-    text: 'Ein **Überziehungskredit** kommt zustande, wenn du dein *Girokonto* oder deinen *Dispo* auf dem *Girokonto* überziehst. Die Zinsen für einen Überziehungskredit sind sehr hoch. Du solltest schnell ein Gespräch mit deiner Bank vereinbaren.'
+    - payload: Welche Kredite gibt es
+      title: Übersicht Kredite
+    text: Ein **Überziehungskredit** kommt zustande, wenn du dein *Girokonto* oder deinen *Dispo* auf dem *Girokonto* überziehst. Die Zinsen für einen Überziehungskredit sind sehr hoch. Du solltest schnell ein Gespräch mit deiner Bank vereinbaren.
   utter_banking/bank_was:
   - buttons:
-      - payload: Bank wofur
-        title: Wofür brauche ich eine Bank
-      - payload: Welche Banken gibt es?
-        title: Welche Banken gibt es
-      - payload: Bezahlen
-        title: Bezahlen
+    - payload: Bank wofur
+      title: Wofür brauche ich eine Bank
+    - payload: Welche Banken gibt es?
+      title: Welche Banken gibt es
+    - payload: Bezahlen
+      title: Bezahlen
     text: 'Banken in Deutschland haben die Aufgabe, die Geldversorgung zu regeln. Dazu zählen zum Beispiel Girokonten und Bargeld, aber auch Sparen, Kredite und Wertpapiere. '
   utter_banking/bank_wofur:
   - buttons:
-      - payload: Bezahlen
-        title: Bezahlen
-      - payload: Konto
-        title: Konto
-      - payload: Geld anlegen
-        title: Geld anlegen
-      - payload: Was ist ein Kredit
-        title: Kredit
-    text: 'Eine Bank oder Sparkasse unterstützt dich bei allen Dingen rund um die Themen Geld, Bezahlen und Sparen'
+    - payload: Bezahlen
+      title: Bezahlen
+    - payload: Konto
+      title: Konto
+    - payload: Geld anlegen
+      title: Geld anlegen
+    - payload: Was ist ein Kredit
+      title: Kredit
+    text: Eine Bank oder Sparkasse unterstützt dich bei allen Dingen rund um die Themen Geld, Bezahlen und Sparen
   utter_banking/bank_welche:
   - buttons:
-      - payload: Universalbanken
-        title: Universalbanken
-      - payload: Spezialbanken
-        title: Spezialbanken
-      - payload: Filialbanken
-        title: Filialbanken
-      - payload: Direktbanken
-        title: Direktbanken
-    text: 'Du kannst verschiedene Arten von Banken unterscheiden. Es gibt *Universalbanken* und *Spezialbanken*. Zudem unterteilen Banken sich in *Filialbanken* und *Direktbanken*.'
+    - payload: Universalbanken
+      title: Universalbanken
+    - payload: Spezialbanken
+      title: Spezialbanken
+    - payload: Filialbanken
+      title: Filialbanken
+    - payload: Direktbanken
+      title: Direktbanken
+    text: Du kannst verschiedene Arten von Banken unterscheiden. Es gibt *Universalbanken* und *Spezialbanken*. Zudem unterteilen Banken sich in *Filialbanken* und *Direktbanken*.
   utter_banking/bezahlen:
   - buttons:
-      - payload: Klassische Bezahlverfahren
-        title: Klassiche Bezahlverfahren
-      - payload: Online bezahlen
-        title: Online bezahlen
-      - payload: Mobiles bezahlen
-        title: Mobiles bezahlen
-    text: 'Es gibt ganz unterschiedliche Möglichkeiten eine Ware oder Dienstleistung zu bezahlen. Möchtest du mehr dazu wissen?'
+    - payload: Klassische Bezahlverfahren
+      title: Klassiche Bezahlverfahren
+    - payload: Online bezahlen
+      title: Online bezahlen
+    - payload: Mobiles bezahlen
+      title: Mobiles bezahlen
+    text: Es gibt ganz unterschiedliche Möglichkeiten eine Ware oder Dienstleistung zu bezahlen. Möchtest du mehr dazu wissen?
   utter_banking/klassisches_bezahlen:
   - buttons:
-      - payload: Barzahlung
-        title: Barzahlung
-      - payload: Vorkasse
-        title: Vorkasse
-      - payload: Rechnung
-        title: Rechnung
-    text: 'Neben der Bezahlung mit Scheinen und Münzen bietet unser Girokonto weitere Möglichkeiten der Bezahlung. Wähle aus.'
+    - payload: Barzahlung
+      title: Barzahlung
+    - payload: Vorkasse
+      title: Vorkasse
+    - payload: Rechnung
+      title: Rechnung
+    - payload: Zurück
+      title: Zurück
+    text: 'Du kannst auf verschiedene Arten bezahlen. Klassische Möglichkeiten sind zum Beispiel diese hier'
   utter_banking/barzahlung:
-    - text: 'In Deutschland ist das Bezahlen mit Münzen und Scheinen sehr beliebt. Es wurden im Jahr 2021 mehr als die Hälfte der alltäglichen Zahlungen in Bargeld getätigt. Du erhältst die Ware direkt nach dem Bezahlen.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: In Deutschland ist das Bezahlen mit Münzen und Scheinen sehr beliebt. Es wurden im Jahr 2021 mehr als die Hälfte der alltäglichen Zahlungen in Bargeld getätigt. Du erhältst die Ware direkt nach dem Bezahlen.
   utter_banking/vorkasse:
-    - text: 'Wenn du beim einkaufen **Vorkasse** auswählst, schickt der Verkäufer die Ware nach dem Eingang des Geldes los. Vorher hast du die Ware mit einer Überweisung oder einer Lastschrift bezahlt. Dafür benötigst du ein Girokonto.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: Wenn du beim Einkaufen **Vorkasse** auswählst, schickt der Verkäufer die Ware nach dem Eingang des Geldes los. Vorher hast du die Ware mit einer Überweisung oder einer Lastschrift bezahlt. Dafür benötigst du ein Girokonto.
   utter_banking/rechnung:
-    - text: 'Viele Versandhändler schicken dir die Ware mit einer **Rechnung**. In der Rechnung steht eine Frist oder ein Datum, bis zu dem die Rechnung bezahlt werden muss. Dafür benötigst du ein Girokonto.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: Viele Versandhändler schicken dir die Ware mit einer **Rechnung**. In der Rechnung steht eine Frist oder ein Datum, bis zu dem die Rechnung bezahlt werden muss. Dafür benötigst du ein Girokonto.
   utter_banking/online_bezahlen:
-    - text: 'Bei **Einkäufen im Internet** kannst du oft auch über sogenannte Zahlungsdienstleister bezahlen. Die größten Anbieter heißen Paypal, Klarna und giropay. Du musst dich bei den Anbietern zum Beispiel mit deiner Email-Adresse anmelden und dein Girokonto angeben.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: 'Bei **Einkäufen im Internet** kannst du oft auch über sogenannte Zahlungsdienstleister bezahlen. Die größten Anbieter heißen  PayPal, Klarna und Giropay. Du musst dich bei den Anbietern zum Beispiel mit deiner E-Mail-Adresse anmelden und dein Girokonto angeben.'
   utter_banking/mobiles_bezahlen:
-    - text: 'Für das **mobile Bezahlen** benötigst du ein Smartphone oder eine Smartwatch. Bekannte Anbieter sind Apple-Pay und google-Pay. Du kannst dann an der Kasse das Handy oder die Smartwatch vor ein Lesegerät halten. Der Betrag wird per *Lastschrift* von deinem Konto abgebucht.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: 'Für das **mobile Bezahlen** benötigst du ein Smartphone oder eine Smartwatch. Bekannte Anbieter sind Apple-Pay und Google-Pay. Du kannst dann an der Kasse das Handy oder die Smartwatch vor ein Lesegerät halten. Der Betrag wird per Lastschrift von deinem Konto abgebucht.'
   utter_banking/universalbanken:
-  - text: '**Universalbanken** bieten alle Dienstleistungen an, die für dich als Privatperson wichtig sind. Du kannst dort dein Girokonto haben, Geld anlegen und Kredite beantragen.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: '**Universalbanken** bieten alle Dienstleistungen an, die für dich als Privatperson wichtig sind. Du kannst dort dein Girokonto haben, Geld anlegen und Kredite beantragen.'
   utter_banking/spezialbanken:
-  - text: '**Spezialbanken** haben sich auf besondere Themen spezialisiert. So gibt es zum Beispiel die Bausparkassen. Dort kannst du für den Kauf oder den Bau eines Hauses sparen und Geld aufnehmen. Du kannst dort aber kein Girokonto eröffnen.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: '**Spezialbanken** haben sich auf besondere Themen spezialisiert. So gibt es zum Beispiel die Bausparkassen. Dort kannst du für den Kauf oder den Bau eines Hauses sparen und Geld aufnehmen. Du kannst dort aber kein Girokonto eröffnen.'
   utter_banking/filialbanken:
   - buttons:
-      - payload: Sparkassen
-        title: Sparkassen
-      - payload: Volksbanken
-        title: Sparkassen
+    - payload: Sparkassen
+      title: Sparkassen
+    - payload: Volksbanken
+      title: Volksbanken
     text: '**Filialbanken** haben Geschäftsräume, die du aufsuchen kannst. Dort kannst du Geld abheben und dich persönlich beraten lassen. Die bekanntesten Filialbanken sind die Sparkassen und Volksbanken.'
   utter_banking/sparkassen:
-  - text: 'Es gibt über 500 **Sparkassen** in Deutschland. Sie haben 16.000 Filialen und arbeiten fast immer in öffentlichem Auftrag. Sie werden von den Städten und Gemeinden getragen.'
+  - buttons:
+    - payload: Volksbanken
+      title: Volksbanken
+    text: Es gibt über 500 **Sparkassen** in Deutschland. Sie haben 16.000 Filialen und arbeiten fast immer in öffentlichem Auftrag. Sie werden von den Städten und Gemeinden getragen.
   utter_banking/volksbanken:
-    - text: 'Die **Volksbanken** gehören zu den Genossenschaftsbanken. Alle Kunden können Mitglieder der Bank werden. Mitglieder können an der Entwicklung der Bank mitbestimmen.'
+  - buttons:
+    - payload: Sparkassen
+      title: Sparkassen
+    text: 'Die Volksbanken haben über 7.000 Filialen in Deutschland und gehören zu den Genossenschaftsbanken. Alle Kunden können Mitglieder der Bank werden. Mitglieder können an der Entwicklung der Bank mitbestimmen.'
   utter_banking/direktbanken:
-  - text: 'Bei **Direktbanken** gibt es keinen Ansprechpartner vor Ort. Du eröffnest dein Konto über das Internet. Direktbanken können ihre Dienste meistens günstiger anbieten. Die bekanntesten Anbieter sind die DKB, die Consorsbank und die ING-DiBa.'
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: Bei **Direktbanken** gibt es keinen Ansprechpartner vor Ort. Du eröffnest dein Konto über das Internet. Direktbanken können ihre Dienste meistens günstiger anbieten. Die bekanntesten Anbieter sind die DKB, die Consorsbank und die ING-DiBa.
   utter_banking/fb_filiale:
   - buttons:
-      - payload: Fachbegriffe Banken
-        title: Fachbegriffe Banken
-    text: 'Filialen sind Geschäftsräume, die zum Beispiel zu einer Bank gehören. Sie werden auch als Zweigniederlassungen bezeichnet. Die Bank möchte mit ihren Filialen nah bei den Kunden sein.'
+    - payload: Fachbegriffe Banken
+      title: Fachbegriffe Banken
+    text: Filialen sind Geschäftsräume, die zum Beispiel zu einer Bank gehören. Sie werden auch als Zweigniederlassungen bezeichnet. Die Bank möchte mit ihren Filialen nah bei den Kunden sein.
+  utter_ask_question1:
+  - buttons:
+    - payload: q1_wrong_1
+      title: Arbeitslosenversicherung
+    - payload: q1_wrong_2
+      title: Rentenversicherung
+    - payload: q1_right
+      title: Privat-Haftpflichtversicherung
+    - payload: q1_wrong_3
+      title: Pflegeversicherung
+    text: 'Es gibt insgesamt 5 Sozialversicherungen. Eine der folgenden vier Versicherungen gehört **nicht** dazu. Welche ist es?'
+  utter_q1_right:
+  - buttons:
+    - payload: /enter_question_2
+      title: Weiter
+    text: Super. Das ist richtig. Die Privat-Haftpflichtversicherung ist sehr wichtig. Dennoch gehört sie nicht zu den 5 Sozialversicherungen, die jeder Arbeitnehmer haben muss.
+  utter_q1_wrong_1:
+  - buttons:
+    - payload: /q1_right
+      title: Richtige Lösung
+    - payload: /enter_question_2
+      title: Weiter
+    text: Das stimmt nicht. Wenn du eine Arbeit hast, musst du jeden Monat in diese **Sozialversicherung** einzahlen. Der Beitrag wird direkt von deinem Gehalt abgezogen. Sobald du arbeitslos wirst, bekommst du Geld aus dieser Versicherung.
+  utter_q1_wrong_2:
+  - buttons:
+    - payload: /q1_right
+      title: Richtige Lösung
+    - payload: /enter_question_2
+      title: Weiter
+    text: Nein, Du bekommst deine Rente von dieser Versicherung. Vorher musst du jeden Monat einen Teil deines Gehalts in diese **Sozialversicherung** einzahlen.
+  utter_q1_wrong_3:
+  - buttons:
+    - payload: q1_right
+      title: Richtige Lösung
+    - payload: /enter_question_2
+      title: Weiter
+    text: Leider falsch Die Pflegeversicherung hilft dir, wenn du dich nicht mehr selbst versorgen kannst. Sie ist eine der fünf **Sozialversicherungen** für Arbeitnehmer.
+  utter_ask_question2:
+  - buttons:
+    - payload: q2_wrong_1
+      title: Reisegepäckversicherung
+    - payload: q2_wrong_2
+      title: Brillenversicherung
+    - payload: q2_right
+      title: Berufsunfähigkeitsversicherung
+    text: 'Welche dieser Versicherungen ist wichtig, um dich im Notfall abzusichern?'
+  utter_q2_right:
+  - buttons:
+    - payload: /enter_question_3
+      title: Weiter
+    text: Korrekt! Diese Versicherung zahlt dir eine monatliche Rente, wenn du einen Unfall hast und in deinem Beruf nicht mehr arbeiten kannst.
+  utter_q2_wrong_1:
+  - buttons:
+    - payload: /q2_right
+      title: Richtige Lösung
+    - payload: /enter_question_3
+      title: Weiter
+    text: Diese Versicherung ist nicht wichtig. Das Gepäck lässt sich auch ohne Versicherung gut ersetzen.
+  utter_q2_wrong_2:
+  - buttons:
+    - payload: /q2_right
+      title: Richtige Lösung
+    - payload: /enter_question_3
+      title: Weiter
+    text: Eine Brille lässt sich bei Verlust gut ersetzen. Eine Versicherung ist nicht zwingend erforderlich.
+  utter_ask_question3:
+  - buttons:
+    - payload: q3_wrong_1
+      title: Die KFZ-Haftpflicht zahlt sowohl die Schäden am anderen Fahrzeug als auch deine Schäden
+    - payload: q3_right
+      title: Die KFZ-Haftpflichtversicherung bezahlt die Schäden am anderen Fahrzeug. Die Schäden an deinem Fahrzeug bezahlt sie nicht
+    - payload: q3_wrong_2
+      title: Jeder der beiden Fahrzeughalter bekommt den Schaden von seiner Versicherung ersetzt.
+    text: Du hast mit deinem Auto beim Einparken ein anderes Auto beschädigt. Welche Schäden werden von deiner KFZ-Haftpflichtversicherung übernommen?
+  utter_q3_right:
+  - buttons:
+    - payload: /enter_question_4
+      title: Weiter
+    text: Richtig gewählt!
+  utter_q3_wrong_1:
+  - buttons:
+    - payload: q3_right
+      title: Richtige Lösung
+    - payload: /enter_question_4
+      title: Weiter
+    text: Die Schäden an beiden Fahrzeugen werden nur von einer Vollkasko-Versicherung übernommen. Wenn du diesen Schutz haben möchtest, ist der Beitrag deutlich höher als bei einer normalen KFZ-Haftpflichtversicherung.
+  utter_q3_wrong_2:
+  - buttons:
+    - payload: q3_right
+      title: Richtige Lösung
+    - payload: /enter_question_4
+      title: Weiter
+    text: In diesem Beispiel hast du den Unfall verursacht. Deshalb zahlt deine Haftpflichtversicherung den Schaden beim anderen Auto. Die Reparaturen an deinem Auto musst du selbst bezahlen.
+  utter_ask_question4:
+  - buttons:
+    - payload: q4_wrong_1
+      title: Für einen Kredit musst du ein Bankkonto besitzen. Hier wird dir dein Kredit zur Verfügung gestellt.
+    - payload: q4_wrong_2
+      title: Damit du einen Kredit erhalten kannst, musst du ein regelmäßiges Einkommen nachweisen.
+    - payload: q4_right
+      title: Jeder Kreditgeber ist verpflichtet, einen schriftlichen Vertrag mit dir zu schließen, in dem die Laufzeit, die Zinsen und die Rückzahlung des Kredits vereinbart werden.
+    - payload: q4_wrong_3
+      title: Um einen Kredit zu beantragen, musst du mindestens 21 Jahre alt sein.
+    text: Du möchtest einen Kredit aufnehmen. Dafür müssen ein paar Voraussetzungen vorliegen. Welche der folgenden Antworten stimmt **nicht**?
+  utter_q4_right:
+  - buttons:
+    - payload: /enter_question_5
+      title: Weiter
+    text: 'So ist es. Für einen Kreditantrag musst du volljährig sein. Das bist du in Deutschland mit 18 Jahren.'
+  utter_q4_wrong_1:
+  - buttons:
+    - payload: /q4_right
+      title: Richtige Lösung
+    - payload: /enter_question_5
+      title: Weiter
+    text: 'Banken achten bei der Kreditvergabe darauf, dass du ein regelmäßiges Einkommen hast. Sie möchten den Kreditbetrag und die Zinsen zurück erhalten.'
+  utter_q4_wrong_2:
+  - buttons:
+    - payload: /q4_right
+      title: Richtige Lösung
+    - payload: /enter_question_5
+      title: Weiter
+    text: 'In Deutschland sind die Banken verpflichtet, einen schriftlichen Kreditvertrag auszustellen, in dem die Bedingungen festgehalten werden.'
+  utter_q4_wrong_3:
+  - buttons:
+    - payload: /q4_right
+      title: Richtige Lösung
+    - payload: /enter_question_5
+      title: Weiter
+    text: 'Ein Bankkonto ist für die Bereitstellung des Kredits notwendig.'
+  utter_ask_question5:
+  - buttons:
+    - payload: q5_wrong_1
+      title: 'Mit Geldscheinen und Münzen kannst du überall bezahlen. Du bleibst also mobil und flexibel. Deswegen nennt man es Mobiles Bezahlen.'
+    - payload: q5_right
+      title: 'Beim Mobilen Bezahlen kannst du mit deinem Smartphone oder der Smartwatch direkt an der Kasse bezahlen. Der Betrag wird dann von deinem Konto abgebucht.'
+    text: 'Eine der beiden folgenden Antworten beschreibt Mobiles Bezahlen. Welche ist es?'
+  utter_q5_right:
+  - buttons:
+    - payload: /enter_question_6
+      title: Weiter
+    text: 'Sehr gut. Das ist die richtige Lösung'
+  utter_q5_wrong_1:
+  - buttons:
+    - payload: /q5_right
+      title: Richtige Lösung
+    - payload: /enter_question_6
+      title: Weiter
+    text: 'Mit Geldscheinen und Münzen kannst du fast immer und überall bezahlen. Dennoch ist mit Mobiles Bezahlen etwas anderes gemeint. Antwort 1 ist richtig.'
+  utter_ask_question6:
+  - buttons:
+    - payload: q6_wrong_1
+      title: 'Ganz egal wann du etwas kaufst oder was es kostet. Hauptsache es ist derselbe Empfänger. Bei diesem Verfahren erlaubst du dem Empfänger, auf dein Konto zuzugreifen. Der Empfänger verpflichtet sich, alles richtig zu machen.'
+    - payload: q6_right
+      title: 'Bei diesem Verfahren zahlt deine Bank regelmäßig den gleichen Betrag von deinem Konto an denselben Empfänger. Das kann zum Beispiel die monatliche Miete am ersten Tag des Monats sein'
+    text: 'Was ist ein Dauerauftrag und wofür ist er sinnvoll? Eine der beiden folgenden Antworten ist richtig'
+  utter_q6_right:
+  - buttons:
+    - payload: /interruption
+      title: Weiter
+    text: 'Top: Das ist absolut richtig.'
+  utter_q6_wrong_1:
+  - buttons:
+    - payload: /q6_right
+      title: Richtige Lösung
+    text: 'Hier wird das Sepa-Lastschrift Mandat beschrieben, Dabei werden die Höhe des Betrages und der Zeitpunkt der Abbuchung vom Empfänger bestimmt.'
+  utter_start_quiz:
+  - buttons:
+    - payload: /enter_question_1
+      title: Erste Frage
+    text: Schön, dass du am Quiz teilnehmen möchtest. Wenn du bereit bist, beginne mir der ersten Frage.
+  utter_quiz_finished:
+  - text: Toll, du hast das Quiz beendet. Ich hoffe, es hat dir gefallen.
   utter_go_on:
-    - text: bei mir kam "weiter" an.
-
+  - text: bei mir kam "weiter" an.
+  utter_support/intro:
+  - buttons:
+    - payload: Überschuldung
+      title: Überschuldung
+    - payload: Streitigkeiten
+      title: Streitigkeiten
+    - payload: Weitere Unterstützung
+      title: Weitere Unterstützung
+    text: Geld, Versicherungen und Kredite sind schwierige Themen, die auch Probleme mit sich bringen können. Zum Glück gibt es auch Einrichtungen, bei denen du Unterstützung und Beratung bekommen kannst. Hier sind ein paar Tipps
+  utter_support/ueberschuldung:
+  - text: |-
+      Es gibt viele Menschen, die Schulden haben. Und es gibt viele Angebote für eine Unterstützung. Hier findest du weitere Informationen zu kostenlosen Beratungen.
+      - [Schuldnerberatung Diakonie](https://www.diakonie.de/wissen-kompakt/schuldnerberatung/)
+      - [Schuldnerberatung Caritas](https://www.caritas.de/hilfeundberatung/onlineberatung/schuldnerberatung/start)
+  utter_support/streitigkeiten:
+  - buttons:
+    - payload: Streitigkeit Energieversorger
+      title: Streit mit Energieversorger
+    - payload: Streitigkeiten Versicherung
+      title: Streit mit Versicherung
+    - payload: Streitigkeiten Bank
+      title: Streit mit Bank
+    text: 'Streiten gehört zum täglichen Leben. Es ist gut, wenn man sich einigen kann. Falls du Probleme mit Energieversorgern, Versicherungen oder einer Bank hast, guck mal hier:'
+  utter_support/energieversorger:
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: 'Hast du Streit mit deinem Stromanbieter oder Gaslieferanten? Dann kann dir vielleicht die Schlichtungsstelle Energie helfen. Hier findest du weitere Informationen: [Schlichtungsstelle Energie](https://www.schlichtungsstelle-energie.de/)'
+  utter_support/versicherungen:
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: Bei Streitigkeiten mit der Versicherung hilft dir die Schlichtungsstelle der Versicherungen. Dafür musst du nichts bezahlen. Sie sprechen mit deiner Versicherung und wollen eine Einigung erzielen. Weitere Informationen findest du [hier](https://www.versicherungsombudsmann.de/).
+  utter_support/bank:
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: |-
+      Bei Streitigkeiten mit der Bank kann dir eine Schlichtungsstelle helfen. Dafür musst du nichts bezahlen. Wähle die passende Schlichtungsstelle aus.
+      - [Schlichtungsstelle der Volksbanken und Raiffeisenbanken](https://www.bvr.de/Service/Kundenbeschwerdestelle)
+      - [Schlichtungsstelle der Sparkassen](https://www.s-schlichtungsstelle.de/)
+      - [Schlichtungsstelle der Privatbanken](https://bankenombudsmann.de/)
+  utter_support/more:
+  - buttons:
+    - payload: Verbraucherzentrale
+      title: Verbraucherzentrale
+    - payload: Alfa-Telefon
+      title: Alfa-Telefon
+    text: Weitere Untersützungsmöglichkeiten findest du hier
+  utter_support/verbraucherzentrale:
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: An 200 Standorten in Deutschland gibt es Verbraucherzentralen. Sie beraten dich zu allen Fragen, die Verbraucher haben können. Eine Beratung kann Geld kosten. Es gibt aber viele Informationen [kostenlos im Internet](https://www.verbraucherzentrale.de/beratung)
+  utter_support/alfatel:
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: Das [ALFA-Telefon](https://alfa-telefon.de/) ist kostenlos und berät Menschen, die mit dem Lesen und Schreiben Schwierigkeiten haben. Du erreichst das ALFA-Telefon unter [0800 53 33 44 55](tel:080053334455).
+  utter_befragung:
+  - text: |-
+      Wir haben eine kleine Umfrage für dich. Dazu leiten wir dich auf eine Webseite weiter. Du kannst dir auch dort die Texte vorlesen lassen, indem du auf das Play-Symbol tippst.
+      [Zur Umfrage](https://www.soscisurvey.de/alfabot/?password=alfabot)
 actions:
 - utter_anything_else
+- utter_befragung
 - action_ask_google
 - action_tell_joke
 - action_test_action
 - utter_chitchat
 - utter_greet
+- utter_survey_completed
 - utter_interruption
 - utter_fachbegriffe_versicherungen
 - utter_kontakt
 - utter_nettiquette
 - utter_insurance
-- utter_invest
 - utter_banking
+- utter_support
 - utter_fachbegriffe_banking
 - utter_fachbegriffe_credit
-- utter_pay
-- utter_counseling
 - action_get_all_insurance_terms
 - action_get_random_insurance_terms
 - action_insurance_terms
@@ -624,3 +1003,40 @@ actions:
 - action_get_all_credit_terms
 - action_list_all_terms
 - action_repeat
+- utter_ask_question1
+- utter_q1_right
+- utter_q1_wrong_1
+- utter_q1_wrong_2
+- utter_q1_wrong_3
+- utter_ask_question2
+- utter_q2_right
+- utter_q2_wrong_1
+- utter_q2_wrong_2
+- utter_ask_question3
+- utter_q3_right
+- utter_q3_wrong_1
+- utter_q3_wrong_2
+- utter_ask_question4
+- utter_q4_right
+- utter_q4_wrong_1
+- utter_q4_wrong_2
+- utter_q4_wrong_3
+- utter_ask_question5
+- utter_q5_right
+- utter_q5_wrong_1
+- utter_q5_wrong_2
+- utter_ask_question6
+- utter_q6_right
+- utter_q6_wrong_1
+- utter_q6_wrong_2
+- utter_q6_wrong_3
+- utter_start_quiz
+- utter_quiz_finished
+- validate_quiz_question1_form
+- validate_quiz_question2_form
+- validate_quiz_question3_form
+- validate_quiz_question4_form
+- validate_quiz_question5_form
+- validate_quiz_question6_form
+- utter_credit
+- action_clear_quiz_slots
