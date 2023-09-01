@@ -136,9 +136,11 @@ responses:
       title: Über Kredite
     - payload: Was sind Versicherungen?
       title: Über Versicherungen
-    text: Willkommen zum Finanzbot. Ich helfe dir gerne mit einfachen Erklärungen zu Fragen rund um Finanzen. Tippe auf den Lautsprecher, damit ich dir meine Nachrichten vorlese.
+    - payload: Beratungsmöglichkeiten?
+      title: Beratungsmöglichkeiten
+    text: Willkommen zum Finanz-Bot. Ich helfe dir gerne mit einfachen Erklärungen zu Fragen rund um Finanzen. Tippe auf den Lautsprecher, damit ich dir meine Nachrichten vorlese. Schreibe mir "Zurück", damit ich meine letzte Antwort wiederhole.
   utter_under_construction:
-  - text: Derzeit bin ich noch im Training. Probiere gerne aus, was ich bereits kann. Wenn du ein Tester bist, notiere dir, was noch nicht wie erwartet funktioniert.
+  - text: Derzeit bin ich noch im Training. Probiere gerne aus, was ich bereits kann. Danach kannst du dein neues Wissen bei unserem kleinen Finanzquiz ausprobieren. Schreibe mir dazu einfach "Quiz". Wenn du ein Tester bist, notiere dir, was noch nicht wie erwartet funktioniert.
   utter_goodbye:
   - text: Machs gut!
   - text: Bis zum nächsten Mal!
@@ -364,7 +366,7 @@ responses:
   - buttons:
     - payload: fachbegriffe versicherung
       title: Weitere Fachbegriffe
-    text: Versicherungsvertreter verkaufen Versicherungen. Sie beraten dich und helfen dir beim Ausfüllen des Versicherungsvertrages. Wenn du einen Vertrag unterschreibst, bekommt der Vertreter dafür Geld von der Versicherung.
+    text: 'Versicherungsvertreter verkaufen Versicherungen. Sie beraten dich und helfen dir beim Ausfüllen des Versicherungsvertrages. Wenn du einen Vertrag unterschrieben hast, bekommt der Vertreter dafür Geld von der Versicherung, für die er arbeitet.'
   utter_insurance/fb_schadensfall:
   - buttons:
     - payload: fachbegriffe versicherung
@@ -457,9 +459,15 @@ responses:
     text: Wenn du Schulden hast, kann der Gläubiger vom Gericht einen Pfändungsbeschluss bekommen. Der Gläubiger kann dann das Geld von deinem Konto einziehen. Er darf aber nicht dein ganzes Geld nehmen. Es gibt ein [Pfändungsschutzkonto](https://www.google.com/url?q=https://www.verbraucherzentrale.de/wissen/geld-versicherungen/kredit-schulden-insolvenz/das-pfaendungsschutzkonto-79078&sa=D&source=docs&ust=1687873687368061&usg=AOvVaw1LvGmDLpMCPJphwVFHNz8b).
   utter_credit/fb_kredit:
   - buttons:
+    - payload: Arten von Krediten
+      title: Arten von Krediten
     - payload: Zurück
       title: Zurück
-    text: Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Du musst das Geld und die Zinsen in kleinen Raten zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst.
+    text: 'Wenn du dir Geld bei der Bank leihst, ist das ein **Kredit**. Ein Kredit wird auch **Darlehen** genannt. Du musst das Geld und die Zinsen  zurückzahlen. Die Zinsen sind die Gebühren dafür, dass du das Geld leihen darfst. Als Voraussetzung für einen Kredit, musst du…
+      - 18 Jahre alt sein
+      - ein Bankkonto besitzen
+      - regelmäßiges Einkommen haben
+      - und einen Vertrag unterschreiben'
   utter_banking/fb_kredit_karte:
   - buttons:
     - payload: Zurück
@@ -505,14 +513,14 @@ responses:
       title: Weitere Fachbegriffe
     - payload: Zurück
       title: Zurück
-    text: Das **Tagesgeldkonto** ist zum Ansparen von Geld gedacht. Du kannst von deinem Tagesgeldkonto Geld abheben. Dafür wird das Geld zunächst auf dein Girokonto übertragen. Zurzeit erhältst du nur geringe Zinsen.
+    text: Das **Tagesgeldkonto** ist zum Ansparen von Geld gedacht. Du kannst von deinem Tagesgeldkonto jederzeit Geld abheben. Dafür wird das Geld zunächst auf dein Girokonto übertragen. Zurzeit erhältst du nur geringe Zinsen.
   utter_banking/fb_festgeld:
   - buttons:
     - payload: fachbegriffe banking
       title: Weitere Fachbegriffe
     - payload: Zurück
       title: Zurück
-    text: Beim **Festgeld** vereinbarst du mit der Bank eine feste Laufzeit und Zinssätze. Je länger das Geld bei der Bank bleibt, desto höher ist der Zinssatz. Du kannst während der Laufzeit nicht an das Geld heran.
+    text: 'Beim **Festgeld** vereinbarst du mit der Bank eine feste Laufzeit und Zinssätze. Du kannst während der Laufzeit nicht an das Geld heran. Dafür erhältst du aber auch mehr Zinsen als bei einem Sparbuch oder Tagesgeldkonto.'
   utter_credit/fb_zwangsvollstreckung:
   - buttons:
     - payload: fachbegriffe credit
@@ -629,7 +637,7 @@ responses:
       title: Welche Banken gibt es
     - payload: Bezahlen
       title: Bezahlen
-    text: 'Banken in Deutschland haben die Aufgabe, die Geldversorgung zu regeln. Dazu zählen zum Beispiel Girokonten und Bargeld, aber auch Sparen, Kredite und Wertpapiere. '
+    text: 'Banken in Deutschland haben die Aufgabe, die Geldversorgung zu regeln. Dazu zählen zum Beispiel Girokonten und Bargeld, aber auch Sparen, Kredite und Wertpapiere.'
   utter_banking/bank_wofur:
   - buttons:
     - payload: Bezahlen
@@ -641,6 +649,28 @@ responses:
     - payload: Was ist ein Kredit
       title: Kredit
     text: Eine Bank oder Sparkasse unterstützt dich bei allen Dingen rund um die Themen Geld, Bezahlen und Sparen
+  utter_banking/konto_arten:
+  - buttons:
+      - payload: Basiskonto
+        title: Basiskonto
+      - payload: Girokonto
+        title: Girokonto
+      - payload: Guthabenkonto
+        title: Guthabenkonto
+      - payload: Wofür brauche ich eine Bank
+        title: Zurück
+    text: 'Es gibt viele verschiedenen Kontoarten. Mit diesen Konten kannst du bargeldlos Zahlungen tätigen und Geld empfangen.'
+  utter_banking/invest:
+  - buttons:
+      - payload: Festgeld
+        title: Festgeld
+      - payload: Sparbuch
+        title: Sparbuch
+      - payload: Tagesgeld
+        title: Tagesgeld
+      - payload: Wofür brauche ich eine Bank
+        title: Zurück
+    text: 'Wenn du mit dem Sparen anfangen willst, bieten sich diese drei Möglichkeiten an.'
   utter_banking/bank_welche:
   - buttons:
     - payload: Universalbanken
@@ -651,11 +681,11 @@ responses:
       title: Filialbanken
     - payload: Direktbanken
       title: Direktbanken
-    text: Du kannst verschiedene Arten von Banken unterscheiden. Es gibt *Universalbanken* und *Spezialbanken*. Zudem unterteilen Banken sich in *Filialbanken* und *Direktbanken*.
+    text: Du kannst verschiedene Arten von Banken unterscheiden. Es gibt *Universalbanken* und *Spezialbanken*. Zudem unterteilen sich Banken in *Filialbanken* und *Direktbanken*.
   utter_banking/bezahlen:
   - buttons:
     - payload: Klassische Bezahlverfahren
-      title: Klassiche Bezahlverfahren
+      title: Klassische Bezahlverfahren
     - payload: Online bezahlen
       title: Online bezahlen
     - payload: Mobiles bezahlen
@@ -669,7 +699,7 @@ responses:
       title: Vorkasse
     - payload: Rechnung
       title: Rechnung
-    - payload: Zurück
+    - payload: Klassische Bezahlverfahren
       title: Zurück
     text: 'Du kannst auf verschiedene Arten bezahlen. Klassische Möglichkeiten sind zum Beispiel diese hier'
   utter_banking/barzahlung:
@@ -689,7 +719,7 @@ responses:
     text: Viele Versandhändler schicken dir die Ware mit einer **Rechnung**. In der Rechnung steht eine Frist oder ein Datum, bis zu dem die Rechnung bezahlt werden muss. Dafür benötigst du ein Girokonto.
   utter_banking/online_bezahlen:
   - buttons:
-    - payload: Zurück
+    - payload: Bezahlen
       title: Zurück
     text: 'Bei **Einkäufen im Internet** kannst du oft auch über sogenannte Zahlungsdienstleister bezahlen. Die größten Anbieter heißen  PayPal, Klarna und Giropay. Du musst dich bei den Anbietern zum Beispiel mit deiner E-Mail-Adresse anmelden und dein Girokonto angeben.'
   utter_banking/mobiles_bezahlen:
@@ -713,16 +743,22 @@ responses:
       title: Sparkassen
     - payload: Volksbanken
       title: Volksbanken
+    - payload: zurück
+      title: Zurück
     text: '**Filialbanken** haben Geschäftsräume, die du aufsuchen kannst. Dort kannst du Geld abheben und dich persönlich beraten lassen. Die bekanntesten Filialbanken sind die Sparkassen und Volksbanken.'
   utter_banking/sparkassen:
   - buttons:
     - payload: Volksbanken
       title: Volksbanken
+    - payload: zurück
+      title: Zurück
     text: Es gibt über 500 **Sparkassen** in Deutschland. Sie haben 16.000 Filialen und arbeiten fast immer in öffentlichem Auftrag. Sie werden von den Städten und Gemeinden getragen.
   utter_banking/volksbanken:
   - buttons:
     - payload: Sparkassen
       title: Sparkassen
+    - payload: zurück
+      title: Zurück
     text: 'Die Volksbanken haben über 7.000 Filialen in Deutschland und gehören zu den Genossenschaftsbanken. Alle Kunden können Mitglieder der Bank werden. Mitglieder können an der Entwicklung der Bank mitbestimmen.'
   utter_banking/direktbanken:
   - buttons:
@@ -749,7 +785,7 @@ responses:
   - buttons:
     - payload: /enter_question_2
       title: Weiter
-    text: Super. Das ist richtig. Die Privat-Haftpflichtversicherung ist sehr wichtig. Dennoch gehört sie nicht zu den 5 Sozialversicherungen, die jeder Arbeitnehmer haben muss.
+    text: 'Die **Privat-Haftpflichtversicherung** ist sehr wichtig. Dennoch gehört sie nicht zu den 5 Sozialversicherungen, die jeder Arbeitnehmer haben muss. Das ist die richtige Lösung.'
   utter_q1_wrong_1:
   - buttons:
     - payload: /q1_right
@@ -783,22 +819,22 @@ responses:
   utter_q2_right:
   - buttons:
     - payload: /enter_question_3
-      title: Weiter
-    text: Korrekt! Diese Versicherung zahlt dir eine monatliche Rente, wenn du einen Unfall hast und in deinem Beruf nicht mehr arbeiten kannst.
+      title: Nächste Frage
+    text: 'Die Berufsunfähigkeitsversicherung zahlt dir eine monatliche Rente, wenn du einen Unfall hast und in deinem Beruf nicht mehr arbeiten kannst. Das ist die richtige Lösung.'
   utter_q2_wrong_1:
   - buttons:
     - payload: /q2_right
       title: Richtige Lösung
     - payload: /enter_question_3
-      title: Weiter
-    text: Diese Versicherung ist nicht wichtig. Das Gepäck lässt sich auch ohne Versicherung gut ersetzen.
+      title: Nächste Frage
+    text: 'Diese Versicherung ist nicht wichtig. Das Gepäck lässt sich auch ohne Versicherung gut ersetzen. Hier ist die richtige Lösung.'
   utter_q2_wrong_2:
   - buttons:
     - payload: /q2_right
       title: Richtige Lösung
     - payload: /enter_question_3
-      title: Weiter
-    text: Eine Brille lässt sich bei Verlust gut ersetzen. Eine Versicherung ist nicht zwingend erforderlich.
+      title: Nächste Frage
+    text: Eine Brille lässt sich bei Verlust gut ersetzen. Eine Versicherung ist nicht zwingend erforderlich. Schau hier nach der richtigen Lösung.
   utter_ask_question3:
   - buttons:
     - payload: q3_wrong_1
@@ -811,21 +847,19 @@ responses:
   utter_q3_right:
   - buttons:
     - payload: /enter_question_4
-      title: Weiter
-    text: Richtig gewählt!
+      title: Nächste Frage
+    text: Toll, du hast die richtige Antwort gewählt!
   utter_q3_wrong_1:
   - buttons:
-    - payload: q3_right
-      title: Richtige Lösung
     - payload: /enter_question_4
-      title: Weiter
-    text: Die Schäden an beiden Fahrzeugen werden nur von einer Vollkasko-Versicherung übernommen. Wenn du diesen Schutz haben möchtest, ist der Beitrag deutlich höher als bei einer normalen KFZ-Haftpflichtversicherung.
+      title: Nächste Frage
+    text: Die Schäden an beiden Fahrzeugen werden nur von KFZ-Haftpflicht und Vollkasko-Versicherung übernommen. Wenn du diesen Schutz haben möchtest, ist der Beitrag deutlich höher als bei einer normalen KFZ-Haftpflichtversicherung.
   utter_q3_wrong_2:
   - buttons:
     - payload: q3_right
       title: Richtige Lösung
     - payload: /enter_question_4
-      title: Weiter
+      title: Nächste Frage
     text: In diesem Beispiel hast du den Unfall verursacht. Deshalb zahlt deine Haftpflichtversicherung den Schaden beim anderen Auto. Die Reparaturen an deinem Auto musst du selbst bezahlen.
   utter_ask_question4:
   - buttons:
@@ -833,36 +867,36 @@ responses:
       title: Für einen Kredit musst du ein Bankkonto besitzen. Hier wird dir dein Kredit zur Verfügung gestellt.
     - payload: q4_wrong_2
       title: Damit du einen Kredit erhalten kannst, musst du ein regelmäßiges Einkommen nachweisen.
-    - payload: q4_right
-      title: Jeder Kreditgeber ist verpflichtet, einen schriftlichen Vertrag mit dir zu schließen, in dem die Laufzeit, die Zinsen und die Rückzahlung des Kredits vereinbart werden.
     - payload: q4_wrong_3
+      title: Jeder Kreditgeber ist verpflichtet, einen schriftlichen Vertrag mit dir zu schließen, in dem die Laufzeit, die Zinsen und die Rückzahlung des Kredits vereinbart werden.
+    - payload: q4_right
       title: Um einen Kredit zu beantragen, musst du mindestens 21 Jahre alt sein.
     text: Du möchtest einen Kredit aufnehmen. Dafür müssen ein paar Voraussetzungen vorliegen. Welche der folgenden Antworten stimmt **nicht**?
   utter_q4_right:
   - buttons:
     - payload: /enter_question_5
-      title: Weiter
-    text: 'So ist es. Für einen Kreditantrag musst du volljährig sein. Das bist du in Deutschland mit 18 Jahren.'
+      title: Nächste Frage
+    text: 'Für einen Kreditantrag musst du volljährig sein. Das bist du in Deutschland mit 18 Jahren. Das ist die richtige Lösung'
   utter_q4_wrong_1:
   - buttons:
     - payload: /q4_right
       title: Richtige Lösung
     - payload: /enter_question_5
-      title: Weiter
+      title: Nächste Frage
     text: 'Banken achten bei der Kreditvergabe darauf, dass du ein regelmäßiges Einkommen hast. Sie möchten den Kreditbetrag und die Zinsen zurück erhalten.'
   utter_q4_wrong_2:
   - buttons:
     - payload: /q4_right
       title: Richtige Lösung
     - payload: /enter_question_5
-      title: Weiter
+      title: Nächste Frage
     text: 'In Deutschland sind die Banken verpflichtet, einen schriftlichen Kreditvertrag auszustellen, in dem die Bedingungen festgehalten werden.'
   utter_q4_wrong_3:
   - buttons:
     - payload: /q4_right
       title: Richtige Lösung
     - payload: /enter_question_5
-      title: Weiter
+      title: Nächste Frage
     text: 'Ein Bankkonto ist für die Bereitstellung des Kredits notwendig.'
   utter_ask_question5:
   - buttons:
@@ -882,7 +916,7 @@ responses:
       title: Richtige Lösung
     - payload: /enter_question_6
       title: Weiter
-    text: 'Mit Geldscheinen und Münzen kannst du fast immer und überall bezahlen. Dennoch ist mit Mobiles Bezahlen etwas anderes gemeint. Antwort 1 ist richtig.'
+    text: 'Mit Geldscheinen und Münzen kannst du fast immer und überall bezahlen. Dennoch ist mit Mobiles Bezahlen etwas anderes gemeint. Antwort 2 ist richtig.'
   utter_ask_question6:
   - buttons:
     - payload: q6_wrong_1
@@ -899,7 +933,7 @@ responses:
   - buttons:
     - payload: /q6_right
       title: Richtige Lösung
-    text: 'Hier wird das Sepa-Lastschrift Mandat beschrieben, Dabei werden die Höhe des Betrages und der Zeitpunkt der Abbuchung vom Empfänger bestimmt.'
+    text: 'Hier wird das Sepa-Lastschrift Mandat beschrieben, Dabei werden die Höhe des Betrages und der Zeitpunkt der Abbuchung vom Empfänger bestimmt. Richtig wäre Antwort 2.'
   utter_start_quiz:
   - buttons:
     - payload: /enter_question_1
@@ -919,7 +953,10 @@ responses:
       title: Weitere Unterstützung
     text: Geld, Versicherungen und Kredite sind schwierige Themen, die auch Probleme mit sich bringen können. Zum Glück gibt es auch Einrichtungen, bei denen du Unterstützung und Beratung bekommen kannst. Hier sind ein paar Tipps
   utter_support/ueberschuldung:
-  - text: |-
+  - buttons:
+    - payload: Zurück
+      title: Zurück
+    text: |-
       Es gibt viele Menschen, die Schulden haben. Und es gibt viele Angebote für eine Unterstützung. Hier findest du weitere Informationen zu kostenlosen Beratungen.
       - [Schuldnerberatung Diakonie](https://www.diakonie.de/wissen-kompakt/schuldnerberatung/)
       - [Schuldnerberatung Caritas](https://www.caritas.de/hilfeundberatung/onlineberatung/schuldnerberatung/start)
@@ -956,8 +993,8 @@ responses:
     - payload: Verbraucherzentrale
       title: Verbraucherzentrale
     - payload: Alfa-Telefon
-      title: Alfa-Telefon
-    text: Weitere Untersützungsmöglichkeiten findest du hier
+      title: ALFA-Telefon
+    text: Weitere Unterstützungsmöglichkeiten findest du hier
   utter_support/verbraucherzentrale:
   - buttons:
     - payload: Zurück

@@ -29,6 +29,9 @@ nlu:
     - Hey, ich bin Simon
     - Hallo!
     - Hallo Alfa-Bot
+    - Anfang
+    - Start
+    - Zum Start
     - Hallo Bot
     - Hi there!
     - Guten Morgen
@@ -765,6 +768,17 @@ nlu:
     - Was ist wenn ich nicht genug Geld auf dem Konto für eine Lastschrift habe?
     - Was passiert, wenn man von leerem Konto Geld einzieht?
     - Wann kommt es zu einer Rücklastschrift?
+- intent: banking/konto_arten
+  examples: |
+    - Kontoarten
+    - Arten von Konten
+    - Welche Konten gibt es?
+    - Konten
+- intent: banking/invest
+  examples: |
+    - Investieren
+    - Sparen anfangen
+    - Geld anlegen
 - intent: credit/fb_mahnverfahren
   examples: |
     - Was ist ein Mahnverfahren?
@@ -1239,4 +1253,6 @@ nlu:
     - Quiz beginnen
     - Quiz start
     - Starte das Quiz
+    - Quiz
+    - Quiz Anfangen
     - Ich möchte das Finanzquiz starten
