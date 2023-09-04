@@ -78,14 +78,14 @@ Container bauen: `docker build -t repo/image:tag .`
 * Wahl-Bot: `docker build -t sjproost/alfa-wahlbot:1.0.0 .`
 * WM-Bot: `docker build -t sjproost/alfa-wmbot:1.2.0 .`
 * Lern-Bot: `docker build -t sjproost/alfa-lernbot:1.1.0 .`
-* Finanz-Bot: `docker build -t sjproost/alfa-finanzbot:1.0.0 .`
+* Finanz-Bot: `docker build -t sjproost/alfa-finanzbot:1.0.1 .`
 
 Container starten und interaktiv (-it) mit shell nutzen 
 `docker run -it -p 8080:5005 -v $(pwd):/app repo/image:tag shell`
 
 
 #### Custom Action Container
-Aktuelle Version: 3.2.4
+Aktuelle Version: 3.3.0
 
 Container bauen: `docker build -f Dockerfile.customAction -t sjproost/alfabot-ca:tag .`
 

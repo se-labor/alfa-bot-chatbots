@@ -136,11 +136,9 @@ responses:
       title: Über Kredite
     - payload: Was sind Versicherungen?
       title: Über Versicherungen
-    - payload: Beratungsmöglichkeiten?
-      title: Beratungsmöglichkeiten
-    text: Willkommen zum Finanz-Bot. Ich helfe dir gerne mit einfachen Erklärungen zu Fragen rund um Finanzen. Tippe auf den Lautsprecher, damit ich dir meine Nachrichten vorlese. Schreibe mir "Zurück", damit ich meine letzte Antwort wiederhole.
+    text: Willkommen zum Finanzbot. Ich helfe dir gerne mit einfachen Erklärungen zu Fragen rund um Finanzen. Tippe auf den Lautsprecher, damit ich dir meine Nachrichten vorlese.
   utter_under_construction:
-  - text: Derzeit bin ich noch im Training. Probiere gerne aus, was ich bereits kann. Danach kannst du dein neues Wissen bei unserem kleinen Finanzquiz ausprobieren. Schreibe mir dazu einfach "Quiz". Wenn du ein Tester bist, notiere dir, was noch nicht wie erwartet funktioniert.
+  - text: Derzeit bin ich noch im Training. Probiere gerne aus, was ich bereits kann. Wenn du ein Tester bist, notiere dir, was noch nicht wie erwartet funktioniert.
   utter_goodbye:
   - text: Machs gut!
   - text: Bis zum nächsten Mal!
@@ -324,14 +322,18 @@ responses:
   - buttons:
     - payload: Teilkasko
       title: Teilkasko
+    - payload: Fachbegriffe Versicherungen
+      title: Zurück
     text: Die **Vollkaskoversicherung** ist eine freiwillige Versicherung für dein Auto. Sie ersetzt fast alle Schäden am eigenen Auto. Auch wenn du den Unfall selbst verursacht hast.
   utter_insurance/fb_teilkasko:
   - buttons:
     - payload: Vollkasko
       title: Vollkasko
+    - payload: Fachbegriffe Versicherungen
+      title: Zurück
     text: Die **Teilkaskoversicherung** ist eine freiwillige Versicherung für dein Auto. Sie ergänzt die KFZ-Haftpflichtversicherung. Du hast dein Auto dann zusätzlich gegen Diebstahl, Wetterschäden, Steinschlag oder Brandschäden geschützt.
   utter_fachbegriffe_versicherungen:
-  - text: Hier findest du wichtige Begriffe zu Versicherungen. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.
+  - text: 'Hier sind zufällig ausgewählte Fachbegriffe zu Versicherungen. Wenn du möchtest, lass dir eine *neue Auswahl* oder *alle Fachbegriffe* zu diesem Thema anzeigen.'
   utter_insurance/fb_basistarif:
   - buttons:
     - payload: fachbegriffe versicherung
@@ -383,9 +385,9 @@ responses:
       title: Weitere Fachbegriffe
     text: Eine Versicherung berechnet immer, wie hoch die Wahrscheinlichkeit ist, dass ein Schadensfall eintritt und sie zahlen müssen. Das ist das Risiko. Je höher das Risiko, desto teurer wird die Versicherung.
   utter_fachbegriffe_credit:
-  - text: Hier findest du wichtige Begriffe, die etwas mit Krediten zu tun haben. Wenn du möchtest, lasse dir die ganze Liste anzeigen.
+  - text: 'Hier sind zufällig ausgewählte Fachbegriffe zu Krediten. Wenn du möchtest, lass dir eine *neue Auswahl* oder *alle Fachbegriffe* zu diesem Thema anzeigen.'
   utter_fachbegriffe_banking:
-  - text: Hier findest du wichtige Begriffe im Bereich Geld und Banken. Wenn du möchtest, kannst du dir auch die ganze Liste anzeigen lassen.
+  - text: 'Hier sind zufällig ausgewählte Fachbegriffe zu Banken und Geld. Wenn du möchtest, lass dir eine *neue Auswahl* oder *alle Fachbegriffe* zu diesem Thema anzeigen.'
   utter_banking/fb_basis_konto:
   - buttons:
     - payload: fachbegriffe banking

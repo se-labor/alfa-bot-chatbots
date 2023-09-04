@@ -70,14 +70,16 @@ def randomSelection(pool: dict, size: int) -> list:
     buttons = getButtonsFromDict(sample)
     return buttons
 
+
 def randomise_fail_answer() -> str:
     fail_answers = ["Leider die falsche Lösung", "Leider falsch", "Das ist nicht richtig",
-                      "Tut mir Leid, das ist nicht korrekt."]
+                    "Tut mir Leid, das ist nicht korrekt."]
     fail_reactions = ["!", ".", " 😊.", " 👍."]
     random_answer = random.choice(fail_answers)
     random_reaction = random.choice(fail_reactions)
     msg = random_answer + random_reaction
     return msg
+
 
 # Generate buttons for all terms subset of insurance terms
 class ActionAllSortOfTerms(Action):
@@ -103,7 +105,7 @@ class ActionGetRandomInsuranceTerms(Action):
         randomButtons = 3
         buttons = randomSelection(termsInsurance, randomButtons)
         buttons.append({"title": "Neue Auswahl", "payload": "/random_insurance_terms"})
-        dispatcher.utter_message(text="Hier ist eine weitere Auswahl an Fachbegriffen", buttons=buttons)
+        dispatcher.utter_message(text="Hier sind zufällig ausgewählte Fachbegriffe. Wenn du möchtest, lass dir eine *neue Auswahl* oder *alle Fachbegriffe* anzeigen.", buttons=buttons)
         return []
 
 
@@ -148,7 +150,7 @@ class ActionGetRandomCreditTerms(Action):
         randomButtons = 3
         buttons = randomSelection(termsCredit, randomButtons)
         buttons.append({"title": "Neue Auswahl", "payload": "/random_credit_terms"})
-        dispatcher.utter_message(text="Hier ist eine weitere Auswahl an Fachbegriffen", buttons=buttons)
+        dispatcher.utter_message(text="Hier sind zufällig ausgewählte Fachbegriffe. Wenn du möchtest, lass dir eine *neue Auswahl* oder *alle Fachbegriffe* anzeigen.", buttons=buttons)
         return []
 
 
@@ -193,7 +195,7 @@ class ActionGetRandomBankingTerms(Action):
         randomButtons = 3
         buttons = randomSelection(termsBanking, randomButtons)
         buttons.append({"title": "Neue Auswahl", "payload": "/random_banking_terms"})
-        dispatcher.utter_message(text="Hier ist eine weitere Auswahl an Fachbegriffen", buttons=buttons)
+        dispatcher.utter_message(text="Hier sind zufällig ausgewählte Fachbegriffe. Wenn du möchtest, lass dir eine *neue Auswahl* oder *alle Fachbegriffe* zu diesem Thema anzeigen.", buttons=buttons)
         return []
 
 
@@ -222,7 +224,7 @@ class ActionGetAllBankingTerms(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         buttons = getButtonsFromDict(dict(sorted(termsBanking.items())))
-        dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe für Banken & Geld, die ich dir anbieten kann:",
+        dispatcher.utter_message(text=f"Hier sind alle Fachbegriffe für Banken und Geld, die ich dir anbieten kann:",
                                  buttons=buttons)
         return []
 
@@ -254,13 +256,17 @@ class ActionRepeat(Action):
         user_ignore_count = 3
         count = 0
         tracker_list = []
-
         # filter user utterances
+        needle = 'ist eine freiwillige Versicherung für dein Auto'
         while user_ignore_count > 0:
             event = tracker.events[count].get('event')
             if event == 'user':
                 user_ignore_count = user_ignore_count - 1
             if event == 'bot':
+                if (needle in (tracker.events[count].get('text'))):
+                    dispatcher.utter_message(response='utter_insurance/versicherungen_was')
+                    return []
+
                 tracker_list.append(tracker.events[count])
             count = count - 1
 
@@ -277,12 +283,13 @@ class ActionRepeat(Action):
 
         return []
 
+
 # Validate finance quiz question 1
 class QuizQuestion1Form(FormValidationAction):
     def name(self) -> Text:
         return "validate_quiz_question1_form"
 
-    def validate_question1     (
+    def validate_question1(
             self,
             slot_value: Any,
             dispatcher: CollectingDispatcher,
@@ -290,14 +297,22 @@ class QuizQuestion1Form(FormValidationAction):
             domain: DomainDict,
             firstTry=bool(True)
     ) -> Dict[Text, Any]:
-        solution_question = str(slot_value)
-        if solution_question != 'q1_right':
-            res_string = f"utter_{solution_question}"
-            dispatcher.utter_message(response=res_string)
+        solution_question = str(slot_value).lower()
+        if solution_question == 'q1_right' or 'haftpflicht' in solution_question:
+            dispatcher.utter_message(response="utter_q1_right")
             return {"question1": slot_value}
-        dispatcher.utter_message(
-            response="utter_q1_right")
-        return {"question1": slot_value}
+        # if solution_question != 'q1_right' or 'haftpflicht' not in solution_question:
+        else:
+            if 'q1_wrong_' in solution_question:
+                res_string = f"utter_{solution_question}"
+                dispatcher.utter_message(response=res_string)
+                return {"question1": slot_value}
+            else:
+                answer = "Leider nein"
+                buttons = ({"title": "Richtige Lösung", "payload": "/q1_right"},
+                           {"title": "Weiter", "payload": "enter_question_2"})
+                dispatcher.utter_message(text=answer, buttons=buttons)
+                return {"question1": slot_value}
 
 
 # Validate finance quiz question 2
@@ -305,7 +320,7 @@ class QuizQuestion2Form(FormValidationAction):
     def name(self) -> Text:
         return "validate_quiz_question2_form"
 
-    def validate_question2     (
+    def validate_question2(
             self,
             slot_value: Any,
             dispatcher: CollectingDispatcher,
@@ -313,22 +328,28 @@ class QuizQuestion2Form(FormValidationAction):
             domain: DomainDict,
             firstTry=bool(True)
     ) -> Dict[Text, Any]:
-        solution_question = str(slot_value)
-        if solution_question != 'q2_right':
-            res_string = f"utter_{solution_question}"
-            dispatcher.utter_message(response=res_string)
+        solution_question = str(slot_value).lower()
+        if solution_question == 'q2_right' or 'unfähigkeit' in solution_question:
+            dispatcher.utter_message(response="utter_q2_right")
             return {"question2": slot_value}
-        dispatcher.utter_message(
-            response="utter_q2_right")
-        return {"question2": slot_value}
-    
-    
+        else:
+            if 'q2_wrong_' in solution_question:
+                res_string = f"utter_{solution_question}"
+                dispatcher.utter_message(response=res_string)
+            else:
+                answer = "Leider nein"
+                buttons = ({"title": "Richtige Lösung", "payload": "/q2_right"},
+                           {"title": "Weiter", "payload": "enter_question_3"})
+                dispatcher.utter_message(text=answer, buttons=buttons)
+            return {"question2": slot_value}
+
+
 # Validate finance quiz question 3
 class QuizQuestion3Form(FormValidationAction):
     def name(self) -> Text:
         return "validate_quiz_question3_form"
 
-    def validate_question3     (
+    def validate_question3(
             self,
             slot_value: Any,
             dispatcher: CollectingDispatcher,
@@ -336,22 +357,28 @@ class QuizQuestion3Form(FormValidationAction):
             domain: DomainDict,
             firstTry=bool(True)
     ) -> Dict[Text, Any]:
-        solution_question = str(slot_value)
-        if solution_question != 'q3_right':
-            res_string = f"utter_{solution_question}"
-            dispatcher.utter_message(response=res_string)
+        solution_question = str(slot_value).lower()
+        if solution_question == 'q3_right' or 'schäden an deinem fahrzeug bezahlt sie nicht' in solution_question:
+            dispatcher.utter_message(response="utter_q3_right")
             return {"question3": slot_value}
-        dispatcher.utter_message(
-            response="utter_q3_right")
-        return {"question3": slot_value}
-    
-    
+        else:
+            if 'q3_wrong_' in solution_question:
+                res_string = f"utter_{solution_question}"
+                dispatcher.utter_message(response=res_string)
+            else:
+                answer = "Leider nein"
+                buttons = ({"title": "Richtige Lösung", "payload": "/q3_right"},
+                           {"title": "Weiter", "payload": "enter_question_4"})
+                dispatcher.utter_message(text=answer, buttons=buttons)
+            return {"question3": slot_value}
+
+
 # Validate finance quiz question 4
 class QuizQuestion4Form(FormValidationAction):
     def name(self) -> Text:
         return "validate_quiz_question4_form"
 
-    def validate_question4     (
+    def validate_question4(
             self,
             slot_value: Any,
             dispatcher: CollectingDispatcher,
@@ -360,21 +387,27 @@ class QuizQuestion4Form(FormValidationAction):
             firstTry=bool(True)
     ) -> Dict[Text, Any]:
         solution_question = str(slot_value)
-        if solution_question != 'q4_right':
-            res_string = f"utter_{solution_question}"
-            dispatcher.utter_message(response=res_string)
+        if solution_question == 'q4_right' or 'kreditgeber ist verpflichtet' in solution_question:
+            dispatcher.utter_message(response="utter_q4_right")
             return {"question4": slot_value}
-        dispatcher.utter_message(
-            response="utter_q4_right")
-        return {"question4": slot_value}
-    
-    
+        else:
+            if 'q4_wrong_' in solution_question:
+                res_string = f"utter_{solution_question}"
+                dispatcher.utter_message(response=res_string)
+            else:
+                answer = "Leider nein"
+                buttons = ({"title": "Richtige Lösung", "payload": "/q4_right"},
+                           {"title": "Weiter", "payload": "enter_question_5"})
+                dispatcher.utter_message(text=answer, buttons=buttons)
+            return {"question4": slot_value}
+
+
 # Validate finance quiz question 5
 class QuizQuestion5Form(FormValidationAction):
     def name(self) -> Text:
         return "validate_quiz_question5_form"
 
-    def validate_question5     (
+    def validate_question5(
             self,
             slot_value: Any,
             dispatcher: CollectingDispatcher,
@@ -383,21 +416,27 @@ class QuizQuestion5Form(FormValidationAction):
             firstTry=bool(True)
     ) -> Dict[Text, Any]:
         solution_question = str(slot_value)
-        if solution_question != 'q5_right':
-            res_string = f"utter_{solution_question}"
-            dispatcher.utter_message(response=res_string)
+        if solution_question == 'q5_right' or 'direkt an der kasse bezahlen' in solution_question:
+            dispatcher.utter_message(response="utter_q5_right")
             return {"question5": slot_value}
-        dispatcher.utter_message(
-            response="utter_q5_right")
-        return {"question5": slot_value}
-    
-    
+        else:
+            if 'q5_wrong_' in solution_question:
+                res_string = f"utter_{solution_question}"
+                dispatcher.utter_message(response=res_string)
+            else:
+                answer = "Leider nein"
+                buttons = ({"title": "Richtige Lösung", "payload": "/q5_right"},
+                           {"title": "Weiter", "payload": "enter_question_6"})
+                dispatcher.utter_message(text=answer, buttons=buttons)
+            return {"question5": slot_value}
+
+
 # Validate finance quiz question 6
 class QuizQuestion6Form(FormValidationAction):
     def name(self) -> Text:
         return "validate_quiz_question6_form"
 
-    def validate_question6     (
+    def validate_question6(
             self,
             slot_value: Any,
             dispatcher: CollectingDispatcher,
@@ -406,13 +445,19 @@ class QuizQuestion6Form(FormValidationAction):
             firstTry=bool(True)
     ) -> Dict[Text, Any]:
         solution_question = str(slot_value)
-        if solution_question != 'q6_right':
-            res_string = f"utter_{solution_question}"
-            dispatcher.utter_message(response=res_string)
+        if solution_question == 'q6_right' or 'regelmäßig den gleichen betrag' in solution_question:
+            dispatcher.utter_message(response="utter_q6_right")
             return {"question6": slot_value}
-        dispatcher.utter_message(
-            response="utter_q6_right")
-        return {"question6": slot_value}
+        else:
+            if 'q6_wrong_' in solution_question:
+                res_string = f"utter_{solution_question}"
+                dispatcher.utter_message(response=res_string)
+            else:
+                answer = "Leider nein"
+                buttons = ({"title": "Richtige Lösung", "payload": "/q6_right"})
+                dispatcher.utter_message(text=answer, buttons=buttons)
+            return {"question6": slot_value}
+
 
 class ActionClearQuizSlots(Action):
     def name(self) -> Text:
