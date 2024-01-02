@@ -1,3 +1,11 @@
+##
+#  bot: learning | domain.yml
+#  Project: ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 version: '3.1'
 session_config:
   session_expiration_time: 60
@@ -513,7 +521,7 @@ responses:
   utter_iamabot:
   - text: Ich bin ein Chatbot. Meine Entwickler sind die **FH Münster** und der **Bundesverband Alphabetisierung und Grundbildung**.
   utter_kontakt:
-  - text: Meine Entwickler erreichst du im [Web](https://www.alfa-bot.de) oder schreibe ihnen eine [Mail](mailto:r.haeder@alphabetisierung.de).
+  - text: Meine Entwickler erreichst du im [Web](https://www.alfa-bot.de) oder schreibe ihnen eine [Mail](mailto:your-own@addr.de).
   utter_help:
   - buttons:
     - payload: /overview
@@ -535,7 +543,7 @@ responses:
     text: |
       Wenn du möchtest, zeige ich dir hier eine Liste aller Wortpaare und aller Fakten, die ich für dich habe. Ich zeige dir aber auch gerne eine zufällige Auswahl.
   utter_out_of_scope:
-  - text: Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder kontaktiere meine Entwickler. Du findest sie [online](https://www.alfa-bot.de) oder schreib ihnen eine [Mail](mailto:r.haeder@alphabetisierung.de).
+  - text: Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder kontaktiere meine Entwickler. Du findest sie [online](https://www.alfa-bot.de) oder schreib ihnen eine [Mail](mailto:your-own@addr.de).
   utter_anything_else:
   - text: Alles klar. Kann ich sonst noch etwas für dich tun?
   utter_interruption:
@@ -563,7 +571,7 @@ responses:
     text: |
       Nimm **wie**, wenn du sagen willst, dass etwas *gleich* ist.
       "Dieser Schrank ist so groß wie ich."
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/12/so_gross_wie.png
+    image: https://www.your-own.domain/upload2022/12/so_gross_wie.png
   utter_explain_like:
   - buttons:
     - payload: /go_on
@@ -571,7 +579,7 @@ responses:
     text: |
       Nimm **als**, wenn du sagen willst, dass etwas *ungleich* ist.
       Beispiel: "Ich bin größer als ein Rasenmäher.
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/12/groesser_als.png
+    image: https://www.your-own.domain/upload2022/12/groesser_als.png
   utter_test_as_wrong:
   - text: |
       Probiere es noch mal. Dieser Satz sagt, dass etwas *ungleich* ist.
@@ -645,7 +653,7 @@ responses:
   utter_test_dasgleiche_wrong:
   - text: Nicht ganz. Da der Nachbar bereits ein Fahrrad gekauft hat, muss ich mir ein *weiteres* Exemplar gekauft haben.
   utter_success_same:
-  - image: https://www.alfa-bot.de/wp-content/uploads/2023/01/dasselbe_dasgleiche.png
+  - image: https://www.your-own.domain/upload2023/01/dasselbe_dasgleiche.png
     text: Super, du hast es raus. Natürlich gilt das auch für die Wörter *derselbe / dieselbe* und *der gleiche / die gleiche*.
   utter_enter_seemingly_apparently:
   - buttons:
@@ -816,7 +824,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/waage.png
+    image: https://www.your-own.domain/upload2023/01/waage.png
     text: |
       Eine **Waage** ist ein Messgerät. Damit misst man, *wie schwer* etwas ist. **Waage** ist übrigens ein Was-Wort. Bestimmt hast du auch eine Waage im Badezimmer oder in der Küche. Beispiel:
       "Ihr Gewicht kontrollieren Sie mit einer Personen-Waage."
@@ -865,7 +873,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/launisch.png
+    image: https://www.your-own.domain/upload2023/01/launisch.png
     text: |
       **Launisch** verwendest du, wenn jemand *von seinen Launen bestimmt* ist. Man meint damit meistens, dass eine Person oft *schlecht gelaunt* oder *unberechenbar* ist. Beispiel:
       "Opa konnte sehr launisch sein und wurde schnell wütend."
@@ -873,7 +881,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/launig.png
+    image: https://www.your-own.domain/upload2023/01/launig.png
     text: |
       Nimm **launig**, wenn etwas oder jemand  *witzig, gut gelaunt* oder *charmant* ist. Beispiel: 
       "Sie hielt zur Eröffnung eine launige Rede."
@@ -914,13 +922,13 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/ein_paar.png
+    image: https://www.your-own.domain/upload2023/01/ein_paar.png
     text: 'Schreibe **ein paar** klein, wenn du eine *ungenaue Anzahl* meinst. Beispiel: "Ich habe ein paar Zitronen gekauft." Anders könntest du auch durch *mehrere*, oder *einige* sagen.'
   utter_explain_couple:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/paar.png
+    image: https://www.your-own.domain/upload2023/01/paar.png
     text: 'Schreibe **ein Paar** groß, wenn du *genau zwei zusammengehörende* Dinge meinst. Beispiel: "Ich habe nur noch ein Paar Socken." oder "Max und Julia sind ein tolles Paar."'
   utter_ask_couple:
   - buttons:
@@ -959,7 +967,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/saiten.png
+    image: https://www.your-own.domain/upload2023/01/saiten.png
     text: |
       Eine **Saite** ist *ein dünner Strang*, den es aus verschiedenen Materialien gibt. Oft sind Saiten aus Plastik oder Metall. Besonders bekannt sind Saiten bei Gitarren, Geigen oder Tennisschlägern. Beispiel:
       "Mit den neuen Saiten klingt meine Gitarre viel besser!"
@@ -967,7 +975,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/seiten.png
+    image: https://www.your-own.domain/upload2023/01/seiten.png
     text: |
       Das Wort **Seite** nimmst du zum Beispiel, wenn du über *Bücher* oder *Hefte* sprichst. Auch das Wort *Webseite* kommt daher. Die ersten Webseiten im Internet waren so gestaltet, wie die Seiten von Büchern. Zusätzlich nimmst du **Seite**, wenn du über Flächen sprichst. Beispiele:
       "Ich lese im Buch gerade auf Seite 153."
@@ -1009,7 +1017,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/gewaehr.png
+    image: https://www.your-own.domain/upload2023/01/gewaehr.png
     text: |
       **Gewähr** verwendest du wenn du *garantierst*, dass eine Sache so ist, wie du es sagst. Davon kommt auch das Wort *Gewährleistung*. Beispiel:
       "Der Händler gibt mir die Gewähr, dass der Staubsauger vollkommen in Ordnung ist."
@@ -1017,7 +1025,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/gewehr.png
+    image: https://www.your-own.domain/upload2023/01/gewehr.png
     text: |
       Nimm **Gewehr** wenn du eine *Waffe* meinst, wie Jäger oder Soldaten sie benutzen.
   utter_ask_warranty:
@@ -1057,7 +1065,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/scheck.png
+    image: https://www.your-own.domain/upload2023/01/scheck.png
     text: |
       Mit einem **Scheck** kann man *bezahlen*. Du kannst mit einem Scheck zur Bank gehen. Die Bank zahlt dir das Geld aus. Beispiel:
       "Am Ende des Monats bekomme ich von meinem Chef einen Scheck und hole mir damit meinen Lohn ab."
@@ -1065,7 +1073,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/03/checkliste.png
+    image: https://www.your-own.domain/upload2023/03/checkliste.png
     text: |
       Nimm **Check**, wenn man etwas prüft. Beispiel:
       "Das Flugzeug kann erst starten, wenn der Pilot den Sicherheits-Check gemacht hat."
@@ -1106,7 +1114,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/malen.png
+    image: https://www.your-own.domain/upload2023/01/malen.png
     text: |
       Nimm **malen**, wenn es darum geht, *Bilder* zu machen oder auch Wände mit *Farbe* zu versehen. Etwa mit Stift oder Pinsel. Beispiel: 
       "Ich male ein Bild für Papa."
@@ -1114,7 +1122,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/mahlen.png
+    image: https://www.your-own.domain/upload2023/01/mahlen.png
     text: |
       Nimm **mahlen**, wenn etwas *zerkleinert* wird, indem man es reibt oder zerquetscht. Beispiel: "Ich mahle meinen Kaffee gerne frisch in einer Kaffeemühle."
   utter_ask_paint:
@@ -1396,7 +1404,7 @@ responses:
   - buttons:
     - payload: Weiter
       title: Weiter
-    image: https://www.alfa-bot.de/wp-content/uploads/2023/01/meer.png
+    image: https://www.your-own.domain/upload2023/01/meer.png
     text: |
       Nimm **Meer**, wenn du von den großen Gewässern wie der Nordsee, Ostsee, dem Mittelmeer sprichst. Beispiel:
       "Wir fahren im Urlaub nach Büsum ans Meer."

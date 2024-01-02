@@ -1,3 +1,11 @@
+##
+#  bot: finance | domain.yml
+#  Project: ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 version: '3.1'
 session_config:
   session_expiration_time: 60
@@ -144,9 +152,9 @@ responses:
   - text: Bis zum nächsten Mal!
   - text: Bis bald!
   utter_kontakt:
-  - text: Meine Entwickler erreichst du im [Web](https://www.alfa-bot.de) oder schreibe ihnen eine [Mail](mailto:r.haeder@alphabetisierung.de).
+  - text: Meine Entwickler erreichst du im [Web](https://www.alfa-bot.de) oder schreibe ihnen eine [Mail](mailto:your-own@addr.de).
   utter_out_of_scope:
-  - text: Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder kontaktiere meine Entwickler. Du findest sie [online](https://www.alfa-bot.de) oder schreib ihnen eine [Mail](mailto:r.haeder@alphabetisierung.de).
+  - text: Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder kontaktiere meine Entwickler. Du findest sie [online](https://www.alfa-bot.de) oder schreib ihnen eine [Mail](mailto:your-own@addr.de).
   utter_anything_else:
   - text: Alles klar. Kann ich sonst noch etwas für dich tun?
   utter_interruption:

@@ -1,3 +1,11 @@
+##
+#  A01_election_actions.py
+#  ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 from typing import Any, Text, Dict
 import pandas as pd
 import requests
@@ -46,9 +54,9 @@ def get_poll_station(city: str, stationnumber: int) -> Pollingstation:
     muenster: List[str] = ["Münster", "münster", "Muenster", "muenster", "MS", "ms"]
     response = None
 
-    # open csv-file
-    url_ms = 'https://www.alfa-bot.de/wp-content/uploads/2022/03/wahllokaleMS.csv'
-    url_k = 'https://www.alfa-bot.de/wp-content/uploads/2022/04/wahllokale_k.csv'
+    # open csv-file - Edit your own URL
+    url_ms = 'https://url.to.upload/wahllokaleMS.csv'
+    url_k = 'https://url.to.upload/wahllokale_k.csv'
 
     if city in cologne:
         response = requests.get(url_k)

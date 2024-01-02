@@ -1,3 +1,11 @@
+##
+#  A02_soccer_actions.py
+#  ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 from typing import Any, Text, Dict
 import arrow
 import pandas as pd
@@ -508,7 +516,7 @@ class ActionTellTeams(Action):
         msg = 'Tut mir Leid, ich habe leider keine Antwort auf deine Frage'
 
         try:
-            create_csv_from_url('https://www.alfa-bot.de/wp-content/uploads/2022/11/gruppenWM2022.csv')
+            create_csv_from_url('https://your.own.url/gruppenWM2022.csv')
 
             df = pd.read_csv('tempfile.csv', sep=';', header=0)
             res = get_teams(wm_final_group, df)
@@ -540,7 +548,7 @@ class ActionTellGroup(Action):
             return [SlotSet("finals_team", None), SlotSet("group", str(res))]
 
         try:
-            create_csv_from_url('https://www.alfa-bot.de/wp-content/uploads/2022/11/gruppenWM2022.csv')
+            create_csv_from_url('https://your.own.url/gruppenWM2022.csv')
             df = pd.read_csv('tempfile.csv', sep=';', header=0)
             res = get_group(team, df)
 

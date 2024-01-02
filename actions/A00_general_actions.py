@@ -1,3 +1,11 @@
+##
+#  A00_general_actions.py
+#  ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 # This files contains your custom actions which can be used to run
 # custom Python code.
 #

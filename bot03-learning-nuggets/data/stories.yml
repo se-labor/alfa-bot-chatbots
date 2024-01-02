@@ -1,3 +1,11 @@
+##
+#  bot: learning | stories.yml
+#  Project: ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 version: "3.1"
 
 stories:

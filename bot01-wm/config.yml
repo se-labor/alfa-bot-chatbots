@@ -1,3 +1,11 @@
+##
+#  bot: soccer | config.yml
+#  Project: ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 # The config recipe.
 # https://rasa.com/docs/rasa/model-configuration/
 recipe: default.v1

@@ -1,3 +1,11 @@
+##
+#  A99_survey_actions.py
+#  ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 from typing import Any, Text, Dict
 import os
 import smtplib

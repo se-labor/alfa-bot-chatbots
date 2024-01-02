@@ -1,6 +1,6 @@
 # Rasa-Chatbot für Projekt ALFA-Bot
 
-#### Stand: 03. April 2023
+#### Stand: 30. November 2023
 
 ## Chatbots in diesem Projekt
 
@@ -93,7 +93,7 @@ Container bauen: `docker build -f Dockerfile.customAction -t sjproost/alfabot-ca
 Container pushen `docker push repo/image:tag`
 
 ### ALFA-Bot API
-[Swagger-API](https://alfabot.se-labor.de/alfabotapi/swagger-ui/index.html?configUrl=/alfabotapi/v3/api-docs/swagger-config) zur Kommunikation von App und Chatbots.
+[Swagger-API]() zur Kommunikation von App und Chatbots.
 
 
 

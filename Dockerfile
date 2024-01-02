@@ -1,3 +1,11 @@
+##
+#  bot: general | dockerfile
+#  Project: ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 # Generate a custom rasa docker container
 # Start from python 3.9 environment
 FROM python:3.10.10-slim

@@ -1,3 +1,11 @@
+##
+#  bot: election | domain.yml
+#  Project: ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 version: '3.1'
 session_config:
   session_expiration_time: 60
@@ -48,7 +56,7 @@ slots:
 responses:
 # Greet, Goodbye, Affirm, Deny, Control
   utter_greet:
-  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
+  - image: https://www.your-own.domain/upload2022/03/nrw_plenarsaal.jpeg
     text: Willkommen zum Chat. Frage mich gerne, was du über Wahlen wissen möchtest. Tippe auf den Lautsprecher, damit ich dir die Nachricht vorlese.
   utter_goodbye:
   - text: Machs gut!
@@ -57,10 +65,10 @@ responses:
   utter_iamabot:
     - text: "Ich bin ein Chatbot. Meine Entwickler sind die **FH Münster** und der **Bundesverband Alphabetisierung und Grundbildung**."
   utter_kontakt:
-  - text: "Meine Entwickler erreichst du im [Web](https://www.alfa-bot.de) oder schreibe ihnen eine [Mail](mailto:r.haeder@alphabetisierung.de)."
+  - text: "Meine Entwickler erreichst du im [Web](https://www.alfa-bot.de) oder schreibe ihnen eine [Mail](mailto:your-own@addr.de)."
 ## Control
   utter_out_of_scope:
-    - text: "Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder kontaktiere meine Entwickler. Du findest sie [online](https://www.alfa-bot.de) oder schreib ihnen eine [Mail](mailto:r.haeder@alphabetisierung.de)."
+    - text: "Ich verstehe deine Eingabe leider nicht. Versuche eine andere Formulierung oder kontaktiere meine Entwickler. Du findest sie [online](https://www.alfa-bot.de) oder schreib ihnen eine [Mail](mailto:your-own@addr.de)."
   utter_interruption:
   - text: Ok. Falls ich dir anders helfen kann, frage mich gerne danach.
   utter_themen:
@@ -93,7 +101,7 @@ responses:
   utter_gvi/democracy:
   - text: "In einer Demokratie bestimmt nicht nur ein Mensch was passieren soll. In der Demokratie dürfen alle Menschen mitbestimmen. Dafür gibt es das Wahl-Recht. Wenn Du wählst, bestimmst Du in Deutschland mit. Das nennt man *demokratisch*."
   utter_gvi/parliamentWhat:
-  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/nrw_plenarsaal.jpeg
+  - image: https://www.your-own.domain/upload2022/03/nrw_plenarsaal.jpeg
     text: "In einem Parlament kommen gewählte Politiker zusammen, die Abgeordneten. Sie beschließen Gesetze oder entscheiden, wofür Geld ausgegeben wird. Ein Parlament wählt auch einen Chef oder eine Chefin. Bei Bundesländern sind das die Ministerpräsidtenen. Der Bundestag als höchstes Parlament wählt den Bundeskanzler."
   utter_gvi/eigenschaftenWahlen:
   - buttons:
@@ -183,13 +191,13 @@ responses:
   - buttons:
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_cdu.gif
+    image: https://www.your-own.domain/upload2022/03/logo_cdu.gif
     text: "[CDU](https://www.cdu.de) steht für Christlich Demokratische Union. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Partei."
   utter_gvi/parties_CSU:
   - buttons:
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_csu.png
+    image: https://www.your-own.domain/upload2022/03/logo_csu.png
     text: "[CSU](https://www.csu.de) steht für Christlich Soziale Union. Diese Partei kannst du nur in Bayern wählen."
   utter_gvi/parties_SPD:
   - buttons:
@@ -197,7 +205,7 @@ responses:
       title: Thomas Kutschaty
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_spd.jpg
+    image: https://www.your-own.domain/upload2022/03/logo_spd.jpg
     text: "[SPD](https://www.spd.de) steht für die Sozialdemokratische Partei Deutschlands. Diesen Namen hat sie seit 1890. Freiheit und soziale Gerechtigkeit sind wichtige Ziele der Partei."
   utter_gvi/parties_FDP:
   - buttons:
@@ -205,7 +213,7 @@ responses:
       title: Joachim Stamp
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_fdp.png
+    image: https://www.your-own.domain/upload2022/03/logo_fdp.png
     text: "[FDP](https://www.fdp.de) steht für Freie Demokratische Partei. Die FDP ist seit 1947 im Landtag vertreten."
   utter_gvi/parties_GRUENE:
   - buttons:
@@ -213,7 +221,7 @@ responses:
       title: Mona Neubaur
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_gruene.jpg
+    image: https://www.your-own.domain/upload2022/03/logo_gruene.jpg
     text: "[Bündnis 90/Die Grünen](https://www.gruene.de): Ein inhaltlicher Schwerpunkt der Grünen ist die Umweltpolitik."
   utter_gvi/parties_Linke:
   - buttons:
@@ -221,7 +229,7 @@ responses:
       title: Carolin Butterwegge
     - payload: Wen soll ich wählen?
       title: Wen soll ich wählen?
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_linke.jpg
+    image: https://www.your-own.domain/upload2022/03/logo_linke.jpg
     text: "[Die LINKE](https://www.die-linke.de/start/) setzt sich für sozialistische Werte ein. 2007 gründete sich die Partei aus den kleineren Parteien *Die Linkspartei*, *PDS* und *WASG*."
   utter_gvi/parties_AFD:
   - buttons:
@@ -229,7 +237,7 @@ responses:
       title: Markus Wagner
     - payload: Wahl-O-Mat
       title: Wen soll ich wählen?
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/logo_afd.png
+    image: https://www.your-own.domain/upload2022/03/logo_afd.png
     text: "[AFD](https://www.afd.de) steht für Alternative für Deutschland. Die AFD gibt es seit 2013 und sie steht für Nationalismus. Damit steht sie von den bekannten Parteien am weitesten rechts."
 # esq Election specific questions
 ## candidates
@@ -252,37 +260,37 @@ responses:
   - buttons:
     - payload: CDU
       title: 'Partei: CDU'
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-hendrik_wuest-scaled.jpeg
+    image: https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-hendrik_wuest-scaled.jpeg
     text: Das ist Hendrik Wüst. Er ist der Spitzenkandidat der CDU und der jetzige Ministerpräsident.
   utter_esq/Thomas_Kutschaty:
   - buttons:
     - payload: SPD
       title: 'Partei: SPD'
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-thomas_kutschaty-scaled.jpg
+    image: https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-thomas_kutschaty-scaled.jpg
     text: Das ist Thomas Kutschaty. Er ist der Spitzenkandidat der SPD.
   utter_esq/Mona_Neubaur:
   - buttons:
     - payload: Die GRÜNEN
       title: 'Partei: Bündnis 90 die GRÜNEN'
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-mona_neubaur.jpg
+    image: https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-mona_neubaur.jpg
     text: Das ist Mona Neubaur. Sie ist die Spitzenkandidatin der Grünen
   utter_esq/Joachim_Stamp:
   - buttons:
     - payload: FDP
       title: 'Partei: FDP'
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-joachim_stamp-scaled.jpg
+    image: https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-joachim_stamp-scaled.jpg
     text: Das ist Joachim Stamp. Er ist der Spitzenkandidat der FDP.
   utter_esq/Markus_Wagner:
   - buttons:
     - payload: AFD
       title: 'Partei: AFD'
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-wagner_markus.png
+    image: https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-wagner_markus.png
     text: Das ist Markus Wagner. Er ist der Spitzenkandidat der AFD.
   utter_esq/Carolin_Butterwegge:
   - buttons:
     - payload: Die LINKE
       title: 'Partei: Die LINKE'
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-caro_butterwegge-scaled.jpg
+    image: https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-caro_butterwegge-scaled.jpg
     text: Das ist Carolin Butterwegge. Sie ist die Spitzenkandidatin der Linken.   
   utter_esq/wahlprogramme:
   - buttons:
@@ -310,11 +318,11 @@ responses:
       title: Briefwahl
     text: Wenn du deine Wahlbenachrichtigung erhalten hast, kannst du damit am 15. Mai im *Wahllokal* wählen gehen oder *Briefwahl* beantragen. Du bekommst zur Wahl einen Stimmzettel auf dem du zwei Kreuze machen kannst. Deine Erststimme links und deine Zweitstimme rechts. Frage mich gerne nach Wahllokal oder Briefwahl.
   utter_esq/erststimme:
-  - text: Mit deiner **Erststimme** wählst du den Kandidaten deines Wahlkreises. Der Kandidat mit den meisten Stimmen im Wahlkreis kommt direkt in den Landtag. Mehr zur [Erststimme in diesem Heft](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
-  - text: Mit deiner **Erststimme** wählst du den Direktkandidaten in deinem Wahlkreis. Aus jedem Wahlkreis kommt die Person mit den meisten Stimmen direkt in den Landtag. Mehr zur [Erststimme in diesem Heft](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
+  - text: Mit deiner **Erststimme** wählst du den Kandidaten deines Wahlkreises. Der Kandidat mit den meisten Stimmen im Wahlkreis kommt direkt in den Landtag. Mehr zur [Erststimme in diesem Heft](https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
+  - text: Mit deiner **Erststimme** wählst du den Direktkandidaten in deinem Wahlkreis. Aus jedem Wahlkreis kommt die Person mit den meisten Stimmen direkt in den Landtag. Mehr zur [Erststimme in diesem Heft](https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
   utter_esq/zweitstimme:
-  - text: Mit der **Zweitstimme** wählst du eine Partei. Damit bestimmst du mit, wie viele Plätze eine Partei im Landtag bekommt. Mehr zur [Zweitstimme in diesem Heft](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
-  - text: Du wählst mit deiner **Zweitstimme** eine Partei. So entscheiden Wähler, wie viele Plätze eine Partei im Landtag bekommt. Mehr zur [Zweitstimme in diesem Heft](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
+  - text: Mit der **Zweitstimme** wählst du eine Partei. Damit bestimmst du mit, wie viele Plätze eine Partei im Landtag bekommt. Mehr zur [Zweitstimme in diesem Heft](https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
+  - text: Du wählst mit deiner **Zweitstimme** eine Partei. So entscheiden Wähler, wie viele Plätze eine Partei im Landtag bekommt. Mehr zur [Zweitstimme in diesem Heft](https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf).
   utter_esq/wahlOMat:
   - text: Bei der Landtagswahl kannst du aus 29 Parteien wählen. Es ist schwer, sich für eine Partei zu entscheiden. Man kann aber nichts verkehrt machen. Du weißt selbst was gut für dich ist. Welche Themen sind dir wichtig? Was interessiert dich? Welche Partei oder welche Person magst du? Du kannst dich aber auch beraten lassen. Dafür gibt es zum Beispiel den [Wahl-O-Mat](https://www.wahl-o-mat.de/nordrheinwestfalen2022/app/main_app.html) oder [VoteSwiper](https://www.voteswiper.org/de/deutschland/landtagswahl-nordrhein-westfalen-2022).
   - text: Bei der Landtagswahl kannst du aus 29 Parteien wählen. Dich für eine Partei zu entscheiden, kann schwer sein. Im Internet gibt es Angebote, die dir dabei helfen. Du musst dort nur ein paar Fragen mit Ja oder Nein beantworten und auswählen, welche Parteien du vergleichen möchtest. Zum Beispiel der [Wahl-O-Mat](https://www.wahl-o-mat.de/nordrheinwestfalen2022/app/main_app.html) der Bundeszentrale für politische Bildung oder [VoteSwiper](https://www.voteswiper.org/de/deutschland/landtagswahl-nordrhein-westfalen-2022).
@@ -324,8 +332,8 @@ responses:
   utter_seq/wahllokal:
     - text: Traditionell wählt man im Wahllokal. Das ist ein Raum in deiner Nähe, in dem Wahlhelfer dir die Stimmzettel geben. Dann kannst du in die Wahlkabine gehen und ungestört wählen. Wenn du fertig bist, wirfst du deine gefalteten Stimmzettel in eine Wahlurne.
   utter_esq/briefwahl:
-  - text: Manche Wähler können nicht zum Wahllokal. Zum Beispiel wenn sie am Wahltag im Urlaub sind, einen Termin haben oder weil sie krank sind. Dafür gibt es die Briefwahl. Dann können sie vor dem Wahltag wählen. Die Briefwahl kannst du mit deiner Wahlbenachrichtigung bis zum 13. Mai beantragen. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Dann kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Informationen dazu findest du [hier](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)
-  - text: 'Möchtest du zu Hause wählen, dann musst du die Briefwahl bis zum 13. Mai beantragen. Diesen Antrag findest du in deiner Wahlbenachrichtigung. Er heißt: Wahlschein-Antrag. du bekommst die Wahlzettel zugeschickt. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Nun kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Informationen dazu findest du [hier](https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)'  
+  - text: Manche Wähler können nicht zum Wahllokal. Zum Beispiel wenn sie am Wahltag im Urlaub sind, einen Termin haben oder weil sie krank sind. Dafür gibt es die Briefwahl. Dann können sie vor dem Wahltag wählen. Die Briefwahl kannst du mit deiner Wahlbenachrichtigung bis zum 13. Mai beantragen. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Dann kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Informationen dazu findest du [hier](https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)
+  - text: 'Möchtest du zu Hause wählen, dann musst du die Briefwahl bis zum 13. Mai beantragen. Diesen Antrag findest du in deiner Wahlbenachrichtigung. Er heißt: Wahlschein-Antrag. du bekommst die Wahlzettel zugeschickt. Du bekommst mehrere Briefumschläge, einen Stimmzettel, einen Wahlschein und eine Anleitung geschickt. Auf dem Stimmzettel wählst du in der linken Spalte einen Direktkandidaten mit deiner **Erststimme**. Mit der rechten Spalte, gibst du deine **Zweitstimme** einer Partei. In jeder Spalte darfst du ein Kreuz machen. Danach steckst du den Stimmzettel gefaltet in den blauen Umschlag und klebst ihn zu. Nun unterschreibst du den Wahlschein und steckst diesen zusammen mit dem blauen Umschlag in den roten Umschlag. Nun kannst du deine Wahlunterlagen in einen Briefkasten einwerfen. Mehr Informationen dazu findest du [hier](https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-e-book_landtagswahl-nrw-2022_ls_0.pdf)'  
   utter_esq/wannWahl:
   - text: Die Landtagswahl 2022 ist am **Sonntag, 15. Mai 2022**. Das dann gewählte Parlament ist normalerweise für fünf Jahre im Amt.  
   utter_esq/oeffnungszeiten:
@@ -341,10 +349,10 @@ responses:
   utter_esq/kostenWahl:
   - text: Die Landtagswahl 2022 wird komplett aus Steuermitteln bezahlt. Das Wählen ist für dich kostenlos. Auch wenn du Briefwahl nutzt, musst du keine Briefmarke kaufen.
   utter_esq/primeMinisterWho:
-  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/alfabot_ltw_nrw_2022-hendrik_wuest-scaled.jpeg
+  - image: https://www.your-own.domain/upload2022/03/alfabot_ltw_nrw_2022-hendrik_wuest-scaled.jpeg
     text: Hendrik Wüst von der CDU ist seit Oktober 2021 Ministerpräsident des Landes NRW. Nach der Landtagswahl am 15. Mai 2022 möchte er wieder Ministerpräsident sein.
   utter_esq/parliamentWhere:
-  - image: https://www.alfa-bot.de/wp-content/uploads/2022/03/landtag_nrw.jpeg
+  - image: https://www.your-own.domain/upload2022/03/landtag_nrw.jpeg
     text: Der Landtag NRW ist in Düsseldorf. Du findest ihn an der Adresse [Platz des Landtags 1, Düsseldorf](https://www.google.com/maps/search/?api=1&query=Platz+des+Landtags+1+40221+Düsseldorf)
   utter_esq/wahlkreise:
   - text: Es gibt insgesamt 128 Wahlkreise in NRW. Die Wahlkreise sind unterschiedlich groß, aber es leben immer ungefähr gleich viele Wähler in den Wahlkreisen.

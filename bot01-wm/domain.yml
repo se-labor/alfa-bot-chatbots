@@ -1,3 +1,11 @@
+##
+#  bot: soccer | domain.yml
+#  Project: ALFA-Bot
+#
+#  Created by Simon on 24.12.2023
+#  Copyright © 2023 Fachhochschule Münster. All rights reserved.
+##
+
 version: '3.1'
 session_config:
   session_expiration_time: 60
@@ -224,7 +232,7 @@ slots:
         requested_slot: learn_not
 responses:
   utter_default:
-  - text: 'Meine Entwickler erreichst du am ALFA-Telefon: [0800 53 53 44 55](tel:080053534455). Du findest sie auch im [Internet](https://alfa-telefon.de) oder kannst ihnen eine [Mail](mailto:r.haeder@alphabetisierung.de) schreiben.'
+  - text: 'Meine Entwickler erreichst du am ALFA-Telefon: [0800 53 53 44 55](tel:080053534455). Du findest sie auch im [Internet](https://alfa-telefon.de) oder kannst ihnen eine [Mail](mailto:your_own@address) schreiben.'
   utter_greet:
   - text: Willkommen zum Chat. Frage mich gerne, was du über die ⚽-Weltmeisterschaft 2022 wissen möchtest. Tippe auf den Lautsprecher, dann lese ich dir die Nachricht vor.
   utter_greet_buttons:
@@ -245,13 +253,13 @@ responses:
     - payload: Ja
       title: Weiter
     text: Auf dem Spielfeld befinden sich zwei Spieler der blauen und zwei Spieler der gelben Mannschaft. Schießt der gelbe Spieler den Ball zu seinem Mitspieler, wenn kein Gegner mehr zwischen dem Mitspieler und dem anderen Torwart steht, wäre das ein Abseits.
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/11/abseits.png
+    image: https://www.your-own.domain/upload2022/11/abseits.png
   utter_offside2:
   - buttons:
     - payload: Ja
       title: Weiter
     text: Schießt der gelbe Spieler den Ball zu seinem Mitspieler, *bevor* dieser Mitspieler hinter die Spieler der gegnerischen Mannschaft läuft, ist es kein Abseits. Außerdem gibt es Abseits nur in der gegnerischen Hälfte.
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/11/kein_abseits.png
+    image: https://www.your-own.domain/upload2022/11/kein_abseits.png
   utter_offside3:
   - buttons:
     - payload: Ja
@@ -259,7 +267,7 @@ responses:
     - payload: Nein
       title: Nein
     text: Was meinst du, handelt es sich hier um Abseits?
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/11/frage_abseits.png
+    image: https://www.your-own.domain/upload2022/11/frage_abseits.png
   utter_offside_right:
   - text: Richtig! denn, ACHTUNG! Es ist kein Abseits, wenn man zwar hinter allen gegnerischen Spielern aber noch in der eigenen Spielfeld-Hälfte steht und einen Ball zugespielt bekommt!
   utter_offside_wrong:
@@ -388,7 +396,7 @@ responses:
     - payload: /katar_critics
       title: Kritik an der WM?
     text: Die WM in Katar wird über 150 Milliarden Euro kosten. Keine andere WM hat jemals so viel Geld gekostet.
-    image: 'https://www.alfa-bot.de/wp-content/uploads/2022/11/kosten_wm.png'
+    image: 'https://www.your-own.domain/upload2022/11/kosten_wm.png'
   utter_qat/worker_situation:
   - buttons:
     - payload: /katar_critics
@@ -412,7 +420,7 @@ responses:
     - payload: /katar_critics
       title: Kritik an der WM
     text: '*„Die FIFA hat die Augen vor vorhersehbaren Menschenrechtsverletzungen verschlossen und diese nicht gestoppt. Sie hat unbestreitbar zu weit verbreiteten Menschenrechtsverstößen gegen Arbeitsmigrant**innen beigetragen.“* Katja Müller-Fahlbusch - Expertin für die Region Naher Osten und Nordafrika bei Amnesty International in Deutschland.'
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/09/Katja-Mueller-Fahlbusch.jpeg
+    image: https://www.your-own.domain/upload2022/09/Katja-Mueller-Fahlbusch.jpeg
   utter_qat/boycott_contra:
   - buttons:
     - payload: /boycott
@@ -420,7 +428,7 @@ responses:
     - payload: /katar_critics
       title: Kritik an der WM
     text: '"*Wir haben uns mit vielen Nichtregierungsorganisationen getroffen, mit dem katarischen Fußballverband, aber auch mit Migrantinnen und Migranten. Eine Hauptaussage von denen war: Es ist hervorragend, dass es keinen Boykott gibt. Durch den Fokus auf das Land ist bei der Verbesserung der Arbeitsbedingungen sehr viel erreicht worden*", berichtete die DFB-Generalsekretärin Heike Ullrich von ihren Gesprächen *(Foto: ©Agentur 54 Grad/Felix König)*.'
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/09/Heike_Ullrich.jpeg
+    image: https://www.your-own.domain/upload2022/09/Heike_Ullrich.jpeg
   utter_wm/wm_time:
   - buttons:
     - payload: Wann ist die Gruppenphase?
@@ -453,7 +461,7 @@ responses:
   - text: In jedem Spiel gibt es eine Pause für die Spieler. Diese dauert 15 Minuten. Bei einer Verlängerung gibt es noch eine Pause von 5 Minuten.
   utter_rule/goal:
     - text: 'Ohne Tor gibt es kein Fußballspiel. Aber auch für das Tor gibt es Normen. Das Tor steht in der Mitte der jeweiligen Torlinie. Es muss dort fest im Boden verankert sein. Ein Fußballtor ist 7,32 Meter breit und 2,44 Meter hoch. Es besteht aus zwei Pfosten, einer Latte und einem Netz. Die beiden Pfosten begrenzen das Tor seitlich. Die Latte begrenzt das Tor in der Höhe. Diese drei Balken sind weiß. Das Netz ist an Pfosten, Latte und Boden befestigt. Mit einem Netz kann man besser erkennen, ob der Schuss ins Tor gegangen ist.'
-      image: 'https://www.alfa-bot.de/wp-content/uploads/2022/10/goal.jpg'
+      image: 'https://www.your-own.domain/upload2022/10/goal.jpg'
   utter_rule/diving:
     - buttons:
         - payload: Was ist ein Elfmeter
@@ -482,7 +490,7 @@ responses:
     - payload: Torwart wechseln
       title: Torwart wechseln
     text: Trainer können Spieler auf dem Feld gegen Reservespieler austauschen. Zum Beispiel, wenn ein Spieler verletzt oder müde ist. Dafür muss man dem Schiedsrichter Bescheid sagen. Normalerweise sind 3 Wechsel pro Spiel erlaubt. Seit der Corona-Pandemie erlaubt die Fifa aber 5 Wechsel pro Spiel.
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/11/auswechseln.png
+    image: https://www.your-own.domain/upload2022/11/auswechseln.png
   utter_rule/keeperChange:
   - buttons:
     - payload: Reservespieler
@@ -520,7 +528,7 @@ responses:
       - payload: Feld Größe
         title: Größe
       text: Der Fußballplatz besteht aus vielen Zonen mit verschiedenen Linien. Die beiden längeren Begrenzungslinien sind die Seitenlinien, die kürzeren, auf denen die Tore stehen, sind die Torlinien. Die Mittellinie teilt das Spielfeld in zwei Hälften. In jeder Hälfte gibt es einen Strafraum.
-      image: https://www.alfa-bot.de/wp-content/uploads/2022/11/fussballspielfeld.jpeg
+      image: https://www.your-own.domain/upload2022/11/fussballspielfeld.jpeg
   utter_rule/ball:
   - buttons:
     - payload: Al Rihla
@@ -580,7 +588,7 @@ responses:
     - payload: Video-Assistent
       title: Video-Assistent
     text: "Der Schiedsrichter ist der Leiter eines Fußballspiels. Er sorgt dafür, dass alle Regeln eingehalten werden. Der Schiedsrichter kann die Spieler bestrafen. Außerdem entscheidet er, ob ein Tor zählt oder nicht.\nDer Schiedsrichter läuft auf dem Platz hin und her und gibt Signale mit einer Pfeife. Die Entscheidungen eines Schiedsrichters sind fest und werden nicht nachträglich geändert."
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/11/schiedsrichter.png
+    image: https://www.your-own.domain/upload2022/11/schiedsrichter.png
   utter_rule/refereeAssistant:
   - buttons:
     - payload: Schiedsrichter
@@ -588,7 +596,7 @@ responses:
     - payload: Video-Assistent
       title: Video-Assistent
     text: "Linienrichter sind Assistenten des Schiedsrichters. Meistens gibt es zwei Linienrichter. Sie halten sich am Rand des Spielfelds in der Nähe der 16 Meter-Räume auf. Sie achten vor allem auf Abseits, Aus und Tore.\nLinienrichter haben immer eine Flagge dabei. Die heben sie hoch, um ein Abseits, ein Tor oder einen Ball außerhalb des Spielfelds anzuzeigen. Damit der Schiedsrichter das auch mitbekommt, trägt er ein Armband. Dieses Armband vibriert, wenn ein Linienrichter ihm ein Signal gibt."
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/11/linienrichter.png
+    image: https://www.your-own.domain/upload2022/11/linienrichter.png
   utter_rule/videoAssistant:
   - buttons:
     - payload: Schiedsrichter
@@ -598,7 +606,7 @@ responses:
     text: Seit 2017 haben Schiedsrichter einen weiteren Assistenten - den Video-Assistenten. Dieser schaut das Spiel über Monitore aus verschiedenen Kamera-Einstellungen. In ganz wichtigen Situationen kann der Schiedsrichter sich das Video ansehen. So gibt es weniger Fehlentscheidungen bei Toren, Strafstößen oder roten Karten. Eine sehr übersichtliche Darstellung findest du [hier](https://quality.fifa.com/de/media-tiles/video-assistant-referee-var/).
   utter_rule/cornerkick:
   - text: Es gibt einen Eckball, wenn ein verteidigender Spieler den Ball über die eigene Torauslinie befördert. Der Ball muss dabei mit dem gesamten Umfang über der Linie sein. Bei einem Eckball darf ein Spieler von der Eckfahne aus den Ball ohne Behinderung spielen. Meistens wird der Ball als Flanke direkt in den Strafraum getreten.
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/11/eckball.png
+    image: https://www.your-own.domain/upload2022/11/eckball.png
   utter_rule/foul:
   - buttons:
     - payload: Welche Strafen gibt es?
@@ -615,7 +623,7 @@ responses:
   - text: Wenn ein Spieler den Ball über die Seitenlinie des Spielfelds befördert, bekommt die gegnerische Mannschaft einen Einwurf zugesprochen. Bei einem Einwurf muss der Ball mit beiden Händen gehalten und von hinten über den Kopf geworfen werden. Der Spieler muss mit beiden Beinen außerhalb des Spielfelds stehen.
   utter_rule/penalty_kick:
   - text: Bei einem Regelverstoß im Strafraum bekommt die gegnerische Mannschaft einen Strafstoß. Der Strafstoß wird auch *Elfmeter* genannt, weil der Punkt, von dem geschossen wird, 11 Meter vom Tor entfernt ist. Dieser Schuss darf ohne Behinderung direkt auf das Tor ausgeführt werden.
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/11/elfmeter.png
+    image: https://www.your-own.domain/upload2022/11/elfmeter.png
   utter_i_know:
   - text: Ok, dann weißt du ja schon gut Bescheid. Was möchstest du noch wissen?
   utter_freekick:
@@ -625,7 +633,7 @@ responses:
     - payload: Nein
       title: Nein
     text: Bei einem Regelverstoß bekommt die gegnerische Mannschaft einen Freistoß. Dieser darf ohne Behinderung des Gegners gespielt werden. In den meisten Fällen gibt der Schiedsrichter den Ball durch einen Pfiff frei. Hast du schon mal etwas von einer *Mauer* im Fußball gehört?
-    image: https://www.alfa-bot.de/wp-content/uploads/2022/11/freistoss.png
+    image: https://www.your-own.domain/upload2022/11/freistoss.png
   utter_freekick_wall:
   - text: Bei einem Freistoß in der Nähe des Tores, stellt der Torwart der verteidigenden Mannschaft eine Mauer aus Spielern auf. So kann der Schütze nicht direkt auf das Tor schießen.
   utter_qualify:
@@ -658,7 +666,7 @@ responses:
   utter_chitchat/turing:
   - text: Du willst mich testen? Dafür gibt es den Turing-Test. Der Turing-Test stammt vom britischen Mathematiker Alan Turing. Turing schlug diesen Test vor, um einen Richtwert für Künstliche Intelligenz zu erschaffen. Solange du mich etwas fragst, was ich weiß, könnte ich den Test bestehen. Aber bei anderen Fragen bin ich raus.
   utter_chitchat/kontakt:
-  - text: 'Meine Entwickler findest du im [Web](https://www.alfa-bot.de). Oder schreibe ihnen von hier aus eine [Mail](mailto:r.haeder@alphabetisierung.de).'
+  - text: 'Meine Entwickler findest du im [Web](https://www.alfa-bot.de). Oder schreibe ihnen von hier aus eine [Mail](mailto:your-own@addr.de).'
   utter_chitchat/nettiquette:
   - text: Das war keine nette Eingabe oder? Ich rede gerne mit dir, aber bitte sei freundlich 🙃
   utter_chitchat/themen:
