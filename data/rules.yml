@@ -42,11 +42,11 @@ rules:
     - action: action_repeat
 
 - rule: Start
-  conversation_start: true
+ # conversation_start: true
   steps:
     - intent: greet
     - action: utter_greet
-    - action: utter_under_construction
+  #  - action: utter_under_construction
 
 - rule: Show intro
   steps:

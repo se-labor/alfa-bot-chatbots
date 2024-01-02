@@ -1075,6 +1075,7 @@ nlu:
 - intent: support/intro
   examples: |
     - Beratung
+    - Hilfe
     - Wo bekomme ich Beratung?
     - Wer kann mir helfen?
     - Kann mir jemand helfen?
@@ -1262,3 +1263,8 @@ nlu:
     - Quiz
     - Quiz Anfangen
     - Ich möchte das Finanzquiz starten
+    - Quiss
+    - Kwiss
+    - Quizz los
+    - mit kwiess los
+    

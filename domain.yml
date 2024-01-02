@@ -486,7 +486,7 @@ responses:
       title: sepa-Lastschrift
     - payload: Mahnverfahren
       title: Mahnverfahren
-    text: 'Du hast einer Firma die Erlaubnis gegeben, Geld von deinem Konto per Lastschrift abzubuchen. Ist nicht genug Geld auf deinem Konto. Dann kommt es zu einer **Rücklastschrift**. Die Gebühren musst du bezahlen und vielleicht kommt es zu einem Mahnverfahren.'
+    text: 'Du hast einer Firma die Erlaubnis gegeben, Geld von deinem Konto per Lastschrift abzubuchen. Wenn nicht genug Geld auf deinem Konto ist, kommt es zu einer **Rücklastschrift**. Die Gebühren musst du bezahlen und vielleicht kommt es zu einem Mahnverfahren.'
   utter_credit/fb_mahnverfahren:
   - buttons:
     - payload: fachbegriffe credit
@@ -754,14 +754,14 @@ responses:
       title: Volksbanken
     - payload: zurück
       title: Zurück
-    text: Es gibt über 500 **Sparkassen** in Deutschland. Sie haben 16.000 Filialen und arbeiten fast immer in öffentlichem Auftrag. Sie werden von den Städten und Gemeinden getragen.
+    text: Es gibt über 350 **Sparkassen** in Deutschland. Sie haben 11.000 Filialen und arbeiten fast immer in öffentlichem Auftrag. Sie werden von den Städten und Gemeinden getragen.
   utter_banking/volksbanken:
   - buttons:
     - payload: Sparkassen
       title: Sparkassen
     - payload: zurück
       title: Zurück
-    text: 'Die Volksbanken haben über 7.000 Filialen in Deutschland und gehören zu den Genossenschaftsbanken. Alle Kunden können Mitglieder der Bank werden. Mitglieder können an der Entwicklung der Bank mitbestimmen.'
+    text: 'Die **Volksbanken** haben über 7.000 Filialen in Deutschland und gehören zu den Genossenschaftsbanken. Alle Kunden können Mitglieder der Bank werden. Mitglieder können an der Entwicklung der Bank mitbestimmen.'
   utter_banking/direktbanken:
   - buttons:
     - payload: Zurück
@@ -786,28 +786,28 @@ responses:
   utter_q1_right:
   - buttons:
     - payload: /enter_question_2
-      title: Weiter
+      title: Nächste Frage
     text: 'Die **Privat-Haftpflichtversicherung** ist sehr wichtig. Dennoch gehört sie nicht zu den 5 Sozialversicherungen, die jeder Arbeitnehmer haben muss. Das ist die richtige Lösung.'
   utter_q1_wrong_1:
   - buttons:
     - payload: /q1_right
       title: Richtige Lösung
     - payload: /enter_question_2
-      title: Weiter
+      title: Nächste Frage
     text: Das stimmt nicht. Wenn du eine Arbeit hast, musst du jeden Monat in diese **Sozialversicherung** einzahlen. Der Beitrag wird direkt von deinem Gehalt abgezogen. Sobald du arbeitslos wirst, bekommst du Geld aus dieser Versicherung.
   utter_q1_wrong_2:
   - buttons:
     - payload: /q1_right
       title: Richtige Lösung
     - payload: /enter_question_2
-      title: Weiter
+      title: Nächste Frage
     text: Nein, Du bekommst deine Rente von dieser Versicherung. Vorher musst du jeden Monat einen Teil deines Gehalts in diese **Sozialversicherung** einzahlen.
   utter_q1_wrong_3:
   - buttons:
     - payload: q1_right
       title: Richtige Lösung
     - payload: /enter_question_2
-      title: Weiter
+      title: Nächste Frage
     text: Leider falsch Die Pflegeversicherung hilft dir, wenn du dich nicht mehr selbst versorgen kannst. Sie ist eine der fünf **Sozialversicherungen** für Arbeitnehmer.
   utter_ask_question2:
   - buttons:
@@ -858,8 +858,6 @@ responses:
     text: Die Schäden an beiden Fahrzeugen werden nur von KFZ-Haftpflicht und Vollkasko-Versicherung übernommen. Wenn du diesen Schutz haben möchtest, ist der Beitrag deutlich höher als bei einer normalen KFZ-Haftpflichtversicherung.
   utter_q3_wrong_2:
   - buttons:
-    - payload: q3_right
-      title: Richtige Lösung
     - payload: /enter_question_4
       title: Nächste Frage
     text: In diesem Beispiel hast du den Unfall verursacht. Deshalb zahlt deine Haftpflichtversicherung den Schaden beim anderen Auto. Die Reparaturen an deinem Auto musst du selbst bezahlen.
@@ -914,8 +912,6 @@ responses:
     text: 'Sehr gut. Das ist die richtige Lösung'
   utter_q5_wrong_1:
   - buttons:
-    - payload: /q5_right
-      title: Richtige Lösung
     - payload: /enter_question_6
       title: Weiter
     text: 'Mit Geldscheinen und Münzen kannst du fast immer und überall bezahlen. Dennoch ist mit Mobiles Bezahlen etwas anderes gemeint. Antwort 2 ist richtig.'
@@ -927,15 +923,9 @@ responses:
       title: 'Bei diesem Verfahren zahlt deine Bank regelmäßig den gleichen Betrag von deinem Konto an denselben Empfänger. Das kann zum Beispiel die monatliche Miete am ersten Tag des Monats sein'
     text: 'Was ist ein Dauerauftrag und wofür ist er sinnvoll? Eine der beiden folgenden Antworten ist richtig'
   utter_q6_right:
-  - buttons:
-    - payload: /interruption
-      title: Weiter
-    text: 'Top: Das ist absolut richtig.'
+  - text: 'Top: Das ist absolut richtig.'
   utter_q6_wrong_1:
-  - buttons:
-    - payload: /q6_right
-      title: Richtige Lösung
-    text: 'Hier wird das Sepa-Lastschrift Mandat beschrieben, Dabei werden die Höhe des Betrages und der Zeitpunkt der Abbuchung vom Empfänger bestimmt. Richtig wäre Antwort 2.'
+  - text: 'Hier wird das Sepa-Lastschrift Mandat beschrieben, Dabei werden die Höhe des Betrages und der Zeitpunkt der Abbuchung vom Empfänger bestimmt. Richtig wäre Antwort 2.'
   utter_start_quiz:
   - buttons:
     - payload: /enter_question_1
@@ -1006,7 +996,7 @@ responses:
   - buttons:
     - payload: Zurück
       title: Zurück
-    text: Das [ALFA-Telefon](https://alfa-telefon.de/) ist kostenlos und berät Menschen, die mit dem Lesen und Schreiben Schwierigkeiten haben. Du erreichst das ALFA-Telefon unter [0800 53 33 44 55](tel:080053334455).
+    text: Das [ALFA-Telefon](https://alfa-telefon.de/) ist kostenlos und berät Menschen, die mit dem Lesen und Schreiben Schwierigkeiten haben. Du erreichst das ALFA-Telefon unter [0800 53 33 44 55](tel:080053334455)
   utter_befragung:
   - text: |-
       Wir haben eine kleine Umfrage für dich. Dazu leiten wir dich auf eine Webseite weiter. Du kannst dir auch dort die Texte vorlesen lassen, indem du auf das Play-Symbol tippst.
